@@ -1,0 +1,20 @@
+---
+permalink: primer/monitoring-storagegrid-operations.html 
+sidebar: sidebar 
+keywords:  
+summary: Grid Managerでは、StorageGRID システムの日 々 のアクティビティを監視するための、健常性を含む情報を提供します。 
+---
+= StorageGRID 処理の監視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Grid Managerでは、StorageGRID システムの日 々 のアクティビティを監視するための、健常性を含む情報を提供します。
+
+* link:viewing-nodes-page.html["Nodesページを表示します"]
+* link:monitoring-and-managing-alerts.html["アラートの監視と管理"]
+* link:using-snmp-monitoring.html["SNMPによる監視を使用する"]
+* link:reviewing-audit-messages.html["監査メッセージの確認"]
+

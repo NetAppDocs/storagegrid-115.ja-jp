@@ -1,0 +1,20 @@
+---
+permalink: expand/planning-expansion.html 
+sidebar: sidebar 
+keywords: expand, expansion, planning 
+summary: StorageGRID を拡張して、ストレージ容量の拡張、メタデータ容量の追加、冗長性や新機能の追加、新しいサイトの追加を行うことができます。追加する必要があるノードの数、タイプ、場所は、拡張の理由によって異なります。 
+---
+= StorageGRID 拡張の計画
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID を拡張して、ストレージ容量の拡張、メタデータ容量の追加、冗長性や新機能の追加、新しいサイトの追加を行うことができます。追加する必要があるノードの数、タイプ、場所は、拡張の理由によって異なります。
+
+* link:adding-storage-capacity.html["ストレージ容量を追加しています"]
+* link:adding-metadata-capacity.html["メタデータ容量の追加"]
+* link:adding-grid-nodes-to-add-capabilities.html["システムの機能を追加するためのグリッドノードの追加"]
+* link:adding-new-site.html["新しいサイトを追加しています"]
+

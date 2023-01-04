@@ -1,0 +1,23 @@
+---
+permalink: sg5600/installing-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, hardware, install, installing 
+summary: ハードウェアの設置では、ハードウェアコンポーネントを設置し、それらのコンポーネントをケーブルで接続し、ポートを設定することが主な作業となります。 
+---
+= ハードウェアを設置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ハードウェアの設置では、ハードウェアコンポーネントを設置し、それらのコンポーネントをケーブルで接続し、ポートを設定することが主な作業となります。
+
+.手順
+* link:registering-hardware.html["ハードウェアの登録"]
+* link:installing-appliance-in-cabinet-or-rack-sg5600.html["キャビネットまたはラックへのアプライアンスの設置（SG5600）"]
+* link:cabling-appliance-sg5600.html["アプライアンスのケーブル接続（SG5600）"]
+* link:connecting-ac-power-cords-sg5600.html["AC電源コードの接続（SG5600）"]
+* link:turning-power-on-sg5600.html["電源のオン（SG5600）"]
+* link:viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.html["SG5600コントローラのブート時のステータスコードとエラーコードの確認"]
+

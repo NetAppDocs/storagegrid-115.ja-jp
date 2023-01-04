@@ -1,0 +1,18 @@
+---
+permalink: vmware/automating-installation.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware仮想グリッドノードの導入、グリッドノードの設定、およびStorageGRID アプライアンスの設定を自動化することができます。 
+---
+= インストールの自動化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware仮想グリッドノードの導入、グリッドノードの設定、およびStorageGRID アプライアンスの設定を自動化することができます。
+
+* link:automating-grid-node-deployment-in-vmware-vsphere.html["VMware vSphereへのグリッドノード導入の自動化"]
+* link:automating-configuration-of-storagegrid.html["StorageGRID の設定の自動化"]
+

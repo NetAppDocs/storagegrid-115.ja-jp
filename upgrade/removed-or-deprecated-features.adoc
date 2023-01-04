@@ -1,0 +1,227 @@
+---
+permalink: upgrade/removed-or-deprecated-features.html 
+sidebar: sidebar 
+keywords: features, removed, deprecated, weak consistency, compliance 
+summary: 一部の機能は、StorageGRID 11.5で削除または廃止されました。以下の項目を確認して、アップグレードの前にクライアントアプリケーションの更新や設定の変更が必要かどうかを把握してください。 
+---
+= 削除または廃止された機能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一部の機能は、StorageGRID 11.5で削除または廃止されました。以下の項目を確認して、アップグレードの前にクライアントアプリケーションの更新や設定の変更が必要かどうかを把握してください。
+
+
+
+== 整合性制御が脆弱になりました
+
+StorageGRID 11.5では、弱い整合性制御が削除されました。アップグレード後は、次の動作が適用されます。
+
+* S3バケットまたはSwiftコンテナに弱い整合性を設定する要求は成功しますが、実際には整合性レベルはavailableに設定されます。
+* 整合性に脆弱性を使用する既存のバケットとコンテナは、整合性を使用するようにサイレントに更新されます。
+* 整合性制御ヘッダーが脆弱な要求では、実際には使用可能な整合性が使用されます（該当する場合）。
+
+
+使用可能な整合性制御は「read-after-new-write」整合性レベルと同じ動作をしますが、HEAD処理については結果整合性のみを提供します。ストレージ・ノードが使用できない場合' Availableコンシステンシ・コントロールは'リードアフター・ニュー・ライトよりもヘッド・オペレーションの可用性が高くなります
+
+
+
+== Grid健全性のアラームが廃止されました
+
+。 `/grid/health/topology` active_alarms_onノードをチェックするAPIは廃止されました。その代わりに、新しい `/grid/node-health` エンドポイントが追加されました。このAPIは、active_alerts_onノードを確認することで各ノードの現在のステータスを返します。
+
+
+
+== コンプライアンス機能は廃止されました
+
+StorageGRID 11.5のS3オブジェクトロック機能は、以前のバージョンのStorageGRID で使用できた準拠機能に代わる機能です。新しいS3オブジェクトロック機能はAmazon S3の要件に準拠しているため、「従来のコンプライアンス」と呼ばれる独自のStorageGRID 準拠機能は廃止されています。
+
+グローバル準拠設定を有効にしている場合は、StorageGRID 11.5にアップグレードすると、新しいグローバルS3オブジェクトロック設定が自動的に有効になります。テナントユーザは、StorageGRID で準拠を有効にした新しいバケットを作成できなくなります。ただし、必要に応じて、テナントユーザは既存の従来の準拠バケットを引き続き使用および管理できます。
+
+Tenant Managerの盾アイコン image:../media/icon_shield.png["盾アイコンをクリックします"] 従来の準拠バケットを示します。従来の準拠バケットには保留バッジが付いている場合もあります image:../media/hold_badge.png["バッジを保留します"] バケットがリーガルホールドの対象であることを示します。
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["KB：StorageGRID 11.5で従来の準拠バケットを管理する方法"^]
+
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+
+
+== 「S3マルチパートのパートが小さすぎます」というアラートが削除されました
+
+S3マルチパートのパートが小さすぎる*アラートは削除されました。以前は、S3クライアントがAmazon S3のサイズ制限を満たしていないパーツでマルチパートアップロードを完了しようとしたときに、このアラートがトリガーされていました。StorageGRID 11.5へのアップグレード後に、次のサイズの制限を満たしていないマルチパートアップロード要求が失敗します。
+
+* マルチパートアップロードの各パートのサイズは 5MiB （ 5 、 242 、 880 バイト）と 5GiB （ 5 、 368 、 709 、 120 バイト）の間にする必要があります。
+* 最後の部分は 5MiB （ 5,242,880 バイト）より小さくできます。
+* 一般に、パーツサイズはできるだけ大きくする必要があります。たとえば、 100GiB オブジェクトの場合、 5GB のパートサイズを使用します。各パートは固有のオブジェクトとみなされるため、大きなパートサイズを使用すると、 StorageGRID のメタデータのオーバーヘッドが軽減されます。
+* 5GB 未満のオブジェクトでは、マルチパートではないアップロードの使用を検討してください。
+
+
+
+
+== 「Appliance link down on Grid Network」アラートが削除されました
+
+次のアラートが削除されました。グリッドネットワークが停止している場合、これらのアラートをトリガーする指標にはアクセスできません。
+
+* サービスアプライアンスはグリッドネットワーク上でリンクダウン状態になります
+* グリッドネットワーク上のストレージアプライアンスのリンクが停止しています
+
+
+
+
+== SNMP設定から削除された完全修飾ドメイン名のサポート
+
+SG6000、SG100、またはSG1000のベースボード管理コントローラ（BMC）でSNMPサーバを設定するときに、完全修飾ドメイン名の代わりにIPアドレスを指定する必要があります。完全修飾ドメイン名がすでに設定されている場合は、StorageGRID 11.5にアップグレードする前にIPアドレスに変更します。
+
+
+
+== レガシー属性が削除されました
+
+次のレガシー属性が削除されました。該当する場合、Prometheus指標は同等の情報を提供します。
+
+[cols="1a,2a"]
+|===
+| レガシー属性 | 同等のPrometheus指標 
+
+
+ a| 
+BREC
+ a| 
+storagegrid_service_network_received_bytes
+
+
+
+ a| 
+BTRA
+ a| 
+storagegrid_service_network_transmitted バイト数
+
+
+
+ a| 
+CQST
+ a| 
+storagegrid_meta_query_average _latency _milliseconds
+
+
+
+ a| 
+はい
+ a| 
+storagegrid_http_session_ining_attempted 」というメッセージが表示されます
+
+
+
+ a| 
+HCCS
+ a| 
+storagegrid_http_session_ining_currently established
+
+
+
+ a| 
+Heis
+ a| 
+storagegrid_http_session_ining_failed
+
+
+
+ a| 
+HISCのように
+ a| 
+storagegrid_http_session_ining_successful
+
+
+
+ a| 
+LHAC
+ a| 
+_ なし _
+
+
+
+ a| 
+NREC
+ a| 
+_ なし _
+
+
+
+ a| 
+NTSO（選択された時間ソースオフセット）
+ a| 
+storagegrid_ntp_Chosen_time_source_offset_milliseconds
+
+
+
+ a| 
+NTRA
+ a| 
+_ なし _
+
+
+
+ a| 
+SLOD
+ a| 
+storagegrid_service_load
+
+
+
+ a| 
+SMEM
+ a| 
+storagegrid_service_memory_usage_bytes
+
+
+
+ a| 
+SUTM
+ a| 
+storagegrid_service_cpu_seconds で指定します
+
+
+
+ a| 
+SVUT
+ a| 
+storagegrid_service_uptime</1> を指定します
+
+
+
+ a| 
+TRBS（受信1秒あたりの合計ビット数）
+ a| 
+_ なし _
+
+
+
+ a| 
+TRXB
+ a| 
+storagegrid_network_received_bytes
+
+
+
+ a| 
+TTBS（送信1秒あたりの合計ビット数）
+ a| 
+_ なし _
+
+
+
+ a| 
+TTXB
+ a| 
+storagegrid_network_transmitted _bytes
+
+|===
+次の関連する変更も行われました。
+
+* 。 `network_received_bytes` および `network_transmitted_bytes` Prometheus指標はゲージからカウンタに変更されました。これらの指標の値は増加するだけです。Prometheusクエリでこれらの指標を現在使用している場合は、の使用を開始します `increase()` クエリ内の関数です。
+* StorageGRID サービスの[リソース]タブから、[ネットワークリソース]テーブルが削除されました。（* Support *>* Tools *>* Grid Topology *を選択します。次に、*_Node_*>*_service_*>* Resources *を選択します。）
+* ストレージノードのHTTP Sessionsページが削除されました。以前は、このページにアクセスするには、* Support *>* Tools *>* Grid Topology *を選択し、*_Storage Node_*>* LDR *>* HTTP *を選択します。
+* HCCS（現在確立されている着信セッション）アラームが削除されました。
+* NTSO（Chosen Time Source Offset）アラームが削除されました。
+

@@ -1,0 +1,14 @@
+---
+permalink: tenant/managing-s3-buckets.html 
+sidebar: sidebar 
+keywords: StorageGRID, tenant, tenant manager, s3 bucket 
+summary: S3テナントを適切な権限で使用している場合は、S3バケットの作成、表示、削除、整合性レベルの設定の更新、Cross-Origin Resource Sharing \（CORS \）の設定、最終アクセス日時の更新の有効化と無効化、S3プラットフォームサービスの管理を実行できます。 
+---
+= S3バケットの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3テナントを適切な権限で使用している場合は、S3バケットの作成、表示、削除、整合性レベルの設定の更新、Cross-Origin Resource Sharing（CORS）の設定、最終アクセス日時の更新の有効化と無効化、S3プラットフォームサービスの管理を実行できます。

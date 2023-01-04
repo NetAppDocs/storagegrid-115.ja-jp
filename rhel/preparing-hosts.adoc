@@ -1,0 +1,17 @@
+---
+permalink: rhel/preparing-hosts.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID の物理ホストまたは仮想ホストの準備作業として、次の手順を実行する必要があります。これらの手順は、Ansible、Puppet、Chefなどの標準のサーバ設定フレームワークを使用して、ほとんどまたはすべて自動化することができます。 
+---
+= ホストを準備します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID の物理ホストまたは仮想ホストの準備作業として、次の手順を実行する必要があります。これらの手順は、Ansible、Puppet、Chefなどの標準のサーバ設定フレームワークを使用して、ほとんどまたはすべて自動化することができます。
+
+.関連情報
+link:automating-installation-and-configuration-of-storagegrid-host-service.html["StorageGRID ホストサービスのインストールと設定を自動化する"]

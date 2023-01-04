@@ -1,0 +1,67 @@
+---
+permalink: admin/adding-autosupport-destination.html 
+sidebar: sidebar 
+keywords:  
+summary: AutoSupport を有効にすると、ヘルスメッセージとステータスメッセージがネットアップサポートに送信されます。すべての AutoSupport メッセージに対して、追加の送信先を 1 つ指定できます。 
+---
+= AutoSupport デスティネーションを追加しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport を有効にすると、ヘルスメッセージとステータスメッセージがネットアップサポートに送信されます。すべての AutoSupport メッセージに対して、追加の送信先を 1 つ指定できます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限または Other Grid Configuration 権限が必要です。
+
+
+.このタスクについて
+AutoSupport メッセージの送信に使用されるプロトコルの確認または変更については、AutoSupport プロトコルの指定手順を参照してください。
+
+
+NOTE: SMTP プロトコルを使用して、 AutoSupport メッセージを追加の送信先に送信することはできません。
+
+link:specifying-protocol-for-autosupport-messages.html["AutoSupport メッセージのプロトコルの指定"]
+
+.手順
+. [*サポート*（Support *）]>[*ツール*（* Tools *）]>[* AutoSupport *（**）]
++
+AutoSupport ページが表示され、 * 設定 * タブが選択されます。
+
+. [ 追加の AutoSupport 送信先を有効にする *] を選択します。
++
+追加の AutoSupport Destination フィールドが表示されます。
+
++
+image::../media/autosupport_additional_destinations.png[AutoSupport に送信先を追加しています]
+
+. 追加の AutoSupport デスティネーションサーバのサーバホスト名または IP アドレスを入力します。
++
+
+NOTE: 追加の送信先は 1 つだけ入力できます。
+
+. 追加の AutoSupport デスティネーションサーバへの接続に使用するポートを入力します（デフォルトは、 HTTP の場合はポート 80 、 HTTPS の場合はポート 443 ）。
+. 証明書の検証とともに AutoSupport メッセージを送信するには、 [ 証明書の検証 *] ドロップダウンで [ カスタム CA バンドルを使用する *] を選択します。次に、次のいずれかを実行します。
++
+** 編集ツールを使用して、 PEM でエンコードされた各 CA 証明書ファイルのすべての内容を、証明書チェーンの順序で連結された * CA Bundle* フィールドにコピーして貼り付けます。を含める必要があります `----BEGIN CERTIFICATE----` および `----END CERTIFICATE----` を選択します。
++
+image::../media/autosupport_certificate.png[AutoSupport 証明書]
+
+** [ * 参照 * ] を選択し、証明書が含まれているファイルに移動し、 [ * 開く * ] を選択してファイルをアップロードします。証明書の検証により、 AutoSupport メッセージの送信を安全に行うことができます。
+
+
+. 証明書の検証を行わずに AutoSupport メッセージを送信するには、 [ 証明書の検証 *] ドロップダウンで [ 証明書を検証しない *] を選択します。
++
+このオプションは、証明書の検証を使用しない理由がある場合（証明書に一時的な問題がある場合など）にのみ選択してください。
+
++
+「 You are not using a TLS certificate to secure connection to the additional AutoSupport destination. 」というメッセージが表示されます。
+
+. [ 保存（ Save ） ] を選択します。
++
+それ以降に送信される毎週、イベントトリガー型、およびユーザトリガー型の AutoSupport メッセージは、すべて追加の送信先に送信されます。
+
+

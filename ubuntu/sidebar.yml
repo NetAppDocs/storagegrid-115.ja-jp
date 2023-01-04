@@ -1,0 +1,100 @@
+---
+section: ubuntu
+title: Ubuntu または Debian をインストールします
+url: "/ubuntu/index.html"
+entries:
+- title: インストールの概要
+  url: "/ubuntu/installation-overview.html"
+- title: 計画と準備
+  url: "/ubuntu/planning-and-preparation.html"
+  entries:
+  - title: 前提要件
+    url: "/ubuntu/required-materials.html"
+  - title: StorageGRID インストールファイルのダウンロードと展開
+    url: "/ubuntu/downloading-and-extracting-storagegrid-installation-files.html"
+  - title: CPU と RAM の要件
+    url: "/ubuntu/cpu-and-ram-requirements.html"
+  - title: ストレージとパフォーマンスの要件
+    url: "/ubuntu/storage-and-performance-requirements.html"
+  - title: ノードコンテナの移行要件
+    url: "/ubuntu/node-container-migration-requirements.html"
+  - title: Web ブラウザの要件
+    url: "/ubuntu/web-browser-requirements.html"
+  - title: 導入ツール
+    url: "/ubuntu/deployment-tools.html"
+  - title: ホストを準備します
+    url: "/ubuntu/preparing-hosts.html"
+    entries:
+    - title: Linux をインストールしています
+      url: "/ubuntu/installing-linux.html"
+    - title: AppArmorプロファイルのインストールの概要
+      url: "/ubuntu/understanding-apparmor-profile-installation.html"
+    - title: ホストネットワークを設定する
+      url: "/ubuntu/configuring-host-network.html"
+      entries:
+      - title: MAC アドレスのクローニングに関する考慮事項と推奨事項
+        url: "/ubuntu/considerations-and-recommendations-for-mac-address-cloning.html"
+      - title: 例 1 ：物理 NIC または仮想 NIC への 1 対 1 のマッピング
+        url: "/ubuntu/example-1-1-to-1-mapping-to-physical-or-virtual-nics.html"
+      - title: 例 2 ： LACP ボンドを使用した VLAN の伝送
+        url: "/ubuntu/example-2-lacp-bond-carrying-vlans.html"
+    - title: ホストストレージを設定しています
+      url: "/ubuntu/configuring-host-storage.html"
+    - title: Dockerストレージボリュームを設定する
+      url: "/ubuntu/configuring-docker-storage-volume.html"
+    - title: Docker をインストールする
+      url: "/ubuntu/installing-docker.html"
+    - title: StorageGRID ホストサービスをインストールしています
+      url: "/ubuntu/installing-storagegrid-webscale-host-services.html"
+- title: 仮想グリッドノードの導入
+  url: "/ubuntu/deploying-virtual-grid-nodes.html"
+  entries:
+  - title: ノード構成ファイルを作成しています
+    url: "/ubuntu/creating-node-configuration-files.html"
+    entries:
+    - title: グリッドノードによるプライマリ管理ノードの検出
+      url: "/ubuntu/how-grid-nodes-discover-primary-admin-node.html"
+    - title: ノード構成ファイルの例
+      url: "/ubuntu/example-node-configuration-files.html"
+  - title: StorageGRID 構成を検証しています
+    url: "/ubuntu/validating-storagegrid-configuration.html"
+  - title: StorageGRID ホストサービスを開始しています
+    url: "/ubuntu/starting-storagegrid-host-service.html"
+- title: グリッドの設定とインストールの完了
+  url: "/ubuntu/configuring-grid-and-completing-installation.html"
+  entries:
+  - title: Grid Managerに移動します
+    url: "/ubuntu/navigating-to-grid-manager.html"
+  - title: StorageGRID ライセンス情報の指定
+    url: "/ubuntu/specifying-storagegrid-license-information.html"
+  - title: サイトの追加
+    url: "/ubuntu/adding-sites.html"
+  - title: グリッドネットワークのサブネットの指定
+    url: "/ubuntu/specifying-grid-network-subnets.html"
+  - title: 保留中のグリッドノードを承認します
+    url: "/ubuntu/approving-pending-grid-nodes.html"
+  - title: Network Time Protocolサーバ情報の指定
+    url: "/ubuntu/specifying-network-time-protocol-server-information.html"
+  - title: Domain Name Systemサーバ情報の指定
+    url: "/ubuntu/specifying-domain-name-system-server-information.html"
+  - title: StorageGRID システムのパスワードの指定
+    url: "/ubuntu/specifying-storagegrid-system-passwords.html"
+  - title: 設定を確認し、インストールを完了します
+    url: "/ubuntu/reviewing-your-configuration-and-completing-installation.html"
+  - title: インストール後のガイドライン
+    url: "/ubuntu/post-installation-guidelines.html"
+- title: インストールの自動化
+  url: "/ubuntu/automating-installation.html"
+  entries:
+  - title: StorageGRID ホストサービスのインストールと設定を自動化する
+    url: "/ubuntu/automating-installation-and-configuration-of-storagegrid-host-service.html"
+  - title: StorageGRID の設定の自動化
+    url: "/ubuntu/automating-configuration-of-storagegrid.html"
+- title: インストール REST API の概要
+  url: "/ubuntu/overview-of-installation-rest-api.html"
+- title: 次の手順
+  url: "/ubuntu/where-to-go-next.html"
+- title: インストールに関する問題のトラブルシューティング
+  url: "/ubuntu/troubleshooting-installation-issues.html"
+- title: "/etc/network/interfaces の例"
+  url: "/ubuntu/example-etc-network-interfaces.html"

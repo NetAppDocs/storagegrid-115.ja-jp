@@ -1,0 +1,62 @@
+---
+permalink: vmware/installation-overview.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware 環境への StorageGRID システムのインストールは、主に 3 つの手順で行われます。 
+---
+= インストールの概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware 環境への StorageGRID システムのインストールは、主に 3 つの手順で行われます。
+
+. * 準備 * ：計画と準備の際に、次のタスクを実行します。
++
+** StorageGRID のハードウェア、ソフトウェア、仮想マシン、ストレージ、パフォーマンスの要件について説明します。
+** ネットワークを適切に設定するためのStorageGRID ネットワークの詳細について説明します。詳細については、StorageGRID のネットワークに関するガイドラインを参照してください。
+** StorageGRID グリッドノードのホストとして使用する物理サーバを決めて準備する。
+** 準備したサーバで、次の作業を行います。
++
+*** VMware vSphere ハイパーバイザーをインストールする
+*** ESX ホストを設定
+*** VMware vSphere および vCenter をインストールして設定
+
+
+
+
+. * 導入 * ： VMware vSphere Web Client を使用してグリッドノードを導入します。導入したグリッドノードは、 StorageGRID システムの一部として作成され、 1 つ以上のネットワークに接続されます。
++
+.. VMware vSphere Web Client 、 .vmdk ファイル、および一連の .ovf ファイルテンプレートを使用して、手順 1 で準備したサーバにソフトウェアベースのノードを仮想マシン（ VM ）として導入します。
+.. StorageGRID アプライアンスノードを導入するには、 StorageGRID アプライアンスインストーラを使用します。
++
+
+NOTE: ハードウェア固有の設置と統合の手順は、 StorageGRID インストール手順 には含まれていません。StorageGRID アプライアンスのインストール方法については、使用するアプライアンスのインストールとメンテナンスの手順を参照してください。
+
+
+
+. *構成*：すべてのノードが導入されたら、StorageGRIDWebscaleを使ってグリッドを構成し、インストールを完了します。
+
+
+ここでは、標準的なアプローチで StorageGRID システムを VMware 環境に導入して設定する方法を推奨します。次の代替アプローチに関する情報も参照してください。
+
+* deploy-vsphere-ovftool.sh Bash スクリプト（インストールアーカイブから入手可能）を使用して VMware vSphere にグリッドノードを導入します。
+* Python 設定スクリプト（インストールアーカイブに付属）を使用して、 StorageGRID システムの導入と設定を自動化します。
+* Python 設定スクリプト（インストールアーカイブまたは StorageGRID アプライアンスインストーラで入手可能）を使用して、アプライアンスグリッドノードの導入と設定を自動化する。
+* StorageGRID 環境を高度に開発する場合は、インストール REST API を使用して StorageGRID グリッドノードのインストールを自動化します。
+
+
+.関連情報
+link:planning-and-preparation.html["計画と準備"]
+
+link:deploying-virtual-machine-grid-nodes-in-vmware-vsphere-web-client.html["VMware vSphere Web Clientでの仮想マシングリッドノードの導入"]
+
+link:configuring-grid-and-completing-installation.html["グリッドの設定とインストールの完了"]
+
+link:automating-installation.html["インストールの自動化"]
+
+link:overview-of-installation-rest-api.html["インストール REST API の概要"]
+
+link:../network/index.html["ネットワークガイドライン"]

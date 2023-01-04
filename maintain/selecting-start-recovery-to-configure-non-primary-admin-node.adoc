@@ -1,0 +1,61 @@
+---
+permalink: maintain/selecting-start-recovery-to-configure-non-primary-admin-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, non-primary admin node 
+summary: 非プライマリ管理ノードを交換したら、 Grid Manager で Start Recovery を選択して、新しいノードを障害ノードの代わりとして設定する必要があります。 
+---
+= リカバリの開始を選択して非プライマリ管理ノードを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+非プライマリ管理ノードを交換したら、 Grid Manager で Start Recovery を選択して、新しいノードを障害ノードの代わりとして設定する必要があります。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Maintenance または Root Access 権限が必要です。
+* プロビジョニングパスフレーズが必要です。
+* 交換用ノードの導入と設定が完了している必要があります。
+
+
+.手順
+. Grid Managerから、* Maintenance * Maintenance Tasks * Recovery *（メンテナンス*メンテナンスタスク*リカバリ）を選択します。
+. リカバリするグリッドノードを Pending Nodes リストで選択します。
++
+ノードは障害が発生するとリストに追加されますが、再インストールされてリカバリの準備ができるまでは選択できません。
+
+. プロビジョニングパスフレーズ * を入力します。
+. [ リカバリの開始 ] をクリックします。
++
+image::../media/4b_select_recovery_node.png[メンテナンスリカバリページを示すスクリーンショット]
+
+. リカバリ中のグリッドノードテーブルで、リカバリの進行状況を監視します。
++
+
+NOTE: リカバリ手順 の実行中に [* リセット ] をクリックすると、新しいリカバリを開始できます。情報ダイアログボックスが表示され、手順 をリセットするとノードが不確定な状態のままになることが示されます。
+
++
+image::../media/recovery_reset_warning.gif[リカバリのリセットに関する警告を示すダイアログボックスのスクリーンショット]
+
++
+手順 をリセットしたあとにリカバリを再試行する場合は、次の手順でノードをインストール前の状態にリストアする必要があります。
+
++
+** * vmware * ：導入した仮想グリッドノードを削除します。その後、リカバリを再開する準備ができたら、ノードを再導入します。
+** * Linux *：Linuxホストで次のコマンドを実行して、ノードを再起動します。 `storagegrid node force-recovery _node-name_`
+** *アプライアンス*：手順 をリセットしたあとにリカバリを再試行する場合は、を実行してアプライアンスノードをインストール前の状態にリストアする必要があります `sgareinstall` をクリックします。
+
+
+. StorageGRID システムでシングルサインオン（SSO）が有効になっており、リカバリした管理ノードの証明書利用者信頼がデフォルトの管理インターフェイスサーバ証明書を使用するように設定されている場合は、ノードの証明書利用者信頼をActive Directoryフェデレーションサービス（AD FS）で更新（削除および再作成）します。管理ノードのリカバリプロセス中に生成された新しいデフォルトサーバ証明書を使用します。
++
+
+NOTE: 証明書利用者信頼を設定するには、 StorageGRID の管理手順を参照してください。デフォルトのサーバ証明書にアクセスするには、管理ノードのコマンドシェルにログインします。にアクセスします `/var/local/mgmt-api` ディレクトリに移動し、を選択します `server.crt` ファイル。
+
+
+
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]
+
+link:preparing-appliance-for-reinstallation-platform-replacement-only.html["再インストールのためのアプライアンスの準備（プラットフォームの交換のみ）"]

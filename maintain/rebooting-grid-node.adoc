@@ -1,0 +1,31 @@
+---
+permalink: maintain/rebooting-grid-node.html 
+sidebar: sidebar 
+keywords:  
+summary: グリッドノードは、 Grid Manager またはノードのコマンドシェルからリブートできます。 
+---
+= グリッドノードのリブート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グリッドノードは、 Grid Manager またはノードのコマンドシェルからリブートできます。
+
+.このタスクについて
+グリッドノードをリブートすると、ノードがシャットダウンして再起動します。すべてのサービスが自動的に再開されます。
+
+ストレージノードをリブートする場合は、次の点に注意してください。
+
+* ILM ルールに取り込み動作に Dual commit が指定されている場合、またはルールで Balanced が指定されていて、必要なすべてのコピーをただちに作成できない場合は、 StorageGRID は新たに取り込まれたオブジェクトをただちに同じサイトの 2 つのストレージノードにコミットしてあとから ILM を評価します。1 つのサイトで複数のストレージノードをリブートすると、リブート中はこれらのオブジェクトにアクセスできない場合があります。
+* ストレージノードのリブート中もすべてのオブジェクトにアクセスできるようにするには、ノードをリブートする前に、サイトでのオブジェクトの取り込みを約 1 時間停止します。
+
+
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]
+
+.選択肢
+* link:rebooting-grid-node-from-grid-manager.html["グリッドノードのリブート- Grid Managerから"]
+* link:rebooting-grid-node-from-command-shell.html["グリッドノードのリブート-コマンドシェルから実行しています"]
+

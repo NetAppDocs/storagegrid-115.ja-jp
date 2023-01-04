@@ -1,0 +1,25 @@
+---
+permalink: admin/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= StorageGRID の管理
+:allow-uri-read: 
+
+
+[role="lead"]
+StorageGRID システムの設定方法について説明します。
+
+* link:administering-storagegrid-system.html["StorageGRID システムの管理"]
+* link:controlling-administrator-access-to-storagegrid.html["StorageGRID への管理者アクセスの制御"]
+* link:kms-configuring.html["キー管理サーバを設定しています"]
+* link:managing-tenants.html["テナントの管理"]
+* link:configuring-client-connections.html["S3およびSwiftクライアント接続の設定"]
+* link:managing-storagegrid-networks-and-connections.html["StorageGRID ネットワークと接続の管理"]
+* link:configuring-autosupport.html["AutoSupport を設定しています"]
+* link:managing-storage-nodes.html["ストレージノードの管理"]
+* link:managing-admin-nodes.html["管理ノードの管理"]
+* link:managing-archive-nodes.html["アーカイブノードの管理"]
+* link:migrating-data-into-storagegrid.html["StorageGRID へのデータの移行"]
+

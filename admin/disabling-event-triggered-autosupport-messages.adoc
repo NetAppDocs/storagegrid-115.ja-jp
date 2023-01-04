@@ -1,0 +1,37 @@
+---
+permalink: admin/disabling-event-triggered-autosupport-messages.html 
+sidebar: sidebar 
+keywords:  
+summary: デフォルトでは、 StorageGRID システムは、重要なアラートやその他の重大なシステムイベントが発生したときに AutoSupport メッセージをネットアップサポートに送信するように設定されています。 
+---
+= イベントトリガー型AutoSupport メッセージを無効にします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトでは、 StorageGRID システムは、重要なアラートやその他の重大なシステムイベントが発生したときに AutoSupport メッセージをネットアップサポートに送信するように設定されています。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限または Other Grid Configuration 権限が必要です。
+
+
+.このタスクについて
+イベントトリガー型 AutoSupport メッセージはいつでも無効にすることができます。
+
+
+NOTE: システム全体で E メール通知を停止した場合は、イベントトリガー型 AutoSupport メッセージも生成されません。（「* Configuration ** System Settings * Display Options *」（設定*システム設定*表示オプション*）を選択します。次に、 [* 通知（ Notification ） ] [ すべてを抑制（ Suppress All ） ] を選択
+
+.手順
+. [*サポート*（Support *）]>[*ツール*（* Tools *）]>[* AutoSupport *（**）]
++
+AutoSupport ページが表示され、 * 設定 * タブが選択されます。
+
+. Enable Event-triggered AutoSupport *チェックボックスをオフにします。
++
+image::../media/autosupport_event_triggered_disabled.png[イベントトリガー型AutoSupport の略]
+
+. [ 保存（ Save ） ] を選択します。
+

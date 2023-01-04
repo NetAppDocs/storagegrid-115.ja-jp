@@ -1,0 +1,22 @@
+---
+permalink: primer/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= グリッド入門
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp StorageGRID システムの基本をご紹介します。
+
+* link:about-storagegrid.html["StorageGRID について"]
+* link:storagegrid-architecture-and-network-topology.html["StorageGRID のアーキテクチャとネットワークトポロジ"]
+* link:how-storagegrid-manages-data.html["StorageGRID によるデータの管理方法"]
+* link:exploring-grid-manager.html["Grid Managerの概要"]
+* link:exploring-tenant-manager.html["Tenant Managerの概要"]
+* link:using-storagegrid.html["StorageGRID を使用する"]
+

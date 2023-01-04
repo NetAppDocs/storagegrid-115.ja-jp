@@ -1,0 +1,32 @@
+---
+permalink: admin/setting-archive-node-to-read-only-if-tsm-middleware-reaches-capacity.html 
+sidebar: sidebar 
+keywords:  
+summary: ターゲットの TSM ミドルウェアサーバが容量の限界に達した場合、読み出しのみを実行するようにアーカイブノードを最適化できます。 
+---
+= TSMミドルウェアが容量の限界に達した場合にアーカイブノードを読み取り専用に設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ターゲットの TSM ミドルウェアサーバが容量の限界に達した場合、読み出しのみを実行するようにアーカイブノードを最適化できます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* 特定のアクセス権限が必要です。
+
+
+.手順
+. Support *>* Tools *>* Grid Topology *を選択します。
+. 「*_アーカイブノード_** ARC **ターゲット*」を選択します。
+. * Configuration * > * Main * を選択します。
+. Maximum Retrieve Sessions を Number of Sessions に示されている同時セッション数と同じ数に変更します
+. 最大ストアセッション数を 0 に変更します。
++
+
+NOTE: アーカイブノードが読み取り専用の場合、最大ストアセッション数を 0 に変更する必要はありません。ストアセッションは作成されません。
+
+. [ 変更の適用 *] をクリックします。
+

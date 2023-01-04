@@ -1,0 +1,25 @@
+---
+permalink: ilm/using-cloud-storage-pools.html 
+sidebar: sidebar 
+keywords:  
+summary: クラウドストレージプールを使用して、StorageGRID オブジェクトをS3 GlacierやMicrosoft Azure BLOBストレージなどの外部ストレージに移動できます。オブジェクトをグリッドの外部に移動すると、低コストのストレージ階層を活用した長期間のアーカイブが可能になります。 
+---
+= クラウドストレージプールの使用
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クラウドストレージプールを使用して、StorageGRID オブジェクトをS3 GlacierやMicrosoft Azure BLOBストレージなどの外部ストレージに移動できます。オブジェクトをグリッドの外部に移動すると、低コストのストレージ階層を活用した長期間のアーカイブが可能になります。
+
+* link:what-cloud-storage-pool-is.html["クラウドストレージプールとは"]
+* link:lifecycle-of-cloud-storage-pool-object.html["クラウドストレージプールオブジェクトのライフサイクル"]
+* link:when-to-use-cloud-storage-pools.html["クラウドストレージプールを使用する状況"]
+* link:considerations-for-cloud-storage-pools.html["クラウドストレージプールに関する考慮事項"]
+* link:comparing-cloud-storage-pools-to-cloudmirror-replication.html["クラウドストレージプールと CloudMirror レプリケーションを比較しています"]
+* link:creating-cloud-storage-pool.html["クラウドストレージプールの作成"]
+* link:editing-cloud-storage-pool.html["クラウドストレージプールの編集"]
+* link:removing-cloud-storage-pool.html["クラウドストレージプールの削除"]
+* link:troubleshooting-cloud-storage-pools.html["クラウドストレージプールのトラブルシューティング"]
+

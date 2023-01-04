@@ -1,0 +1,25 @@
+---
+permalink: s3/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= S3 を使用する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クライアントアプリケーションでS3 APIを使用して、StorageGRID システムを操作する方法を説明します。
+
+* link:support-for-s3-rest-api.html["S3 REST APIのサポート"]
+* link:configuring-tenant-accounts-and-connections.html["テナントアカウントと接続を設定する"]
+* link:how-storagegrid-implements-s3-rest-api.html["StorageGRID でのS3 REST APIの実装"]
+* link:s3-rest-api-supported-operations-and-limitations.html["S3 REST API のサポートされる処理と制限事項"]
+* link:storagegrid-s3-rest-api-operations.html["StorageGRID の S3 REST API の処理"]
+* link:bucket-and-group-access-policies.html["バケットとグループのアクセスポリシー"]
+* link:configuring-security-for-rest-api.html["REST APIのセキュリティの設定"]
+* link:monitoring-and-auditing-operations.html["処理の監視と監査"]
+* link:benefits-of-active-idle-and-concurrent-http-connections.html["アクティブ、アイドル、および同時 HTTP 接続のメリット"]
+

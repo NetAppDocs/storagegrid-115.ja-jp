@@ -1,0 +1,67 @@
+---
+permalink: upgrade/verifying-installed-version-of-storagegrid.html 
+sidebar: sidebar 
+keywords: storagegrid, version, current version, previous version 
+summary: アップグレードを開始する前に、利用可能な最新のホットフィックスを適用して以前のバージョンの StorageGRID が現在インストールされていることを確認する必要があります。 
+---
+= インストールされているStorageGRID のバージョンを確認しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレードを開始する前に、利用可能な最新のホットフィックスを適用して以前のバージョンの StorageGRID が現在インストールされていることを確認する必要があります。
+
+.手順
+. サポートされているブラウザを使用してGrid Managerにサインインします。
+. 「*ヘルプ*>*バージョン情報*」を選択します。
+. バージョン*が11.4であることを確認します。_x y _。
++
+StorageGRID 11.4の_x.y_version番号で、次の手順を実行します。
+
++
+** メジャーリリースの_x_valueは0（11.4.0）です。
+** マイナーリリースが存在する場合、0以外の_x_valueが存在します（例：11.4.1）。
+** ホットフィックスがある場合は、_y_valueが含まれています（例：11.11.1.0.1）。
+
+
++
+
+IMPORTANT: 以前のバージョンのStorageGRID を使用している場合は、StorageGRID 11.5にアップグレードする前に、すべてのバージョン11.4にアップグレードする必要があります。StorageGRID 11.5にアップグレードするには、11.4マイナーバージョンのリリースが最も高い必要はありません。
+
+. StorageGRID 11.4バージョンを使用していない場合は、各リリースの手順に従って、一度に1つのリリースをバージョン11.4にアップグレードする必要があります。
++
+また、StorageGRID の各バージョンに最新のホットフィックスを適用してから、次のレベルにアップグレードする必要があります。
+
++
+使用可能なアップグレードパスの例を次に示します。
+
+. StorageGRID 11.4が表示されたら、StorageGRID のネットアップのダウンロードページにアクセスし、StorageGRID 11.4._x_versionに利用可能なホットフィックスがあるかどうかを確認します。
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
+
+. StorageGRID 11.4._x_versionに最新のホットフィックスが適用されていることを確認します。
+. 必要に応じて、最新のStorageGRID 11.4._x.y_hotfixをダウンロードしてStorageGRID 11.4._x_versionに適用します。
++
+ホットフィックスの適用については、リカバリとメンテナンスの手順を参照してください。
+
+
+
+
+
+== 例：バージョン11.3.0.8からStorageGRID 11.5にアップグレードする準備
+
+次の例は、StorageGRID バージョン11.3.0.8からバージョン11.5へのアップグレード準備のためのアップグレード手順を示しています。StorageGRID 11.5にアップグレードするには、システムにStorageGRID 11.4バージョンがインストールされていて、最新のホットフィックスがインストールされている必要があります。
+
+次の順序でソフトウェアをダウンロードしてインストールし、システムをアップグレードする準備をします。
+
+. 最新の StorageGRID 11.3.0 ._y_hotfix を適用します。
+. StorageGRID 11.4.0 メジャーリリースにアップグレードします。（11.4._x_minorリリースをインストールする必要はありません）。
+. 最新の StorageGRID 11.11.0._y_hotfix を適用します。
+
+
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]
+
+link:../maintain/index.html[""]

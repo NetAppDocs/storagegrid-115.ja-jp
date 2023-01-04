@@ -1,0 +1,26 @@
+---
+permalink: network/deployment-specific-networking-requirements.html 
+sidebar: sidebar 
+keywords:  
+summary: 使用する導入プラットフォームによっては、StorageGRID ネットワーク設計に関する追加の考慮事項が生じることがあります。 
+---
+= 環境固有のネットワークに関する考慮事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用する導入プラットフォームによっては、StorageGRID ネットワーク設計に関する追加の考慮事項が生じることがあります。
+
+グリッドノードは次のように導入できます。
+
+* VMware vSphere Web Clientで仮想マシンとして導入される、ソフトウェアベースのグリッドノード
+* Linuxホスト上のDockerコンテナ内に導入された、ソフトウェアベースのグリッドノード
+* アプライアンスベースのノード
+
+
+グリッドノードに関する追加情報 の場合は、_グリッド入門_を参照してください。
+
+.関連情報
+link:../primer/index.html["グリッド入門"]

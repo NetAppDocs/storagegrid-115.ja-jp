@@ -1,0 +1,85 @@
+---
+permalink: ilm/enabling-s3-object-lock-globally.html 
+sidebar: sidebar 
+keywords: S3 Object Lock 
+summary: オブジェクトデータの保存時に S3 テナントアカウントが規制要件に準拠する必要がある場合は、 StorageGRID システム全体で S3 オブジェクトのロックを有効にする必要があります。グローバルな S3 オブジェクトのロック設定を有効にすると、 S3 テナントユーザは S3 オブジェクトのロックでバケットとオブジェクトを作成および管理できるようになります。 
+---
+= S3オブジェクトのロックをグローバルに有効にする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+オブジェクトデータの保存時に S3 テナントアカウントが規制要件に準拠する必要がある場合は、 StorageGRID システム全体で S3 オブジェクトのロックを有効にする必要があります。グローバルな S3 オブジェクトのロック設定を有効にすると、 S3 テナントユーザは S3 オブジェクトのロックでバケットとオブジェクトを作成および管理できるようになります。
+
+.必要なもの
+* Root Access 権限が必要です。
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* S3オブジェクトロックのワークフローを確認し、考慮事項を把握しておく必要があります。
+* アクティブなILMポリシーのデフォルトルールは準拠ルールである必要があります。
++
+link:creating-default-ilm-rule.html["デフォルトのILMルールを作成する"]
+
++
+link:creating-ilm-policy.html["ILMポリシーを作成する"]
+
+
+
+.このタスクについて
+テナントユーザが S3 オブジェクトのロックを有効にした新しいバケットを作成できるようにするには、グリッド管理者がグローバルな S3 オブジェクトロック設定を有効にする必要があります。この設定を有効にすると、あとで無効にすることはできません。
+
+[NOTE]
+====
+以前のバージョンのStorageGRID を使用してグローバル準拠設定を有効にした場合は、StorageGRID バージョン11.5にアップグレードすると新しいS3オブジェクトロック設定が自動的に有効になります。既存の準拠バケットの設定の管理には引き続きStorageGRID を使用できますが、新しい準拠バケットを作成することはできません。
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"^]
+
+====
+.手順
+. * Configuration *>* System Settings *>* S3 Object Lock *を選択します。
++
+S3 Object Lock Settings （ S3 オブジェクトロック設定）ページが表示されます。
+
++
+image::../media/s3_object_lock_global_setting.png[S3 オブジェクトのロックのグローバル設定]
+
++
+以前のバージョンの StorageGRID を使用してグローバル準拠設定を有効にした場合、ページには次の注が表示されます。
+
++
+image::../media/s3_object_lock_global_setting_compliant_note.png[S3 オブジェクトロックグローバル設定準拠ノート]
+
+. S3 オブジェクトロックを有効にする * を選択します。
+. * 適用 * を選択します。
++
+確認のダイアログボックスが表示され、有効にした S3 オブジェクトのロックを無効にできないことを通知するメッセージが表示されます。
+
++
+image::../media/s3_object_lock_global_setting_confirm.png[S3 オブジェクトのロックグローバル設定の確認]
+
+. システム全体に対して S3 オブジェクトロックを永続的に有効にしてもよろしいですか？ * OK * を選択します。
++
+「 * OK * 」を選択した場合：
+
++
+** アクティブな ILM ポリシーのデフォルトルールが準拠している場合は、グリッド全体で S3 オブジェクトのロックが有効になり、無効にすることはできません。
+** デフォルトルールが準拠していない場合は、準拠ルールをデフォルトルールとして含む新しい ILM ポリシーを作成してアクティブ化する必要があることを示すエラーメッセージが表示されます。「 * OK 」を選択し、新しいドラフトポリシーを作成してシミュレートし、アクティブ化します。
++
+image::../media/s3_object_lock_global_setting_error.gif[S3 オブジェクトロックグローバル設定エラー]
+
+
+
+
+
+.完了後
+グローバルなS3オブジェクトのロック設定を有効にしたあとで、新しいILMポリシーを作成できます。設定を有効にすると、 ILM ポリシーに、準拠デフォルトルールと非準拠デフォルトルールの両方をオプションで含めることができます。たとえば、 S3 オブジェクトロックが有効になっていないバケット内のオブジェクトに対してフィルタが適用されていない非準拠ルールを使用できます。
+
+.関連情報
+link:creating-ilm-policy-after-s3-object-lock-is-enabled.html["S3オブジェクトのロックが有効になったあとのILMポリシーの作成"]
+
+link:creating-ilm-rule.html["ILMルールを作成する"]
+
+link:creating-ilm-policy.html["ILMポリシーを作成する"]
+
+link:comparing-s3-object-lock-to-legacy-compliance.html["S3 オブジェクトロックと従来の準拠の比較"]

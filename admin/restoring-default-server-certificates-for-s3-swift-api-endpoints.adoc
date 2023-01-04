@@ -1,0 +1,24 @@
+---
+permalink: admin/restoring-default-server-certificates-for-s3-swift-api-endpoints.html 
+sidebar: sidebar 
+keywords:  
+summary: S3およびSwiftのREST APIエンドポイント用のデフォルトサーバ証明書を使用する設定に戻すことができます。 
+---
+= S3およびSwiftのREST APIエンドポイント用のデフォルトサーバ証明書のリストア
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3およびSwiftのREST APIエンドポイント用のデフォルトサーバ証明書を使用する設定に戻すことができます。
+
+.手順
+. [* Configuration *]>[* Network Settings *]>[* Server Certificates*]を選択します。
+. Object Storage API Service Endpoints Server Certificateセクションで、* Use Default Certificates *をクリックします。
+. 確認ダイアログボックスで * OK * をクリックする。
++
+オブジェクトストレージAPIエンドポイント用のデフォルトサーバ証明書をリストアすると、設定したカスタムサーバ証明書ファイルは削除され、システムからはリカバリできなくなります。以降すべての新しいAPIクライアント接続には、デフォルトのサーバ証明書が使用されます。
+
+. Web ブラウザが更新されたことを確認するには、ページをリフレッシュしてください。
+

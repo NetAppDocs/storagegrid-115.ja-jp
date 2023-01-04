@@ -1,0 +1,141 @@
+---
+section: tenant
+title: テナントアカウントを使用する
+url: "/tenant/index.html"
+entries:
+- title: Tenant Managerを使用します
+  url: "/tenant/using-tenant-manager.html"
+  entries:
+  - title: Web ブラウザの要件
+    url: "/tenant/web-browser-requirements.html"
+  - title: Tenant Managerにサインインします
+    url: "/tenant/signing-in-to-tenant-manager.html"
+  - title: Tenant Managerからサインアウトします
+    url: "/tenant/signing-out-of-tenant-manager.html"
+  - title: Tenant Managerのダッシュボードについて
+    url: "/tenant/understanding-tenant-manager-dashboard.html"
+  - title: テナント管理APIについて
+    url: "/tenant/understanding-tenant-management-api.html"
+    entries:
+    - title: テナント管理 API のバージョン管理
+      url: "/tenant/tenant-management-api-versioning.html"
+    - title: クロスサイトリクエストフォージェリ（CSRF）の防止
+      url: "/tenant/protecting-against-cross-site-request-forgery-csrf.html"
+- title: テナントユーザのシステムアクセスの管理
+  url: "/tenant/managing-system-access-for-tenant-users.html"
+  entries:
+  - title: アイデンティティフェデレーションを使用する
+    url: "/tenant/using-identity-federation.html"
+    entries:
+    - title: フェデレーテッドアイデンティティソースを設定する
+      url: "/tenant/configuring-federated-identity-source.html"
+      entries:
+      - title: OpenLDAP サーバの設定に関するガイドライン
+        url: "/tenant/guidelines-for-configuring-openldap-server.html"
+    - title: アイデンティティソースとの強制同期
+      url: "/tenant/forcing-synchronization-with-identity-source.html"
+    - title: アイデンティティフェデレーションの無効化
+      url: "/tenant/disabling-identity-federation.html"
+  - title: グループの管理
+    url: "/tenant/managing-groups.html"
+    entries:
+    - title: S3テナント用のグループの作成
+      url: "/tenant/creating-groups-for-s3-tenant.html"
+    - title: Swiftテナント用のグループの作成
+      url: "/tenant/creating-groups-for-swift-tenant.html"
+    - title: グループの詳細を表示および編集する
+      url: "/tenant/viewing-and-editing-group-details.html"
+    - title: ローカルグループへのユーザの追加
+      url: "/tenant/adding-users-to-local-group.html"
+    - title: グループ名を編集する
+      url: "/tenant/editing-group-name.html"
+    - title: グループを複製する
+      url: "/tenant/duplicating-group.html"
+    - title: グループを削除しています
+      url: "/tenant/deleting-group.html"
+  - title: ローカルユーザの管理
+    url: "/tenant/managing-local-users.html"
+- title: S3テナントアカウントの管理
+  url: "/tenant/managing-s3-tenant-accounts.html"
+  entries:
+  - title: S3 アクセスキーの管理
+    url: "/tenant/managing-s3-access-keys.html"
+    entries:
+    - title: 自分のS3アクセスキーを作成する
+      url: "/tenant/creating-your-own-s3-access-keys.html"
+    - title: S3アクセスキーを表示します
+      url: "/tenant/viewing-your-s3-access-keys.html"
+    - title: 自分のS3アクセスキーを削除する
+      url: "/tenant/deleting-your-own-s3-access-keys.html"
+    - title: 別のユーザのS3アクセスキーを作成する
+      url: "/tenant/creating-another-users-s3-access-keys.html"
+    - title: 別のユーザのS3アクセスキーを表示しています
+      url: "/tenant/viewing-another-users-s3-access-keys.html"
+    - title: 別のユーザのS3アクセスキーを削除しています
+      url: "/tenant/deleting-another-users-s3-access-keys.html"
+  - title: S3バケットの管理
+    url: "/tenant/managing-s3-buckets.html"
+    entries:
+    - title: S3 オブジェクトロックを使用する
+      url: "/tenant/using-s3-object-lock.html"
+      entries:
+      - title: S3 オブジェクトロックのワークフロー
+        url: "/tenant/s3-object-lock-workflow.html"
+      - title: S3 オブジェクトのロックの要件
+        url: "/tenant/requirements-for-s3-object-lock.html"
+    - title: S3バケットの作成
+      url: "/tenant/creating-s3-bucket.html"
+    - title: S3バケットの詳細の表示
+      url: "/tenant/viewing-s3-bucket-details.html"
+    - title: 整合性レベルを変更する
+      url: "/tenant/changing-consistency-level.html"
+    - title: 最終アクセス日時の更新の有効化または無効化
+      url: "/tenant/enabling-or-disabling-last-access-time-updates.html"
+    - title: Cross-Origin Resource Sharing（CORS）の設定
+      url: "/tenant/configuring-cross-origin-resource-sharing-cors.html"
+    - title: S3バケットを削除しています
+      url: "/tenant/deleting-s3-bucket.html"
+- title: S3プラットフォームサービスの管理
+  url: "/tenant/managing-s3-platform-services.html"
+  entries:
+  - title: プラットフォームサービスとは
+    url: "/tenant/what-platform-services-are.html"
+    entries:
+    - title: CloudMirrorレプリケーションサービスの概要
+      url: "/tenant/understanding-cloudmirror-replication-service.html"
+    - title: バケットの通知の概要
+      url: "/tenant/understanding-notifications-for-buckets.html"
+    - title: 検索統合サービスの概要
+      url: "/tenant/understanding-search-integration-service.html"
+  - title: プラットフォームサービスの使用に関する考慮事項
+    url: "/tenant/considerations-for-using-platform-services.html"
+  - title: プラットフォームサービスエンドポイントの設定
+    url: "/tenant/configuring-platform-services-endpoints.html"
+    entries:
+    - title: プラットフォームサービスのエンドポイントのURNの指定
+      url: "/tenant/specifying-urn-for-platform-services-endpoint.html"
+    - title: プラットフォームサービスエンドポイントの作成
+      url: "/tenant/creating-platform-services-endpoint.html"
+    - title: プラットフォームサービスエンドポイントの接続をテストしています
+      url: "/tenant/testing-connection-for-platform-services-endpoint.html"
+    - title: プラットフォームサービスエンドポイントの編集
+      url: "/tenant/editing-platform-services-endpoint.html"
+    - title: プラットフォームサービスエンドポイントを削除しています
+      url: "/tenant/deleting-platform-services-endpoint.html"
+    - title: プラットフォームサービスのエンドポイントエラーのトラブルシューティング
+      url: "/tenant/troubleshooting-platform-services-endpoint-errors.html"
+  - title: CloudMirrorレプリケーションの設定
+    url: "/tenant/configuring-cloudmirror-replication.html"
+  - title: イベント通知を設定する
+    url: "/tenant/configuring-event-notifications.html"
+  - title: 検索統合サービスを使用する
+    url: "/tenant/using-search-integration-service.html"
+    entries:
+    - title: 検索統合用の XML を設定します
+      url: "/tenant/configuration-xml-for-search-configuration.html"
+    - title: 検索統合サービスの設定
+      url: "/tenant/configuring-search-integration-service.html"
+    - title: 検索統合サービスで生成される JSON
+      url: "/tenant/json-generated-by-search-integration-service.html"
+    - title: メタデータ通知に含まれているオブジェクトメタデータ
+      url: "/tenant/object-metadata-included-in-metadata-notifications.html"

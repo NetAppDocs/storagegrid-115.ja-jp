@@ -1,0 +1,65 @@
+---
+permalink: sg100-1000/accessing-bmc-interface-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, BMC, baseboard management controller, access, open, login 
+summary: BMC 管理ポートの DHCP または静的 IP アドレスを使用して、サービスアプライアンスの BMC インターフェイスにアクセスできます。 
+---
+= BMCインターフェイスへのアクセス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+BMC 管理ポートの DHCP または静的 IP アドレスを使用して、サービスアプライアンスの BMC インターフェイスにアクセスできます。
+
+.必要なもの
+* 管理クライアントがサポートされているWebブラウザを使用している必要があります。
+* サービスアプライアンスの BMC 管理ポートが、使用する管理ネットワークに接続されている必要があります。
++
+* SG100 BMC 管理ポート *
+
++
+image::../media/sg100_bmc_management_port.png[SG100 BMC 管理ポート]
+
++
+* SG1000 BMC 管理ポート *
+
++
+image::../media/sg1000_bmc_management_port.png[SG1000 BMC 管理ポート]
+
+
+
+.手順
+. BMCインターフェイスのURLとして「+」を入力します
+`*https://_BMC_Port_IP_*`
++
+の場合 `_BMC_Port_IP_`BMC管理ポートのDHCPまたは静的IPアドレスを使用します。
+
++
+BMC のサインインページが表示されます。
+
+. rootのユーザ名とパスワードを入力します。デフォルトのrootパスワード+を変更したときに設定したパスワードを使用します
+`*root*`
++
+`*_password_*`
+
++
+image::../media/bmc_signin_page.gif[BMC のサインインページ]
+
+. [ サインイン（ Sign me in ） ] をクリックします
++
+BMC ダッシュボードが表示されます。
+
++
+image::../media/bmc_dashboard.gif[BMC ダッシュボード]
+
+. 必要に応じて、 *Settings*>*User Management* を選択し、「 disabled 」ユーザをクリックして、追加のユーザを作成します。
++
+
+NOTE: ユーザが初めてサインインすると、セキュリティを強化するためにパスワードの変更を求められる場合があります。
+
+
+
+.関連情報
+link:changing-root-password-for-bmc-interface-sg1000.html["BMCインターフェイスのrootパスワードを変更しています"]

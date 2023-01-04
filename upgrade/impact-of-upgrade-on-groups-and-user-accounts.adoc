@@ -1,0 +1,41 @@
+---
+permalink: upgrade/impact-of-upgrade-on-groups-and-user-accounts.html 
+sidebar: sidebar 
+keywords: upgrade, permissions 
+summary: アップグレードの完了後にグループとユーザアカウントを適切に更新できるよう、 StorageGRID アップグレードの影響を理解しておく必要があります。 
+---
+= アップグレードによるグループおよびユーザアカウントへの影響
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレードの完了後にグループとユーザアカウントを適切に更新できるよう、 StorageGRID アップグレードの影響を理解しておく必要があります。
+
+
+
+== グループの権限とオプションが変更されました
+
+StorageGRID 11.5にアップグレードしたあと、必要に応じて、次の新しい権限とオプションを選択します（* Configuration *>* Access Control *>* Admin Groups *）。
+
+[cols="1a,2a"]
+|===
+| 権限またはオプション | 説明 
+
+
+ a| 
+ストレージアプライアンス管理者
+ a| 
+Grid ManagerからSANtricity System Managerのユーザインターフェイスにアクセスするために必要です。
+
+
+
+ a| 
+アクセスモード
+ a| 
+グループを管理するときに、この新しいオプションに対して「*読み取り専用*」を選択すると、ユーザーがグループに対して選択した設定や機能を変更できなくなります。読み取り専用アクセスモードのグループ内のユーザは設定を表示できますが、変更することはできません。
+
+|===
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]

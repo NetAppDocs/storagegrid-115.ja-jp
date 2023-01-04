@@ -1,0 +1,23 @@
+---
+permalink: expand/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= グリッドを展開します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+システムの運用を中断することなくStorageGRID システムを拡張する方法をご紹介します。
+
+* link:planning-expansion.html["StorageGRID 拡張の計画"]
+* link:preparing-for-expansion.html["拡張の準備"]
+* link:overview-of-expansion-procedure.html["拡張手順 の概要"]
+* link:adding-storage-volumes-to-storage-nodes.html["ストレージノードへのストレージボリュームの追加"]
+* link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["既存のサイトへのグリッドノードの追加と新しいサイトの追加"]
+* link:configuring-expanded-storagegrid-system.html["拡張後のStorageGRID システムの設定"]
+* link:contacting-technical-support.html["テクニカルサポートにお問い合わせください"]
+

@@ -1,0 +1,73 @@
+---
+permalink: vmware/required-materials.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID をインストールする前に、必要な情報やデータ、機器を揃えておく必要があります。 
+---
+= 前提要件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID をインストールする前に、必要な情報やデータ、機器を揃えておく必要があります。
+
+[cols="1a,2a"]
+|===
+| 項目 | 注： 
+
+
+ a| 
+NetApp StorageGRID ライセンス
+ a| 
+デジタル署名された有効なネットアップライセンスが必要です。
+
+* 注： StorageGRID インストールアーカイブには、製品サポートのない無償ライセンスが含まれています。
+
+
+
+ a| 
+VMware用のStorageGRID インストールアーカイブ
+ a| 
+StorageGRID インストールアーカイブをダウンロードし、ファイルを展開する必要があります。
+
+
+
+ a| 
+VMware のソフトウェアとドキュメント
+ a| 
+インストール時に、VMware vSphere Web Clientで仮想マシンに仮想グリッドノードを導入します。サポートされるバージョンについては、Interoperability Matrixを参照してください。
+
+
+
+ a| 
+サービスラップトップ
+ a| 
+StorageGRID システムは、サービスラップトップを介してインストールされます。サービスラップトップには次のものが必要です。
+
+* ネットワークポート
+* SSH クライアント（ PuTTY など）
+* サポートされている Web ブラウザ
+
+
+
+
+ a| 
+StorageGRID のドキュメント
+ a| 
+* リリースノート
+* StorageGRID の管理手順
+
+
+|===
+.関連情報
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]
+
+link:downloading-and-extracting-storagegrid-installation-files.html["StorageGRID インストールファイルのダウンロードと展開"]
+
+link:web-browser-requirements.html["Web ブラウザの要件"]
+
+link:../admin/index.html["StorageGRID の管理"]
+
+link:../release-notes/index.html["リリースノート"]

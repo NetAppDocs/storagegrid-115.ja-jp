@@ -1,0 +1,43 @@
+---
+permalink: maintain/grid-node-procedures.html 
+sidebar: sidebar 
+keywords: storagegrid, grid node procedure 
+summary: 特定のグリッドノードで作業を実行する必要がある場合があります。これらの手順の一部は Grid Manager から実行できますが、ほとんどの手順ではノードのコマンドラインから Server Manager にアクセスする必要があります。 
+---
+= グリッドノードの手順
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+特定のグリッドノードで作業を実行する必要がある場合があります。これらの手順の一部は Grid Manager から実行できますが、ほとんどの手順ではノードのコマンドラインから Server Manager にアクセスする必要があります。
+
+Server Manager はすべてのグリッドノード上で実行されてサービスの開始と停止を管理し、 StorageGRID システムでサービスが正常に開始および終了するようにします。また、すべてのグリッドノードのサービスを監視し、エラーが報告された場合は自動的に再開を試みます。
+
+
+IMPORTANT: Server Manager には、テクニカルサポートから指示があった場合にのみアクセスしてください。
+
+
+NOTE: Server Manager での作業が完了したら、現在のコマンドシェルセッションを閉じてログアウトする必要があります。入力するコマンド `exit`
+
+.選択肢
+* link:viewing-server-manager-status-and-version.html["Server Managerのステータスとバージョンの表示"]
+* link:viewing-current-status-of-all-services.html["すべてのサービスの現在のステータスを表示しています"]
+* link:starting-server-manager-and-all-services.html["Server Managerおよびすべてのサービスを開始しています"]
+* link:restarting-server-manager-and-all-services.html["Server Managerおよびすべてのサービスを再起動しています"]
+* link:stopping-server-manager-and-all-services.html["Server Managerおよびすべてのサービスを停止しています"]
+* link:viewing-current-status-of-service.html["サービスの現在のステータスを表示します"]
+* link:stopping-service.html["サービスを停止しています"]
+* link:placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]
+* link:forcing-service-to-terminate.html["サービスを強制的に終了します"]
+* link:starting-or-restarting-service.html["サービスの開始または再開"]
+* link:removing-port-remaps.html["ポートの再マッピングの削除"]
+* link:removing-port-remaps-on-bare-metal-hosts.html["ベアメタルホストでのポートの再マッピングの削除"]
+* link:rebooting-grid-node.html["グリッドノードのリブート"]
+* link:shutting-down-grid-node.html["グリッドノードをシャットダウンしています"]
+* link:powering-down-host.html["ホストの電源のオフ"]
+* link:powering-off-and-on-all-nodes-in-grid.html["グリッド内のすべてのノードの電源のオンとオフを切り替えます"]
+* link:using-donotstart-file.html["DoNotStartファイルを使用する"]
+* link:troubleshooting-server-manager.html["Server Managerのトラブルシューティング"]
+

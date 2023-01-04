@@ -1,0 +1,24 @@
+---
+permalink: admin/restoring-default-server-certificates-for-grid-manager-tenant-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: Grid ManagerおよびTenant Managerでデフォルトのサーバ証明書を使用するように戻すことができます。 
+---
+= Grid ManagerおよびTenant Manager用のデフォルトのサーバ証明書のリストア
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Grid ManagerおよびTenant Managerでデフォルトのサーバ証明書を使用するように戻すことができます。
+
+.手順
+. [* Configuration *]>[* Network Settings *]>[* Server Certificates*]を選択します。
+. Manage Interface Server Certificateセクションで、* Use Default Certificates *をクリックします。
+. 確認ダイアログボックスで * OK * をクリックする。
++
+デフォルトのサーバ証明書をリストアすると、設定したカスタムサーバ証明書ファイルは削除され、システムからはリカバリできなくなります。以降すべての新しいクライアント接続には、デフォルトのサーバ証明書が使用されます。
+
+. Web ブラウザが更新されたことを確認するには、ページをリフレッシュしてください。
+

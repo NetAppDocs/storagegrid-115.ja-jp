@@ -1,0 +1,61 @@
+---
+permalink: admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: デフォルトの StorageGRID サーバ証明書を単一のカスタムサーバ証明書に置き換えると、ユーザがグリッドマネージャとテナントマネージャにアクセスする際にセキュリティの警告が表示されなくなります。 
+---
+= Grid ManagerおよびTenant Manager用のカスタムサーバ証明書を設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトの StorageGRID サーバ証明書を単一のカスタムサーバ証明書に置き換えると、ユーザがグリッドマネージャとテナントマネージャにアクセスする際にセキュリティの警告が表示されなくなります。
+
+.このタスクについて
+デフォルトでは、管理ノードごとに、グリッド CA によって署名された証明書が 1 つずつ発行されます。これらの CA 署名証明書は、単一の共通するカスタムサーバ証明書および対応する秘密鍵で置き換えることができます。
+
+1つのカスタムサーバ証明書がすべての管理ノードに対して使用されるため、Grid ManagerおよびTenant Managerへの接続時にクライアントがホスト名を確認する必要がある場合は、ワイルドカード証明書またはマルチドメイン証明書として指定する必要があります。グリッド内のすべての管理ノードに一致するカスタム証明書を定義してください。
+
+設定はサーバ上で行う必要があります。また、使用しているルート認証局（CA）によっては、ユーザがGrid ManagerおよびTenant Managerへのアクセスに使用するWebブラウザにルートCA証明書をインストールすることも必要になります。
+
+
+NOTE: サーバ証明書の問題によって処理が中断されないようにするために、このサーバ証明書の有効期限が近づくと、Expiration of server certificate for Management Interface *アラートとLegacy Management Interface Certificate Expiry（MCEP）アラームの両方がトリガーされます。必要に応じて、* Support *>* Tools *>* Grid Topology *を選択することにより、現在のサービス証明書が期限切れになるまでの日数を表示できます。次に、「*_ primary Admin Node_*>* CMN *>* Resources *」を選択します。
+
+[NOTE]
+====
+IP アドレスではなくドメイン名を使用して Grid Manager または Tenant Manager にアクセスする場合は、次のいずれかの場合に証明書のエラーが表示され、バイパスするオプションはありません。
+
+* カスタム管理インターフェイスサーバ証明書の有効期限が切れます。
+* カスタムの管理インターフェイスサーバ証明書をデフォルトのサーバ証明書に戻した場合。
+
+
+====
+.手順
+. [* Configuration *]>[* Network Settings *]>[* Server Certificates*]を選択します。
+. Management Interface Server Certificateセクションで、* Install Custom Certificate *をクリックします。
+. 必要なサーバ証明書ファイルをアップロードします。
++
+** *サーバー証明書*：カスタムサーバー証明書ファイル (`.crt`）。
+** * Server Certificate Private Key *：カスタムサーバ証明書の秘密鍵ファイル (`.key`）。
++
+
+NOTE: EC 秘密鍵は 224 ビット以上である必要があります。RSA 秘密鍵は 2048 ビット以上にする必要があります。
+
+** *CA Bundle*：各中間発行認証局（CA）の証明書を含む単一のファイル。このファイルには、 PEM でエンコードされた各 CA 証明書ファイルが、証明書チェーンの順序で連結して含まれている必要があります。
+
+
+. [ 保存（ Save ） ] をクリックします。
++
+以降すべての新しいクライアント接続には、カスタムサーバ証明書が使用されます。
+
++
+タブを選択して、デフォルトのStorageGRID サーバ証明書またはアップロードされたCA署名証明書に関する詳細情報を表示します。
+
++
+
+NOTE: 新しい証明書をアップロードしたあと、関連する証明書の有効期限アラート（またはレガシーアラーム）がクリアされるまでに最大1日かかります。
+
+. Web ブラウザが更新されたことを確認するには、ページをリフレッシュしてください。
+

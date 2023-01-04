@@ -1,0 +1,27 @@
+---
+permalink: sg6000/index.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance 
+summary: StorageGRID SG6060とSGF6024アプライアンスの設置とメンテナンスの方法について説明します。 
+---
+= SG6000 ストレージアプライアンス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID SG6060とSGF6024アプライアンスの設置とメンテナンスの方法について説明します。
+
+* link:sg6000-appliances-overview.html["SG6000アプライアンスの概要"]
+* link:installation-and-deployment-overview.html["インストールと導入の概要"]
+* link:preparing-for-installation.html["設置を準備しています"]
+* link:installing-hardware.html["ハードウェアを設置"]
+* link:configuring-hardware.html["ハードウェアの設定"]
+* link:deploying-appliance-storage-node.html["アプライアンスストレージノードの導入"]
+* link:monitoring-storage-appliance-installation.html["ストレージアプライアンスのインストールの監視"]
+* link:automating-appliance-installation-and-configuration.html["アプライアンスのインストールと設定の自動化"]
+* link:overview-of-installation-rest-apis.html["インストール REST API の概要"]
+* link:troubleshooting-hardware-installation.html["ハードウェアの設置のトラブルシューティング"]
+* link:maintaining-sg6000-appliance.html["SG6000アプライアンスのメンテナンス"]
+

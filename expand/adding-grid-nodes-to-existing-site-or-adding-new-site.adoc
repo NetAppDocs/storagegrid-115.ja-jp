@@ -1,0 +1,30 @@
+---
+permalink: expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html 
+sidebar: sidebar 
+keywords: grid node, node, site, add, adding, expand, expansion 
+summary: この手順 を使用して、既存のサイトにグリッドノードを追加したり、新しいサイトを追加したりできますが、両方のタイプの拡張を同時に実行することはできません。 
+---
+= 既存のサイトへのグリッドノードの追加と新しいサイトの追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+この手順 を使用して、既存のサイトにグリッドノードを追加したり、新しいサイトを追加したりできますが、両方のタイプの拡張を同時に実行することはできません。
+
+.必要なもの
+* root権限またはmaintenance権限が必要です。詳細については、管理者ユーザアカウントおよびグループを使用したシステムアクセスの制御に関する情報を参照してください。
+* グリッド内のすべての既存ノードがすべてのサイトで動作している必要があります。
+* 前の拡張、アップグレード、運用停止、またはリカバリの手順が完了している必要があります。
++
+
+NOTE: 拡張は、別の拡張、アップグレード、リカバリ、またはアクティブな運用停止の手順 を実行中のときは開始できません。ただし、必要に応じて、運用停止手順 を一時停止して拡張を開始できます。
+
+
+
+.手順
+. link:updating-subnets-for-grid-network.html["グリッドネットワークのサブネットを更新しています"]
+. link:deploying-new-grid-nodes.html["新しいグリッドノードの導入"]
+. link:performing-expansion.html["拡張の実施"]
+

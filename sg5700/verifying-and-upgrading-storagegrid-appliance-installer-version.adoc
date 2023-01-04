@@ -1,0 +1,55 @@
+---
+permalink: sg5700/verifying-and-upgrading-storagegrid-appliance-installer-version.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, Verifying, verify, upgrading, upgrade, update, updating, Appliance Installer, version, release 
+summary: StorageGRID のすべての機能がサポートされるようにするには、アプライアンスの StorageGRID アプライアンスインストーラのバージョンと StorageGRID システムにインストールされているソフトウェアのバージョンが一致している必要があります。 
+---
+= StorageGRID アプライアンスインストーラのバージョンの確認とアップグレード
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID のすべての機能がサポートされるようにするには、アプライアンスの StorageGRID アプライアンスインストーラのバージョンと StorageGRID システムにインストールされているソフトウェアのバージョンが一致している必要があります。
+
+.必要なもの
+StorageGRID アプライアンスインストーラにアクセスしておきます。
+
+.このタスクについて
+StorageGRID アプライアンスは、 StorageGRID アプライアンスインストーラがプリインストールされた状態で出荷されます。最近アップグレードした StorageGRID システムにアプライアンスを追加する場合は、そのアプライアンスを新しいノードとしてインストールする前に、 StorageGRID アプライアンスインストーラの手動アップグレードが必要になることがあります。
+
+新しい StorageGRID バージョンにアップグレードすると、 StorageGRID アプライアンスインストーラが自動的にアップグレードされます。インストールされているアプライアンスノードでは、 StorageGRID アプライアンスインストーラをアップグレードする必要はありません。この手順 が必要になるのは、以前のバージョンの StorageGRID アプライアンスインストーラを搭載したアプライアンスをインストールする場合のみです。
+
+.手順
+. StorageGRID アプライアンス・インストーラから、 * アドバンスト * > * アップグレード・ファームウェア * を選択します。
+. 現在のファームウェアバージョンとStorageGRID システムにインストールされているソフトウェアバージョンを比較します（Grid Managerから* Help *>* About *を選択します）。
++
+2 つのバージョンの 2 桁目の数字が一致している必要があります。たとえば、StorageGRID システムでバージョン11.* 5 *。_x_.y_y__を実行している場合、StorageGRID アプライアンスインストーラのバージョンは3.* 5 *._z_にする必要があります。
+
+. アプライアンスに StorageGRID アプライアンスインストーラの下位バージョンがインストールされている場合は、 StorageGRID のネットアップのダウンロードページにアクセスします。
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
+
++
+ネットアップアカウントのユーザ名とパスワードを使用してサインインします。
+
+. StorageGRID アプライアンス * 対応するバージョンのサポート・ファイルと対応するチェックサム・ファイルをダウンロードします。
++
+StorageGRID アプライアンスファイルのサポートファイルは、です `.zip` すべてのStorageGRID アプライアンスモデルの最新および以前のファームウェアバージョンを、各コントローラタイプのサブディレクトリに格納してアーカイブする。
+
++
+StorageGRID アプライアンスファイルのサポートファイルをダウンロードしたら、を展開します `.zip` StorageGRID アプライアンスインストーラのインストールに関する重要な情報については、READMEファイルをアーカイブして参照してください。
+
+. StorageGRID アプライアンスインストーラのファームウェアのアップグレードページの手順に従って、次の手順を実行します。
++
+.. コントローラタイプとチェックサムファイルに適したサポートファイル（ファームウェアイメージ）をアップロードします。
+.. 非アクティブなパーティションをアップグレードします。
+.. パーティションを再起動してスワップします。
+.. 2番目のパーティションをアップグレードします。
+
+
+
+
+.関連情報
+link:accessing-storagegrid-appliance-installer-sg5700.html["StorageGRID アプライアンスインストーラへのアクセス"]

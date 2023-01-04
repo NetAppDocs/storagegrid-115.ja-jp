@@ -1,0 +1,116 @@
+---
+permalink: fabricpool/information-needed-to-attach-storagegrid-as-cloud-tier.html 
+sidebar: sidebar 
+keywords: StorageGRID, fabricPool, ONTAP System Manager, ONTAP CLI, port, FQDN, object store name 
+summary: StorageGRID をFabricPool のクラウド階層として接続する前に、StorageGRID でいくつかの設定手順を実行して特定の値を取得する必要があります。 
+---
+= StorageGRID をクラウド階層として接続するために必要な情報
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID をFabricPool のクラウド階層として接続する前に、StorageGRID でいくつかの設定手順を実行して特定の値を取得する必要があります。
+
+.このタスクについて
+次の表に、 FabricPool のクラウド階層として StorageGRID を接続する場合に ONTAP に入力する必要がある情報を示します。このセクションのトピックでは、 StorageGRID のグリッドマネージャとテナントマネージャを使用して必要な情報を取得する方法について説明します。
+
+
+NOTE: 表示されるフィールド名と ONTAP で必要な値の入力プロセスは、 ONTAP CLI （ storage aggregate object-store config create ）と ONTAP System Manager （ * Storage * > * Aggregates & Disks * > * Cloud Tier * ）のどちらを使用しているかによって異なります。
+
+詳細については、以下を参照してください。
+
+* https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598：『FabricPool Best Practices for ONTAP 9.8』"^]
+* https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"^]
+
+
+[cols="1a,2a"]
+|===
+| ONTAP フィールド | 説明 
+
+
+ a| 
+オブジェクトストア名
+ a| 
+一意でわかりやすい名前。例： `StorageGRID_Cloud_Tier`。
+
+
+
+ a| 
+プロバイダタイプ
+ a| 
+StorageGRID （System Manager）または `SGWS` （CLI）。
+
+
+
+ a| 
+ポート
+ a| 
+FabricPool が StorageGRID に接続するときに使用するポート。StorageGRID ロードバランサエンドポイントを定義する際に使用するポート番号を指定します。
+
+link:creating-load-balancer-endpoint-for-fabricpool.html["FabricPool のロードバランサエンドポイントの作成"]
+
+
+
+ a| 
+サーバ名
+ a| 
+StorageGRID ロードバランサエンドポイントの完全修飾ドメイン名（ FQDN ）。例： `s3.storagegrid.company.com`。
+
+次の点に注意してください。
+
+* ここで指定するドメイン名は、 StorageGRID ロードバランサエンドポイント用にアップロードする CA 証明書のドメイン名と一致する必要があります。
+* このドメイン名の DNS レコードは、 StorageGRID への接続に使用する各 IP アドレスにマッピングする必要があります。
+
+
+link:configuring-dns-for-storagegrid-ip-addresses.html["StorageGRID IPアドレス用のDNSサーバを設定する"]
+
+
+
+ a| 
+コンテナ名
+ a| 
+この ONTAP クラスタで使用する StorageGRID バケットの名前。例： `fabricpool-bucket`。このバケットはTenant Managerで作成します。
+
+次の点に注意してください。
+
+* 設定の作成後にバケット名を変更することはできません。
+* バケットでバージョン管理を有効にすることはできません。
+* データを StorageGRID に階層化する ONTAP クラスタごとに異なるバケットを使用する必要があります。
+
+
+link:creating-s3-bucket-and-access-key.html["S3バケットを作成してアクセスキーを取得する"]
+
+
+
+ a| 
+アクセスキーとシークレットのパスワード
+ a| 
+StorageGRID テナントアカウントのアクセスキーとシークレットアクセスキー。
+
+これらの値は Tenant Manager で生成します。
+
+link:creating-s3-bucket-and-access-key.html["S3バケットを作成してアクセスキーを取得する"]
+
+
+
+ a| 
+SSL
+ a| 
+有効にする必要があります。
+
+
+
+ a| 
+オブジェクトストアの証明書
+ a| 
+StorageGRID ロードバランサエンドポイントの作成時にアップロードした CA 証明書。
+
+* 注：中間 CA が StorageGRID 証明書を発行した場合は、中間 CA 証明書を指定する必要があります。StorageGRID 証明書がルート CA によって直接発行された場合は、ルート CA 証明書を指定する必要があります。
+
+link:creating-load-balancer-endpoint-for-fabricpool.html["FabricPool のロードバランサエンドポイントの作成"]
+
+|===
+.完了後
+必要な StorageGRID 情報を取得したら、 ONTAP にアクセスしてクラウド階層として StorageGRID を追加し、クラウド階層をアグリゲートとして追加し、ボリューム階層化ポリシーを設定できます。

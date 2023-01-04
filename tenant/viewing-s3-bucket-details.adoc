@@ -1,0 +1,74 @@
+---
+permalink: tenant/viewing-s3-bucket-details.html 
+sidebar: sidebar 
+keywords: storagegrid, tenant, s3 bucket, view s3 bucket, viewing s3 bucket, view bucket, viewing bucket, bucket details 
+summary: テナントアカウントのバケットおよびバケット設定のリストを表示できます。 
+---
+= S3バケットの詳細の表示
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+テナントアカウントのバケットおよびバケット設定のリストを表示できます。
+
+.必要なもの
+* Tenant Managerにはサポートされているブラウザを使用してサインインする必要があります。
+
+
+.手順
+. ストレージ（ S3 ） * > * バケット * を選択します。
++
+バケットページが表示され、テナントアカウントのすべてのバケットがリストされます。
+
++
+image::../media/buckets_table.png[バケットテーブル（バケットテーブル）]
+
+. 各バケットの情報を確認します。
++
+必要に応じて、任意の列で情報をソートしたり、リストを前後にページ移動したりできます。
+
++
+** Name ：バケットの一意の名前。変更できません。
+** S3 Object Lock ：このバケットで S3 オブジェクトのロックが有効になっているかどうか。
++
+グローバルな S3 オブジェクトのロック設定が無効になっている場合は、この列は表示されません。この列には、古い準拠バケットの情報も表示されます。
+
+** Region ：バケットのリージョン。変更できません。
+** Object Count ：このバケット内のオブジェクトの数。
+** Space Used ：このバケット内のすべてのオブジェクトの論理サイズ。論理サイズには、レプリケートコピーやイレイジャーコーディングコピー、またはオブジェクトメタデータに必要な実際のスペースは含まれていません。
+** Date Created ：バケットが作成された日時。
+
+
++
+
+IMPORTANT: 「オブジェクト数」と「使用済みスペース」の値が概算値として表示されます。これらの推定値は、取り込みのタイミング、ネットワーク接続、ノードのステータスによって左右されます。
+
+. バケットの設定を表示および管理するには、バケット名を選択します。
++
+バケットの詳細ページが表示されます。
+
++
+このページでは、バケットオプション、バケットアクセス、およびプラットフォームサービスの設定を表示および編集できます。
+
++
+各設定またはプラットフォームサービスの設定手順を参照してください。
+
++
+image::../media/bucket_details_page.png[バケットの詳細ページ]
+
+
+
+.関連情報
+link:changing-consistency-level.html["整合性レベルを変更する"]
+
+link:enabling-or-disabling-last-access-time-updates.html["最終アクセス日時の更新の有効化または無効化"]
+
+link:configuring-cross-origin-resource-sharing-cors.html["Cross-Origin Resource Sharing（CORS）の設定"]
+
+link:configuring-cloudmirror-replication.html["CloudMirrorレプリケーションの設定"]
+
+link:configuring-event-notifications.html["イベント通知を設定する"]
+
+link:configuring-search-integration-service.html["検索統合サービスの設定"]

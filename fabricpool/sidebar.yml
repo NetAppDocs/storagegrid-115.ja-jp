@@ -1,0 +1,33 @@
+---
+section: fabricpool
+title: StorageGRID for FabricPool を設定します
+url: "/fabricpool/index.html"
+entries:
+- title: StorageGRID for FabricPool を設定しています
+  url: "/fabricpool/configuring-storagegrid-for-fabricpool.html"
+- title: StorageGRID をクラウド階層として接続するために必要な情報
+  url: "/fabricpool/information-needed-to-attach-storagegrid-as-cloud-tier.html"
+  entries:
+  - title: ロードバランシングのベストプラクティスを参照してください
+    url: "/fabricpool/best-practices-for-load-balancing.html"
+  - title: ハイアベイラビリティグループのベストプラクティス
+    url: "/fabricpool/best-practices-for-high-availability-groups.html"
+  - title: StorageGRID IPアドレス用のDNSサーバを設定する
+    url: "/fabricpool/configuring-dns-for-storagegrid-ip-addresses.html"
+  - title: FabricPool のハイアベイラビリティ（HA）グループの作成
+    url: "/fabricpool/creating-ha-group-for-fabricpool.html"
+  - title: FabricPool のロードバランサエンドポイントの作成
+    url: "/fabricpool/creating-load-balancer-endpoint-for-fabricpool.html"
+  - title: FabricPool のテナントアカウントの作成
+    url: "/fabricpool/creating-tenant-account-for-fabricpool.html"
+  - title: S3バケットを作成してアクセスキーを取得する
+    url: "/fabricpool/creating-s3-bucket-and-access-key.html"
+- title: StorageGRID の情報ライフサイクル管理とFabricPool のデータを使用する
+  url: "/fabricpool/using-storagegrid-ilm-with-fabricpool-data.html"
+  entries:
+  - title: FabricPool データ用の ILM ポリシーの例
+    url: "/fabricpool/example-ilm-policy-for-fabricpool-data.html"
+- title: FabricPool のトラフィック分類ポリシーを作成する
+  url: "/fabricpool/creating-traffic-classification-policy-for-fabricpool.html"
+- title: StorageGRID および FabricPool に関するその他のベストプラクティスです
+  url: "/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html"

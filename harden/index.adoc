@@ -1,0 +1,22 @@
+---
+permalink: harden/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= システムの保護対策
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムをセキュリティの脅威から保護するためのシステム設定、ベストプラクティス、および推奨事項について説明します。
+
+* link:hardening-storagegrid-system.html["StorageGRID システムのセキュリティ強化"]
+* link:hardening-guidelines-for-software-upgrades.html["ソフトウェアアップグレードの強化に関するガイドライン"]
+* link:hardening-guidelines-for-storagegrid-networks.html["StorageGRID ネットワークのセキュリティ強化のガイドライン"]
+* link:hardening-guidelines-for-storagegrid-nodes.html["StorageGRID ノードの保護対策のガイドライン"]
+* link:hardening-guideline-for-server-certificates.html["サーバ証明書のセキュリティ強化ガイドライン"]
+* link:other-hardening-guidelines.html["その他のセキュリティ強化に関するガイドライン"]]
+

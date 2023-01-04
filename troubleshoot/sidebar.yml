@@ -1,0 +1,33 @@
+---
+section: troubleshoot
+title: StorageGRID システムのトラブルシューティングを行う
+url: "/troubleshoot/troubleshooting-storagegrid-system.html"
+entries:
+- title: オブジェクトとストレージの問題のトラブルシューティング
+  url: "/troubleshoot/troubleshooting-object-and-storage-issues.html"
+  entries:
+  - title: オブジェクトの整合性を検証してい
+    url: "/troubleshoot/verifying-object-integrity.html"
+  - title: オブジェクトデータの損失と欠落が発生した場合のトラブルシューティング
+    url: "/troubleshoot/troubleshooting-lost-and-missing-object-data.html"
+    entries:
+    - title: 損失オブジェクトを調査しています
+      url: "/troubleshoot/investigating-lost-objects.html"
+    - title: 失われた可能性があるオブジェクトの検索とリストア
+      url: "/troubleshoot/searching-for-and-restoring-potentially-lost-objects.html"
+    - title: 損失オブジェクトと欠落オブジェクトのカウントのリセット
+      url: "/troubleshoot/resetting-lost-and-missing-object-counts.html"
+  - title: Low object data storageアラートのトラブルシューティング
+    url: "/troubleshoot/troubleshooting-low-object-data-storage-alert.html"
+  - title: Storage Status（SSTS）アラームのトラブルシューティングを行います
+    url: "/troubleshoot/troubleshooting-storage-status-alarm.html"
+  - title: プラットフォームサービスメッセージの配信のトラブルシューティング（SMTTアラーム）
+    url: "/troubleshoot/troubleshooting-delivery-platform-services-messages.html"
+- title: メタデータに関する問題のトラブルシューティング
+  url: "/troubleshoot/troubleshooting-metadata-issues.html"
+- title: 証明書エラーのトラブルシューティング
+  url: "/troubleshoot/troubleshooting-certificate-errors.html"
+- title: 管理ノードとユーザインターフェイスの問題のトラブルシューティング
+  url: "/troubleshoot/troubleshooting-admin-node-and-user-interface-issues.html"
+- title: ネットワーク、ハードウェア、およびプラットフォームの問題のトラブルシューティング
+  url: "/troubleshoot/troubleshooting-network-hardware-and-platform-issues.html"

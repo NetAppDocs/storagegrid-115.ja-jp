@@ -1,0 +1,27 @@
+---
+permalink: sg5700/maintaining-sg5700-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, maintain, maintaining, hardware, procedures, tasks 
+summary: E2800 コントローラでの SANtricity OS ソフトウェアのアップグレード、 E5700SG コントローラのイーサネットリンク設定の変更、 E2800 コントローラまたは E5700SG コントローラの交換、または特定のコンポーネントの交換が必要になることがあります。このセクションの手順は、アプライアンスが StorageGRID システムにストレージノードとしてすでに導入されていることを前提としています。 
+---
+= SG5700アプライアンスのメンテナンス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+E2800 コントローラでの SANtricity OS ソフトウェアのアップグレード、 E5700SG コントローラのイーサネットリンク設定の変更、 E2800 コントローラまたは E5700SG コントローラの交換、または特定のコンポーネントの交換が必要になることがあります。このセクションの手順は、アプライアンスが StorageGRID システムにストレージノードとしてすでに導入されていることを前提としています。
+
+.手順
+* link:placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]
+* link:upgrading-santricity-os-on-storage-controller.html["ストレージコントローラのSANtricity OSをアップグレードしています"]
+* link:upgrading-drive-firmware-using-santricity-system-manager.html["SANtricity System Managerを使用してドライブファームウェアをアップグレードする"]
+* link:replacing-e2800-controller.html["E2800コントローラの交換"]
+* link:replacing-e5700sg-controller.html["E5700SGコントローラの交換"]
+* link:replacing-other-hardware-components-sg5700.html["その他のハードウェアコンポーネントの交換"]
+* link:changing-link-configuration-of-e5700sg-controller.html["E5700SGコントローラのリンク設定の変更"]
+* link:changing-mtu-setting.html["MTU設定を変更します"]
+* link:checking-dns-server-configuration.html["DNSサーバの設定を確認しています"]
+* link:monitoring-node-encryption-in-maintenance-mode.html["メンテナンスモードでのノード暗号化の監視"]
+

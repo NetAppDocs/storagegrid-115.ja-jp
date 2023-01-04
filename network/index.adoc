@@ -1,0 +1,22 @@
+---
+permalink: network/index.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID アーキテクチャとネットワークトポロジについて説明します。ネットワークの設定とプロビジョニングの要件を理解します。 
+---
+= ネットワークのガイドライン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID アーキテクチャとネットワークトポロジについて説明します。ネットワークの設定とプロビジョニングの要件を理解します。
+
+* link:storagegrid-networking-overview.html["StorageGRID ネットワークの概要"]
+* link:networking-requirements-and-guidelines.html["ネットワークの要件とガイドライン"]
+* link:deployment-specific-networking-requirements.html["環境固有のネットワークに関する考慮事項"]
+* link:network-installation-and-provisioning.html["ネットワークのインストールとプロビジョニング"]
+* link:post-installation-guidelines.html["インストール後のガイドライン"]
+* link:network-port-reference.html["ネットワークポートのリファレンス"]
+

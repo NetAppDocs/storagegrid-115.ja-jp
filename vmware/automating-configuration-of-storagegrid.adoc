@@ -1,0 +1,98 @@
+---
+permalink: vmware/automating-configuration-of-storagegrid.html 
+sidebar: sidebar 
+keywords:  
+summary: グリッドノードを導入したら、 StorageGRID システムの設定を自動化できます。 
+---
+= StorageGRID の設定の自動化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グリッドノードを導入したら、 StorageGRID システムの設定を自動化できます。
+
+.必要なもの
+* インストールアーカイブにある次のファイルの場所を確認しておきます。
+
+
+[cols="1a,1a"]
+|===
+| ファイル名 | 説明 
+
+
+| configure-storagegrid.py  a| 
+設定を自動化するための Python スクリプト
+
+
+
+| storagegrid-sample.json を設定します  a| 
+スクリプトで使用するサンプル構成ファイル
+
+
+
+| storagegrid-bank.json を設定する  a| 
+スクリプトで使用する空の構成ファイルです
+
+|===
+* を作成しておきます `configure-storagegrid.json` 構成ファイルこのファイルを作成するには、サンプル構成ファイルを変更します (`configure-storagegrid.sample.json`)または空の構成ファイル (`configure-storagegrid.blank.json`）。
+
+
+を使用できます `configure-storagegrid.py` Pythonスクリプトおよび `configure-storagegrid.json` StorageGRID システムの設定を自動化するための構成ファイル。
+
+
+NOTE: また、 Grid Manager またはインストール API を使用してシステムを設定することもできます。
+
+.手順
+. Python スクリプトを実行するために使用する Linux マシンにログインします。
+. インストールアーカイブを展開したディレクトリに移動します。
++
+例：
+
++
+[listing]
+----
+cd StorageGRID-Webscale-version/platform
+----
++
+ここで、 `platform` は、debs、RPM、またはvSphereです。
+
+. Python スクリプトを実行し、作成した構成ファイルを使用します。
++
+例：
+
++
+[listing]
+----
+./configure-storagegrid.py ./configure-storagegrid.json --start-install
+----
+
+
+.結果
+設定プロセスでリカバリパッケージの .zip ファイルが生成され、インストールと設定を実行するディレクトリにダウンロードされます。グリッドノードで障害が発生した場合に StorageGRID システムをリカバリできるようにするために、リカバリパッケージファイルをバックアップする必要があります。たとえば、バックアップされたセキュアなネットワーク上の場所や、安全なクラウドストレージ上の場所にコピーします。
+
+
+IMPORTANT: リカバリパッケージファイルには StorageGRID システムからデータを取得するための暗号キーとパスワードが含まれているため、安全に保管する必要があります。
+
+ランダムパスワードを生成するように指定した場合は、 Passwords.txt ファイルを展開し、 StorageGRID システムへのアクセスに必要なパスワードを探す必要があります。
+
+[listing]
+----
+######################################################################
+##### The StorageGRID "recovery package" has been downloaded as: #####
+#####           ./sgws-recovery-package-994078-rev1.zip          #####
+#####   Safeguard this file as it will be needed in case of a    #####
+#####                 StorageGRID node recovery.                 #####
+######################################################################
+----
+StorageGRID システムがインストールおよび設定されると、確認メッセージが表示されます。
+
+[listing]
+----
+StorageGRID has been configured and installed.
+----
+.関連情報
+link:navigating-to-grid-manager.html["Grid Managerに移動します"]
+
+link:overview-of-installation-rest-api.html["インストール REST API の概要"]

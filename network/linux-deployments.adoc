@@ -1,0 +1,26 @@
+---
+permalink: network/linux-deployments.html 
+sidebar: sidebar 
+keywords:  
+summary: 効率性、信頼性、セキュリティを確保するため、StorageGRID システムはDockerコンテナの集合としてLinux上で動作します。StorageGRID システムではDocker関連のネットワーク構成は必要ありません。 
+---
+= Linux の導入
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+効率性、信頼性、セキュリティを確保するため、StorageGRID システムはDockerコンテナの集合としてLinux上で動作します。StorageGRID システムではDocker関連のネットワーク構成は必要ありません。
+
+コンテナネットワークインターフェイスには、 VLAN ペアや仮想イーサネット（ veth ）ペアなどの非ボンドデバイスを使用します。このデバイスをノード構成ファイルのネットワークインターフェイスとして指定してください。
+
+
+IMPORTANT: ボンドデバイスやブリッジデバイスをコンテナネットワークインターフェイスとして直接使用しないでください。このようにすると、 macvlan を使用してコンテナネームスペース内のボンドデバイスとブリッジデバイスを使用するカーネル問題 が原因でノードの起動が妨げられる可能性があります。
+
+Red Hat Enterprise Linux/CentOSまたはUbuntu / Debianの環境でのインストール手順を参照してください。
+
+.関連情報
+link:../rhel/index.html["Red Hat Enterprise Linux または CentOS をインストールします"]
+
+link:../ubuntu/index.html["Ubuntu または Debian をインストールします"]

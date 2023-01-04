@@ -1,0 +1,22 @@
+---
+permalink: monitor/message-severities-in-bycast-log.html 
+sidebar: sidebar 
+keywords: bycast, log, severities 
+summary: bycast.logのメッセージには重大度レベルが割り当てられています。 
+---
+= bycast.log のメッセージの重大度
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+のメッセージ `bycast.log` 重大度レベルが割り当てられている。
+
+例：
+
+* *notice *-- 記録すべきイベントが発生しました。ほとんどのログメッセージはこのレベルです。
+* * warning * -- 予期しない状態が発生しました。
+* * error * -- 操作に影響を与える大きなエラーが発生しました。
+* * critical * -- 異常な状態が発生し、通常の動作が停止しました。原因となった状態にすぐに対処する必要があります。クリティカルなメッセージは Grid Manager にも表示されます。Support *>* Tools *>* Grid Topology *を選択します。次に、 [ * Site * ] > [ * Node * ] > * SSM * > * Events * を選択します。
+

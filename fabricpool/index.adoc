@@ -1,0 +1,21 @@
+---
+permalink: fabricpool/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= StorageGRID for FabricPool を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID をNetApp FabricPool クラウド階層として設定する方法について説明します。
+
+* link:configuring-storagegrid-for-fabricpool.html["StorageGRID for FabricPool を設定しています"]
+* link:information-needed-to-attach-storagegrid-as-cloud-tier.html["StorageGRID をクラウド階層として接続するために必要な情報"]
+* link:using-storagegrid-ilm-with-fabricpool-data.html["StorageGRID の情報ライフサイクル管理とFabricPool のデータを使用する"]
+* link:creating-traffic-classification-policy-for-fabricpool.html["FabricPool のトラフィック分類ポリシーを作成する"]
+* link:other-best-practices-for-storagegrid-and-fabricpool.html["StorageGRID および FabricPool に関するその他のベストプラクティスです"]
+

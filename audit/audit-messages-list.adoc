@@ -1,0 +1,14 @@
+---
+permalink: audit/audit-messages-list.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, messages, message 
+summary: システムイベントが発生すると、StorageGRID システムは監査メッセージを生成して監査ログに記録します。 
+---
+= 監査メッセージ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+システムイベントが発生すると、StorageGRID システムは監査メッセージを生成して監査ログに記録します。

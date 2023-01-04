@@ -1,0 +1,84 @@
+---
+permalink: tenant/changing-consistency-level.html 
+sidebar: sidebar 
+keywords: storagegrid, tenant, consistency level, read after new write, read-after-new-write, strong site, strong-site, strong global, strong-global 
+summary: S3 テナントを使用している場合は、テナントマネージャまたはテナント管理 API を使用して、 S3 バケット内のオブジェクトに対して実行される処理の整合性制御レベルを変更できます。 
+---
+= 整合性レベルを変更する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3 テナントを使用している場合は、テナントマネージャまたはテナント管理 API を使用して、 S3 バケット内のオブジェクトに対して実行される処理の整合性制御レベルを変更できます。
+
+.必要なもの
+* Tenant Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Manage All Buckets 権限または Root Access 権限のあるユーザグループに属している必要があります。これらの権限は、グループまたはバケットポリシーの権限の設定よりも優先されます。
+
+
+.このタスクについて
+整合性レベルを設定する場合は、オブジェクトの可用性と、異なるストレージノードおよびサイト間におけるオブジェクトの整合性のどちらかを犠牲にしなければなりません。通常は、バケットに * Read-after-new-write * 整合性レベルを使用してください。Read-after-new-write *整合性レベルがクライアントアプリケーションの要件を満たさない場合は、バケットの整合性レベルを設定するか、を使用して整合性レベルを変更できます `Consistency-Control` ヘッダー。。 `Consistency-Control` ヘッダーはバケットの整合性レベルよりも優先されます。
+
+
+NOTE: バケットの整合性レベルを変更した場合、変更後のレベルを満たすことが保証されるのは、変更後に取り込まれたオブジェクトのみです。
+
+.手順
+. ストレージ（ S3 ） * > * バケット * を選択します。
+. リストからバケット名を選択します。
++
+バケットの詳細ページが表示されます。
+
+. * Bucket options * > * Consistency level * を選択します。
++
+image::../media/bucket_change_consistency_level.png[バケットの整合性レベル変更]
+
+. このバケット内のオブジェクトに対して実行される処理の整合性レベルを選択します。
++
+[cols="1a,3a"]
+|===
+| 整合性レベル | 説明 
+
+
+ a| 
+すべて
+ a| 
+すべてのノードが即座にデータを受け取り、受け取れない場合は要求が失敗します。
+
+
+
+ a| 
+strong-global
+ a| 
+すべてのサイトのすべてのクライアント要求について、リードアフターライト整合性が保証されます。
+
+
+
+ a| 
+strong-site
+ a| 
+1 つのサイト内のすべてのクライアント要求について、リードアフターライト整合性が保証されます。
+
+
+
+ a| 
+read-after-new-write （デフォルト）
+ a| 
+新規オブジェクトにはリードアフターライト整合性を、オブジェクトの更新には結果整合性を提供します。高可用性が確保され、データ保護が保証されます。Amazon S3の整合性に相当します。
+
+*注：Amazon S3の整合性保証が必要な場合を除き、アプリケーションが存在しないキーに対してHEAD処理を試行する場合は、整合性レベルを「* Available *」に設定してください。そうしないと、使用できないストレージノードがある場合に「 500 Internal Server Error 」が大量に発生する可能性があります。
+
+
+
+ a| 
+available（HEAD処理は結果整合性）
+ a| 
+read-after-new-write *整合性レベルと動作は同じですが、HEAD処理については結果整合性のみを提供します。ストレージノードを使用できない場合に、HEAD処理に対して「Read-after-new-write」よりも高い可用性が提供される。Amazon S3 の整合性と異なるのは HEAD 処理のみです。
+
+|===
+. 「変更を保存」を選択します。
+
+
+.関連情報
+link:tenant-management-permissions.html["テナント管理権限"]

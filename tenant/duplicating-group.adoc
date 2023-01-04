@@ -1,0 +1,47 @@
+---
+permalink: tenant/duplicating-group.html 
+sidebar: sidebar 
+keywords: StorageGRID, tenant manager, tenant group, duplicating tenant group, duplicate tenant group 
+summary: 既存のグループを複製することで、新しいグループをより迅速に作成できます。 
+---
+= グループを複製する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存のグループを複製することで、新しいグループをより迅速に作成できます。
+
+.必要なもの
+* Tenant Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限を持つユーザグループに属している必要があります。
+
+
+.手順
+. * access management * > * Groups * を選択します。
+. 複製するグループのチェックボックスをオンにします。
+. 「 * グループを複製 * 」を選択します。グループの作成の詳細については、S3テナントまたはSwiftテナントのグループを作成する手順を参照してください。
+. [ ローカルグループ *] タブを選択してローカルグループを作成するか、または [ フェデレーショングループ *] タブを選択して、以前に設定したアイデンティティソースからグループをインポートします。
++
+StorageGRID システムでシングルサインオン（ SSO ）が有効になっている場合、ローカルグループに属するユーザは Tenant Manager にサインインできません。ただし、クライアントアプリケーションを使用して、グループの権限に基づいてテナントのリソースを管理することはできます。
+
+. グループの名前を入力します。
++
+** * ローカルグループ * ：表示名と一意の名前の両方を入力します。表示名はあとで編集できます。
+** * フェデレーショングループ * ：一意の名前を入力します。Active Directoryの場合、に関連付けられている一意の名前です `sAMAccountName` 属性（Attribute）：OpenLDAPの場合は、に関連付けられている一意の名前です `uid` 属性（Attribute）：
+
+
+. 「 * Continue * 」を選択します。
+. 必要に応じて、このグループの権限を変更します。
+. 「 * Continue * 」を選択します。
+. 必要に応じて、 S3 テナントのグループを複製する場合は、 * S3 ポリシーの追加 * オプションボタンとは別のポリシーを選択します。カスタムポリシーを選択した場合は、 JSON 文字列を必要に応じて更新します。
+. 「 * グループを作成 * 」を選択します。
+
+
+.関連情報
+link:creating-groups-for-s3-tenant.html["S3テナント用のグループの作成"]
+
+link:creating-groups-for-swift-tenant.html["Swiftテナント用のグループの作成"]
+
+link:tenant-management-permissions.html["テナント管理権限"]

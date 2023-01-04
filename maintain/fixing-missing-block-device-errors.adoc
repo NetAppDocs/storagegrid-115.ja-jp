@@ -1,0 +1,44 @@
+---
+permalink: maintain/fixing-missing-block-device-errors.html 
+sidebar: sidebar 
+keywords: storagegrid, missing block device, block device error 
+summary: 'システムは、リカバリされた各ノードが有効なブロックデバイススペシャルファイル、またはブロックデバイススペシャルファイルへの有効なソフトリンクにマッピングされていることを確認します。StorageGRID がで無効なマッピングを検出した場合 `/etc/storagegrid/nodes/_node-name_.conf` ファイル。ブロックデバイスが見つからないことを示すエラーが表示されます。' 
+---
+= ブロックデバイスが見つからないエラーの修正
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+システムは、リカバリされた各ノードが有効なブロックデバイススペシャルファイル、またはブロックデバイススペシャルファイルへの有効なソフトリンクにマッピングされていることを確認します。StorageGRID がで無効なマッピングを検出した場合 `/etc/storagegrid/nodes/_node-name_.conf` ファイル。ブロックデバイスが見つからないことを示すエラーが表示されます。
+
+次のエラーが発生することがあります。
+
+`Checking configuration file /etc/storagegrid/nodes/_node-name_.conf for node _node-name_...`
+`ERROR: _node-name_: BLOCK_DEVICE_PURPOSE = _path-name_``_node-name_:_path-name_does not exist`
+
+これはそのことを意味します `/etc/storagegrid/nodes/_node-name_.conf` Linuxファイルシステムで特定のパス名に目的として_node-name_forで使用されているブロックデバイスをマッピングしますが、有効なブロックデバイススペシャルファイル、またはブロックデバイススペシャルファイルへのソフトリンクがこの場所にありません。
+
+「新しいLinuxホストの導入」の手順を完了したことを確認します。すべてのブロックデバイスに、元のホストで使用されていたのと同じ永続的なデバイス名を使用します。
+
+見つからないブロックデバイスのスペシャルファイルをリストアまたは再作成できない場合は、適切なサイズとストレージカテゴリの新しいブロックデバイスを割り当て、ノード構成ファイルを編集して新しいブロックデバイスのスペシャルファイルを参照するように block_device_purpose の値を変更します。
+
+Linux オペレーティングシステムのインストール手順の「ストレージ要件」の表から適切なサイズとストレージカテゴリを決定します。ブロック・デバイスの交換に進む前に ' ホスト・ストレージの構成に記載されている推奨事項を確認してください
+
+
+IMPORTANT: で始まる構成ファイル変数に新しいブロックストレージデバイスを指定する必要がある場合 `BLOCK_DEVICE_` 元のブロックデバイスは障害ホストとともに失われたため、リカバリ手順を進める前に新しいブロックデバイスがフォーマットされていないことを確認してください。共有ストレージを使用していて新しいボリュームを作成済みの場合、新しいブロックデバイスはアンフォーマットされます。状況がわからない場合は、新しいブロックストレージデバイスのスペシャルファイルに対して次のコマンドを実行します。
+
+
+CAUTION: 次のコマンドは、新しいブロックストレージデバイスに対してのみ実行してください。デバイス上のデータがすべて失われるため、リカバリされているノードの有効なデータがブロックストレージに格納されている可能性がある場合は、このコマンドを実行しないでください。
+
+[listing]
+----
+sudo dd if=/dev/zero of=/dev/mapper/my-block-device-name bs=1G count=1
+----
+.関連情報
+link:deploying-new-linux-hosts.html["新しいLinuxホストの導入"]
+
+link:../rhel/index.html["Red Hat Enterprise Linux または CentOS をインストールします"]
+
+link:../ubuntu/index.html["Ubuntu または Debian をインストールします"]

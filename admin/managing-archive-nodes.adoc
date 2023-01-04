@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-archive-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: 必要に応じて、StorageGRID システムの各データセンターサイトにアーカイブノードを導入して、Tivoli Storage Manager\（TSM）などの外部アーカイブストレージシステムに接続できます。 
+---
+= アーカイブノードの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+必要に応じて、StorageGRID システムの各データセンターサイトにアーカイブノードを導入して、Tivoli Storage Manager（TSM）などの外部アーカイブストレージシステムに接続できます。
+
+外部ターゲットへの接続を設定したあと、 TSM のパフォーマンスを最適化するようにアーカイブノードを設定できます。 TSM サーバの容量が上限に近づいている場合や TSM サーバを使用できない場合は、アーカイブノードをオフラインにできます。また、レプリケーションと読み出しを設定できます。アーカイブノードにカスタムアラームを設定することもできます。
+
+* link:what-archive-node-is.html["アーカイブノードとは"]
+* link:configuring-archive-node-connections-to-archival-storage.html["アーカイブストレージへのアーカイブノード接続を設定しています"]
+* link:setting-custom-alarms-for-archive-node.html["アーカイブノード用のカスタムアラームの設定"]
+* link:integrating-tivoli-storage-manager.html["Tivoli Storage Managerを統合する"]
+

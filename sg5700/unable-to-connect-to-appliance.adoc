@@ -1,0 +1,57 @@
+---
+permalink: sg5700/unable-to-connect-to-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, troubleshoot, troubleshooting, connect, connection, unable to connect, no connection 
+summary: アプライアンスに接続できない場合は、ネットワーク問題 があるか、またはハードウェアの設置が正常に完了していない可能性があります。 
+---
+= アプライアンスに接続できません
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アプライアンスに接続できない場合は、ネットワーク問題 があるか、またはハードウェアの設置が正常に完了していない可能性があります。
+
+.手順
+. SANtricity システムマネージャに接続できない場合は、次の手順を実行します。
++
+.. SANtricity System Managerの管理ネットワークで、E2800コントローラのIPアドレスを使用してアプライアンスにpingを送信します：+
+`*ping _E2800_Controller_IP_*`
+.. ping からの応答がない場合は、正しい IP アドレスを使用していることを確認します。
++
+E2800 コントローラの管理ポート 1 の IP アドレスを使用します。
+
+.. IP アドレスが正しい場合は、アプライアンスのケーブル接続とネットワークのセットアップを確認します。
++
+この手順で問題 が解決しない場合は、テクニカルサポートにお問い合わせください。
+
+.. ping が成功した場合は、 Web ブラウザを開きます。
+.. SANtricity システムマネージャのURLとして「+」を入力します
+`*https://_E2800_Controller_IP_*`
++
+SANtricity System Manager のログインページが表示されます。
+
+
+
+. E5700SG コントローラに接続できない場合は、次の手順を実行してください。
++
+.. E5700SGコントローラのIPアドレス+を使用してアプライアンスにpingを送信してください
+`*ping _E5700SG_Controller_IP_*`
+.. ping からの応答がない場合は、正しい IP アドレスを使用していることを確認します。
++
+グリッドネットワーク、管理ネットワーク、またはクライアントネットワークでのアプライアンスの IP アドレスを使用できます。
+
+.. IP アドレスが正しい場合は、アプライアンスのケーブル接続、 SFP トランシーバ、およびネットワークのセットアップを確認します。
++
+この手順で問題 が解決しない場合は、テクニカルサポートにお問い合わせください。
+
+.. ping が成功した場合は、 Web ブラウザを開きます。
+.. StorageGRID アプライアンスインストーラのURLとして「+」を入力します
+`*https://_E5700SG_Controller_IP_:8443*`
++
+ホームページが表示されます。
+
+
+
+

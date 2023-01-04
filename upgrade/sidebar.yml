@@ -1,0 +1,56 @@
+---
+section: upgrade
+title: ソフトウェアをアップグレードする
+url: "/upgrade/index.html"
+entries:
+- title: StorageGRID 11.5について
+  url: "/upgrade/about-this-release.html"
+  entries:
+  - title: StorageGRID 11.5の新機能
+    url: "/upgrade/whats-new.html"
+  - title: 削除または廃止された機能
+    url: "/upgrade/removed-or-deprecated-features.html"
+  - title: Grid 管理 API に対する変更
+    url: "/upgrade/changes-to-grid-management-api.html"
+  - title: テナント管理 API に変更が加えられました
+    url: "/upgrade/changes-to-tenant-management-api.html"
+- title: アップグレードの計画と準備
+  url: "/upgrade/upgrade-planning-and-preparation.html"
+  entries:
+  - title: アップグレード所要時間の見積もり
+    url: "/upgrade/estimating-time-to-complete-upgrade.html"
+  - title: アップグレード中にシステムが受ける影響
+    url: "/upgrade/how-your-system-is-affected-during-upgrade.html"
+  - title: アップグレードによるグループおよびユーザアカウントへの影響
+    url: "/upgrade/impact-of-upgrade-on-groups-and-user-accounts.html"
+  - title: インストールされているStorageGRID のバージョンを確認しています
+    url: "/upgrade/verifying-installed-version-of-storagegrid.html"
+  - title: ソフトウェアアップグレードの前提要件の確認
+    url: "/upgrade/obtaining-required-materials-for-software-upgrade.html"
+    entries:
+    - title: Web ブラウザの要件
+      url: "/upgrade/web-browser-requirements.html"
+  - title: StorageGRID アップグレードファイルをダウンロードします
+    url: "/upgrade/downloading-storagegrid-upgrade-files.html"
+  - title: リカバリパッケージをダウンロードしています
+    url: "/upgrade/downloading-recovery-package.html"
+  - title: ソフトウェアをアップグレードする前に、システムの状態を確認します
+    url: "/upgrade/checking-systems-condition-before-upgrading-software.html"
+- title: アップグレードを実行する
+  url: "/upgrade/performing-upgrade.html"
+  entries:
+  - title: Linux：すべてのホストにRPMパッケージまたはDEBパッケージをインストールします
+    url: "/upgrade/linux-installing-rpm-or-deb-package-on-all-hosts.html"
+  - title: アップグレードを開始する
+    url: "/upgrade/starting-upgrade.html"
+  - title: グリッドノードのアップグレードとアップグレードの完了
+    url: "/upgrade/upgrading-grid-nodes-and-completing-upgrade.html"
+  - title: Metadata Reserved Space設定を拡張しています
+    url: "/upgrade/increasing-metadata-reserved-space-setting.html"
+- title: アップグレードの問題のトラブルシューティング
+  url: "/upgrade/troubleshooting-upgrade-issues.html"
+  entries:
+  - title: ユーザインターフェイスの問題のトラブルシューティング
+    url: "/upgrade/troubleshooting-user-interface-issues.html"
+  - title: "「 Docker image availability check 」というエラーメッセージが表示される"
+    url: "/upgrade/docker-image-availability-check-error-messages.html"

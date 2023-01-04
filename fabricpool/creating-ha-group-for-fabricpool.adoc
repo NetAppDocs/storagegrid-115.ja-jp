@@ -1,0 +1,40 @@
+---
+permalink: fabricpool/creating-ha-group-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, high availability group, HA group, create, creating, virtual IP, VIP, preferred master, backup interface 
+summary: FabricPool で使用するように StorageGRID を設定する場合は、必要に応じて 1 つ以上のハイアベイラビリティ（ HA\ ）グループを作成できます。HA グループは、管理ノード、ゲートウェイノード、またはその両方の 1 つ以上のネットワークインターフェイスで構成されます。 
+---
+= FabricPool のハイアベイラビリティ（HA）グループの作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FabricPool で使用するように StorageGRID を設定する場合は、必要に応じて 1 つ以上のハイアベイラビリティ（ HA ）グループを作成できます。HA グループは、管理ノード、ゲートウェイノード、またはその両方の 1 つ以上のネットワークインターフェイスで構成されます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限が必要です。
+
+
+.このタスクについて
+各 HA グループは、仮想 IP アドレス（ VIP ）を使用して、関連付けられたノード上の共有サービスへの可用性の高いアクセスを提供します。
+
+詳細については、を参照してください。を参照してください link:../admin/managing-high-availability-groups.html["ハイアベイラビリティグループの管理"]。
+
+.手順
+. * Configuration *>* Network Settings *>* High Availability Groups *を選択します。
+. ネットワークインターフェイスを1つ以上選択してください。ネットワークインターフェイスは、グリッドネットワーク（eth0）またはクライアントネットワーク（eth2）上の同じサブネットに属している必要があります。
+. 1つのノードを優先マスターに割り当てます。
++
+優先マスターは、障害が発生してVIPアドレスがバックアップインターフェイスに再割り当てされない限り、アクティブインターフェイスです。
+
+. HAグループのIPv4アドレスを10個まで入力します。
++
+すべてのメンバーインターフェイスで共有するIPv4サブネット内のアドレスを指定する必要があります。
+
++
+image::../media/create_ha_group_for_fabricpool.png[FabricPool のHAグループを作成します]
+
+

@@ -1,0 +1,21 @@
+---
+permalink: ilm/creating-storage-grades-storage-pools-ec-profiles-regions.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システム用のILMルールを作成する前に、オブジェクトの格納場所を定義し、希望するコピーのタイプを決め、必要に応じてS3リージョンを設定する必要があります。 
+---
+= ストレージグレード、ストレージプール、ECプロファイル、リージョンを作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システム用のILMルールを作成する前に、オブジェクトの格納場所を定義し、希望するコピーのタイプを決め、必要に応じてS3リージョンを設定する必要があります。
+
+* link:creating-and-assigning-storage-grades.html["ストレージグレードを作成して割り当てます"]
+* link:configuring-storage-pools.html["ストレージプールを設定しています"]
+* link:using-cloud-storage-pools.html["クラウドストレージプールの使用"]
+* link:configuring-erasure-coding-profiles.html["イレイジャーコーディングプロファイルの設定"]
+* link:configuring-regions-optional-and-s3-only.html["リージョンの設定（オプション、S3のみ）"]
+

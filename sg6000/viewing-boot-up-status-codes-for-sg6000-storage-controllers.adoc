@@ -1,0 +1,41 @@
+---
+permalink: sg6000/viewing-boot-up-status-codes-for-sg6000-storage-controllers.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, boot codes, boot-up codes, start codes, codes, boot, start, storage controller, controller, storage 
+summary: 各ストレージコントローラにはデジタル表示ディスプレイがあり、電源投入時にステータスコードが表示されます。ステータスコードは、 E2800 コントローラと EF570 コントローラで同じです。 
+---
+= SG6000ストレージコントローラのブート時のステータスコードを確認する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+各ストレージコントローラにはデジタル表示ディスプレイがあり、電源投入時にステータスコードが表示されます。ステータスコードは、 E2800 コントローラと EF570 コントローラで同じです。
+
+.このタスクについて
+これらのコードの説明については、使用しているストレージコントローラタイプの E シリーズシステムの監視に関する情報を参照してください。
+
+.手順
+. ブート時に、各ストレージコントローラのデジタル表示ディスプレイに表示されるコードを確認して進行状況を監視します。
++
+各ストレージコントローラのデジタル表示ディスプレイに、* OS *、* SD *、 `*_blank_*` コントローラが一日の開始処理を実行中であることを示します。
+
+. コントローラがブートすると、各ストレージコントローラに E シリーズコントローラシェルフのデフォルト ID である 99 が表示されます。
++
+この値が両方のストレージコントローラに表示されていることを確認してください。以下は E2800 コントローラの例です。
+
++
+image::../media/seven_segment_display_codes_for_e2800.gif[E2800 のデジタル表示ディスプレイに表示されているコード]
+
+. 一方または両方のコントローラに別の値が表示される場合は、ハードウェアの設置に関するトラブルシューティング情報を参照し、設置手順が正しく完了していることを確認してください。問題を解決できない場合は、テクニカルサポートにお問い合わせください。
+
+
+.関連情報
+https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html["E5700 and E2800 System Monitoring Guide"^]
+
+link:troubleshooting-hardware-installation.html["ハードウェアの設置のトラブルシューティング"]
+
+https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"^]
+
+link:powering-on-sg6000-cn-controller-and-verifying-operation.html["SG6000-CNコントローラの電源をオンにして処理を確認します"]

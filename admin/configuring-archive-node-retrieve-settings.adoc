@@ -1,0 +1,41 @@
+---
+permalink: admin/configuring-archive-node-retrieve-settings.html 
+sidebar: sidebar 
+keywords:  
+summary: アーカイブノードの読み出し設定を行って、状態をオンラインまたはオフラインに設定したり、関連するアラームで追跡されているエラー数をリセットしたりできます。 
+---
+= アーカイブノードの読み出し設定を構成しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アーカイブノードの読み出し設定を行って、状態をオンラインまたはオフラインに設定したり、関連するアラームで追跡されているエラー数をリセットしたりできます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* 特定のアクセス権限が必要です。
+
+
+.手順
+. Support *>* Tools *>* Grid Topology *を選択します。
+. アーカイブノード* ARC *読み出し*を選択します。
+. * Configuration * > * Main * を選択します。
++
+image::../media/archive_node_retreive.gif[アーカイブノードの設定の取得ページ]
+
+. 必要に応じて次の設定を変更します。
++
+** * Retrieve State * ：コンポーネントの状態を次のいずれかに設定します。
++
+*** Online ：グリッドノードがアーカイブメディアデバイスからオブジェクトデータを読み出すことができます。
+*** Offline ：グリッドノードはオブジェクトデータを読み出すことができません。
+
+
+** Reset Request Failures Count ：オンにすると、要求エラーのカウンタがリセットされます。この設定を使用して、 ARRF （ Request Failures ）アラームをクリアできます。
+** Reset Verification Failure Count ：オンにすると、読み出したオブジェクトデータの検証エラーのカウンタがリセットされます。この設定を使用して、 ARRV （ Verification Failures ）アラームをクリアできます。
+
+
+. [ 変更の適用 *] をクリックします。
+

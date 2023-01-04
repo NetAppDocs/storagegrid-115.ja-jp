@@ -1,0 +1,254 @@
+---
+permalink: monitor/comparing-alerts-and-alarms.html 
+sidebar: sidebar 
+keywords: alerts, alarms, comparing alerts and alarms 
+summary: アラートシステムと従来のアラームシステムにはいくつかの類似点がありますが、アラートシステムには大きなメリットがあり、使いやすくなっています。 
+---
+= アラートとアラームの比較
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アラートシステムと従来のアラームシステムにはいくつかの類似点がありますが、アラートシステムには大きなメリットがあり、使いやすくなっています。
+
+同様の処理を実行する方法については、次の表を参照してください。
+
+|===
+|  | アラート | アラーム（レガシーシステム） 
+
+
+ a| 
+アクティブなアラートまたはアラームを確認するにはどうすればよいですか？
+ a| 
+* ダッシュボードの* Current alerts *リンクをクリックします。
+* ノード*>*概要*ページで警告をクリックします。
+* [* Alerts*>*current*]を選択します。
+
+
+link:viewing-current-alerts.html["現在のアラートの表示"]
+ a| 
+* ダッシュボードの*レガシーアラーム*リンクをクリックします。
+* [*Support*>]>[* Alarms (legac)*>]>[* Current Alarms]を選択します。
+
+
+link:viewing-legacy-alarms.html["古いアラームの表示"]
+
+
+
+ a| 
+アラートまたはアラートがトリガーされる原因
+ a| 
+アラートは、アラートルールの Prometheus 式で特定のトリガー条件と期間について true と評価されたときにトリガーされます。
+
+link:managing-alerts.html["アラートルールを表示しています"]
+ a| 
+StorageGRID 属性がしきい値に達すると、アラームがトリガーされます。
+
+link:managing-alarms.html["アラームトリガーロジック（レガシーシステム）"]
+
+
+
+ a| 
+アラートまたはアラームがトリガーされた場合、原因となっている問題をどのように解決すればよいですか？
+ a| 
+アラートの推奨される対処方法は E メール通知に含まれており、 Grid Manager のアラートページから確認できます。
+
+追加情報 は、必要に応じて StorageGRID のドキュメントに記載されています。
+
+link:alerts-reference.html["アラート一覧"]
+ a| 
+アラームの詳細については、属性名をクリックするか、StorageGRID のドキュメントでアラームコードを検索して確認できます。
+
+link:alarms-reference.html["アラーム一覧（従来のシステム）"]
+
+
+
+ a| 
+アラートまたはアラームのリストはどこで確認できますか？
+ a| 
+* ダッシュボードの最近解決したアラート*リンクをクリックします。
+* [* Alerts*>]>[* Resolved *]を選択します。
+
+
+link:viewing-resolved-alerts.html["解決済みのアラートの表示"]
+ a| 
+[*Support*>]>[* Alarms (legac)*>]>[* Historical Alarms]を選択します。
+
+link:managing-alarms.html["アラーム履歴とアラーム頻度の確認（従来のシステム）"]
+
+
+
+ a| 
+設定を管理する場所
+ a| 
+[Alerts（アラート）]を選択します。次に、[Alerts]メニューのオプションを使用します。
+
+link:managing-alerts.html["アラートの管理"]
+ a| 
+[ サポート ] を選択します。次に、メニューの * Alarms （レガシー） * セクションのオプションを使用します。
+
+link:managing-alarms.html["アラームの管理（従来のシステム）"]
+
+
+
+ a| 
+どのようなユーザグループ権限が必要ですか？
+ a| 
+* Grid Manager にサインインできるユーザは、現在のアラートと解決済みのアラートを表示できます。
+* サイレンス、アラート通知、およびアラートルールを管理するには、 Manage Alerts 権限が必要です。
+
+
+link:../admin/index.html["StorageGRID の管理"]
+ a| 
+* Grid Manager にサインインできるすべてのユーザがレガシーアラームを表示できます。
+* アラームを確認するには、 Acknowledge Alarms 権限が必要です。
+* グローバルなアラームと E メール通知を管理するには、 Grid Topology Page Configuration 権限と Other Grid Configuration 権限の両方が必要です。
+
+
+link:../admin/index.html["StorageGRID の管理"]
+
+
+
+ a| 
+電子メール通知の管理方法を教えてください。
+ a| 
+[* Alerts*>*Email Setup*]を選択します。
+
+* 注： * アラームとアラートは独立したシステムなので、アラームと AutoSupport 通知に使用されるメール設定は、アラート通知には使用されません。ただし、すべての通知に同じメールサーバを使用できます。
+
+link:managing-alerts.html["アラート通知の管理"]
+ a| 
+[*Support*>]>[* Alarms (legacy]*>[* Legacy Email Setup*]を選択します。 link:managing-alarms.html["アラームの通知の設定（従来のシステム）"]
+
+
+
+ a| 
+SNMP 通知の管理方法を教えてください。
+ a| 
+* Configuration *>* Monitoring *>* SNMP Agent *を選択します。 link:using-snmp-monitoring.html["SNMPによる監視を使用する"]
+ a| 
+* Configuration *>* Monitoring *>* SNMP Agent *を選択します。 link:using-snmp-monitoring.html["SNMPによる監視を使用する"]
+
+* 注 * ： SNMP 通知は、すべてのアラームまたはアラーム重大度について送信されるわけではありません。
+
+link:alarms-that-generate-snmp-notifications.html["SNMP 通知を生成するアラーム（従来のシステム）"]
+
+
+
+ a| 
+通知の受信者を制御するにはどうすればよいですか？
+ a| 
+. [* Alerts*>*Email Setup*]を選択します。
+. [ 受信者 * ] セクションで、電子メールリストごと、またはアラート発生時に電子メールを受信する必要があるユーザーごとに電子メールアドレスを入力します。
+
+
+link:managing-alerts.html["アラート用のEメール通知の設定"]
+ a| 
+. [*Support*>]>[* Alarms (legacy]*>[* Legacy Email Setup*]を選択します。
+. メーリングリストを作成しています。
+. [*Notifications] を選択します。
+. メーリングリストを選択します。
+
+
+link:managing-alarms.html["アラーム通知のメーリングリストの作成（従来のシステム）"]
+
+link:managing-alarms.html["アラームのEメール通知の設定（従来のシステム）"]
+
+
+
+ a| 
+通知を送信する管理ノードはどれですか？
+ a| 
+1 つの管理ノード（「優先送信者」）。
+
+link:../admin/index.html["StorageGRID の管理"]
+ a| 
+1 つの管理ノード（「優先送信者」）。
+
+link:../admin/index.html["StorageGRID の管理"]
+
+
+
+ a| 
+一部の通知を停止する方法を教えてください。
+ a| 
+. [*アラート*>]>[*サイレンス*]を選択します。
+. サイレント化するアラートルールを選択します。
+. サイレンスの期間を指定します。
+. サイレント化するアラートの重大度を選択します。
+. を選択して、グリッド全体、単一サイト、または単一ノードにサイレンスを適用します。
+
+
+* 注： SNMP エージェントを有効にした場合、サイレンスは SNMP トラップおよびインフォームも抑制します。
+
+link:managing-alerts.html["アラート通知のサイレント化"]
+ a| 
+. [*Support*>]>[* Alarms (legacy]*>[* Legacy Email Setup*]を選択します。
+. [*Notifications] を選択します。
+. メーリングリストを選択し、 * 抑制 * を選択します。
+
+
+link:managing-alarms.html["メーリングリストでのアラーム通知の停止（従来のシステム）"]
+
+
+
+ a| 
+すべての通知を停止するにはどうすればよいですか？
+ a| 
+[*アラート*>*サイレンス*]を選択します。次に、[*すべてのルール*]を選択します。
+
+* 注： SNMP エージェントを有効にした場合、サイレンスは SNMP トラップおよびインフォームも抑制します。
+
+link:managing-alerts.html["アラート通知のサイレント化"]
+ a| 
+. * Configuration *>* System Settings *>* Display Options *を選択します。
+. [* 通知 - すべてを抑制 * ] チェックボックスをオンにします。
+
+
+* 注：システム全体で E メール通知を無効にすることで、イベントトリガー型 AutoSupport E メールも抑制されます。
+
+link:managing-alarms.html["システム全体でのEメール通知の停止"]
+
+
+
+ a| 
+条件とトリガーをカスタマイズする方法を教えてください。
+ a| 
+. [*アラート*>]>[*アラートルール*]を選択します。
+. 編集するデフォルトルールを選択するか、 * カスタムルールの作成 * を選択します。
+
+
+link:managing-alerts.html["アラートルールを編集する"]
+
+link:managing-alerts.html["カスタムのアラートルールを作成する"]
+ a| 
+. [*Support*>]>[* Alarms (legac)*>]>[* Global Alarms]を選択します。
+. グローバルカスタムアラームを作成して、デフォルトアラームを上書きしたり、デフォルトアラームのない属性を監視したりします。
+
+
+link:managing-alarms.html["グローバルカスタムアラームの作成（従来のシステム）"]
+
+
+
+ a| 
+個々のアラートまたはアラームを無効にする方法を教えてください。
+ a| 
+. [*アラート*>]>[*アラートルール*]を選択します。
+. ルールを選択し、*ルールの編集*をクリックします。
+. [ 有効 *] チェックボックスの選択を解除します。
+
+
+link:managing-alerts.html["アラートルールを無効にします"]
+ a| 
+. [*Support*>]>[* Alarms (legac)*>]>[* Global Alarms]を選択します。
+. ルールを選択し、[編集]アイコンをクリックします。
+. [ 有効 *] チェックボックスの選択を解除します。
+
+
+link:managing-alarms.html["デフォルトアラームの無効化（レガシーシステム）"]
+
+link:managing-alarms.html["グローバルカスタムアラームの無効化（従来のシステム）"]
+
+|===

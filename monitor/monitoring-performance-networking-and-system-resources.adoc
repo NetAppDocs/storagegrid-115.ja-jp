@@ -1,0 +1,14 @@
+---
+permalink: monitor/monitoring-performance-networking-and-system-resources.html 
+sidebar: sidebar 
+keywords:  
+summary: パフォーマンス、ネットワーク、およびシステムのリソースを監視して、StorageGRID が現在の負荷を処理できるかどうかを判断し、クライアントのパフォーマンスが時間とともに低下しないようにする必要があります。 
+---
+= パフォーマンス、ネットワーク、およびシステムリソースの監視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+パフォーマンス、ネットワーク、およびシステムのリソースを監視して、StorageGRID が現在の負荷を処理できるかどうかを判断し、クライアントのパフォーマンスが時間とともに低下しないようにする必要があります。

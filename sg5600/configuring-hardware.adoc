@@ -1,0 +1,22 @@
+---
+permalink: sg5600/configuring-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, hardware, configure, configuration, set up, setup, network, networking 
+summary: アプライアンスの電源を入れたら、ハードウェアの監視に使用するソフトウェアである SANtricity Storage Manager を設定する必要があります。また、 StorageGRID で使用されるネットワーク接続も設定する必要があります。 
+---
+= ハードウェアの設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アプライアンスの電源を入れたら、ハードウェアの監視に使用するソフトウェアである SANtricity Storage Manager を設定する必要があります。また、 StorageGRID で使用されるネットワーク接続も設定する必要があります。
+
+.手順
+* link:configuring-storagegrid-connections.html["StorageGRID 接続を設定しています"]
+* link:configuring-santricity-storage-manager.html["SANtricity Storage Managerを設定しています"]
+* link:optional-enabling-node-encryption.html["オプション：ノード暗号化を有効にする"]
+* link:optional-changing-to-raid6-mode-sg5660-only.html["オプション：RAID 6モードへの変更（SG5660のみ）"]
+* link:optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html["オプション：アプライアンスに対するネットワークポートの再マッピング"]
+

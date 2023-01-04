@@ -1,0 +1,22 @@
+---
+permalink: tenant/managing-s3-platform-services.html 
+sidebar: sidebar 
+keywords:  
+summary: S3テナントアカウントにプラットフォームサービスの使用が許可されている場合は、プラットフォームサービスを使用して外部サービスを利用し、S3バケットに対してCloudMirrorレプリケーション、通知、および検索統合を設定できます。 
+---
+= S3プラットフォームサービスの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3テナントアカウントにプラットフォームサービスの使用が許可されている場合は、プラットフォームサービスを使用して外部サービスを利用し、S3バケットに対してCloudMirrorレプリケーション、通知、および検索統合を設定できます。
+
+* link:what-platform-services-are.html["プラットフォームサービスとは"]
+* link:considerations-for-using-platform-services.html["プラットフォームサービスの使用に関する考慮事項"]
+* link:configuring-platform-services-endpoints.html["プラットフォームサービスエンドポイントの設定"]
+* link:configuring-cloudmirror-replication.html["CloudMirrorレプリケーションの設定"]
+* link:configuring-event-notifications.html["イベント通知を設定する"]
+* link:using-search-integration-service.html["検索統合サービスを使用する"]
+

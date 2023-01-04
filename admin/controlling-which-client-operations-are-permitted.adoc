@@ -1,0 +1,49 @@
+---
+permalink: admin/controlling-which-client-operations-are-permitted.html 
+sidebar: sidebar 
+keywords:  
+summary: PreventClientModification グリッドオプションを選択して、特定の HTTP クライアント処理を拒否することができます。 
+---
+= 許可するクライアント処理の制御
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+PreventClientModification グリッドオプションを選択して、特定の HTTP クライアント処理を拒否することができます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* 特定のアクセス権限が必要です。
+
+
+.このタスクについて
+クライアント変更の禁止は、システム全体の設定です。[ クライアント変更を禁止する ] オプションを選択すると、次の要求が拒否されます。
+
+* * S3 REST API *
++
+** バケットの削除要求
+** 既存オブジェクトのデータ、ユーザ定義メタデータ、または S3 オブジェクトのタグを変更するすべての要求
++
+
+NOTE: この設定は、バージョン管理が有効なバケットには適用されません。バージョン管理によって、すでにオブジェクトデータ、ユーザ定義メタデータ、オブジェクトのタグを変更できないようになっています。
+
+
+
+* * Swift REST API *
++
+** コンテナの削除要求
+** 既存のオブジェクトを変更する要求。たとえば、 Put Overwrite 、 Delete 、 Metadata Update などの処理が拒否されます。
+
+
+
+
+.手順
+. 「*環境設定*システム設定**グリッドオプション*」を選択します。
+. [ ネットワークオプション ] セクションで、 [ クライアントの変更を禁止する *] チェックボックスをオンにします。
++
+image::../media/prevent_client_modification.png[クライアントの変更を禁止します]
+
+. [ 保存（ Save ） ] をクリックします。
+

@@ -1,0 +1,27 @@
+---
+permalink: sg5600/index.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance 
+summary: StorageGRID SG5612とSG5660アプライアンスをインストールおよび保守する方法について説明します。 
+---
+= SG5600 ストレージアプライアンス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID SG5612とSG5660アプライアンスをインストールおよび保守する方法について説明します。
+
+* link:storagegrid-appliance-overview.html["StorageGRID アプライアンスの概要"]
+* link:installation-and-deployment-overview.html["インストールと導入の概要"]
+* link:preparing-for-installation.html["設置を準備しています"]
+* link:installing-hardware.html["ハードウェアを設置"]
+* link:configuring-hardware.html["ハードウェアの設定"]
+* link:deploying-appliance-storage-node.html["アプライアンスストレージノードの導入"]
+* link:monitoring-storage-appliance-installation.html["ストレージアプライアンスのインストールの監視"]
+* link:automating-appliance-installation-and-configuration.html["アプライアンスのインストールと設定の自動化"]
+* link:overview-of-installation-rest-apis.html["インストール REST API の概要"]
+* link:troubleshooting-hardware-installation.html["ハードウェアの設置のトラブルシューティング"]
+* link:maintaining-sg5600-appliance.html["SG5600アプライアンスのメンテナンス"]
+

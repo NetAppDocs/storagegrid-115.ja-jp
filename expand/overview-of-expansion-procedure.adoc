@@ -1,0 +1,36 @@
+---
+permalink: expand/overview-of-expansion-procedure.html 
+sidebar: sidebar 
+keywords: expand, expansion, overview 
+summary: StorageGRID 拡張を実行するための基本的な手順は、拡張のタイプによって異なります。ストレージノードへのストレージボリュームの追加、既存のサイトへの新しいノードの追加、または新しいサイトの追加です。いずれの場合も、拡張は現在のシステムの処理を中断せずに実行できます。 
+---
+= 拡張手順 の概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 拡張を実行するための基本的な手順は、拡張のタイプによって異なります。ストレージノードへのストレージボリュームの追加、既存のサイトへの新しいノードの追加、または新しいサイトの追加です。いずれの場合も、拡張は現在のシステムの処理を中断せずに実行できます。
+
+グリッドに追加するノードのタイプやノードを追加する理由は、基本的な拡張手順 には影響しません。次のワークフロー図に示すように、ノードを追加する手順は、StorageGRID アプライアンスと、VMwareまたはLinuxを実行しているホストのどちらを追加するかによって多少異なります。
+
+
+NOTE: ネットアップでは、OpenStackでのStorageGRID の新規インストールまたは拡張を対象とした仮想マシンディスクファイルおよびスクリプトの提供は現在は行っていません。OpenStackの既存の環境を拡張する場合は、Linuxディストリビューション向けの手順に従ってください。
+
+
+NOTE: 「 Linux 」とは、 Red Hat ® Enterprise Linux ® 、 Ubuntu ® 、 CentOS 、または Debian ® の環境を指します。サポートされているバージョンの一覧については、 NetApp Interoperability Matrix Tool を参照してください。
+
+image::../media/expansion_workflow.png[拡張プロセスの概要を示すフローチャート]
+
+* 関連情報 *
+
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]
+
+link:planning-expansion.html["StorageGRID 拡張の計画"]
+
+link:preparing-for-expansion.html["拡張の準備"]
+
+link:adding-storage-volumes-to-storage-nodes.html["ストレージノードへのストレージボリュームの追加"]
+
+link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["既存のサイトへのグリッドノードの追加と新しいサイトの追加"]

@@ -1,0 +1,14 @@
+---
+permalink: maintain/troubleshooting-server-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: テクニカルサポートから、Server Manager関連の問題の原因を突き止めるためにトラブルシューティングタスクの実行を指示される場合があります。 
+---
+= Server Managerのトラブルシューティング
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+テクニカルサポートから、Server Manager関連の問題の原因を突き止めるためにトラブルシューティングタスクの実行を指示される場合があります。

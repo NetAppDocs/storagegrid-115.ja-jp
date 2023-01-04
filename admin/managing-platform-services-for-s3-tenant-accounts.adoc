@@ -1,0 +1,20 @@
+---
+permalink: admin/managing-platform-services-for-s3-tenant-accounts.html 
+sidebar: sidebar 
+keywords:  
+summary: S3 テナントアカウントでプラットフォームサービスを有効にする場合は、テナントがそのサービスの使用に必要な外部リソースにアクセスできるようにグリッドを設定する必要があります。 
+---
+= S3テナントアカウント用のプラットフォームサービスの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3 テナントアカウントでプラットフォームサービスを有効にする場合は、テナントがそのサービスの使用に必要な外部リソースにアクセスできるようにグリッドを設定する必要があります。
+
+* link:what-platform-services-are.html["プラットフォームサービスとは"]
+* link:networking-and-ports-for-platform-services.html["プラットフォームサービス用のネットワークとポート"]
+* link:per-site-delivery-of-platform-services-messages.html["サイト単位のプラットフォームサービスメッセージの配信"]
+* link:troubleshooting-platform-services.html["プラットフォームサービスのトラブルシューティング"]
+

@@ -1,0 +1,29 @@
+---
+permalink: maintain/site-decommissioning.html 
+sidebar: sidebar 
+keywords:  
+summary: データセンターサイトの StorageGRID システムからの削除が必要になる場合があります。サイトを削除するには、サイトの運用を停止する必要があります。 
+---
+= サイトの運用停止
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データセンターサイトの StorageGRID システムからの削除が必要になる場合があります。サイトを削除するには、サイトの運用を停止する必要があります。
+
+次のフローチャートは、サイトの運用停止手順の概要を示しています。
+
+image::../media/overview_decommission_site.png[概要：運用停止サイト]
+
+.手順
+* link:considerations-for-removing-site.html["サイトの削除に関する考慮事項"]
+* link:gathering-required-materials-site-decom.html["前提要件"]
+* link:step-1-select-site.html["手順 1 ： [ サイト ] を選択します"]
+* link:step-2-view-details.html["手順 2 ：詳細を表示する"]
+* link:step-3-revise-ilm-policy.html["手順 3 ： ILM ポリシーを改訂する"]
+* link:step-4-remove-ilm-references.html["手順 4 ： ILM 参照を削除する"]
+* link:step-5-resolve-node-conflicts.html["手順 5 ：ノードの競合を解決する（運用停止を開始する）"]
+* link:step-6-monitor-decommission.html["ステップ 6 ：運用停止を監視する"]
+

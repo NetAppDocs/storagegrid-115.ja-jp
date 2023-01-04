@@ -1,0 +1,22 @@
+---
+permalink: swift/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Swift を使用します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クライアントアプリケーションでOpenStack Swift APIを使用して、StorageGRID システムを操作する方法について説明します。
+
+* link:openstack-swift-api-support-in-storagegrid.html["StorageGRID でのOpenStack Swift APIのサポート"]
+* link:configuring-tenant-accounts-and-connections.html["テナントアカウントと接続を設定する"]
+* link:swift-rest-api-supported-operations.html["Swift REST API でサポートされている処理"]
+* link:storagegrid-swift-rest-api-operations.html["StorageGRID の Swift REST API 処理"]
+* link:configuring-security-for-rest-api.html["REST APIのセキュリティの設定"]
+* link:monitoring-and-auditing-operations.html["処理の監視と監査"]
+

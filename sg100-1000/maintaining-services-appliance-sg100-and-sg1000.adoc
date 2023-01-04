@@ -1,0 +1,28 @@
+---
+permalink: sg100-1000/maintaining-services-appliance-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, maintain, maintaining, hardware, procedures, tasks 
+summary: アプライアンスのメンテナンス作業が必要になることがあります。このセクションの手順は、アプライアンスが StorageGRID システムにゲートウェイノードまたは管理ノードとしてすでに導入されていることを前提としています。 
+---
+= アプライアンスのメンテナンス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アプライアンスのメンテナンス作業が必要になることがあります。このセクションの手順は、アプライアンスが StorageGRID システムにゲートウェイノードまたは管理ノードとしてすでに導入されていることを前提としています。
+
+.手順
+* link:placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]
+* link:turning-controller-identify-led-on-and-off.html["コントローラ識別LEDのオンとオフの切り替え"]
+* link:locating-controller-in-data-center.html["コントローラのデータセンターへの配置"]
+* link:replacing-services-appliance.html["サービスアプライアンスの交換"]
+* link:replacing-power-supply-in-services-appliance.html["サービスアプライアンスの電源装置の交換"]
+* link:replacing-fan-in-services-appliance.html["サービスアプライアンスのファンの交換"]
+* link:replacing-drive-in-services-appliance.html["サービスアプライアンスのドライブの交換"]
+* link:changing-link-configuration-of-services-appliance.html["サービスアプライアンスのリンク設定の変更"]
+* link:changing-mtu-setting.html["MTU設定を変更します"]
+* link:checking-dns-server-configuration.html["DNSサーバの設定を確認しています"]
+* link:monitoring-node-encryption-in-maintenance-mode.html["メンテナンスモードでのノード暗号化の監視"]
+

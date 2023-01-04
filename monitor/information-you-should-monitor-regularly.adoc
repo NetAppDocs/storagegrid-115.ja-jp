@@ -1,0 +1,91 @@
+---
+permalink: monitor/information-you-should-monitor-regularly.html 
+sidebar: sidebar 
+keywords: monitor, monitoring, StorageGRID, 
+summary: StorageGRID は、フォールトトレラントな分散ストレージシステムで、エラーが発生した場合やノードやサイトを使用できない場合でも、継続して動作するように設計されています。システムの健全性、ワークロード、および使用状況の統計情報をプロアクティブに監視して、潜在的な問題にグリッドの効率や可用性に影響が及ぶ前に対処できるようにする必要があります。 
+---
+= 定期的に監視する必要がある情報
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID は、フォールトトレラントな分散ストレージシステムで、エラーが発生した場合やノードやサイトを使用できない場合でも、継続して動作するように設計されています。システムの健全性、ワークロード、および使用状況の統計をプロアクティブに監視して、潜在的な問題にグリッドの効率性または可用性に影響が及ぶ前に対処できるようにする必要があります。
+
+ビジーシステムでは大量の情報が生成されます。このセクションでは、継続的に監視する必要がある最も重要な情報についてガイダンスを提供します。ここでは、次のサブセクションについて説明します。
+
+* link:monitoring-system-health.html["システムヘルスを監視しています"]
+* link:monitoring-storage-capacity.html["ストレージ容量を監視しています"]
+* link:monitoring-information-lifecycle-management.html["情報ライフサイクル管理の監視"]
+* link:monitoring-performance-networking-and-system-resources.html["パフォーマンス、ネットワーク、およびシステムリソースの監視"]
+* link:monitoring-tenant-activity.html["テナントアクティビティの監視"]
+* link:monitoring-archival-capacity.html["アーカイブ容量を監視しています"]
+* link:monitoring-load-balancing-operations.html["ロードバランシング処理の監視"]
+* link:applying-hotfixes-or-upgrading-software-if-necessary.html["必要に応じてホットフィックスの適用またはソフトウェアのアップグレードを行います"]
+
+
+|===
+| 監視対象 | 頻度 
+
+
+ a| 
+Grid Managerのダッシュボードに表示されるシステム健全性データ。前日から変更があった場合はメモします。
+ a| 
+毎日
+
+
+
+ a| 
+ストレージノードのオブジェクトとメタデータの容量が消費されている速度です
+ a| 
+毎週
+
+
+
+ a| 
+情報ライフサイクル管理のオペレーション
+ a| 
+毎週
+
+
+
+ a| 
+パフォーマンス、ネットワーク、システムリソース：
+
+* クエリのレイテンシ
+* 接続とネットワーク
+* ノードレベルのリソース
+
+ a| 
+毎週
+
+
+
+ a| 
+テナントのアクティビティ
+ a| 
+毎週
+
+
+
+ a| 
+外部アーカイブストレージシステムの容量
+ a| 
+毎週
+
+
+
+ a| 
+ロードバランシング操作
+ a| 
+初期設定後と設定の変更後
+
+
+
+ a| 
+ソフトウェアのホットフィックスおよびソフトウェアのアップグレードの可用性
+ a| 
+毎月
+
+|===

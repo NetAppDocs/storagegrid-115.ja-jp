@@ -1,0 +1,77 @@
+---
+permalink: vmware/running-bash-script.html 
+sidebar: sidebar 
+keywords:  
+summary: deploy-vsphere-ovftool.sh Bashスクリプトおよび各自で変更したdeploy-vsphere-ovftool.ini構成ファイルを使用して、VMware vSphereへのStorageGRID グリッドノードの導入を自動化することができます。 
+---
+= Bashスクリプトの実行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+を使用できます `deploy-vsphere-ovftool.sh` VMware vSphereへのStorageGRID グリッドノードの導入を自動化するために変更したBashスクリプトおよびdeploy-vsphere-ovftool.ini構成ファイル。
+
+.必要なもの
+* 環境に対応した deploy-vsphere-ovftool.ini 構成ファイルを作成しておきます。
+
+
+Bashスクリプトのヘルプを参照するには、ヘルプコマンドを入力します (`-h/--help`）。例：
+
+[listing]
+----
+./deploy-vsphere-ovftool.sh -h
+----
+または
+
+[listing]
+----
+./deploy-vsphere-ovftool.sh --help
+----
+.手順
+. Bash スクリプトの実行に使用する Linux マシンにログインします。
+. インストールアーカイブを展開したディレクトリに移動します。
++
+例：
+
++
+[listing]
+----
+cd StorageGRID-Webscale-version/vsphere
+----
+. グリッドノードをすべて導入する場合は、使用する環境に適したオプションを指定して Bash スクリプトを実行します。
++
+例：
+
++
+[listing]
+----
+./deploy-vsphere-ovftool.sh --username=user --password=pwd ./deploy-vsphere-ovftool.ini
+----
+. エラーのために導入できなかったグリッドノードがある場合は、エラーを解決し、そのノードだけを対象に Bash スクリプトを再実行します。
++
+例：
+
++
+[listing]
+----
+./deploy-vsphere-ovftool.sh --username=user --password=pwd --single-node="DC1-S3" ./deploy-vsphere-ovftool.ini
+----
+
+
+各ノードのステータスが Passed になると ' 配備は完了します
+
+[listing]
+----
+Deployment Summary
++-----------------------------+----------+----------------------+
+| node                        | attempts | status               |
++-----------------------------+----------+----------------------+
+| DC1-ADM1                    |        1 | Passed               |
+| DC1-G1                      |        1 | Passed               |
+| DC1-S1                      |        1 | Passed               |
+| DC1-S2                      |        1 | Passed               |
+| DC1-S3                      |        1 | Passed               |
++-----------------------------+----------+----------------------+
+----

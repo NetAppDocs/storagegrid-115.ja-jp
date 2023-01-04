@@ -1,0 +1,34 @@
+---
+permalink: admin/updating-link-costs.html 
+sidebar: sidebar 
+keywords:  
+summary: データセンターサイト間のリンクコストを更新して、サイト間のレイテンシを反映させることができます。 
+---
+= リンクコストを更新しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データセンターサイト間のリンクコストを更新して、サイト間のレイテンシを反映させることができます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Grid Topology Page Configuration権限が必要です。
+
+
+.手順
+. [*環境設定*]>[*ネットワーク設定*]>[*リンクコスト*]を選択します。
++
+image::../media/configuring_link_costs.png[リンクコスト]
+
+. [ リンク先 * ] でサイトを選択し、 [ リンク先 * ] に 0 ～ 100 のコスト値を入力します。
++
+リンク元がリンク先と同じ場合は、リンクコストを変更できません。
+
++
+変更をキャンセルするには、をクリックします image:../media/nms_revert.gif["取り消しアイコン"]* 復帰 * 。
+
+. [ 変更の適用 *] をクリックします。
+

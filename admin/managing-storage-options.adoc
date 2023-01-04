@@ -1,0 +1,18 @@
+---
+permalink: admin/managing-storage-options.html 
+sidebar: sidebar 
+keywords:  
+summary: ストレージオプションは、Grid Managerの設定メニューを使用して表示および設定できます。ストレージオプションには、オブジェクトのセグメント化設定と、ストレージウォーターマークの現在の値が含まれます。ゲートウェイノード上の廃止された CLB サービスおよびストレージノード上の LDR サービスで使用されている S3 および Swift ポートを表示することもできます。 
+---
+= ストレージオプションの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージオプションは、Grid Managerの設定メニューを使用して表示および設定できます。ストレージオプションには、オブジェクトのセグメント化設定と、ストレージウォーターマークの現在の値が含まれます。ゲートウェイノード上の廃止された CLB サービスおよびストレージノード上の LDR サービスで使用されている S3 および Swift ポートを表示することもできます。
+
+ポート割り当ての詳細については、を参照してください link:summary-ip-addresses-and-ports-for-client-connections.html["Summary ：クライアント接続の IP アドレスとポート"]。
+
+image::../media/storage_options.gif[ストレージオプション]

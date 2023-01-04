@@ -1,0 +1,60 @@
+---
+permalink: admin/specifying-protocol-for-autosupport-messages.html 
+sidebar: sidebar 
+keywords:  
+summary: AutoSupport メッセージの送信には、3つのプロトコルのいずれかを使用できます。 
+---
+= AutoSupport メッセージのプロトコルの指定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport メッセージの送信には、3つのプロトコルのいずれかを使用できます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限または Other Grid Configuration 権限が必要です。
+* AutoSupport メッセージの送信用にHTTPSプロトコルまたはHTTPプロトコルを使用する場合は、プライマリ管理ノードへのアウトバウンドインターネットアクセスを直接提供するか、プロキシサーバを使用して提供しておく必要があります（インバウンド接続は不要です）。
+* HTTPSまたはHTTPプロトコルの使用時にプロキシサーバを使用する場合は、管理プロキシサーバを設定しておく必要があります。
+* AutoSupport メッセージのプロトコルとしてSMTPを使用する場合は、SMTPメールサーバを設定しておく必要があります。アラームの E メール通知には同じメールサーバ設定（従来のシステム）が使用されます。
+
+
+.このタスクについて
+AutoSupport メッセージは、次のいずれかのプロトコルを使用して送信できます。
+
+* * HTTPS * ：これはデフォルトで、新規インストールに推奨される設定です。HTTPS プロトコルはポート 443 を使用します。AutoSupport On Demand 機能を有効にする場合は、 HTTPS プロトコルを使用する必要があります。
+* * HTTP * ：このプロトコルは、インターネット経由でデータを送信する際にプロキシサーバーが HTTPS に変換する信頼された環境で使用されない限り、安全ではありません。HTTP プロトコルはポート 80 を使用します。
+* * SMTP * ： AutoSupport メッセージを E メールで送信する場合は、このオプションを使用します。SMTPをAutoSupport メッセージのプロトコルとして使用する場合は、[Legacy Email Setup]ページ（* Support * Alarms（レガシー）** Legacy Email Setup*）でSMTPメールサーバを設定する必要があります。
++
+
+NOTE: StorageGRID 11.2 より前のリリースでは、 SMTP が AutoSupport メッセージに使用できる唯一のプロトコルでした。以前のバージョンの StorageGRID をインストールしていた場合は、 SMTP がプロトコルとして選択されている可能性があります。
+
+
+
+設定したプロトコルは、すべてのタイプの AutoSupport メッセージの送信に使用されます。
+
+.手順
+. [*サポート*（Support *）]>[*ツール*（* Tools *）]>[* AutoSupport *（**）]
++
+AutoSupport ページが表示され、 * 設定 * タブが選択されます。
+
+. AutoSupport メッセージの送信に使用するプロトコルを選択します。
++
+image::../media/autosupport_protocol.png[AutoSupport プロトコル]
+
+. ネットアップサポート証明書の検証*を選択します。
++
+** ネットアップサポート証明書を使用（デフォルト）：証明書の検証により、AutoSupport メッセージの送信がセキュアになります。ネットアップサポート証明書は、 StorageGRID ソフトウェアとともにすでにインストールされています。
+** Do not verify certificate（証明書を検証しない）：このオプションは、証明書の一時的な問題が発生した場合など、証明書の検証を使用しない十分な理由がある場合にのみ選択します。
+
+
+. [ 保存（ Save ） ] を選択します。
++
+毎週、ユーザトリガー型、およびイベントトリガー型のすべてのメッセージが選択したプロトコルを使用して送信されます。
+
+
+
+.関連情報
+link:configuring-admin-proxy-settings.html["管理プロキシの設定"]

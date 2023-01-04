@@ -1,0 +1,32 @@
+---
+permalink: admin/kms-adding.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID キー管理サーバウィザードを使用して、各 KMS または KMS クラスタを追加します。 
+---
+= キー管理サーバの追加（KMS）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID キー管理サーバウィザードを使用して、各 KMS または KMS クラスタを追加します。
+
+.必要なもの
+* を確認しておく必要があります link:kms-considerations-and-requirements.html["キー管理サーバを使用する際の考慮事項と要件"]。
+* が必要です link:kms-configuring-storagegrid-as-client.html["KMS でクライアントとして StorageGRID を設定"]をクリックし、KMSまたはKMSクラスタごとに必要な情報を確認しておく必要があります
+* Root Access 権限が必要です。
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+
+
+.このタスクについて
+可能環境 であれば、サイト固有のキー管理サーバを設定してから、別の KMS で管理されていないデフォルトの KMS を設定してください。最初にデフォルトの KMS を作成すると、グリッド内のノードで暗号化されたすべてのアプライアンスがデフォルトの KMS で暗号化されます。サイト固有の KMS をあとで作成するには、まず、暗号化キーの現在のバージョンをデフォルトの KMS から新しい KMS にコピーする必要があります。
+
+link:kms-considerations-for-changing-for-site.html["サイトの KMS を変更する際の考慮事項"]
+
+.手順
+. link:kms-adding-enter-kms-details.html["手順 1 ： KMS の詳細を入力します"]
+. link:kms-adding-upload-server-certificate.html["手順 2 ：サーバ証明書をアップロードする"]
+. link:kms-adding-upload-client-certificates.html["手順 3 ：クライアント証明書をアップロードする"]
+

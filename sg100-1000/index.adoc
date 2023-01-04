@@ -1,0 +1,27 @@
+---
+permalink: sg100-1000/index.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node 
+summary: StorageGRID SG100およびSG1000アプライアンスの設置とメンテナンスの方法について説明します。 
+---
+= SG100およびSG1000サービスアプライアンス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID SG100およびSG1000アプライアンスの設置とメンテナンスの方法について説明します。
+
+* link:sg100-and-sg1000-appliances-overview.html["SG100 および SG1000 アプライアンスの概要"]
+* link:sg100-and-sg1000-applications.html["SG100 および SG1000 アプリケーション"]
+* link:installation-and-deployment-overview.html["インストールと導入の概要"]
+* link:preparing-for-installation-sg100-and-sg1000.html["設置を準備しています"]
+* link:installing-hardware-sg100-and-sg1000.html["ハードウェアを設置"]
+* link:configuring-storagegrid-connections-sg100-and-sg1000.html["StorageGRID 接続を設定しています"]
+* link:configuring-bmc-interface-sg1000.html["BMCインターフェイスを設定しています"]
+* link:optional-enabling-node-encryption.html["オプション：ノード暗号化を有効にする"]
+* link:deploying-services-appliance-node.html["サービスアプライアンスノードの導入"]
+* link:troubleshooting-hardware-installation-sg100-and-sg1000.html["ハードウェアの設置のトラブルシューティング"]
+* link:maintaining-services-appliance-sg100-and-sg1000.html["アプライアンスのメンテナンス"]
+

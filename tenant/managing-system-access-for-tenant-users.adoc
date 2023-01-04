@@ -1,0 +1,19 @@
+---
+permalink: tenant/managing-system-access-for-tenant-users.html 
+sidebar: sidebar 
+keywords:  
+summary: テナントアカウントへのアクセス権をユーザに付与するには、フェデレーテッドアイデンティティソースからグループをインポートして、管理権限を割り当てます。StorageGRID システム全体でシングルサインオン（SSO）が有効になっていないかぎり、ローカルテナントグループおよびユーザを作成することもできます。 
+---
+= テナントユーザのシステムアクセスの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+テナントアカウントへのアクセス権をユーザに付与するには、フェデレーテッドアイデンティティソースからグループをインポートして、管理権限を割り当てます。StorageGRID システム全体でシングルサインオン（SSO）が有効になっていないかぎり、ローカルテナントグループおよびユーザを作成することもできます。
+
+* link:using-identity-federation.html["アイデンティティフェデレーションを使用する"]
+* link:managing-groups.html["グループの管理"]
+* link:managing-local-users.html["ローカルユーザの管理"]
+

@@ -1,0 +1,21 @@
+---
+permalink: s3/how-storagegrid-implements-s3-rest-api.html 
+sidebar: sidebar 
+keywords:  
+summary: クライアントアプリケーションは、S3 REST API呼び出しを使用してStorageGRID に接続し、バケットの作成、削除、変更、およびオブジェクトの格納と読み出しを行うことができます。 
+---
+= StorageGRID でのS3 REST APIの実装
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+クライアントアプリケーションは、S3 REST API呼び出しを使用してStorageGRID に接続し、バケットの作成、削除、変更、およびオブジェクトの格納と読み出しを行うことができます。
+
+* link:conflicting-client-requests.html["競合するクライアント要求です"]
+* link:consistency-controls.html["整合性制御"]
+* link:how-storagegrid-ilm-rules-manage-objects.html["StorageGRID の ILM ルールによるオブジェクトの管理"]
+* link:object-versioning.html["オブジェクトのバージョン管理"]
+* link:recommendations-for-implementing-s3-rest-api.html["S3 REST APIを実装する際の推奨事項"]
+

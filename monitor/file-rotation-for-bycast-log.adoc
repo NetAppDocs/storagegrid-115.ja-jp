@@ -1,0 +1,26 @@
+---
+permalink: monitor/file-rotation-for-bycast-log.html 
+sidebar: sidebar 
+keywords: file rotation, bycast, log, file rotation, bycast.log 
+summary: 'をクリックします `bycast.log` ファイルが1GBに達し、既存のファイルが保存され、新しいログファイルが開始されます。' 
+---
+= bycast.log ファイルのローテーション
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+をクリックします `bycast.log` ファイルが1GBに達し、既存のファイルが保存され、新しいログファイルが開始されます。
+
+保存されたファイルの名前が変更されます `bycast.log.1`をクリックすると、新しいファイルの名前がになります `bycast.log`。新しいとき `bycast.log` 1GBに達しました。 `bycast.log.1` が圧縮されて名前がに変更されます `bycast.log.2.gz`および `bycast.log` の名前がに変更され `bycast.log.1`。
+
+の回転制限です `bycast.log` は21ファイルです。の22番目のバージョン `bycast.log` ファイルが作成され、最も古いファイルが削除されます。
+
+の回転制限です `bycast-err.log` は7つのファイルです。
+
+
+NOTE: 圧縮されたログファイルは、ファイルが圧縮された同じ場所に解凍しないでください。ファイルを同じ場所で解凍すると、ログローテーションスクリプトの妨げになることがあります。
+
+.関連情報
+link:collecting-log-files-and-system-data.html["ログファイルとシステムデータを収集しています"]

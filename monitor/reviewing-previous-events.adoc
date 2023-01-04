@@ -1,0 +1,31 @@
+---
+permalink: monitor/reviewing-previous-events.html 
+sidebar: sidebar 
+keywords:  
+summary: 以前のイベントメッセージのリストを生成して、過去に発生した問題を特定することができます。 
+---
+= 以前のイベントを確認しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以前のイベントメッセージのリストを生成して、過去に発生した問題を特定することができます。
+
+. Support *>* Tools *>* Grid Topology *を選択します。
+. [*_site *>] > [*_grid node_*] > * ssm * > * Events * > * Reports * ] を選択します。
+. 「 * テキスト * 」を選択します。
++
+「* Last Event *」属性は「Charts（チャート）」ビューには表示されません。
+
+. 属性 * を * 最後のイベント * に変更します。
+. 必要に応じて、 * クイッククエリ * の期間を選択します。
+. [ 更新（ Update ） ] をクリックします。
++
+image::../media/events_report.gif[［ イベント ］ ページ]
+
+
+
+.関連情報
+link:using-charts-and-reports.html["グラフとレポートを使用する"]

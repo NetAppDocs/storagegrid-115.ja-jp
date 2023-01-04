@@ -1,0 +1,20 @@
+---
+permalink: audit/index.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, logs, messages, log, message 
+summary: StorageGRID システムの監査ログについて説明し、すべての監査メッセージの一覧を確認します。 
+---
+= 監査ログを確認します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムの監査ログについて説明し、すべての監査メッセージの一覧を確認します。
+
+* link:audit-message-overview.html["監査メッセージの概要"]
+* link:audit-file-and-message-formats.html["監査ログファイルおよびメッセージの形式"]
+* link:audit-messages-and-object-lifecycle.html["監査メッセージとオブジェクトライフサイクル"]
+* link:audit-messages-main.html["監査メッセージ"]
+

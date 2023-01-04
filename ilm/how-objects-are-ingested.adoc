@@ -1,0 +1,42 @@
+---
+permalink: ilm/how-objects-are-ingested.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID は、オブジェクトに一致するILMルールの指定に従って、同期配置またはデュアルコミットを実行し、取り込み時にオブジェクトを保護します。 
+---
+= オブジェクトの取り込み方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID は、オブジェクトに一致するILMルールの指定に従って、同期配置またはデュアルコミットを実行し、取り込み時にオブジェクトを保護します。
+
+S3またはSwiftクライアントがオブジェクトをグリッドに格納すると、次のどちらかの方法でStorageGRID にオブジェクトが取り込まれます。
+
+* *同期配置*：StorageGRID は、ILM要件を満たすために必要なすべてのオブジェクトコピーをただちに作成します。すべてのコピーが作成されると、StorageGRID は「ingest successful」メッセージをクライアントに送信します。
++
+StorageGRID は、すべてのオブジェクトコピーをただちに作成できない場合（必要な場所が一時的に使用できない場合など）、クライアントに「ingest failed」というメッセージを送信します。または、ILMルールの作成時に選択した内容に応じて、中間オブジェクトコピーの作成とILMの評価を実行します。
+
+* *デュアル・コミット*：StorageGRID は'それぞれ異なるストレージ・ノード上に'オブジェクトの中間コピーを2つ作成し'クライアントにingest successfulメッセージを送信します次に、StorageGRID はオブジェクトをILM評価のキューに登録します。
++
+StorageGRID によるILM評価では、中間コピーがILMルールの配置手順を満たしているかどうかが最初にチェックされます。たとえば、2つの中間コピーが2コピーのILMルールの手順を満たしていても、イレイジャーコーディングルールの手順を満たしていない場合があります。中間コピーがILMの手順を満たしていない場合、StorageGRID は新しいオブジェクトコピーを作成し、不要な中間コピーをすべて削除します。
+
++
+StorageGRID が中間コピーを2つ作成できない場合（ネットワーク問題 が2つ目のコピーを作成できない場合など）、StorageGRID は再試行しません。取り込みは失敗します。
+
++
+
+NOTE: S3 / Swiftクライアントでは、を指定することで、StorageGRID が取り込み時に1つの中間コピーを作成するように指定できます `REDUCED_REDUNDANCY` ストレージクラス。詳細については、S3 / Swiftクライアントを実装する手順を参照してください。
+
+
+
+デフォルトでは、StorageGRID は同期配置を使用して取り込み時にオブジェクトを保護します。
+
+.関連情報
+link:data-protection-options-for-ingest.html["取り込みのデータ保護オプション"]
+
+link:../s3/index.html["S3 を使用する"]
+
+link:../swift/index.html["Swift を使用します"]

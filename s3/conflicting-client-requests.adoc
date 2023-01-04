@@ -1,0 +1,16 @@
+---
+permalink: s3/conflicting-client-requests.html 
+sidebar: sidebar 
+keywords:  
+summary: 同じキーに書き込む2つのクライアントなど、競合するクライアント要求は、「latest-wins」ベースで解決されます。 
+---
+= 競合するクライアント要求です
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+同一キーに書き込む2つのクライアントなど'競合するクライアント要求は'最新のWINS形式で解決されます
+
+「latest-wins」評価のタイミングは、S3クライアントが処理を開始するタイミングではなく、StorageGRID システムが特定の要求を完了したタイミングに基づいています。

@@ -1,0 +1,28 @@
+---
+permalink: upgrade/changes-to-tenant-management-api.html 
+sidebar: sidebar 
+keywords: tenant management api, api, api version, swagger, rest api 
+summary: StorageGRID 11.5は、バージョン3のテナント管理APIを使用します。バージョン 3 はバージョン 2 に代わるものですが、バージョン 1 とバージョン 2 も引き続きサポートされます。 
+---
+= テナント管理 API に変更が加えられました
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11.5は、バージョン3のテナント管理APIを使用します。バージョン 3 はバージョン 2 に代わるものですが、バージョン 1 とバージョン 2 も引き続きサポートされます。
+
+
+IMPORTANT: バージョン1とバージョン2の管理APIはStorageGRID 11.5で引き続き使用できますが、これらのバージョンのAPIのサポートはStorageGRID の今後のリリースで終了する予定です。StorageGRID 11.5にアップグレードしたあとに、でv1およびv2 APIを非アクティブ化できます `PUT /grid/config/management` API
+
+
+
+== テナントストレージ使用状況APIの新しいパラメータ
+
+。 `GET /org/usage` APIにが追加されました `strictConsistency` パラメータストレージノード間でストレージ使用状況情報を取得するときにstrong-global整合性を適用するには、このパラメータをに設定します `true`。このパラメータがに設定されている場合 `false` （デフォルト）StorageGRID は、strong-global整合性を使用して使用状況の情報を取得しますが、strong-global整合性が保証されていない場合はstrong-site整合性にフォールバックします。
+
+.関連情報
+link:../s3/index.html["S3 を使用する"]
+
+link:../tenant/index.html["テナントアカウントを使用する"]

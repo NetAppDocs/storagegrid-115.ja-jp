@@ -1,0 +1,115 @@
+---
+permalink: s3/using-s3-object-lock.html 
+sidebar: sidebar 
+keywords: using S3 object lock, object lock, S3 object 
+summary: StorageGRID システムでグローバルな S3 オブジェクトのロック設定が有効になっている場合は、 S3 オブジェクトのロックを有効にしたバケットを作成し、そのバケットに追加するオブジェクトのバージョンごとに retain-until date および legal hold 設定を指定できます。 
+---
+= S3 オブジェクトロックを使用する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムでグローバルな S3 オブジェクトのロック設定が有効になっている場合は、 S3 オブジェクトのロックを有効にしたバケットを作成し、そのバケットに追加するオブジェクトのバージョンごとに retain-until date および legal hold 設定を指定できます。
+
+S3 オブジェクトロックでは、オブジェクトレベルの設定を指定して、一定期間または無期限にオブジェクトが削除または上書きされないようにすることができます。
+
+StorageGRID S3 オブジェクトロック機能は、 Amazon S3 準拠モードと同等の単一の保持モードを提供します。デフォルトでは、保護されたオブジェクトバージョンは、どのユーザーでも上書きまたは削除できません。StorageGRID S3 オブジェクトのロック機能では、ガバナンスモードはサポートされず、特別な権限を持つユーザは保持設定を省略したり保護されたオブジェクトを削除したりすることはできません。
+
+
+
+== バケットでS3オブジェクトのロックを有効にする
+
+StorageGRID システムでグローバルな S3 オブジェクトのロック設定が有効になっている場合は、各バケットの作成時に S3 オブジェクトのロックを必要に応じて有効にすることができます。次のいずれかの方法を使用できます。
+
+* Tenant Manager を使用してバケットを作成します。
++
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+* を指定したPUT Bucket要求を使用してバケットを作成します `x-amz-bucket-object-lock_enabled` 要求ヘッダー。
++
+link:s3-rest-api-supported-operations-and-limitations.html["バケットの処理"]
+
+
+
+バケットの作成後に S3 オブジェクトのロックを追加または無効にすることはできません。S3 オブジェクトロックにはバケットのバージョン管理が必要です。バケットの作成時に自動的に有効になります。
+
+S3 オブジェクトのロックが有効になっているバケットには、 S3 オブジェクトのロック設定があるオブジェクトとなっていないオブジェクトを組み合わせて含めることができます。StorageGRID では、S3オブジェクトロックバケット内のオブジェクトのデフォルトの保持はサポートされないため、PUT Object Lock Configurationバケットの処理はサポートされません。
+
+
+
+== バケットでS3オブジェクトのロックが有効になっているかどうかを確認しています
+
+S3オブジェクトロックが有効になっているかどうかを確認するには、GET Object Lock Configuration要求を使用します。
+
+link:s3-rest-api-supported-operations-and-limitations.html["バケットの処理"]
+
+
+
+== S3オブジェクトのロック設定を使用してオブジェクトを作成する
+
+S3 オブジェクトロックが有効に問題 なっているバケットにオブジェクトのバージョンを追加するときに S3 オブジェクトのロック設定を指定するには、 PUT Object 、 PUT Object - Copy 、 Initiate Multipart Upload 要求のいずれかを実行します。次の要求ヘッダーを使用します。
+
+
+NOTE: バケットの作成時に S3 オブジェクトのロックを有効にする必要があります。バケットの作成後に S3 オブジェクトのロックを追加または無効にすることはできません。
+
+* `x-amz-object-lock-mode`は、コンプライアンスに準拠している必要があります（大文字と小文字が区別されます
++
+
+NOTE: を指定する場合 `x-amz-object-lock-mode`、も指定する必要があります `x-amz-object-lock-retain-until-date`。
+
+* `x-amz-object-lock-retain-until-date`
++
+** retain-une-dateの値は、の形式で指定する必要があります `2020-08-10T21:46:00Z`。秒数には分数を指定できますが、保持される 10 進数は 3 桁（ミリ秒単位）だけです。それ以外の ISO 8601 形式はサポートされません。
+** retain-une-date は将来の日付にする必要があります。
+
+
+* `x-amz-object-lock-legal-hold`
++
+リーガルホールドがオン（大文字と小文字が区別される）の場合、オブジェクトはリーガルホールドの対象になります。リーガルホールドがオフの場合、リーガルホールドは適用されません。それ以外の値を指定すると、 400 Bad Request （ InvalidArgument ）エラーが発生します。
+
+
+
+次のいずれかの要求ヘッダーを使用する場合は、次の制限事項に注意してください。
+
+* 。 `Content-MD5` 要求ヘッダーがある場合は必須です `x-amz-object-lock-*` 要求ヘッダーがPUT Object要求に含まれています。 `Content-MD5` PUT Object - CopyまたはInitiate Multipart Uploadには必要ありません。
+* バケットでS3オブジェクトロックが有効になっていない場合は、とをクリックします `x-amz-object-lock-*` 要求ヘッダーが存在し、400 Bad Request（InvalidRequest）エラーが返されます。
+* PUT Object要求では、の使用がサポートされます `x-amz-storage-class: REDUCED_REDUNDANCY` AWSの動作に合わせて調整できます。ただし、 S3 オブジェクトのロックが有効になっているバケットにオブジェクトが取り込まれると、 StorageGRID は常にデュアルコミットの取り込みを実行します。
+* 後続のGETまたはHEAD Objectバージョンの応答では、ヘッダーが含まれます `x-amz-object-lock-mode`、 `x-amz-object-lock-retain-until-date`および `x-amz-object-lock-legal-hold`が設定されている場合、および要求の送信者が正しいかどうか `s3:Get*` 権限：
+* それ以降の DELETE Object version 要求または DELETE Objects versions 要求は、 retain-until 日の前であるか、リーガルホールドがオンの場合には失敗します。
+
+
+
+
+== S3オブジェクトのロック設定を更新しています
+
+既存のオブジェクトのバージョンのリーガルホールドや保持の設定を更新する必要がある場合、次のオブジェクトサブリソース処理を実行できます。
+
+* `PUT Object legal-hold`
++
+新しいリーガルホールドの値が on の場合、オブジェクトはリーガルホールドの対象になります。リーガルホールドの値がオフの場合、リーガルホールドは解除されます。
+
+* `PUT Object retention`
++
+** モード値は準拠している必要があります（大文字と小文字が区別されます）。
+** retain-une-dateの値は、の形式で指定する必要があります `2020-08-10T21:46:00Z`。秒数には分数を指定できますが、保持される 10 進数は 3 桁（ミリ秒単位）だけです。それ以外の ISO 8601 形式はサポートされません。
+** オブジェクトバージョンに既存の retain-until がある場合は、オブジェクトバージョンを増やすことはできますが、増やすことはできません。新しい値は将来の必要があります。
+
+
+
+
+.関連情報
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+link:put-object.html["PUT Object の場合"]
+
+link:put-object-copy.html["PUT Object - Copy の各コマンドを実行します"]
+
+link:s3-rest-api-supported-operations-and-limitations.html["マルチパートアップロードを開始します"]
+
+link:object-versioning.html["オブジェクトのバージョン管理"]
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html["Amazon Simple Storage Service User Guide ： Using S3 Object Lock"]

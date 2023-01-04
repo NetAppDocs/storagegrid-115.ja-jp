@@ -1,0 +1,31 @@
+---
+permalink: admin/changing-network-transfer-encryption.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムでは、 Transport Layer Security （ TLS ）を使用して、グリッドノード間の内部制御トラフィックを保護します。Network Transfer Encryption オプションは、グリッドノード間の制御トラフィックを暗号化するために TLS で使用されるアルゴリズムを設定します。この設定はデータ暗号化には影響しません。 
+---
+= ネットワーク転送の暗号化の変更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムでは、 Transport Layer Security （ TLS ）を使用して、グリッドノード間の内部制御トラフィックを保護します。Network Transfer Encryption オプションは、グリッドノード間の制御トラフィックを暗号化するために TLS で使用されるアルゴリズムを設定します。この設定はデータ暗号化には影響しません。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* 特定のアクセス権限が必要です。
+
+
+.このタスクについて
+デフォルトでは、ネットワーク転送の暗号化には AES256-SHA アルゴリズムが使用されます。AES128-SHA アルゴリズムを使用して暗号化することもできます。
+
+.手順
+. 「*環境設定*システム設定**グリッドオプション*」を選択します。
+. ネットワークオプションセクションで、ネットワーク転送の暗号化を * AES128-SHA * または * AES256-SHA * （デフォルト）に変更します。
++
+image::../media/network_transfer_encryption.png[グリッド設定 - ネットワークの暗号化]
+
+. [ 保存（ Save ） ] をクリックします。
+

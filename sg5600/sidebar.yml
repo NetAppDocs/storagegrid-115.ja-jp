@@ -1,0 +1,157 @@
+---
+section: sg5600
+title: SG5600 ストレージアプライアンス
+url: "/sg5600/index.html"
+entries:
+- title: StorageGRID アプライアンスの概要
+  url: "/sg5600/storagegrid-appliance-overview.html"
+  entries:
+  - title: StorageGRID アプライアンスの特長
+    url: "/sg5600/storagegrid-appliance-features.html"
+  - title: ハードウェアの構成図
+    url: "/sg5600/hardware-diagrams.html"
+- title: インストールと導入の概要
+  url: "/sg5600/installation-and-deployment-overview.html"
+- title: 設置を準備しています
+  url: "/sg5600/preparing-for-installation.html"
+  entries:
+  - title: サイトの準備（SG5600）
+    url: "/sg5600/preparing-site-sg5600.html"
+  - title: 開梱（SG5600）
+    url: "/sg5600/unpacking-boxes-sg5600.html"
+  - title: 追加の機器と工具の入手（SG5600）
+    url: "/sg5600/obtaining-additional-equipment-and-tools-sg5600.html"
+  - title: サービスラップトップの要件
+    url: "/sg5600/service-laptop-requirements-sg5600.html"
+  - title: Web ブラウザの要件
+    url: "/sg5600/web-browser-requirements.html"
+  - title: アプライアンスのネットワーク接続を確認します
+    url: "/sg5600/reviewing-appliance-network-connections-sg5600.html"
+    entries:
+    - title: E5600SG コントローラポートのポートボンディングモード
+      url: "/sg5600/port-bond-modes-for-e5600sg-controller-ports.html"
+      entries:
+      - title: 10GbEポートのネットワークボンディングモード
+        url: "/sg5600/network-bond-modes-for-10-gbe-ports.html"
+      - title: 1GbE管理ポートのネットワークボンディングモード
+        url: "/sg5600/network-bond-modes-for-1-gbe-managment-ports.html"
+  - title: 設置情報の収集（SG5600）
+    url: "/sg5600/gathering-installation-information-sg5600.html"
+- title: ハードウェアを設置
+  url: "/sg5600/installing-hardware.html"
+  entries:
+  - title: ハードウェアの登録
+    url: "/sg5600/registering-hardware.html"
+  - title: キャビネットまたはラックへのアプライアンスの設置（SG5600）
+    url: "/sg5600/installing-appliance-in-cabinet-or-rack-sg5600.html"
+  - title: アプライアンスのケーブル接続（SG5600）
+    url: "/sg5600/cabling-appliance-sg5600.html"
+  - title: AC電源コードの接続（SG5600）
+    url: "/sg5600/connecting-ac-power-cords-sg5600.html"
+  - title: 電源のオン（SG5600）
+    url: "/sg5600/turning-power-on-sg5600.html"
+  - title: SG5600コントローラのブート時のステータスコードとエラーコードの確認
+    url: "/sg5600/viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.html"
+    entries:
+    - title: E5600SG コントローラのデジタル表示ディスプレイのコード
+      url: "/sg5600/e5600sg-controller-seven-segment-display-codes.html"
+- title: ハードウェアの設定
+  url: "/sg5600/configuring-hardware.html"
+  entries:
+  - title: StorageGRID 接続を設定しています
+    url: "/sg5600/configuring-storagegrid-connections.html"
+    entries:
+    - title: StorageGRID アプライアンスインストーラへのアクセス
+      url: "/sg5600/accessing-storagegrid-appliance-installer-sg5600.html"
+    - title: StorageGRID アプライアンスインストーラのバージョンの確認とアップグレード
+      url: "/sg5600/verifying-and-upgrading-storagegrid-appliance-installer-version.html"
+    - title: ネットワークリンクの設定（SG5600）
+      url: "/sg5600/configuring-network-links-sg5600.html"
+    - title: IPの設定
+      url: "/sg5600/setting-ip-configuration-sg5600.html"
+    - title: ネットワーク接続の確認
+      url: "/sg5600/verifying-network-connections.html"
+    - title: ポートレベルのネットワーク接続の確認
+      url: "/sg5600/verifying-port-level-network-connections.html"
+  - title: SANtricity Storage Managerを設定しています
+    url: "/sg5600/configuring-santricity-storage-manager.html"
+    entries:
+    - title: E2700コントローラのIPアドレスを設定します
+      url: "/sg5600/setting-ip-address-for-e2700-controller.html"
+    - title: SANtricity ストレージ・マネージャへのアプライアンスの追加
+      url: "/sg5600/adding-appliance-to-santricity-storage-manager.html"
+    - title: SANtricity Storage Managerをセットアップしています
+      url: "/sg5600/setting-up-santricity-storage-manager.html"
+      entries:
+      - title: AutoSupport を設定しています
+        url: "/sg5600/configuring-autosupport.html"
+      - title: AutoSupport の受信確認
+        url: "/sg5600/verifying-receipt-of-autosupport.html"
+      - title: EメールおよびSNMPトラップのアラート通知の設定
+        url: "/sg5600/configuring-email-and-snmp-trap-alert-notifications.html"
+      - title: SANtricity Storage Managerのパスワードを設定しています
+        url: "/sg5600/setting-passwords-for-santricity-storage-manager.html"
+  - title: オプション：ノード暗号化を有効にする
+    url: "/sg5600/optional-enabling-node-encryption.html"
+  - title: オプション：RAID 6モードへの変更（SG5660のみ）
+    url: "/sg5600/optional-changing-to-raid6-mode-sg5660-only.html"
+  - title: オプション：アプライアンスに対するネットワークポートの再マッピング
+    url: "/sg5600/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html"
+- title: アプライアンスストレージノードの導入
+  url: "/sg5600/deploying-appliance-storage-node.html"
+- title: ストレージアプライアンスのインストールの監視
+  url: "/sg5600/monitoring-storage-appliance-installation.html"
+- title: アプライアンスのインストールと設定の自動化
+  url: "/sg5600/automating-appliance-installation-and-configuration.html"
+  entries:
+  - title: StorageGRID アプライアンスインストーラを使用したアプライアンス設定の自動化
+    url: "/sg5600/automating-appliance-configuration-using-storagegrid-appliance-installer.html"
+  - title: configure-sga.pyスクリプトを使用して、アプライアンスノードのインストールと設定を自動化する
+    url: "/sg5600/automating-installation-configuration-appliance-nodes-configure-sga-py-script.html"
+  - title: StorageGRID の設定の自動化
+    url: "/sg5600/automating-configuration-of-storagegrid.html"
+- title: インストール REST API の概要
+  url: "/sg5600/overview-of-installation-rest-apis.html"
+- title: ハードウェアの設置のトラブルシューティング
+  url: "/sg5600/troubleshooting-hardware-installation.html"
+  entries:
+  - title: ハードウェアのセットアップがハングしたように見えます
+    url: "/sg5600/hardware-setup-progress-appears-to-hang.html"
+    entries:
+    - title: HE エラー： SANtricity OS ソフトウェアとの同期エラー
+      url: "/sg5600/he-error-error-synchronizing-with-santricity-os-software.html"
+  - title: 接続の問題のトラブルシューティング
+    url: "/sg5600/troubleshooting-connection-issues.html"
+    entries:
+    - title: StorageGRID アプライアンスにネットワーク経由で接続できません
+      url: "/sg5600/unable-to-connect-to-storagegrid-appliance-over-network.html"
+  - title: StorageGRID アプライアンスインストーラの実行中にコントローラをリブートします
+    url: "/sg5600/rebooting-controller-while-storagegrid-appliance-installer-is-running.html"
+- title: SG5600アプライアンスのメンテナンス
+  url: "/sg5600/maintaining-sg5600-appliance.html"
+  entries:
+  - title: アプライアンスをメンテナンスモードにします
+    url: "/sg5600/placing-appliance-into-maintenance-mode.html"
+  - title: グリッドマネージャを使用してストレージコントローラのSANtricity OSをアップグレードします
+    url: "/sg5600/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5600.html"
+  - title: E2700コントローラでのSANtricity OSのメンテナンスモードを使用したアップグレード
+    url: "/sg5600/upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html"
+  - title: SANtricity Storage Managerを使用してドライブファームウェアをアップグレードしています
+    url: "/sg5600/upgrading-drive-firmware-using-santricity-storage-manager.html"
+  - title: E2700コントローラの交換
+    url: "/sg5600/replacing-e2700-controller.html"
+  - title: E5600SGコントローラの交換
+    url: "/sg5600/replacing-e5600sg-controller.html"
+  - title: その他のハードウェアコンポーネントの交換
+    url: "/sg5600/replacing-other-hardware-components-sg5600.html"
+  - title: E5600SGコントローラのリンク設定の変更
+    url: "/sg5600/changing-link-configuration-of-e5600sg-controller.html"
+  - title: MTU設定を変更します
+    url: "/sg5600/changing-mtu-setting.html"
+  - title: DNSサーバの設定を確認しています
+    url: "/sg5600/checking-dns-server-configuration.html"
+  - title: メンテナンスモードでのノード暗号化の監視
+    url: "/sg5600/monitoring-node-encryption-in-maintenance-mode.html"
+    entries:
+    - title: キー管理サーバ設定のクリア
+      url: "/sg5600/clearing-key-management-server-configuration.html"

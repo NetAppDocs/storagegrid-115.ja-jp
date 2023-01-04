@@ -1,0 +1,43 @@
+---
+permalink: maintain/pausing-and-resuming-decommission-process-for-storage-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, decommission, storage node 
+summary: 必要に応じて、ストレージノードの運用停止手順 を特定の段階で一時停止できます。別のメンテナンス手順 を開始するには、ストレージノードで運用停止手順を一時停止する必要があります。もう一方の手順 の運用停止が完了したら、運用停止手順を再開できます。 
+---
+= ストレージノードの運用停止プロセスの一時停止と再開
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+必要に応じて、ストレージノードの運用停止手順 を特定の段階で一時停止できます。別のメンテナンス手順 を開始するには、ストレージノードで運用停止手順を一時停止する必要があります。もう一方の手順 の運用停止が完了したら、運用停止手順を再開できます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Maintenance または Root Access 権限が必要です。
+
+
+.手順
+. [* Maintenance *（メンテナンス）]>[* Maintenance Tasks（メンテナンスタスク）]*>[* Decommission]*を選択します
++
+Decommission ページが表示されます。
+
+. [* Decommission Nodes]をクリックします。
++
+Decommission Nodes ページが表示されます。手順 の運用停止が次のいずれかの段階に達すると、 * 一時停止 * ボタンが有効になります。
+
++
+** ILM を評価中です
+** イレイジャーコーディングデータの運用停止
+
+
+. 手順 を一時停止するには、*一時停止*をクリックします。
++
+現在のステージが一時停止され、 * Resume * （続行）ボタンが有効になります。
+
++
+image::../media/decommission_nodes_procedure_paused.png[ノード手順 の運用停止が一時停止され]
+
+. もう1つのメンテナンス手順 が終了したら、[* Resume（続行）]をクリックして運用停止を続行します。
+

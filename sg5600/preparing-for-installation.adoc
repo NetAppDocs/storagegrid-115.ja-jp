@@ -1,0 +1,24 @@
+---
+permalink: sg5600/preparing-for-installation.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, install, installation, preparation, get ready, prepare 
+summary: StorageGRID アプライアンスを設置するための準備では、設置場所を準備し、必要なすべてのハードウェア、ケーブル、工具を揃えます。また、 IP アドレスとネットワーク情報を収集する必要があります。 
+---
+= 設置を準備しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID アプライアンスを設置するための準備では、設置場所を準備し、必要なすべてのハードウェア、ケーブル、工具を揃えます。また、 IP アドレスとネットワーク情報を収集する必要があります。
+
+.手順
+* link:preparing-site-sg5600.html["サイトの準備（SG5600）"]
+* link:unpacking-boxes-sg5600.html["開梱（SG5600）"]
+* link:obtaining-additional-equipment-and-tools-sg5600.html["追加の機器と工具の入手（SG5600）"]
+* link:service-laptop-requirements-sg5600.html["サービスラップトップの要件"]
+* link:web-browser-requirements.html["Web ブラウザの要件"]
+* link:reviewing-appliance-network-connections-sg5600.html["アプライアンスのネットワーク接続を確認します"]
+* link:gathering-installation-information-sg5600.html["設置情報の収集（SG5600）"]
+

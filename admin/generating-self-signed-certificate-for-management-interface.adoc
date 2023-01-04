@@ -1,0 +1,68 @@
+---
+permalink: admin/generating-self-signed-certificate-for-management-interface.html 
+sidebar: sidebar 
+keywords:  
+summary: スクリプトを使用して、ホスト名の厳密な検証が必要な管理APIクライアント用の自己署名サーバ証明書を生成できます。 
+---
+= 管理インターフェイス用の自己署名サーバ証明書の生成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+スクリプトを使用して、ホスト名の厳密な検証が必要な管理APIクライアント用の自己署名サーバ証明書を生成できます。
+
+.必要なもの
+* 特定のアクセス権限が必要です。
+* を用意しておく必要があります `Passwords.txt` ファイル。
+
+
+.このタスクについて
+本番環境では、既知の認証局（CA）によって署名された証明書を使用する必要があります。CA によって署名された証明書は、システムを停止することなくローテーションできます。また、中間者攻撃に対する保護としても優れているため、セキュリティも強化されます。
+
+.手順
+. 各管理ノードの完全修飾ドメイン名（ FQDN ）を取得します。
+. プライマリ管理ノードにログインします。
++
+.. 次のコマンドを入力します。 `ssh admin@primary_Admin_Node_IP`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. 次のコマンドを入力してrootに切り替えます。 `su -`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
++
+rootとしてログインすると、プロンプトがから変わります `$` 終了： `#`。
+
+
+
+. 新しい自己署名証明書を使用して StorageGRID を設定します。
++
+`$ sudo make-certificate --domains _wildcard-admin-node-fqdn_ --type management`
+
++
+** の場合 `--domains`、ワイルドカードを使用して、すべての管理ノードの完全修飾ドメイン名を表します。例： `*.ui.storagegrid.example.com` ワイルドカード*を使用して表します `admin1.ui.storagegrid.example.com` および `admin2.ui.storagegrid.example.com`。
+** 設定 `--type` 終了： `management` Grid ManagerおよびTenant Managerで使用される証明書を設定するため。
+** デフォルトでは、生成された証明書の有効期間は 1 年間（ 365 日）です。この期間を過ぎる前に証明書を再作成する必要があります。を使用できます `--days` デフォルトの有効期間を上書きする引数。
++
+
+NOTE: 証明書の有効期間は、で始まります `make-certificate` を実行します。管理APIクライアントがStorageGRID と同じ時間ソースと同期されるようにしてください。同期されていないと、クライアントが証明書を拒否する可能性があります。
+
++
+ $ sudo make-certificate --domains *.ui.storagegrid.example.com --type management --days 365
++
+出力には、管理 API クライアントで必要なパブリック証明書が含まれています。
+
+
+
+. 証明書を選択してコピーします。
++
+BEGIN タグと END タグも含めて選択してください。
+
+. コマンドシェルからログアウトします。 `$ exit`
+. 証明書が設定されたことを確認します。
++
+.. Grid Manager にアクセスします。
+.. 「* Configuration * Server Certificates * Management Interface Server Certificate *」を選択します。
+
+
+. コピーしたパブリック証明書を使用するように管理APIクライアントを設定します。BEGIN タグと END タグを含めてください。
+

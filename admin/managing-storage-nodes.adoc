@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-storage-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: ストレージノードは、ディスクストレージの容量とサービスを提供します。ストレージノードを管理するには、各ノードの使用可能なスペース量を監視し、しきい値を設定し、ストレージノードの設定を適用します。 
+---
+= ストレージノードの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージノードは、ディスクストレージの容量とサービスを提供します。ストレージノードを管理するには、各ノードの使用可能なスペース量を監視し、しきい値を設定し、ストレージノードの設定を適用します。
+
+* link:what-storage-node-is.html["ストレージノードとは"]
+* link:managing-storage-options.html["ストレージオプションの管理"]
+* link:managing-object-metadata-storage.html["オブジェクトメタデータストレージの管理"]
+* link:configuring-global-settings-for-stored-objects.html["格納オブジェクトのグローバル設定"]
+* link:storage-node-configuration-settings.html["ストレージノード設定"]
+* link:managing-full-storage-nodes.html["容量が上限に達したストレージノードの管理"]
+

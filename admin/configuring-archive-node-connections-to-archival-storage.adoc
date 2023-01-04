@@ -1,0 +1,25 @@
+---
+permalink: admin/configuring-archive-node-connections-to-archival-storage.html 
+sidebar: sidebar 
+keywords:  
+summary: 外部アーカイブに接続するようにアーカイブノードを設定する場合は、ターゲットタイプを選択する必要があります。 
+---
+= アーカイブストレージへのアーカイブノード接続を設定しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+外部アーカイブに接続するようにアーカイブノードを設定する場合は、ターゲットタイプを選択する必要があります。
+
+StorageGRID システムでは、S3インターフェイスを使用したクラウドへのオブジェクトデータのアーカイブ、またはTivoli Storage Manager（TSM）ミドルウェアを使用したテープへのオブジェクトデータのアーカイブがサポートされます。
+
+
+NOTE: アーカイブノードにアーカイブターゲットのタイプを設定したあとに、そのタイプを変更することはできません。
+
+* link:archiving-to-cloud-through-s3-api.html["S3 APIを使用したクラウドへのアーカイブ"]
+* link:archiving-to-tape-through-tsm-middleware.html["TSMミドルウェア経由でテープにアーカイブ"]
+* link:configuring-archive-node-retrieve-settings.html["アーカイブノードの読み出し設定を構成しています"]
+* link:configuring-archive-node-replication.html["アーカイブノードのレプリケーションを設定しています"]
+

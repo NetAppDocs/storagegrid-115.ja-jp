@@ -1,0 +1,72 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html 
+sidebar: sidebar 
+keywords: grid management api, api, api version, swagger, rest api 
+summary: StorageGRID 11.5はグリッド管理APIのバージョン3を使用します。バージョン 3 はバージョン 2 に代わるものですが、バージョン 1 とバージョン 2 も引き続きサポートされます。 
+---
+= Grid 管理 API に対する変更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11.5はグリッド管理APIのバージョン3を使用します。バージョン 3 はバージョン 2 に代わるものですが、バージョン 1 とバージョン 2 も引き続きサポートされます。
+
+
+IMPORTANT: バージョン1とバージョン2の管理APIはStorageGRID 11.5で引き続き使用できますが、これらのバージョンのAPIのサポートはStorageGRID の今後のリリースで終了する予定です。StorageGRID 11.5にアップグレードしたあとに、でv1およびv2 APIを非アクティブ化できます `PUT /grid/config/management` API
+
+
+
+== 新しいクライアント証明書セクション
+
+新しいセクション、 `/grid/client-certificates`を使用すると、クライアント証明書を設定して、StorageGRID Prometheusデータベースへのセキュアで認証されたアクセスを提供できます。たとえば、Grafanaを使用してStorageGRID を外部から監視できます。
+
+
+
+== 従来のコンプライアンスエンドポイントは、新しいs3 - object-lockセクションに移動されました
+
+StorageGRID S3オブジェクトのロックが導入され、グリッドの従来の準拠設定の管理に使用していたAPIが、Swaggerユーザインターフェイスの新しいセクションに移動されました。s3 - object-lock *セクションには2つのセクションがあります `/grid/compliance-global` APIエンドポイント。グローバルなS3オブジェクトのロック設定を制御します。エンドポイントURIは、既存のアプリケーションとの互換性を維持するために変更されません。
+
+
+
+== Swift-admin-passwordアカウントエンドポイントが削除されました
+
+StorageGRID 10.4で廃止された次のアカウントAPIエンドポイントが削除されました。
+
+[listing]
+----
+https://<IP-Address>/api/v1/grid/accounts/<AccountID>/swift-admin-password
+----
+
+
+== 新しいGridパスワードセクション
+
+「* grid-password*」セクションでは、グリッドパスワード管理の処理を使用できます。このセクションには、2つのが含まれ `/grid/change-provisioning-passphrase` APIエンドポイント。エンドポイントを使用すると、ユーザはStorageGRID プロビジョニングパスフレーズを変更して、パスフレーズの変更のステータスを取得できます。
+
+
+
+== Storageadmin権限がグループAPIに追加されました
+
+。 `/grid/groups` APIにstorageadmin権限が追加されました。
+
+
+
+== Storage Usage APIの新しいパラメータ
+
+。 `+GET /grid/accounts/{id}/usage+` APIにが追加されました `strictConsistency` パラメータストレージノード間でストレージ使用状況情報を取得するときにstrong-global整合性を適用するには、このパラメータをに設定します `true`。このパラメータがに設定されている場合 `false` （デフォルト）StorageGRID は、strong-global整合性を使用して使用状況の情報を取得しますが、strong-global整合性が保証されていない場合はstrong-site整合性にフォールバックします。
+
+
+
+== 新しいノード健全性API
+
+新しい `/grid/node-health` エンドポイントが追加されました。このAPIは、ノードでactive_alerts_onを確認することで各ノードの現在のステータスを返します。。 `/grid/health/topology` active_alarms_onノードをチェックするAPIは廃止されました。
+
+
+
+== 「Appliance StorageShellvesPowerSupplyDegraded」アラートルールIDに変更します
+
+アラートルールID「Appliance StorageShellvesPowerSupplyDegraded」の名前が「Appliance StorageShellvesDegraded」に変更され、アラートの実際の動作がより正確に反映されました。
+
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]

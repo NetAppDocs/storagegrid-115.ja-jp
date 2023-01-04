@@ -1,0 +1,78 @@
+---
+section: vmware
+title: VMware をインストールする
+url: "/vmware/index.html"
+entries:
+- title: インストールの概要
+  url: "/vmware/installation-overview.html"
+- title: 計画と準備
+  url: "/vmware/planning-and-preparation.html"
+  entries:
+  - title: 前提要件
+    url: "/vmware/required-materials.html"
+  - title: StorageGRID インストールファイルのダウンロードと展開
+    url: "/vmware/downloading-and-extracting-storagegrid-installation-files.html"
+  - title: ソフトウェア要件
+    url: "/vmware/software-requirements.html"
+  - title: CPU と RAM の要件
+    url: "/vmware/cpu-and-ram-requirements.html"
+  - title: ストレージとパフォーマンスの要件
+    url: "/vmware/storage-and-performance-requirements.html"
+  - title: Web ブラウザの要件
+    url: "/vmware/web-browser-requirements.html"
+- title: VMware vSphere Web Clientでの仮想マシングリッドノードの導入
+  url: "/vmware/deploying-virtual-machine-grid-nodes-in-vmware-vsphere-web-client.html"
+  entries:
+  - title: 導入環境に関する情報を収集
+    url: "/vmware/collecting-information-about-your-deployment-environment.html"
+  - title: グリッドノードによるプライマリ管理ノードの検出
+    url: "/vmware/how-grid-nodes-discover-primary-admin-node.html"
+  - title: 仮想マシンとしてのStorageGRID ノードの導入
+    url: "/vmware/deploying-storagegrid-node-as-virtual-machine.html"
+- title: グリッドの設定とインストールの完了
+  url: "/vmware/configuring-grid-and-completing-installation.html"
+  entries:
+  - title: Grid Managerに移動します
+    url: "/vmware/navigating-to-grid-manager.html"
+  - title: StorageGRID ライセンス情報の指定
+    url: "/vmware/specifying-storagegrid-license-information.html"
+  - title: サイトの追加
+    url: "/vmware/adding-sites.html"
+  - title: グリッドネットワークのサブネットの指定
+    url: "/vmware/specifying-grid-network-subnets.html"
+  - title: 保留中のグリッドノードを承認します
+    url: "/vmware/approving-pending-grid-nodes.html"
+  - title: Network Time Protocolサーバ情報の指定
+    url: "/vmware/specifying-network-time-protocol-server-information.html"
+  - title: Domain Name Systemサーバ情報の指定
+    url: "/vmware/specifying-domain-name-system-server-information.html"
+  - title: StorageGRID システムのパスワードの指定
+    url: "/vmware/specifying-storagegrid-system-passwords.html"
+  - title: 設定を確認し、インストールを完了します
+    url: "/vmware/reviewing-your-configuration-and-completing-installation.html"
+  - title: インストール後のガイドライン
+    url: "/vmware/post-installation-guidelines.html"
+- title: インストールの自動化
+  url: "/vmware/automating-installation.html"
+  entries:
+  - title: VMware vSphereへのグリッドノード導入の自動化
+    url: "/vmware/automating-grid-node-deployment-in-vmware-vsphere.html"
+    entries:
+    - title: 導入用の構成ファイルを定義しています
+      url: "/vmware/defining-configuration-file-for-your-deployment.html"
+      entries:
+      - title: 構成ファイルの設定
+        url: "/vmware/configuration-file-settings.html"
+    - title: Bashスクリプトの実行
+      url: "/vmware/running-bash-script.html"
+  - title: StorageGRID の設定の自動化
+    url: "/vmware/automating-configuration-of-storagegrid.html"
+- title: インストール REST API の概要
+  url: "/vmware/overview-of-installation-rest-api.html"
+- title: 次の手順
+  url: "/vmware/where-to-go-next.html"
+- title: インストールに関する問題のトラブルシューティング
+  url: "/vmware/troubleshooting-installation-issues.html"
+  entries:
+  - title: 仮想マシンのリソースリザベーションの調整が必要です
+    url: "/vmware/virtual-machine-resource-reservation-requires-adjustment.html"

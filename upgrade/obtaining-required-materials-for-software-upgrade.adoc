@@ -1,0 +1,105 @@
+---
+permalink: upgrade/obtaining-required-materials-for-software-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, requirements, rhel, red hat, linux, centOS, ubuntu, debian 
+summary: ソフトウェアのアップグレードを開始する前に、アップグレードを正常に完了できるよう、必要なファイル、機器、情報をすべて揃えておく必要があります。 
+---
+= ソフトウェアアップグレードの前提要件の確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソフトウェアのアップグレードを開始する前に、アップグレードを正常に完了できるよう、必要なファイル、機器、情報をすべて揃えておく必要があります。
+
+[cols="1a,3a"]
+|===
+| 項目 | 注： 
+
+
+ a| 
+StorageGRID アップグレードファイル
+ a| 
+必要なファイルをサービスラップトップにダウンロードする必要があります。
+
+* *すべてのプラットフォーム*： `.upgrade` ファイル。
+* * Red Hat Enterprise LinuxまたはCentOS *上の任意のノード： `.upgrade` ファイルおよびRPMファイル (`.zip` または `.tgz`)
+* * UbuntuまたはDebian上の任意のノード*： `.upgrade` ファイルとDEBファイル (`.zip` または `.tgz`)
+
+
+
+
+ a| 
+サービスラップトップ
+ a| 
+サービスラップトップには次のものが必要です。
+
+* ネットワークポート
+* SSH クライアント（ PuTTY など）
+
+
+
+
+ a| 
+サポートされている Web ブラウザ
+ a| 
+サービスラップトップのWebブラウザがStorageGRID 11.5でサポートされていることを確認する必要があります。
+
+link:web-browser-requirements.html["Web ブラウザの要件"]
+
+*注：StorageGRID 11.5ではブラウザサポートが変更されています。サポート対象のバージョンを使用していることを確認してください。
+
+
+
+ a| 
+リカバリパッケージ (`.zip`)ファイル
+ a| 
+アップグレード前に、アップグレード中に問題が発生した場合に備えて、最新のリカバリパッケージファイルをダウンロードする必要があります。
+
+プライマリ管理ノードをアップグレードしたら、リカバリパッケージファイルの新しいコピーをダウンロードして安全な場所に保存する必要があります。更新されたリカバリパッケージファイルは、障害発生時のシステムのリストアに使用できます。
+
+link:downloading-recovery-package.html["リカバリパッケージをダウンロードしています"]
+
+
+
+ a| 
+`Passwords.txt` ファイル。
+ a| 
+このファイルは、リカバリパッケージの一部であるSAIDパッケージに含まれています `.zip` ファイル。最新バージョンのリカバリパッケージを入手する必要があります。
+
+
+
+ a| 
+プロビジョニングパスフレーズ
+ a| 
+このパスフレーズは、 StorageGRID システムが最初にインストールされるときに作成されて文書化されます。プロビジョニングパスフレーズは、に表示されません `Passwords.txt` ファイル。
+
+
+
+ a| 
+関連ドキュメント
+ a| 
+* StorageGRID 11.5リリースノートアップグレードを開始する前に、このドキュメントに記載されている情報をよくお読みください。
+* StorageGRID の管理手順
+* Linux環境をアップグレードする場合は、使用しているLinuxプラットフォーム用のStorageGRID インストール手順
+* 必要に応じて、その他の StorageGRID ドキュメント
+
+
+|===
+.関連情報
+link:web-browser-requirements.html["Web ブラウザの要件"]
+
+link:../admin/index.html["StorageGRID の管理"]
+
+link:../rhel/index.html["Red Hat Enterprise Linux または CentOS をインストールします"]
+
+link:../ubuntu/index.html["Ubuntu または Debian をインストールします"]
+
+link:../vmware/index.html["VMware をインストールする"]
+
+link:downloading-storagegrid-upgrade-files.html["StorageGRID アップグレードファイルをダウンロードします"]
+
+link:downloading-recovery-package.html["リカバリパッケージをダウンロードしています"]
+
+link:../release-notes/index.html["リリースノート"]

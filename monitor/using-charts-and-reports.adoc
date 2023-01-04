@@ -1,0 +1,14 @@
+---
+permalink: monitor/using-charts-and-reports.html 
+sidebar: sidebar 
+keywords:  
+summary: グラフやレポートを使用して、 StorageGRID システムの状態を監視し、問題のトラブルシューティングを行うことができます。Grid Managerで使用できるグラフとレポートのタイプには、円グラフ（ダッシュボードのみ）、グラフ、テキストレポートがあります。 
+---
+= グラフとレポートを使用する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グラフやレポートを使用して、 StorageGRID システムの状態を監視し、問題のトラブルシューティングを行うことができます。Grid Managerで使用できるグラフとレポートのタイプには、円グラフ（ダッシュボードのみ）、グラフ、テキストレポートがあります。

@@ -1,0 +1,24 @@
+---
+permalink: ilm/configuring-storage-pools.html 
+sidebar: sidebar 
+keywords:  
+summary: ILMルールを定義する際には、ストレージプールを使用してオブジェクトの格納場所を指定します。ストレージプールを作成する前に、ストレージプールに関するガイドラインを確認してください。 
+---
+= ストレージプールを設定しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ILMルールを定義する際には、ストレージプールを使用してオブジェクトの格納場所を指定します。ストレージプールを作成する前に、ストレージプールに関するガイドラインを確認してください。
+
+* link:what-storage-pool-is.html["ストレージプールとは"]
+* link:guidelines-for-creating-storage-pools.html["ストレージプールの作成に関するガイドラインを次に示します"]
+* link:using-multiple-storage-pools-for-cross-site-replication.html["複数のストレージプールを使用したサイト間レプリケーション"]
+* link:using-storage-pool-as-temporary-location-deprecated.html["一時的な場所としてのストレージプールの使用（廃止）"]
+* link:creating-storage-pool.html["ストレージプールを作成します"]
+* link:viewing-storage-pool-details.html["ストレージプールの詳細を表示しています"]
+* link:editing-storage-pool.html["ストレージプールを編集する"]
+* link:removing-storage-pool.html["ストレージプールを削除しています"]
+

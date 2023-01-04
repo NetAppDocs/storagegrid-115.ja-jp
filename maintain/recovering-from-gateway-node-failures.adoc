@@ -1,0 +1,24 @@
+---
+permalink: maintain/recovering-from-gateway-node-failures.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, gateway node failure 
+summary:  
+---
+= ゲートウェイノードの障害からのリカバリ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ゲートウェイノードの障害からリカバリするには、一連のタスクを正しい順序で実行する必要があります。
+
+image::../media/overview_api_gateway_node_recovery.png[ゲートウェイノードのリカバリの概要フローチャート]
+
+.関連情報
+link:../sg100-1000/index.html["SG100 SG1000サービスアプライアンス"]
+
+.手順
+* link:replacing-gateway-node.html["ゲートウェイノードの交換"]
+* link:selecting-start-recovery-to-configure-gateway-node.html["Start Recovery（リカバリの開始）を選択してゲートウェイノードを設定します"]
+

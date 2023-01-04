@@ -1,0 +1,42 @@
+---
+permalink: troubleshoot/troubleshooting-delivery-platform-services-messages.html 
+sidebar: sidebar 
+keywords:  
+summary: データを受信できないデスティネーションにプラットフォームサービスメッセージが配信された場合、 Grid Manager で Total Events （ SMTT ）アラームがトリガーされます。 
+---
+= プラットフォームサービスメッセージの配信のトラブルシューティング（SMTTアラーム）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データを受信できないデスティネーションにプラットフォームサービスメッセージが配信された場合、 Grid Manager で Total Events （ SMTT ）アラームがトリガーされます。
+
+.このタスクについて
+たとえば S3 マルチパートアップロードは、関連するレプリケーションまたは通知メッセージを設定済みのエンドポイントに配信できなくても成功します。または、 CloudMirror レプリケーションのメッセージはメタデータが長すぎると配信できません。
+
+SMTTアラームには、 `Failed to publish notifications for _bucket-name object key_` 通知が失敗した最後のオブジェクト
+
+追加情報 プラットフォームサービスのトラブルシューティングについては、 StorageGRID の管理手順を参照してください。プラットフォームサービスエラーをデバッグするために、Tenant Managerからテナントへのアクセスが必要になる場合があります。
+
+.手順
+. アラームを表示するには、* Nodes *>*_site *>*_ grid node_name *>* Events *を選択します。
+. 表の一番上に Last Event が表示されます。
++
+イベントメッセージは、にも表示されます `/var/local/log/bycast-err.log`。
+
+. SMTT アラームに記載されている指示に従って問題 を修正します。
+. [*イベントカウントのリセット*]をクリックします。
+. プラットフォームサービスメッセージが配信されていないオブジェクトについてテナントに通知します。
+. テナントで、オブジェクトのメタデータまたはタグを更新することで、失敗したレプリケーションまたは通知をトリガーするよう指定します。
+
+
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]
+
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+link:../monitor/logs-files-reference.html["ログファイル参照"]
+
+link:../monitor/resetting-event-counts.html["イベント数のリセット"]

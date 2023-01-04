@@ -1,0 +1,43 @@
+---
+permalink: admin/configuring-server-certificates.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムで使用されるサーバ証明書をカスタマイズできます。 
+---
+= サーバ証明書の設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムで使用されるサーバ証明書をカスタマイズできます。
+
+StorageGRID システムは、用途が異なる複数のセキュリティ証明書を使用します。
+
+* 管理インターフェイスのサーバ証明書：Grid Manager、Tenant Manager、Grid管理API、およびテナント管理APIへのアクセスを保護するために使用します。
+* ストレージAPIのサーバ証明書：ストレージノードおよびゲートウェイノードへのアクセスを保護するために使用します。これらのノードは、APIクライアントアプリケーションがオブジェクトデータをアップロードおよびダウンロードするために使用します。
+
+
+インストール時に作成されたデフォルトの証明書を使用できるほか、デフォルトの証明書のいずれか、または両方を独自のカスタム証明書に置き換えることもできます。
+
+
+
+== サポートされているカスタムサーバ証明書のタイプ
+
+StorageGRID システムでは、RSAまたはECDSA（Elliptic Curve Digital Signature Algorithm）で暗号化されたカスタムサーバ証明書がサポートされます。
+
+StorageGRID でREST APIのクライアント接続を保護する方法の詳細については、S3またはSwiftの実装ガイドを参照してください。
+
+
+
+== ロードバランサエンドポイントの証明書
+
+StorageGRID では、ロードバランサエンドポイントに使用する証明書は別に管理されます。ロードバランサ証明書を設定するには、ロードバランサエンドポイントの設定手順を参照してください。
+
+.関連情報
+link:../s3/index.html["S3 を使用する"]
+
+link:../swift/index.html["Swift を使用します"]
+
+link:configuring-load-balancer-endpoints.html["ロードバランサエンドポイントの設定"]

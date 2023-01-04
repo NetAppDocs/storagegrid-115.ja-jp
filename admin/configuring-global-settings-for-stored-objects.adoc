@@ -1,0 +1,19 @@
+---
+permalink: admin/configuring-global-settings-for-stored-objects.html 
+sidebar: sidebar 
+keywords:  
+summary: グリッドオプションを使用すると、 StorageGRID システムに格納されているすべてのオブジェクトについて、格納オブジェクトの圧縮や格納オブジェクトの暗号化などの設定を行うことができます。設定を行うことができます。 
+---
+= 格納オブジェクトのグローバル設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グリッドオプションを使用すると、 StorageGRID システムに格納されているすべてのオブジェクトについて、格納オブジェクトの圧縮や格納オブジェクトの暗号化などの設定を行うことができます。設定を行うことができます。
+
+* link:configuring-stored-object-compression.html["格納オブジェクトの圧縮を設定しています"]
+* link:configuring-stored-object-encryption.html["格納オブジェクトの暗号化を設定する"]
+* link:configuring-stored-object-hashing.html["格納オブジェクトのハッシュの設定"]
+

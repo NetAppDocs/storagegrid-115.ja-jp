@@ -1,0 +1,23 @@
+---
+permalink: ilm/example-ilm-rules-and-policies.html 
+sidebar: sidebar 
+keywords:  
+summary: このセクションの例は、独自のILMルールとポリシーのベースとして使用できます。 
+---
+= ILM ルールとポリシーの例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+このセクションの例は、独自のILMルールとポリシーのベースとして使用できます。
+
+* link:example-1-ilm-rules-and-policy-for-object-storage.html["例 1 ：オブジェクトストレージの ILM ルールとポリシー"]
+* link:example-2-ilm-rules-and-policy-for-ec-object-size-filtering.html["例 2 ： EC オブジェクトサイズのフィルタリング用の ILM ルールとポリシー"]
+* link:example-3-ilm-rules-and-policy-for-better-protection-for-image-files.html["例 3 ：画像ファイルの保護を強化する ILM ルールとポリシー"]
+* link:example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["例 4 ： S3 バージョン管理オブジェクトの ILM ルールとポリシー"]
+* link:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.html["例 5 ：取り込み動作が Strict の場合の ILM ルールとポリシー"]
+* link:example-6-changing-ilm-policy.html["例 6 ： ILM ポリシーを変更する"]
+* link:example-7-compliant-ilm-policy-for-s3-object-lock.html["例 7 ： S3 オブジェクトロックの準拠 ILM ポリシー"]
+

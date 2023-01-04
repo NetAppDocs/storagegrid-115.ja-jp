@@ -1,0 +1,19 @@
+---
+permalink: admin/integrating-tivoli-storage-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: ここでは、アーカイブノードをTivoli Storage Manager\（TSM）サーバと統合する際のベストプラクティスとセットアップ情報について、TSMサーバの設定に影響を及ぼすアーカイブノードの動作の詳細も含めて説明します。 
+---
+= Tivoli Storage Managerを統合する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ここでは、アーカイブノードをTivoli Storage Manager（TSM）サーバと統合する際のベストプラクティスとセットアップ情報について、TSMサーバの設定に影響を及ぼすアーカイブノードの動作の詳細も含めて説明します。
+
+* link:archive-node-configuration-and-operation.html["アーカイブノードの設定と処理"]
+* link:configuration-best-practices.html["構成のベストプラクティス"]
+* link:completing-archive-node-setup.html["アーカイブノードのセットアップを完了します"]
+

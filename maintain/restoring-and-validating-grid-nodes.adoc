@@ -1,0 +1,96 @@
+---
+permalink: maintain/restoring-and-validating-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, restore grid node, restore node, validate grid node, validate node 
+summary: 障害グリッドノードのグリッド構成ファイルをリストアして検証し、エラーをすべて解決する必要があります。 
+---
+= グリッドノードのリストアと検証
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+障害グリッドノードのグリッド構成ファイルをリストアして検証し、エラーをすべて解決する必要があります。
+
+.このタスクについて
+ホストに必要なグリッドノードは、すべてインポートできます `/var/local` 前のホストで障害が発生したためにボリュームが失われませんでした。たとえば、などです `/var/local` 使用しているLinuxオペレーティングシステムでのStorageGRID のインストール手順に従って、StorageGRID システムのデータボリュームに共有ストレージを使用していた場合は、ボリュームが残っている可能性があります。ノードをインポートすると、ノード構成ファイルがホストにリストアされます。
+
+ノードをインポートできない場合は、グリッド構成ファイルを再作成する必要があります。
+
+次に、 StorageGRID の再起動に進む前に、グリッド構成ファイルを検証し、予想されるネットワークまたはストレージの問題を解決する必要があります。ノードの構成ファイルを再作成する場合は、リカバリするノードに使用されていたのと同じ名前を交換用ノードに使用する必要があります。
+
+の場所の詳細については、インストール手順を参照してください `/var/local` ノードのボリューム。
+
+.手順
+. リカバリしたホストのコマンドラインで、現在設定されているすべてのStorageGRID グリッドノードを表示します。``sudo storagegrid node list``
++
+グリッドノードが設定されていない場合、出力は表示されません。グリッドノードが設定されている場合は、次の形式で出力が表示されます。
+
++
+[listing]
+----
+Name               Metadata-Volume
+================================================================
+dc1-adm1           /dev/mapper/sgws-adm1-var-local
+dc1-gw1            /dev/mapper/sgws-gw1-var-local
+dc1-sn1            /dev/mapper/sgws-sn1-var-local
+dc1-arc1           /dev/mapper/sgws-arc1-var-local
+----
++
+ホストで設定する必要のある一部またはすべてのグリッドノードが表示されない場合は、そのグリッドノードをリストアする必要があります。
+
+. を含むグリッドノードをインポートします `/var/local` ボリューム：
++
+.. インポートする各ノードに対して次のコマンドを実行します。``sudo storagegrid node import node-var-local-volume-path``
++
+。 `storagegrid node import` コマンドが成功するのは、対象のノードが最後に実行されたホストでクリーンシャットダウンされている場合のみです。そうでない場合は、次のようなエラーが表示されます。
+
++
+`This node (_node-name_) appears to be owned by another host (UUID host-uuid).`
+
++
+`Use the --force flag if you are sure import is safe.`
+
+.. 別のホストが所有しているノードに関するエラーが表示された場合は、を指定してもう一度コマンドを実行します `--force` インポートを完了するためのフラグ：``sudo storagegrid --force node import node-var-local-volume-path``
++
+
+NOTE: を使用してインポートされたノード `--force` フラグは、「必要に応じた追加のリカバリ手順の実行」の説明に従って、グリッドに再参加する前に追加のリカバリ手順を必要とします。
+
+
+
+. がないグリッドノード `/var/local` ボリュームで、ノードの構成ファイルを再作成してホストにリストアします。
++
+インストール手順の「ノード構成ファイルの作成」のガイドラインに従ってください。
+
++
+
+IMPORTANT: ノードの構成ファイルを再作成する場合は、リカバリするノードに使用されていたのと同じ名前を交換用ノードに使用する必要があります。Linux 環境の場合は、構成ファイルの名前にノード名が含まれていることを確認します。可能な場合は、同じネットワークインターフェイス、ブロックデバイスマッピング、および IP アドレスを使用してください。これにより、リカバリ時にノードにコピーしなければならないデータ量を最小限に抑えることができるため、リカバリにかかる時間を大幅に（場合によっては、数週間から数分に）短縮できます。
+
++
+
+IMPORTANT: 新しいブロックデバイス（StorageGRID ノードで以前に使用していなかったデバイス）を、で始まる設定変数の値として使用する場合 `BLOCK_DEVICE_` ノードの構成ファイルを再作成するときは、「ブロックデバイスが見つからないエラーの修正」のすべてのガイドラインに従ってください。
+
+. リカバリしたホストで次のコマンドを実行して、すべての StorageGRID ノードを一覧表示します。
++
+`sudo storagegrid node list`
+
+. StorageGRID のノードリストの出力に表示されている各グリッドノードのノード構成ファイルを検証します。
++
+`sudo storagegrid node validate _node-name_`
+
++
+StorageGRID ホストサービスを開始する前に、すべてのエラーまたは警告に対処する必要があります。以下のセクションでは、リカバリ時に特に問題となるエラーについて詳しく説明します。
+
+
+
+.関連情報
+link:../rhel/index.html["Red Hat Enterprise Linux または CentOS をインストールします"]
+
+link:../ubuntu/index.html["Ubuntu または Debian をインストールします"]
+
+link:fixing-mssing-network-interface-errors.html["ネットワークインターフェイスが見つからないエラーの修正"]
+
+link:fixing-missing-block-device-errors.html["ブロックデバイスが見つからないエラーの修正"]
+
+link:whats-next-performing-additional-recovery-steps-if-required.html["次の手順：必要に応じて追加のリカバリ手順を実行します"]

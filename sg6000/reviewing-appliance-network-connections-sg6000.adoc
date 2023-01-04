@@ -1,0 +1,35 @@
+---
+permalink: sg6000/reviewing-appliance-network-connections-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, network connections, network connection, network, connection, grid, admin, client, bmc, management, SANtricity System Manager, SANtricity 
+summary: StorageGRID アプライアンスを設置する前に、アプライアンスに接続できるネットワークを確認しておく必要があります。 
+---
+= アプライアンスのネットワーク接続を確認します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID アプライアンスを設置する前に、アプライアンスに接続できるネットワークを確認しておく必要があります。
+
+StorageGRID アプライアンスを StorageGRID システムのストレージノードとして導入する場合は、次のネットワークに接続できます。
+
+* * StorageGRID のグリッドネットワーク * ：グリッドネットワークは、すべての内部 StorageGRID トラフィックに使用されます。このネットワークによって、グリッド内のすべてのノードが、すべてのサイトおよびサブネットにわたって相互に接続されます。グリッドネットワークは必須です。
+* * StorageGRID の管理ネットワーク * ：管理ネットワークは、システムの管理とメンテナンスに使用するクローズドネットワークです。管理ネットワークは通常はプライベートネットワークであり、サイト間でルーティング可能にする必要はありません。管理ネットワークはオプションです。
+* * StorageGRID のクライアントネットワーク： * クライアントネットワークは、 S3 や Swift などのクライアントアプリケーションへのアクセスを可能にするオープンネットワークです。クライアントネットワークはグリッドへのクライアントプロトコルアクセスを提供するため、グリッドネットワークを分離してセキュリティを確保できます。クライアントネットワークはオプションです。
+* * SANtricity システム・マネージャ用管理ネットワーク*：このネットワークは、ストレージ・コントローラ上のSANtricity システム・マネージャへのアクセスを提供し、ストレージ・コントローラ・シェルフ内のハードウェア・コンポーネントの監視と管理を可能にします。この管理ネットワークは、 StorageGRID の管理ネットワークと同じにすることも、独立した管理ネットワークにすることもできます。
+* * SG6000-CNコントローラのBMC管理ネットワーク：*このネットワークはSG6000-CN内のベースボード管理コントローラへのアクセスを提供し、SG6000-CNコントローラのハードウェアコンポーネントの監視と管理を可能にします。この管理ネットワークは、 StorageGRID の管理ネットワークと同じにすることも、独立した管理ネットワークにすることもできます。
+
+
+
+NOTE: StorageGRID ネットワークの詳細については、 _ グリッド入門 _ を参照してください。
+
+.関連情報
+link:gathering-installation-information-sg6000.html["設置情報（SG6000）の収集"]
+
+link:cabling-appliance-sg6000.html["アプライアンスのケーブル接続（SG6000）"]
+
+link:port-bond-modes-for-sg6000-cn-controller.html["SG6000-CNコントローラのポートボンディングモード"]
+
+link:../network/index.html["ネットワークガイドライン"]

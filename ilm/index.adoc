@@ -1,0 +1,19 @@
+---
+permalink: ilm/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= ILM を使用してオブジェクトを管理する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+情報ライフサイクルルールとポリシーを使用してオブジェクトを管理する方法、およびS3オブジェクトロックを使用してオブジェクト保持に関する規制に準拠する方法について説明します。
+
+* link:managing-objects-with-information-lifecycle-management.html["情報ライフサイクル管理によるオブジェクトの管理"]
+* link:managing-objects-with-s3-object-lock.html["S3オブジェクトロックでオブジェクトを管理する"]
+* link:example-ilm-rules-and-policies.html["ILM ルールとポリシーの例"]
+

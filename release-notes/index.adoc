@@ -1,0 +1,20 @@
+---
+permalink: release-notes/index.html 
+sidebar: sidebar 
+keywords:  
+summary: 新機能、既知の問題、および解決済みの問題に関するリリース固有の情報を入手する。 
+---
+= リリースノート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新機能、削除および廃止された機能、解決済みの問題、および既知の問題に関するリリース固有の情報を取得します。
+
+このドキュメントサイトにはリリースノートがあります。NetApp Support Siteのクレデンシャルでログインするように求められます。
+
+* https://library.netapp.com/ecmdocs/ECMLP2873529/html/frameset.html["HTML"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2873529["PDF"^]
+

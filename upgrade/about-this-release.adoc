@@ -1,0 +1,20 @@
+---
+permalink: upgrade/about-this-release.html 
+sidebar: sidebar 
+keywords:  
+summary: アップグレードを開始する前に、このセクションを一目で確認して、StorageGRID 11.5の新機能と機能強化について把握し、廃止または削除された機能がないかを確認してください。また、StorageGRID APIに対する変更も確認してください。 
+---
+= StorageGRID 11.5について
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アップグレードを開始する前に、このセクションを一目で確認して、StorageGRID 11.5の新機能と機能強化について把握し、廃止または削除された機能がないかを確認してください。また、StorageGRID APIに対する変更も確認してください。
+
+* link:whats-new.html["StorageGRID 11.5の新機能"]
+* link:removed-or-deprecated-features.html["削除または廃止された機能"]
+* link:changes-to-grid-management-api.html["Grid 管理 API に対する変更"]
+* link:changes-to-tenant-management-api.html["テナント管理 API に変更が加えられました"]
+

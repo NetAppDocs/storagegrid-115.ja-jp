@@ -1,0 +1,23 @@
+---
+permalink: admin/confirming-capacity-of-storagegrid-system.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムに大量のデータを移行する前に、予想されるボリュームを処理できるディスク容量が StorageGRID システムにあることを確認します。 
+---
+= StorageGRID システムの容量の確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムに大量のデータを移行する前に、予想されるボリュームを処理できるディスク容量が StorageGRID システムにあることを確認します。
+
+StorageGRID システムにアーカイブノードが含まれていて、移行するオブジェクトのコピーをニアラインストレージ（テープなど）に保存する場合は、アーカイブノードのストレージに予想される移行量に対応する十分な容量があることを確認します。
+
+容量評価の一環として、移行を計画しているオブジェクトのデータプロファイルを確認し、必要なディスク容量を計算します。StorageGRID システムのディスク容量の監視に関する詳細については、StorageGRID の監視とトラブルシューティングの手順を参照してください。
+
+.関連情報
+link:../monitor/index.html["トラブルシューティングを監視します"]
+
+link:managing-storage-nodes.html["ストレージノードの管理"]

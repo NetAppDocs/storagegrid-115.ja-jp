@@ -1,0 +1,33 @@
+---
+permalink: maintain/recovering-from-system-drive-failure.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, system drive failure 
+summary: ソフトウェアベースのストレージノードのシステムドライブで障害が発生すると、そのストレージノードは StorageGRID システムで使用できなくなります。システムドライブの障害からリカバリするには、特定のタスクを実行する必要があります。 
+---
+= システムドライブ障害からのリカバリ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ソフトウェアベースのストレージノードのシステムドライブで障害が発生すると、そのストレージノードは StorageGRID システムで使用できなくなります。システムドライブの障害からリカバリするには、特定のタスクを実行する必要があります。
+
+.このタスクについて
+この手順 を使用して、ソフトウェアベースのストレージノードでシステムドライブ障害が発生した場合にリカバリします。この手順 には、障害が発生したストレージボリュームや再マウントできないストレージボリュームがある場合の手順も含まれています。
+
+
+NOTE: この 手順 環境 ソフトウェアベースのストレージノードのみ。アプライアンスストレージノードをリカバリするには、別の手順 に従う必要があります。
+
+link:recovering-storagegrid-appliance-storage-node.html["StorageGRID アプライアンスストレージノードのリカバリ"]
+
+image::../media/storage_node_recovery_system_drive.gif[ソフトウェアベースのストレージノードで障害が発生したシステムドライブのリカバリ手順]
+
+.手順
+* link:reviewing-warnings-for-system-drive-recovery.html["ストレージノードのシステムドライブのリカバリに関する警告の確認"]
+* link:replacing-storage-node.html["ストレージノードの交換"]
+* link:selecting-start-recovery-to-configure-storage-node.html["Start Recoveryを選択して、ストレージノードを設定します"]
+* link:remounting-and-reformatting-storage-volumes-manual-steps.html["ストレージ・ボリュームの再マウントと再フォーマット（手動手順）"]
+* link:restoring-object-data-to-storage-volume-if-required.html["必要に応じたストレージボリュームへのオブジェクトデータのリストア"]
+* link:checking-storage-state-after-recovering-storage-node-system-drive.html["ストレージノードシステムドライブのリカバリ後のストレージの状態の確認"]
+

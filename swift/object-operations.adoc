@@ -1,0 +1,216 @@
+---
+permalink: swift/object-operations.html 
+sidebar: sidebar 
+keywords:  
+summary: オブジェクトに対して実行する Swift API 処理を次に示します。 
+---
+= オブジェクトの処理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+オブジェクトに対して実行する Swift API 処理を次に示します。
+
+
+
+== オブジェクトを削除します
+
+この処理は、オブジェクトのコンテンツとメタデータを StorageGRID システムから削除します。
+
+次の要求パラメータが必要です。
+
+* `Account`
+* `Container`
+* `Object`
+
+
+次の要求ヘッダーが必要です。
+
+* `X-Auth-Token`
+
+
+実行が成功すると、が指定された次の応答ヘッダーが返されます `HTTP/1.1 204 No Content` 対応：
+
+* `Content-Length`
+* `Content-Type`
+* `Date`
+* `X-Trans-Id`
+
+
+StorageGRID は、 DELETE Object 要求を処理する際に、オブジェクトのすべてのコピーをすべての格納場所からただちに削除しようとします。成功すると、 StorageGRID はただちにクライアントに応答を返します。30 秒以内にすべてのコピーを削除できなかった場合（格納場所が一時的に使用不能などの理由で）、 StorageGRID は削除対象のコピーをキューに登録し、クライアントに処理が成功したことを通知します。
+
+オブジェクトの削除方法の詳細については、情報ライフサイクル管理を使用してオブジェクトを管理する手順を参照してください。
+
+
+
+== GET オブジェクト
+
+この処理は、 StorageGRID から、オブジェクトのコンテンツを読み出し、オブジェクトメタデータを取得します。
+
+次の要求パラメータが必要です。
+
+* `Account`
+* `Container`
+* `Object`
+
+
+次の要求ヘッダーが必要です。
+
+* `X-Auth-Token`
+
+
+次の要求ヘッダーはオプションです。
+
+* `Accept-Encoding`
+* `If-Match`
+* `If-Modified-Since`
+* `If-None-Match`
+* `If-Unmodified-Since`
+* `Range`
+
+
+実行が成功すると、が指定された次のヘッダーが返されます `HTTP/1.1 200 OK` 対応：
+
+* `Accept-Ranges`
+*  `Content-Disposition`の場合にのみ返されます `Content-Disposition` メタデータが設定されました
+*  `Content-Encoding`の場合にのみ返されます `Content-Encoding` メタデータが設定されました
+* `Content-Length`
+* `Content-Type`
+* `Date`
+* `ETag`
+* `Last-Modified`
+* `X-Timestamp`
+* `X-Trans-Id`
+
+
+
+
+== HEAD オブジェクト
+
+この処理は、取り込まれたオブジェクトのメタデータとプロパティを StorageGRID システムから読み出します。
+
+次の要求パラメータが必要です。
+
+* `Account`
+* `Container`
+* `Object`
+
+
+次の要求ヘッダーが必要です。
+
+* `X-Auth-Token`
+
+
+実行が成功すると、「 HTTP/1.1 200 OK 」の応答とともに次のヘッダーが返されます。
+
+* `Accept-Ranges`
+*  `Content-Disposition`の場合にのみ返されます `Content-Disposition` メタデータが設定されました
+*  `Content-Encoding`の場合にのみ返されます `Content-Encoding` メタデータが設定されました
+* `Content-Length`
+* `Content-Type`
+* `Date`
+* `ETag`
+* `Last-Modified`
+* `X-Timestamp`
+* `X-Trans-Id`
+
+
+
+
+== PUT オブジェクト
+
+この処理は、 StorageGRID システムで、データとメタデータを含む新しいオブジェクトを作成するか、データとメタデータを含む既存のオブジェクトを置換します。
+
+StorageGRID は、サイズが最大5TBのオブジェクトをサポートします。
+
+
+IMPORTANT: 同一キーに書き込む2つのクライアントなど'競合するクライアント要求は'最新のWINS形式で解決されます「latest-wins」評価のタイミングは、Swiftクライアントが処理を開始するタイミングではなく、StorageGRID システムが特定の要求を完了したタイミングに基づいています。
+
+次の要求パラメータが必要です。
+
+* `Account`
+* `Container`
+* `Object`
+
+
+次の要求ヘッダーが必要です。
+
+* `X-Auth-Token`
+
+
+次の要求ヘッダーはオプションです。
+
+* `Content-Disposition`
+* `Content-Encoding`
++
+チャンクを使用しないでください `Content-Encoding` 環境 オブジェクトがサイズに基づいてオブジェクトをフィルタリングし、取り込み時に同期配置を使用するILMルール（取り込み動作にBalancedオプションまたはStrictオプション）の場合。
+
+* `Transfer-Encoding`
++
+圧縮またはチャンクを使用しないでください `Transfer-Encoding` 環境 オブジェクトがサイズに基づいてオブジェクトをフィルタリングし、取り込み時に同期配置を使用するILMルール（取り込み動作にBalancedオプションまたはStrictオプション）の場合。
+
+* `Content-Length`
++
+ILMルールで、オブジェクトがサイズでフィルタリングされ、取り込み時に同期配置が使用される場合は、を指定する必要があります `Content-Length`。
+
++
+
+NOTE: でこれらのガイドラインに従っていない場合は、を参照してください `Content-Encoding`、 `Transfer-Encoding`および `Content-Length`ではStorageGRID 、オブジェクトのサイズを確認してILMルールを適用する前に、オブジェクトを保存しておく必要があります。つまり、 StorageGRID で取り込み時にデフォルトでオブジェクトの中間コピーを作成する必要があります。つまり、 StorageGRID での取り込み動作には Dual Commit オプションを使用する必要があります。
+
++
+同期配置と ILM ルールの詳細については、情報ライフサイクル管理を使用してオブジェクトを管理する手順を参照してください。
+
+* `Content-Type`
+* `ETag`
+* `X-Object-Meta-<name\>` （オブジェクト関連のメタデータ）
++
+ILMルールの参照時間として* User Defined Creation Time *オプションを使用する場合は、という名前のユーザ定義のヘッダーに値を格納する必要があります `X-Object-Meta-Creation-Time`。例：
+
++
+[listing]
+----
+X-Object-Meta-Creation-Time: 1443399726
+----
++
+このフィールドの値は、 1970 年 1 月 1 日からの秒数となります。
+
+* `X-Storage-Class: reduced_redundancy`
++
+このヘッダーは、取り込まれたオブジェクトに一致する ILM ルールで取り込み動作に Dual Commit または Balanced が指定されている場合に StorageGRID で作成されるオブジェクトコピーの数に影響します。
+
++
+** * Dual commit * ： ILM ルールの取り込み動作が Dual commit オプションに指定されている場合は、オブジェクトの取り込み時に StorageGRID が中間コピーを 1 つ作成します（シングルコミット）。
+** * Balanced * ： ILM ルールで Balanced オプションが指定されている場合、 StorageGRID は、ルールで指定されたすべてのコピーをただちに作成できない場合にのみ、中間コピーを 1 つ作成します。StorageGRID で同期配置を実行できる場合、このヘッダーは効果がありません。
++
+。 `reduced_redundancy` ヘッダーは、オブジェクトに一致するILMルールで単一のレプリケートコピーが作成される場合に最も適しています。この場合は、を使用します `reduced_redundancy` 取り込み処理のたびに追加のオブジェクトコピーを不要に作成および削除する必要がなくなります。
+
++
+を使用する `reduced_redundancy` 取り込み中にオブジェクトデータが失われるリスクが高まるため、他の状況ではヘッダーを使用することは推奨されません。たとえば、 ILM 評価の前にコピーが 1 つだけ格納されていたストレージノードに障害が発生すると、データが失われる可能性があります。
+
++
+
+IMPORTANT: レプリケートコピーを一定期間に 1 つだけ作成すると、データが永続的に失われるリスクがあります。オブジェクトのレプリケートコピーが 1 つしかない場合、ストレージノードに障害が発生したり、重大なエラーが発生すると、そのオブジェクトは失われます。また、アップグレードなどのメンテナンス作業中は、オブジェクトへのアクセスが一時的に失われます。
+
+
+
++
+を指定することに注意してください `reduced_redundancy` オブジェクトの初回取り込み時に作成されるコピー数のみに影響します。オブジェクトがアクティブな ILM ポリシーで評価される際に作成されるオブジェクトのコピー数には影響せず、 StorageGRID システムでデータが格納されるときの冗長性レベルが低下することもありません。
+
+
+
+実行が成功すると、「 HTTP/1.1 201 Created 」の応答とともに次のヘッダーが返されます。
+
+* `Content-Length`
+* `Content-Type`
+* `Date`
+* `ETag`
+* `Last-Modified`
+* `X-Trans-Id`
+
+
+.関連情報
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+link:monitoring-and-auditing-operations.html["監査ログで追跡される Swift 処理"]

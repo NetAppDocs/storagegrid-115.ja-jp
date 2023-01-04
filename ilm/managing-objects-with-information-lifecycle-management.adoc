@@ -1,0 +1,25 @@
+---
+permalink: ilm/managing-objects-with-information-lifecycle-management.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムのオブジェクトを管理するには、情報ライフサイクル管理（ILM）ルールとポリシーを設定します。ILM ルールとポリシーは、オブジェクトデータのコピーを作成して分散し、一定の期間にわたって管理する方法を StorageGRID に指示します。 
+---
+= 情報ライフサイクル管理によるオブジェクトの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムのオブジェクトを管理するには、情報ライフサイクル管理（ ILM ）ルールとポリシーを設定します。ILM ルールとポリシーは、オブジェクトデータのコピーを作成して分散し、一定の期間にわたって管理する方法を StorageGRID に指示します。
+
+ILM ルールと ILM ポリシーを設計して実装するには、慎重な計画が必要です。運用要件、 StorageGRID システムのトポロジ、オブジェクト保護のニーズ、使用可能なストレージタイプについて理解しておく必要があります。次に、さまざまなタイプのオブジェクトをどのようにコピー、分散、および格納するかを決定する必要があります。
+
+* link:how-ilm-operates-throughout-objects-life.html["オブジェクトのライフサイクル全体にわたる ILM の動作"]
+* link:what-ilm-policy-is.html["ILM ポリシーとは"]
+* link:what-ilm-rule-is.html["ILM ルールとは"]
+* link:creating-storage-grades-storage-pools-ec-profiles-regions.html["ストレージグレード、ストレージプール、ECプロファイル、リージョンを作成する"]
+* link:creating-ilm-rule.html["ILMルールを作成する"]
+* link:creating-ilm-policy.html["ILMポリシーを作成する"]
+* link:working-with-ilm-rules-and-ilm-policies.html["ILMルールおよびILMポリシーの操作"]
+

@@ -1,0 +1,145 @@
+---
+section: sg5700
+title: SG5700 ストレージアプライアンス
+url: "/sg5700/index.html"
+entries:
+- title: StorageGRID アプライアンスの概要
+  url: "/sg5700/storagegrid-appliance-overview.html"
+  entries:
+  - title: StorageGRID アプライアンスのコントローラ
+    url: "/sg5700/controllers-in-storagegrid-appliance.html"
+- title: インストールと導入の概要
+  url: "/sg5700/installation-and-deployment-overview.html"
+- title: 設置を準備しています
+  url: "/sg5700/preparing-for-installation.html"
+  entries:
+  - title: サイトの準備（SG5700）
+    url: "/sg5700/preparing-site-sg5700.html"
+  - title: 開梱（SG5700）
+    url: "/sg5700/unpacking-boxes-sg5700.html"
+  - title: 追加の機器や工具の入手（SG5700）
+    url: "/sg5700/obtaining-additional-equipment-and-tools-sg5700.html"
+  - title: Web ブラウザの要件
+    url: "/sg5700/web-browser-requirements.html"
+  - title: アプライアンスのネットワーク接続を確認します
+    url: "/sg5700/reviewing-appliance-network-connections-sg5700.html"
+    entries:
+    - title: E5700SG コントローラポートのポートボンディングモード
+      url: "/sg5700/port-bond-modes-for-e5700sg-controller-ports.html"
+      entries:
+      - title: 10 / 25GbEポートのネットワークボンディングモード
+        url: "/sg5700/network-bond-modes-for-10-25-gbe-ports.html"
+      - title: 1GbE管理ポートのネットワークボンディングモード
+        url: "/sg5700/network-bond-modes-for-1-gbe-ports.html"
+  - title: 設置情報の収集（SG5700）
+    url: "/sg5700/gathering-installation-information-sg5700.html"
+- title: ハードウェアを設置
+  url: "/sg5700/installing-hardware.html"
+  entries:
+  - title: ハードウェアの登録
+    url: "/sg5700/registering-hardware.html"
+  - title: キャビネットまたはラックへのアプライアンスの設置（SG5700）
+    url: "/sg5700/installing-appliance-in-cabinet-or-rack-sg5700.html"
+  - title: アプライアンスのケーブル接続（SG5700）
+    url: "/sg5700/cabling-appliance-sg5700.html"
+  - title: 電源コードの接続と電源の投入（SG5700）
+    url: "/sg5700/connecting-power-cords-and-applying-power-sg5700.html"
+  - title: SG5700ブート時のステータスコードの表示
+    url: "/sg5700/viewing-sg5700-boot-up-status-codes.html"
+    entries:
+    - title: E5700SG コントローラのステータスインジケータ
+      url: "/sg5700/status-indicators-on-e5700sg-controller.html"
+- title: ハードウェアの設定
+  url: "/sg5700/configuring-hardware-sg5712-60.html"
+  entries:
+  - title: StorageGRID 接続を設定しています
+    url: "/sg5700/configuring-storagegrid-connections.html"
+    entries:
+    - title: StorageGRID アプライアンスインストーラへのアクセス
+      url: "/sg5700/accessing-storagegrid-appliance-installer-sg5700.html"
+    - title: StorageGRID アプライアンスインストーラのバージョンの確認とアップグレード
+      url: "/sg5700/verifying-and-upgrading-storagegrid-appliance-installer-version.html"
+    - title: ネットワークリンクの設定（SG5700）
+      url: "/sg5700/configuring-network-links-sg5700.html"
+    - title: IPの設定
+      url: "/sg5700/setting-ip-configuration-sg5700.html"
+    - title: ネットワーク接続の確認
+      url: "/sg5700/verifying-network-connections.html"
+    - title: ポートレベルのネットワーク接続の確認
+      url: "/sg5700/verifying-port-level-network-connections.html"
+  - title: SANtricity システムマネージャにアクセスして設定します
+    url: "/sg5700/accessing-and-configuring-santricity-system-manager.html"
+    entries:
+    - title: "『Setting Up and Accessing SANtricity System Manager』を参照してください"
+      url: "/sg5700/setting-up-and-accessing-santricity-system-manager.html"
+    - title: SANtricity システムマネージャでハードウェアステータスを確認します
+      url: "/sg5700/reviewing-hardware-status-in-santricity-system-manager.html"
+    - title: StorageGRID アプライアンスインストーラを使用してストレージコントローラのIPアドレスを設定します
+      url: "/sg5700/setting-ip-addresses-for-storage-controllers-using-storagegrid-appliance-installer.html"
+  - title: オプション：ノード暗号化を有効にする
+    url: "/sg5700/optional-enabling-node-encryption.html"
+  - title: オプション：RAIDモードの変更（SG5760のみ）
+    url: "/sg5700/optional-changing-raid-mode-sg5760-only.html"
+  - title: オプション：アプライアンスに対するネットワークポートの再マッピング
+    url: "/sg5700/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html"
+- title: アプライアンスストレージノードの導入
+  url: "/sg5700/deploying-appliance-storage-node.html"
+- title: ストレージアプライアンスのインストールの監視
+  url: "/sg5700/monitoring-storage-appliance-installation.html"
+- title: アプライアンスのインストールと設定の自動化
+  url: "/sg5700/automating-appliance-installation-and-configuration.html"
+  entries:
+  - title: StorageGRID アプライアンスインストーラを使用したアプライアンス設定の自動化
+    url: "/sg5700/automating-appliance-configuration-using-storagegrid-appliance-installer.html"
+  - title: configure-sga.pyスクリプトを使用して、アプライアンスノードのインストールと設定を自動化する
+    url: "/sg5700/automating-installation-configuration-appliance-nodes-configure-sga-py-script.html"
+  - title: StorageGRID の設定の自動化
+    url: "/sg5700/automating-configuration-of-storagegrid.html"
+- title: インストール REST API の概要
+  url: "/sg5700/overview-of-installation-rest-apis.html"
+- title: ハードウェアの設置のトラブルシューティング
+  url: "/sg5700/troubleshooting-hardware-installation.html"
+  entries:
+  - title: ハードウェアのセットアップがハングしたように見えます
+    url: "/sg5700/hardware-setup-appears-to-hang.html"
+    entries:
+    - title: HE エラー： SANtricity OS ソフトウェアとの同期エラー
+      url: "/sg5700/he-error-error-synchronizing-with-santricity-os-software.html"
+  - title: 接続の問題のトラブルシューティング
+    url: "/sg5700/troubleshooting-connection-issues.html"
+    entries:
+    - title: アプライアンスに接続できません
+      url: "/sg5700/unable-to-connect-to-appliance.html"
+  - title: StorageGRID アプライアンスインストーラの実行中にコントローラをリブートします
+    url: "/sg5700/rebooting-controller-while-storagegrid-appliance-installer-is-running.html"
+- title: SG5700アプライアンスのメンテナンス
+  url: "/sg5700/maintaining-sg5700-appliance.html"
+  entries:
+  - title: アプライアンスをメンテナンスモードにします
+    url: "/sg5700/placing-appliance-into-maintenance-mode.html"
+  - title: ストレージコントローラのSANtricity OSをアップグレードしています
+    url: "/sg5700/upgrading-santricity-os-on-storage-controller.html"
+    entries:
+    - title: グリッドマネージャを使用してストレージコントローラのSANtricity OSをアップグレードします
+      url: "/sg5700/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5700.html"
+    - title: メンテナンスモードを使用したE2800コントローラでのSANtricity OSのアップグレード
+      url: "/sg5700/upgrading-santricity-os-on-e2800-controller-using-maintenance-mode.html"
+  - title: SANtricity System Managerを使用してドライブファームウェアをアップグレードする
+    url: "/sg5700/upgrading-drive-firmware-using-santricity-system-manager.html"
+  - title: E2800コントローラの交換
+    url: "/sg5700/replacing-e2800-controller.html"
+  - title: E5700SGコントローラの交換
+    url: "/sg5700/replacing-e5700sg-controller.html"
+  - title: その他のハードウェアコンポーネントの交換
+    url: "/sg5700/replacing-other-hardware-components-sg5700.html"
+  - title: E5700SGコントローラのリンク設定の変更
+    url: "/sg5700/changing-link-configuration-of-e5700sg-controller.html"
+  - title: MTU設定を変更します
+    url: "/sg5700/changing-mtu-setting.html"
+  - title: DNSサーバの設定を確認しています
+    url: "/sg5700/checking-dns-server-configuration.html"
+  - title: メンテナンスモードでのノード暗号化の監視
+    url: "/sg5700/monitoring-node-encryption-in-maintenance-mode.html"
+    entries:
+    - title: キー管理サーバ設定のクリア
+      url: "/sg5700/clearing-key-management-server-configuration.html"

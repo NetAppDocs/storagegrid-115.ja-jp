@@ -1,0 +1,20 @@
+---
+permalink: tenant/index.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID テナントアカウントの使用方法について説明します。 
+---
+= テナントアカウントを使用する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID テナントアカウントの使用方法について説明します。
+
+* link:using-tenant-manager.html["Tenant Managerを使用します"]
+* link:managing-system-access-for-tenant-users.html["テナントユーザのシステムアクセスの管理"]
+* link:managing-s3-tenant-accounts.html["S3テナントアカウントの管理"]
+* link:managing-s3-platform-services.html["S3プラットフォームサービスの管理"]
+

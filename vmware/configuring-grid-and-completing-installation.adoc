@@ -1,0 +1,26 @@
+---
+permalink: vmware/configuring-grid-and-completing-installation.html 
+sidebar: sidebar 
+keywords: storagegrid, vmware, configuring grid, completing installation 
+summary: プライマリ管理ノード上のグリッドマネージャからStorageGRID システムを設定すると、インストールが完了します。 
+---
+= グリッドの設定とインストールの完了
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+プライマリ管理ノード上のグリッドマネージャからStorageGRID システムを設定すると、インストールが完了します。
+
+* link:navigating-to-grid-manager.html["Grid Managerに移動します"]
+* link:specifying-storagegrid-license-information.html["StorageGRID ライセンス情報の指定"]
+* link:adding-sites.html["サイトの追加"]
+* link:specifying-grid-network-subnets.html["グリッドネットワークのサブネットの指定"]
+* link:approving-pending-grid-nodes.html["保留中のグリッドノードを承認します"]
+* link:specifying-network-time-protocol-server-information.html["Network Time Protocolサーバ情報の指定"]
+* link:specifying-domain-name-system-server-information.html["Domain Name Systemサーバ情報の指定"]
+* link:specifying-storagegrid-system-passwords.html["StorageGRID システムのパスワードの指定"]
+* link:reviewing-your-configuration-and-completing-installation.html["設定を確認し、インストールを完了します"]
+* link:post-installation-guidelines.html["インストール後のガイドライン"]
+

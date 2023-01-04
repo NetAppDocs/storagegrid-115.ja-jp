@@ -1,0 +1,24 @@
+---
+permalink: primer/using-storagegrid.html 
+sidebar: sidebar 
+keywords:  
+summary: グリッドノードとStorageGRID ネットワークのインストールが完了したら、StorageGRID の設定と使用を開始できます。システム管理機能へのユーザアクセスの制御、テナントアカウントの設定、クライアント接続の管理、設定オプションの設定、ILMによるオブジェクトの場所の管理、StorageGRID システムの健全性と日常のアクティビティの監視、定期的/非定期的なメンテナンスなどのタスクを実行します。 
+---
+= StorageGRID を使用する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グリッドノードとStorageGRID ネットワークのインストールが完了したら、StorageGRID の設定と使用を開始できます。システム管理機能へのユーザアクセスの制御、テナントアカウントの設定、クライアント接続の管理、設定オプションの設定、ILMによるオブジェクトの場所の管理、StorageGRID システムの健全性と日常のアクティビティの監視、定期的/非定期的なメンテナンスなどのタスクを実行します。
+
+* link:controlling-storagegrid-access.html["StorageGRID アクセスの制御"]
+* link:managing-tenants-and-client-connections.html["テナントとクライアント接続の管理"]
+* link:configuring-network-settings.html["ネットワークの設定"]
+* link:configuring-system-settings.html["システム設定を構成しています"]
+* link:using-information-lifecycle-management.html["情報ライフサイクル管理の使用"]
+* link:monitoring-storagegrid-operations.html["StorageGRID 処理の監視"]
+* link:performing-maintenance-procedures.html["メンテナンス手順の実行"]
+* link:using-storagegrid-support-options.html["StorageGRID サポートオプションを使用する"]
+

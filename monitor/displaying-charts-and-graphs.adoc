@@ -1,0 +1,64 @@
+---
+permalink: monitor/displaying-charts-and-graphs.html 
+sidebar: sidebar 
+keywords: charts, display graphs 
+summary: ノードページには、ストレージ容量やスループットなどの属性を監視するために定期的にアクセスする必要があるグラフやグラフが表示されます。一部のケース、特にテクニカルサポートと一緒に作業しているときに、サポート\>ツール\>グリッドトポロジページを使用してその他のグラフにアクセスできます。 
+---
+= グラフやグラフの表示
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ノードページには、ストレージ容量やスループットなどの属性を監視するために定期的にアクセスする必要があるグラフやグラフが表示されます。一部のケース、特にテクニカルサポートと一緒に作業しているときに、* Support *>* Tools *>* Grid Topology *ページを使用して追加のチャートにアクセスできます。
+
+.必要なもの
+Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+
+.手順
+. [*ノード（* Nodes）]を選択し次に、ノード、サイト、またはグリッド全体を選択します。
+. 情報を表示するタブを選択します。
++
+一部のタブには、 Prometheus 指標の値の経時的プロットに使用される 1 つ以上の Grafana チャートがあります。たとえば、ノードの* Nodes *>* Hardware *タブには、2つのGrafanaチャートがあります。
+
++
+image::../media/nodes_page_hardware_tab_graphs.png[ノードページハードウェアタブグラフ]
+
+. 必要に応じて、グラフにカーソルを合わせると特定の時点における詳細な値が表示されます。
++
+image::../media/nodes_page_memory_usage_details.png[Nodes ページメモリ使用状況の詳細]
+
+. 必要に応じて、特定の属性や指標のグラフを表示することもできます。ノードページのテーブルで、グラフアイコンをクリックします image:../media/icon_chart_new.gif["グラフアイコン"] または image:../media/icon_chart_new_for_11_5.png["グラフアイコン- 11.5で新規に追加されました"] をクリックします。
++
+
+NOTE: 一部の指標および属性に対してチャートを使用することはできません。
+
++
+*例1 *：ストレージノードの[オブジェクト]タブで、グラフアイコンをクリックします image:../media/icon_chart_new.gif["グラフアイコン"] をクリックすると、ある期間におけるメタデータクエリの平均レイテンシが表示されます。
+
++
+image::../media/icon_nodes_average_latency_chart.png[ノード平均レイテンシグラフのアイコン]
+
++
+image::../media/charts_average_query_latency.png[グラフ-平均クエリレイテンシ]
+
++
+*例2 *：ストレージノードの[オブジェクト]タブで、グラフアイコンをクリックします image:../media/icon_chart_new_for_11_5.png["グラフアイコン- 11.5で新規に追加されました"] 一定の期間に検出された損失オブジェクトの数の Grafana グラフを確認する場合。
+
++
+image::../media/object_count_table.png[オブジェクト数テーブル]
+
++
+image::../media/charts_lost_object_detected.png[グラフに損失オブジェクトが検出されました]
+
+. ノードページに表示されない属性のグラフを表示するには、* Support *>* Tools *>* Grid Topology *を選択します。
+. *_grid node_*>*_component または SERVICE_*>* Overview *>* Main * を選択します。
++
+image::../media/nms_chart.gif[説明が付随するスクリーンショット]
+
+. グラフアイコンをクリックします image:../media/icon_chart_new.gif["グラフアイコン"] をクリックします。
++
+表示は自動的に * Reports * > * Charts * ページに変わります。このグラフには、過去 1 日間の属性のデータが表示されます。
+
+

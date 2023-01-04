@@ -1,0 +1,36 @@
+---
+permalink: admin/kms-adding-upload-server-certificate.html 
+sidebar: sidebar 
+keywords:  
+summary: キー管理サーバの追加ウィザードの手順2\（サーバ証明書のアップロード\）で、KMSのサーバ証明書\（または証明書バンドル\）をアップロードします。サーバ証明書を使用すると、外部 KMS は StorageGRID に対して自身を認証できます。 
+---
+= 手順 2 ：サーバ証明書をアップロードする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+キー管理サーバの追加ウィザードの手順 2 （サーバ証明書をアップロード）で、 KMS のサーバ証明書（または証明書バンドル）をアップロードします。サーバ証明書を使用すると、外部 KMS は StorageGRID に対して自身を認証できます。
+
+.手順
+. 手順 2 （サーバー証明書のアップロード） * から、保存されているサーバー証明書または証明書バンドルの場所を参照します。
++
+image::../media/kms_step_2_upload_server_certificate.png[KMS ステップ 2 サーバー証明書のアップロード]
+
+. 証明書ファイルをアップロードします。
++
+サーバ証明書のメタデータが表示されます。
+
++
+image::../media/kms_step_2_server_certificate_metadata.png[KMS の手順 2 ：サーバ証明書のメタデータ]
+
++
+
+NOTE: 証明書バンドルをアップロードした場合は、各証明書のメタデータが独自のタブに表示されます。
+
+. 「 * 次へ * 」を選択します。
++
+Add a Key Management Serverウィザードの手順3（クライアント証明書をアップロード）が表示されます。
+
+

@@ -1,0 +1,23 @@
+---
+permalink: sg6000/configuring-storagegrid-connections.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, storagegrid connections, connections, configure, setup, set up 
+summary: StorageGRID アプライアンスをストレージノードとして StorageGRID システムに導入するには、アプライアンスと使用するネットワークの間の接続を設定する必要があります。ネットワークを設定するには、 SG6000-CN コントローラ（コンピューティングコントローラ）に事前にインストールされている StorageGRID アプライアンスインストーラを参照します。 
+---
+= StorageGRID 接続を設定しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID アプライアンスをストレージノードとして StorageGRID システムに導入するには、アプライアンスと使用するネットワークの間の接続を設定する必要があります。ネットワークを設定するには、 SG6000-CN コントローラ（コンピューティングコントローラ）に事前にインストールされている StorageGRID アプライアンスインストーラにアクセスします。
+
+.手順
+* link:accessing-storagegrid-appliance-installer-sg6000.html["StorageGRID アプライアンスインストーラへのアクセス"]
+* link:verifying-and-upgrading-storagegrid-appliance-installer-version.html["StorageGRID アプライアンスインストーラのバージョンの確認とアップグレード"]
+* link:configuring-network-links-sg6000.html["ネットワークリンクの設定（SG6000）"]
+* link:configuring-storagegrid-ip-addresses-sg6000.html["StorageGRID IPアドレスを設定しています"]
+* link:verifying-network-connections.html["ネットワーク接続の確認"]
+* link:verifying-port-level-network-connections.html["ポートレベルのネットワーク接続の確認"]
+

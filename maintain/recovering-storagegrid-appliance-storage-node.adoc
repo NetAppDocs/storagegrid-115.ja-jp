@@ -1,0 +1,58 @@
+---
+permalink: maintain/recovering-storagegrid-appliance-storage-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, appliance storage node failure 
+summary: 障害が発生した StorageGRID アプライアンスストレージノードのリカバリ用手順 は、システムドライブの損失からリカバリする場合も、ストレージボリュームのみの損失からリカバリする場合も同じです。 
+---
+= StorageGRID アプライアンスストレージノードのリカバリ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+障害が発生した StorageGRID アプライアンスストレージノードのリカバリ用手順 は、システムドライブの損失からリカバリする場合も、ストレージボリュームのみの損失からリカバリする場合も同じです。
+
+.このタスクについて
+アプライアンスを準備してソフトウェアを再インストールし、ノードがグリッドに再参加するように設定し、ストレージを再フォーマットし、オブジェクトデータをリストアする必要があります。
+
+image::../media/overview_sga_recovery.gif[StorageGRID アプライアンスのリカバリの概要フローチャート]
+
+
+CAUTION: 複数のストレージノードで障害が発生した場合（またはオフラインの場合）は、テクニカルサポートにお問い合わせください。次のリカバリ手順 は実行しないでください。データが失われる可能性があります。
+
+
+CAUTION: ストレージノードの障害またはリカバリ後 15 日以内に 2 つ目のストレージノードの障害が発生した場合は、テクニカルサポートにお問い合わせください。15 日以内に複数のストレージノードで Cassandra を再構築すると、データが失われることがあります。
+
+
+NOTE: サイトの複数のストレージノードで障害が発生した場合は、サイトリカバリ手順 が必要になる可能性があります。テクニカルサポートにお問い合わせください。
+
+link:how-site-recovery-is-performed-by-technical-support.html["テクニカルサポートによるサイトリカバリの実行方法"]
+
+
+IMPORTANT: レプリケートコピーを 1 つだけ保存するように ILM ルールを設定している場合に、そのコピーがあるストレージボリュームで障害が発生すると、オブジェクトをリカバリできません。
+
+
+NOTE: リカバリ中に Services ： Status - Cassandra （ SVST ）アラームが発生した場合は、監視とトラブルシューティングの手順を参照して、 Cassandra を再構築してアラームからリカバリしてください。Cassandra を再構築すると、アラームは解除されます。アラームが解除されない場合は、テクニカルサポートに連絡してください。
+
+
+NOTE: コントローラの交換や SANtricity OS の再インストールの手順など、ハードウェアのメンテナンス手順については、ご使用のストレージアプライアンスの設置とメンテナンスの手順を参照してください。
+
+.関連情報
+link:../monitor/index.html["トラブルシューティングを監視します"]
+
+link:../sg6000/index.html["SG6000 ストレージアプライアンス"]
+
+link:../sg5700/index.html["SG5700 ストレージアプライアンス"]
+
+link:../sg5600/index.html["SG5600 ストレージアプライアンス"]
+
+.手順
+* link:preparing-appliance-storage-node-for-reinstallation.html["再インストールのためのアプライアンスストレージノードの準備"]
+* link:starting-storagegrid-appliance-installation.html["StorageGRID アプライアンスのインストールを開始しています"]
+* link:monitoring-storagegrid-appliance-installation-sn.html["StorageGRID アプライアンスのインストールの監視"]
+* link:selecting-start-recovery-to-configure-appliance-storage-node.html["Start Recoveryを選択して、アプライアンスストレージノードを設定します"]
+* link:remounting-and-reformatting-appliance-storage-volumes.html["アプライアンス・ストレージ・ボリュームの再マウントと再フォーマット（手動手順）"]
+* link:restoring-object-data-to-storage-volume-for-appliance.html["アプライアンスのストレージボリュームへのオブジェクトデータのリストア"]
+* link:checking-storage-state-after-recovering-sga.html["アプライアンスストレージノードのリカバリ後のストレージの状態の確認"]
+

@@ -1,0 +1,304 @@
+---
+permalink: maintain/downloading-and-extracting-storagegrid-installation-files.html 
+sidebar: sidebar 
+keywords: storagegrid, installation files, download 
+summary: StorageGRID グリッドノードをリカバリする前に、ソフトウェアをダウンロードしてファイルを展開する必要があります。 
+---
+= StorageGRID インストールファイルのダウンロードと展開
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID グリッドノードをリカバリする前に、ソフトウェアをダウンロードしてファイルを展開する必要があります。
+
+グリッドで現在実行されているバージョンの StorageGRID を使用する必要があります。
+
+.手順
+. 現在インストールされているソフトウェアのバージョンを確認します。Grid Managerから*ヘルプ*バージョン情報*へ進んでください。
+. ネットアップの StorageGRID ダウンロードページにアクセスします。
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"]
+
+. グリッドで現在実行されている StorageGRID のバージョンを選択します。
++
+StorageGRID ソフトウェアのバージョンの形式は、 11.x.y です
+
+. ネットアップアカウントのユーザ名とパスワードを使用してサインインします。
+. エンドユーザライセンス契約を読み、チェックボックスをオンにして、「 * 同意して続行 * 」を選択します。
+. ダウンロードページの「* Install StorageGRID *」列で、を選択します `.tgz` または `.zip` ご使用のプラットフォームに対応するファイルです。
++
+インストールアーカイブファイルに表示されるバージョンは、現在インストールされているソフトウェアのバージョンと一致している必要があります。
+
++
+を使用します `.zip` ファイル（File）Windowsを実行している場合。
+
++
+[cols="1a,2a"]
+|===
+| プラットフォーム | インストールアーカイブ 
+
+
+ a| 
+VMware
+| StorageGRID-Webscale-_version_-VMware-_uniqueID_.zip StorageGRIDWebscale--vmware-uniqueID_tgz 
+
+
+ a| 
+Red Hat Enterprise Linux または CentOS
+| StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip StorageGRIDWebscale--_version_-rpm_uniqueID_tgz 
+
+
+ a| 
+Ubuntu または Debian
+
+またはアプライアンス
+| StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip StorageGRIDWebscale--_version_-bDEB --_uniqueID_tgz 
+
+
+ a| 
+OpenStackまたはその他のハイパーバイザー
+ a| 
+リカバリ処理を対象とした OpenStack 用の仮想マシンディスクファイルおよびスクリプトは、現在は提供されていません。OpenStack 環境で実行されているノードのリカバリが必要な場合は、使用している Linux オペレーティングシステム用のファイルをダウンロードしてください。その後、手順 に従って Linux ノードを交換します。
+
+|===
+. アーカイブファイルをダウンロードして展開します。
+. プラットフォームに応じた手順に従って、プラットフォームとリカバリが必要なグリッドノードに基づいて必要なファイルを選択します。
++
+各プラットフォームの手順に記載されているパスは、アーカイブファイルによってインストールされた最上位ディレクトリに対する相対パスです。
+
+. VMwareシステムをリカバリする場合は、適切なファイルを選択します。
++
+[cols="1a,1a"]
+|===
+| パスとファイル名 | 説明 
+
+
+| ./vsphere/README （ ./vsphere/README  a| 
+StorageGRID ダウンロードファイルに含まれているすべてのファイルについて説明するテキストファイル。
+
+
+
+| ./vsphere/NLF000000.txt にアクセスします  a| 
+製品サポートのない無償ライセンス。
+
+
+
+| ./vsphere/NetApp-SG --version_sha.vmdk  a| 
+グリッドノード仮想マシンを作成するためのテンプレートとして使用される仮想マシンディスクファイル。
+
+
+
+| ./vsphere/vsphere-primary-admin.ovf ./vsphere-primary-admin.mf  a| 
+Open Virtualization Formatテンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を使用してください。
+
+
+
+| ./vsphere/vsphere-non-primary-admin.ovf ./vsphere/vsphere-non-primary-admin.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）。非プライマリ管理ノードを導入する場合に使用します。
+
+
+
+| /vsphere/vsphere-archive.ovf ./vsphere-archive.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を使用してアーカイブノードを導入します。
+
+
+
+| ./vsphere/vsphere-gateway.ovf ./vsphere/vsphere-gateway.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を選択します。
+
+
+
+| ./vsphere/vsphere-storage.OVF ./vsphere/vsphere-storage.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を選択します。
+
+
+
+| 導入スクリプトツール | 説明 
+
+
+| ./vsphere/deploy-vsphere-ovftool.sh にアクセスします  a| 
+仮想グリッドノードの導入を自動化するための Bash シェルスクリプト。
+
+
+
+| ./vsphere/deploy-vsphere-ovftool-sample.ini にアクセスします  a| 
+で使用するサンプル構成ファイル `deploy-vsphere-ovftool.sh` スクリプト：
+
+
+
+| ./vsphere/configure-storagegrid.py にアクセスします  a| 
+StorageGRID システムの設定を自動化するための Python スクリプト。
+
+
+
+| ./vsphere/configure-sga.py にアクセスします  a| 
+StorageGRID アプライアンスの設定を自動化するための Python スクリプト。
+
+
+
+| ./vsphere/storagegrid-ssoauth.py にアクセスします  a| 
+シングルサインオンが有効な場合にグリッド管理 API にサインインするために使用できる Python スクリプトの例。
+
+
+
+| ./vsphere/configure -storagegrid-sample.json という形式で実行します  a| 
+で使用するサンプル構成ファイル `configure-storagegrid.py` スクリプト：
+
+
+
+| ./vsphere/configure -storagegrid-bank.json （ページ構成  a| 
+で使用する空の構成ファイル `configure-storagegrid.py` スクリプト：
+
+|===
+. Red Hat Enterprise LinuxまたはCentOSのシステムをリカバリする場合は、該当するファイルを選択します。
++
+[cols="1a,1a"]
+|===
+| パスとファイル名 | 説明 
+
+
+| ./rps/README  a| 
+StorageGRID ダウンロードファイルに含まれているすべてのファイルについて説明するテキストファイル。
+
+
+
+| ./rps/NLF000000.txt  a| 
+製品サポートのない無償ライセンス。
+
+
+
+| ./rps/StorageGRID-Webscale-Images-_version_-SHA.rpm  a| 
+RHEL ホストまたは CentOS ホストに StorageGRID ノードイメージをインストールするための RPM パッケージ。
+
+
+
+| ./rps/StorageGRID-Webscale-Service-_version_-SHA.rpm  a| 
+RHEL ホストまたは CentOS ホストに StorageGRID ホストサービスをインストールするための RPM パッケージ。
+
+
+
+| 導入スクリプトツール | 説明 
+
+
+| ./rps/configure-storagegrid.py  a| 
+StorageGRID システムの設定を自動化するための Python スクリプト。
+
+
+
+| ./rps/configure-sga.py  a| 
+StorageGRID アプライアンスの設定を自動化するための Python スクリプト。
+
+
+
+| ./rpms/configure -storagegrid-sample.json  a| 
+で使用するサンプル構成ファイル `configure-storagegrid.py` スクリプト：
+
+
+
+| ./rps/storagegrid-ssoauth.py  a| 
+シングルサインオンが有効な場合にグリッド管理 API にサインインするために使用できる Python スクリプトの例。
+
+
+
+| ./rpms/configure -storagegridBlank.json （ StorageGRID を構成する  a| 
+で使用する空の構成ファイル `configure-storagegrid.py` スクリプト：
+
+
+
+| ./rps/extra/Ansible と入力します  a| 
+StorageGRID コンテナ導入用の RHEL ホストまたは CentOS ホストを設定するためのサンプルの Ansible のロールとプレイブック。必要に応じて、ロールまたはプレイブックをカスタマイズできます。
+
+|===
+. UbuntuまたはDebianシステムをリカバリする場合は、適切なファイルを選択します。
++
+[cols="1a,1a"]
+|===
+| パスとファイル名 | 説明 
+
+
+| ./debs/README  a| 
+StorageGRID ダウンロードファイルに含まれているすべてのファイルについて説明するテキストファイル。
+
+
+
+| ./debs/NLF000000.txt  a| 
+テスト環境およびコンセプトの実証環境に使用できる、非本番環境のネットアップライセンスファイル。
+
+
+
+| ./debs/storagegrid-webscale-images-_version_-SHA.deb  a| 
+Ubuntu ホストまたは Debian ホストに StorageGRID ノードイメージをインストールするための DEB パッケージ。
+
+
+
+| ./debs/storagegrid-webscale-images-_version_-SHA.deb.md5  a| 
+ファイルのMD5チェックサム `/debs/storagegrid-webscale-images-version-SHA.deb`
+
+
+
+| ./debs/storagegrid-webscale-service-_version_-SHA.deb  a| 
+Ubuntu ホストまたは Debian ホストに StorageGRID ホストサービスをインストールするための DEB パッケージ。
+
+
+
+| 導入スクリプトツール | 説明 
+
+
+| ./debs/configure-storagegrid.py  a| 
+StorageGRID システムの設定を自動化するための Python スクリプト。
+
+
+
+| ./debs/configure-sga.py  a| 
+StorageGRID アプライアンスの設定を自動化するための Python スクリプト。
+
+
+
+| ./debs/storagegrid-ssoauth.py  a| 
+シングルサインオンが有効な場合にグリッド管理 API にサインインするために使用できる Python スクリプトの例。
+
+
+
+| ./debs/configure -storagegrid-sample.json という形式で指定します  a| 
+で使用するサンプル構成ファイル `configure-storagegrid.py` スクリプト：
+
+
+
+| ./debs/configure -storagegrid-bank.json という形式で実行します  a| 
+で使用する空の構成ファイル `configure-storagegrid.py` スクリプト：
+
+
+
+| ./debs/extras /Ansible を実行します  a| 
+StorageGRID コンテナ導入用の Ubuntu ホストまたは Debian ホストを設定するためのサンプルの Ansible のロールとプレイブック。必要に応じて、ロールまたはプレイブックをカスタマイズできます。
+
+|===
+. StorageGRID アプライアンスベースのシステムをリカバリする場合は、該当するファイルを選択してください。
++
+[cols="1a,1a"]
+|===
+| パスとファイル名 | 説明 
+
+
+| ./debs/storagegrid-webscale-images-_version_-SHA.deb  a| 
+アプライアンスに StorageGRID ノードイメージをインストールするための DEB パッケージ。
+
+
+
+| ./debs/storagegrid-webscale-images-_version_-SHA.deb.md5  a| 
+DEB インストールパッケージのチェックサム。アップロード後にパッケージに変更が加えられていないことを確認するために StorageGRID アプライアンスインストーラで使用されます。
+
+|===
++
+*注：*アプライアンスのインストールでは、これらのファイルはネットワーク・トラフィックを回避する必要がある場合にのみ必要です。アプライアンスは、プライマリ管理ノードから必要なファイルをダウンロードできます。
+
+
+
+.関連情報
+link:../vmware/index.html["VMware をインストールする"]
+
+link:../rhel/index.html["Red Hat Enterprise Linux または CentOS をインストールします"]
+
+link:../ubuntu/index.html["Ubuntu または Debian をインストールします"]

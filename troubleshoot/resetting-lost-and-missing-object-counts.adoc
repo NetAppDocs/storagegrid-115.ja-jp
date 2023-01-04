@@ -1,0 +1,61 @@
+---
+permalink: troubleshoot/resetting-lost-and-missing-object-counts.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムを調査し、記録されたすべての損失オブジェクトが完全に失われていること、または誤ったアラームであることを確認できたら、 Lost Objects 属性の値を 0 にリセットできます。 
+---
+= 損失オブジェクトと欠落オブジェクトのカウントのリセット
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムを調査し、記録されたすべての損失オブジェクトが完全に失われていること、または誤ったアラームであることを確認できたら、 Lost Objects 属性の値を 0 にリセットできます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* 特定のアクセス権限が必要です。
+
+
+.このタスクについて
+Lost Objects カウンタは次のどちらかのページからリセットできます。
+
+* *サポート*>*ツール*>*グリッドトポロジ*>*_site >ストレージ・ノード_*>* LDR *>*データ・ストア*>*概要*>* Main *
+* *サポート*>*ツール*>*グリッド・トポロジ*>*_site >ストレージ・ノード_*>* DDS *>*データ・ストア*>*概要*>* Main *
+
+
+これらの手順は、 *ldr*>*Data Store* ページからカウンタをリセットする方法を示しています。
+
+.手順
+. Support *>* Tools *>* Grid Topology *を選択します。
+. 警告またはLOSTアラームが発生しているストレージノードについて、「*_ Site > Storage Node_*>* LDR *>* Data Store *>* Configuration *」を選択します。
+. 「 * Lost Objects Count * をリセット」を選択します。
++
+image::../media/reset_ldr_lost_object_count.gif[LDR Reset Lost Object 数のスクリーンショット]
+
+. [ 変更の適用 *] をクリックします。
++
+Lost Objects 属性が 0 にリセットされ、 * Objects lost * アラートと LOST アラームが解除されます。これには数分かかることがあります。
+
+. 必要に応じて、損失オブジェクトを特定するプロセスで増分された可能性がある、その他の関連属性の値をリセットできます。
++
+.. [*_Site]>[Storage Node_*]>[* ldr*]>[*イレイジャーコーディング*]>[*設定*]を選択します。
+.. 「 Reset Reads Failure Count 」と「 Reset Corrupt Copies Detected Count 」を選択します。
+.. [ 変更の適用 *] をクリックします。
+.. [*_site]>[Storage Node_*]>[* ldr*]>[* Verification]*>[* Configuration]*を選択します。
+.. 「 Reset Missing Objects Count 」（不足オブジェクト数のリセット）および「 Reset Corrupt Objects Count 」（破損オブジェクト数のリセット）を選択します
+.. 隔離されたオブジェクトが不要であることが確実な場合は、 ［ * 隔離されたオブジェクトの削除 * ］ を選択します。
++
+隔離されたオブジェクトは、バックグラウンド検証で破損したレプリケートオブジェクトコピーが確認されると作成されます。ほとんどの場合、 StorageGRID は破損したオブジェクトを自動的に置き換え、隔離されたオブジェクトを削除しても安全です。ただし、 * Objects lost * アラートがトリガーされた場合や、 LOST アラームがトリガーされた場合は、テクニカルサポートが隔離されたオブジェクトにアクセスすることを推奨します。
+
+.. [ 変更の適用 *] をクリックします。
+
+
++
+[ 変更の適用（ Apply Changes ） ] をクリックした後、属性がリセットされるまでに少し時間がかかる場合があります。
+
+
+
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]

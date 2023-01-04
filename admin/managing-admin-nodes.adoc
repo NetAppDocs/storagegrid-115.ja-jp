@@ -1,0 +1,23 @@
+---
+permalink: admin/managing-admin-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID 環境の各サイトには管理ノードを1つ以上配置できます。 
+---
+= 管理ノードの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 環境の各サイトには管理ノードを1つ以上配置できます。
+
+* link:what-admin-node-is.html["管理ノードとは"]
+* link:using-multiple-admin-nodes.html["複数の管理ノードを使用する"]
+* link:identifying-primary-admin-node.html["プライマリ管理ノードの特定"]
+* link:selecting-preferred-sender.html["優先送信者を選択しています"]
+* link:viewing-notification-status-and-queues.html["通知のステータスとキューの表示"]
+* link:how-admin-nodes-show-acknowledged-alarms.html["管理ノードによる確認済みアラームの表示（従来のシステム）"]
+* link:configuring-audit-client-access.html["監査クライアントアクセスを設定しています"]
+

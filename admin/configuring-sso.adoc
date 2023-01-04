@@ -1,0 +1,23 @@
+---
+permalink: admin/configuring-sso.html 
+sidebar: sidebar 
+keywords:  
+summary: シングルサインオン \ （ SSO \ ）が有効な場合、ユーザは、組織によって実装された SSO サインインプロセスを使用してクレデンシャルが許可された場合にのみ、 Grid Manager 、テナントマネージャ、 Grid 管理 API 、またはテナント管理 API にアクセスできます。 
+---
+= シングルサインオンを設定しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+シングルサインオン（ SSO ）が有効な場合、ユーザは、組織によって実装された SSO サインインプロセスを使用してクレデンシャルが許可されている場合にのみ、 Grid Manager 、テナントマネージャ、 Grid 管理 API 、またはテナント管理 API にアクセスできます。
+
+* link:confirming-federated-users-can-sign-in.html["フェデレーテッドユーザがサインインできることを確認しておき"]
+* link:using-sandbox-mode.html["サンドボックスモードの使用"]
+* link:creating-relying-party-trusts-in-ad-fs.html["AD FSでの証明書利用者信頼の作成"]
+* link:testing-relying-party-trusts.html["証明書利用者信頼のテスト"]
+* link:enabling-single-sign-on.html["シングルサインオンの有効化"]
+* link:disabling-single-sign-on.html["シングルサインオンを無効にしています"]
+* link:temporarily-disabling-and-reenabling-sso-for-admin-node.html["1つの管理ノードのシングルサインオンの一時的な無効化と再有効化"]
+

@@ -1,0 +1,16 @@
+---
+permalink: monitor/about-bycast-log.html 
+sidebar: sidebar 
+keywords: bycast, log 
+summary: '/var/local/log/bycast.log ファイルは、 StorageGRID ソフトウェアの主要なトラブルシューティングファイルです。があります `bycast.log` ファイルを選択します。ファイルに、そのグリッドノードに固有のメッセージが含まれています。' 
+---
+= bycast.log について
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ファイル `/var/local/log/bycast.log` は、StorageGRID ソフトウェアのトラブルシューティングに使用する主要なファイルです。があります `bycast.log` ファイルを選択します。ファイルに、そのグリッドノードに固有のメッセージが含まれています。
+
+ファイル `/var/local/log/bycast-err.log` はのサブセットです `bycast.log`。ERROR と CRITICAL の重大度のメッセージが含まれています。

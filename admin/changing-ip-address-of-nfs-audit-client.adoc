@@ -1,0 +1,21 @@
+---
+permalink: admin/changing-ip-address-of-nfs-audit-client.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= NFS監査クライアントのIPアドレスの変更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+. 既存の NFS 監査共有に新しい IP アドレスを追加します。
+. 元の IP アドレスを削除します。
+
+
+.関連情報
+link:adding-nfs-audit-client-to-audit-share.html["監査共有へのNFS監査クライアントの追加"]
+
+link:removing-nfs-audit-client-from-audit-share.html["監査共有からのNFS監査クライアントの削除"]

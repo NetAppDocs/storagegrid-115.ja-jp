@@ -1,0 +1,58 @@
+---
+permalink: sg5600/upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, controller, e2700, storage controller, upgrade, upgrading, SANtricity OS, SANtricity, maintenance mode 
+summary: グリッドマネージャを使用して SANtricity OS ソフトウェアをアップグレードできない場合は、メンテナンスモードの手順 を使用してアップグレードを適用します。 
+---
+= E2700コントローラでのSANtricity OSのメンテナンスモードを使用したアップグレード
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グリッドマネージャを使用して SANtricity OS ソフトウェアをアップグレードできない場合は、メンテナンスモードの手順 を使用してアップグレードを適用します。
+
+.必要なもの
+* NetApp Interoperability Matrix Tool （ IMT ）を参照して、アップグレードに使用する SANtricity OS のバージョンがお使いのアプライアンスと互換性があることを確認してください。
+* グリッドマネージャを使用しない場合は、 E5600SG コントローラをメンテナンスモードにする必要があります。コントローラをメンテナンスモードにすると、 E2700 コントローラへの接続が中断されます。リンク設定を変更する前に、E5600SGコントローラをメンテナンスモードにする必要があります。StorageGRID アプライアンスをメンテナンスモードにすると、アプライアンスにリモートアクセスできなくなることがあります。
++
+link:placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]
+
+
+
+.このタスクについて
+一度に複数の StorageGRID アプライアンスで E シリーズコントローラの SANtricity OS または NVSRAM をアップグレードしないでください。
+
+
+IMPORTANT: 一度に複数の StorageGRID アプライアンスをアップグレードすると、導入モデルや ILM ポリシーによっては、原因 データを使用できなくなる可能性があります。
+
+.手順
+. サービスラップトップから、 SANtricity ストレージマネージャにアクセスしてサインインします。
+. 新しい SANtricity OS ソフトウェアファイルと NVSRAM ファイルを管理クライアントにダウンロードします。
++
+
+IMPORTANT: NVSRAM は、 StorageGRID アプライアンスに固有です。標準の NVSRAM ダウンロードを使用しないでください。
+
+. E2700 および E5600 SANtricity ソフトウェアとファームウェアのアップグレード手順 _ または SANtricity Storage Manager のオンラインヘルプに記載されている手順に従って、 E2700 コントローラのファームウェア、 NVSRAM 、またはその両方をアップグレードします。
++
+
+IMPORTANT: E2700 コントローラの NVSRAM をアップグレードする必要がある場合は、ダウンロードした SANtricity OS ファイルが StorageGRID アプライアンスと互換性があると明記されていることを確認する必要があります。
+
++
+
+NOTE: アップグレードファイルはただちにアクティブ化する必要があります。アクティブ化を先延ばしにしないでください。
+
+. アップグレード処理が完了したら、ノードをリブートします。StorageGRID アプライアンス・インストーラから、 *Advanced*>*Reboot Controller* を選択し、次のいずれかのオプションを選択します。
++
+** Reboot into StorageGRID * を選択し、ノードをグリッドに再追加してコントローラをリブートします。メンテナンスモードで作業を完了し、ノードを通常動作に戻す準備ができている場合は、このオプションを選択します。
+** メンテナンスモードを維持したままコントローラをリブートするには、 * Reboot into Maintenance Mode * を選択します。このオプションは、グリッドに再追加する前にノードで追加のメンテナンス処理を実行する必要がある場合に選択します。image:../media/reboot_controller_from_maintenance_mode.png["コントローラをメンテナンスモードでリブートします"]
++
+アプライアンスがリブートしてグリッドに再参加するまでに最大 20 分かかることがあります。リブートが完了し、ノードが再びグリッドに参加したことを確認するには、 Grid Manager に戻ります。[ノード*（Nodes *）]タブには、通常のステータスが表示されます image:../media/icon_alert_green_checkmark.png["アイコンアラートの緑のチェックマーク"] アクティブなアラートがなく、ノードがグリッドに接続されていることを示す、アプライアンスノードの場合。
+
++
+image::../media/node_rejoin_grid_confirmation.png[アプライアンスノードがグリッドに再参加しました]
+
+
+
+

@@ -1,0 +1,27 @@
+---
+permalink: sg6000/installing-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, hardware, install, installing 
+summary: ハードウェアの設置作業では、 SG6000-CN コントローラとストレージコントローラシェルフをキャビネットまたはラックに設置し、ケーブルを接続し、電源を投入します。 
+---
+= ハードウェアを設置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ハードウェアの設置作業では、 SG6000-CN コントローラとストレージコントローラシェルフをキャビネットまたはラックに設置し、ケーブルを接続し、電源を投入します。
+
+.手順
+* link:registering-hardware.html["ハードウェアの登録"]
+* link:sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html["SG6060：キャビネットまたはラックへの60ドライブシェルフの設置"]
+* link:sg6060-installing-drives.html["SG6060：ドライブの取り付け"]
+* link:sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html["SGF6024：キャビネットまたはラックへの24ドライブシェルフの設置"]
+* link:sg6000-cn-installing-into-cabinet-or-rack.html["SG6000-CN：キャビネットまたはラックへの設置"]
+* link:cabling-appliance-sg6000.html["アプライアンスのケーブル接続（SG6000）"]
+* link:sg6060-cabling-optional-expansion-shelves.html["SG6060：オプションの拡張シェルフのケーブル接続"]
+* link:connecting-power-cords-and-applying-power-sg6000.html["電源コードの接続と電源の投入（SG6000）"]
+* link:viewing-status-indicators-and-buttons-on-sg6000-cn-controller.html["SG6000-CNコントローラのステータスインジケータとボタンの表示"]
+* link:viewing-boot-up-status-codes-for-sg6000-storage-controllers.html["SG6000ストレージコントローラのブート時のステータスコードを確認する"]
+

@@ -1,0 +1,108 @@
+---
+permalink: rhel/downloading-and-extracting-storagegrid-installation-files.html 
+sidebar: sidebar 
+keywords: storagegrid, redhat, rhel, download installation files, downloading installation files 
+summary: StorageGRID インストールアーカイブをダウンロードし、必要なファイルを展開する必要があります。 
+---
+= StorageGRID インストールファイルのダウンロードと展開
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID インストールアーカイブをダウンロードし、必要なファイルを展開する必要があります。
+
+.手順
+. ネットアップの StorageGRID ダウンロードページにアクセスします。
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
+
+. 最新のリリースをダウンロードするボタンを選択するか、ドロップダウンメニューから別のバージョンを選択して、「 * Go * 」を選択します。
+. ネットアップアカウントのユーザ名とパスワードを使用してサインインします。
+. 「注意 / 必ずお読みください」という記述が表示されたら、それを読んでチェックボックスを選択してください。
++
+StorageGRID リリースのインストール後に、必要な修正プログラムを適用する必要があります。詳細については、リカバリおよびメンテナンスの手順にあるホットフィックス手順 を参照してください。
+
+. エンドユーザライセンス契約を読み、チェックボックスをオンにして、「 * 同意して続行 * 」を選択します。
+. [Install StorageGRID *（インストールソフトウェアのインストール）]列で、適切なソフトウェアを選択します。
++
+をダウンロードします `.tgz` または `.zip` 使用するプラットフォームに対応したアーカイブファイルです。
+
++
+これらの圧縮ファイルには、Red Hat Enterprise LinuxまたはCentOSのRPMファイルとスクリプトが含まれています。
+
++
+
+NOTE: を使用します `.zip` ファイルサービスラップトップでWindowsを実行している場合。
+
+. アーカイブファイルを保存して展開します。
+. 次のリストから必要なファイルを選択します。
++
+必要なファイルは、計画したグリッドトポロジおよび StorageGRID システムの導入方法によって異なります。
+
++
+
+NOTE: 次の表に示すパスは、展開されたインストールアーカイブによってインストールされた最上位ディレクトリに対する相対パスです。
+
+
+
+[cols="1a,2a"]
+|===
+| パスとファイル名 | 説明 
+
+
+| ./rps/README  a| 
+StorageGRID ダウンロードファイルに含まれているすべてのファイルについて説明するテキストファイル。
+
+
+
+| ./rps/NLF000000.txt  a| 
+製品サポートのない無償ライセンス。
+
+
+
+| ./rps/StorageGRID-Webscale-Images-_version_-SHA.rpm  a| 
+RHEL ホストまたは CentOS ホストに StorageGRID ノードイメージをインストールするための RPM パッケージ。
+
+
+
+| ./rps/StorageGRID-Webscale-Service-_version_-SHA.rpm  a| 
+RHEL ホストまたは CentOS ホストに StorageGRID ホストサービスをインストールするための RPM パッケージ。
+
+
+
+| 導入スクリプトツール | 説明 
+
+
+| ./rps/configure-storagegrid.py  a| 
+StorageGRID システムの設定を自動化するための Python スクリプト。
+
+
+
+| ./rps/configure-sga.py  a| 
+StorageGRID アプライアンスの設定を自動化するための Python スクリプト。
+
+
+
+| ./rpms/configure -storagegrid-sample.json  a| 
+で使用するサンプル構成ファイル `configure-storagegrid.py` スクリプト：
+
+
+
+| ./rps/storagegrid-ssoauth.py  a| 
+シングルサインオンが有効な場合にグリッド管理 API にサインインするために使用できる Python スクリプトの例。
+
+
+
+| ./rpms/configure -storagegridBlank.json （ StorageGRID を構成する  a| 
+で使用する空の構成ファイル `configure-storagegrid.py` スクリプト：
+
+
+
+| ./rps/extra/Ansible と入力します  a| 
+StorageGRID コンテナ導入用の RHEL ホストまたは CentOS ホストを設定するためのサンプルの Ansible のロールとプレイブック。必要に応じて、ロールまたはプレイブックをカスタマイズできます。
+
+|===
+.関連情報
+link:../maintain/index.html[""]

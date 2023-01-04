@@ -1,0 +1,22 @@
+---
+permalink: admin/controlling-administrator-access-to-storagegrid.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムへの管理者アクセスは、ファイアウォールポートを開いたり閉じたり、管理者グループやユーザを管理したり、シングルサインオン\（SSO \）を設定したり、StorageGRID 指標へのセキュアな外部アクセスを許可するクライアント証明書を提供したりすることで制御できます。 
+---
+= StorageGRID への管理者アクセスの制御
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムへの管理者アクセスは、ファイアウォールポートを開くか閉じ、管理者グループとユーザを管理し、シングルサインオン（SSO）を設定し、StorageGRID 指標へのセキュアな外部アクセスを許可するクライアント証明書を提供することによって制御できます。
+
+* link:controlling-access-through-firewalls.html["ファイアウォールによるアクセス制御"]
+* link:using-identity-federation.html["アイデンティティフェデレーションを使用する"]
+* link:managing-admin-groups.html["管理者グループの管理"]
+* link:managing-local-users.html["ローカルユーザの管理"]
+* link:using-single-sign-on.html["StorageGRID にシングルサインオン（SSO）を使用する"]
+* link:configuring-administrator-client-certificates.html["管理者クライアント証明書の設定"]
+

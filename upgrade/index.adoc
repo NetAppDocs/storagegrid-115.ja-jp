@@ -1,0 +1,20 @@
+---
+permalink: upgrade/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= ソフトウェアをアップグレードする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムを新しいリリースにアップグレードする方法について説明します。
+
+* link:about-this-release.html["StorageGRID 11.5について"]
+* link:upgrade-planning-and-preparation.html["アップグレードの計画と準備"]
+* link:performing-upgrade.html["アップグレードを実行する"]
+* link:troubleshooting-upgrade-issues.html["アップグレードの問題のトラブルシューティング"]
+

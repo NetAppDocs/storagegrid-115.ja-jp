@@ -1,0 +1,60 @@
+---
+section: expand
+title: グリッドを展開します
+url: "/expand/index.html"
+entries:
+- title: StorageGRID 拡張の計画
+  url: "/expand/planning-expansion.html"
+  entries:
+  - title: ストレージ容量を追加しています
+    url: "/expand/adding-storage-capacity.html"
+    entries:
+    - title: オブジェクト容量を追加する場合のガイドラインを次に示します
+      url: "/expand/guidelines-for-adding-object-capacity.html"
+    - title: レプリケートオブジェクトにストレージ容量を追加しています
+      url: "/expand/adding-storage-capacity-for-replicated-objects.html"
+    - title: イレイジャーコーディングオブジェクトのストレージ容量の追加
+      url: "/expand/adding-storage-capacity-for-erasure-coded-objects.html"
+    - title: イレイジャーコーディングデータのリバランシングに関する考慮事項
+      url: "/expand/considerations-for-rebalancing-erasure-coded-data.html"
+  - title: メタデータ容量の追加
+    url: "/expand/adding-metadata-capacity.html"
+  - title: システムの機能を追加するためのグリッドノードの追加
+    url: "/expand/adding-grid-nodes-to-add-capabilities.html"
+  - title: 新しいサイトを追加しています
+    url: "/expand/adding-new-site.html"
+- title: 拡張の準備
+  url: "/expand/preparing-for-expansion.html"
+- title: 拡張手順 の概要
+  url: "/expand/overview-of-expansion-procedure.html"
+- title: ストレージノードへのストレージボリュームの追加
+  url: "/expand/adding-storage-volumes-to-storage-nodes.html"
+  entries:
+  - title: VMware：ストレージノードへのストレージボリュームの追加
+    url: "/expand/vmware-adding-storage-volumes-to-storage-node.html"
+  - title: Linux：ストレージノードへの直接接続型ボリュームまたはSANボリュームの追加
+    url: "/expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
+- title: 既存のサイトへのグリッドノードの追加と新しいサイトの追加
+  url: "/expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html"
+  entries:
+  - title: グリッドネットワークのサブネットを更新しています
+    url: "/expand/updating-subnets-for-grid-network.html"
+  - title: 新しいグリッドノードの導入
+    url: "/expand/deploying-new-grid-nodes.html"
+  - title: 拡張の実施
+    url: "/expand/performing-expansion.html"
+- title: 拡張後のStorageGRID システムの設定
+  url: "/expand/configuring-expanded-storagegrid-system.html"
+  entries:
+  - title: ストレージノードがアクティブであることを確認しています
+    url: "/expand/verifying-storage-node-is-active.html"
+  - title: 管理ノードデータベースをコピーしています
+    url: "/expand/copying-admin-node-database.html"
+  - title: Prometheus指標のコピー
+    url: "/expand/copying-prometheus-metrics.html"
+  - title: 監査ログをコピーしています
+    url: "/expand/copying-audit-logs.html"
+  - title: ストレージノードの追加後におけるイレイジャーコーディングデータのリバランシング
+    url: "/expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html"
+- title: テクニカルサポートにお問い合わせください
+  url: "/expand/contacting-technical-support.html"

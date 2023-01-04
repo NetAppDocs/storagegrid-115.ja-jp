@@ -1,0 +1,22 @@
+---
+permalink: maintain/network-maintenance-procedures.html 
+sidebar: sidebar 
+keywords:  
+summary: グリッドネットワーク上のサブネットのリストを設定したり、StorageGRID システムのIPアドレス、DNSサーバ、またはNTPサーバを更新したりできます。 
+---
+= ネットワークのメンテナンス手順
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グリッドネットワーク上のサブネットのリストを設定したり、StorageGRID システムのIPアドレス、DNSサーバ、またはNTPサーバを更新したりできます。
+
+.選択肢
+* link:updating-subnets-for-grid-network.html["グリッドネットワークのサブネットを更新しています"]
+* link:configuring-ip-addresses.html["IPアドレスを設定しています"]
+* link:configuring-dns-servers.html["DNSサーバを設定しています"]
+* link:configuring-ntp-servers.html["NTPサーバを設定しています"]
+* link:restoring-network-connectivity-for-isolated-nodes.html["分離されているノードのネットワーク接続のリストア"]
+

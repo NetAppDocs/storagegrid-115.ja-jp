@@ -1,0 +1,39 @@
+---
+permalink: sg6000/maintaining-sg6000-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, maintain, maintaining, hardware, procedures, tasks 
+summary: SG6000 アプライアンスでメンテナンス手順を実行する必要がある場合があります。このセクションの手順は、アプライアンスが StorageGRID システムにストレージノードとしてすでに導入されていることを前提としています。 
+---
+= SG6000アプライアンスのメンテナンス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SG6000 アプライアンスでメンテナンス手順を実行する必要がある場合があります。このセクションの手順は、アプライアンスが StorageGRID システムにストレージノードとしてすでに導入されていることを前提としています。
+
+.手順
+* link:placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]
+* link:upgrading-santricity-os-on-storage-controllers.html["ストレージコントローラのSANtricity OSをアップグレードします"]
+* link:upgrading-drive-firmware-using-santricity-system-manager.html["SANtricity System Managerを使用してドライブファームウェアをアップグレードする"]
+* link:adding-expansion-shelf-to-deployed-sg6060.html["導入済みのSG6060への拡張シェルフの追加"]
+* link:turning-controller-identify-led-on-and-off.html["コントローラ識別LEDのオンとオフの切り替え"]
+* link:locating-controller-in-data-center.html["コントローラのデータセンターへの配置"]
+* link:replacing-storage-controller-sg6000.html["ストレージコントローラの交換"]
+* link:replacing-hardware-components-in-storage-controller-shelf.html["ストレージコントローラシェルフのハードウェアコンポーネントの交換"]
+* link:replacing-hardware-components-in-optional-60-drive-expansion-shelf.html["オプションの60ドライブ拡張シェルフのハードウェアコンポーネントの交換"]
+* link:shutting-down-sg6000-cn-controller.html["SG6000-CNコントローラをシャットダウンします"]
+* link:powering-on-sg6000-cn-controller-and-verifying-operation.html["SG6000-CNコントローラの電源をオンにして処理を確認します"]
+* link:replacing-sg6000-cn-controller.html["SG6000-CNコントローラの交換"]
+* link:replacing-power-supply-in-sg6000-cn-controller.html["SG6000-CNコントローラの電源装置の交換"]
+* link:removing-sg6000-cn-controller-from-cabinet-or-rack.html["キャビネットまたはラックからのSG6000-CNコントローラの取り外し"]
+* link:reinstalling-sg6000-cn-controller-into-cabinet-or-rack.html["キャビネットまたはラックへのSG6000-CNコントローラの再取り付け"]
+* link:removing-sg6000-cn-controller-cover.html["SG6000-CNコントローラのカバーの取り外し"]
+* link:reinstalling-sg6000-cn-controller-cover.html["SG6000-CNコントローラカバーの再取り付け"]
+* link:replacing-fibre-channel-hba-in-sg6000-cn-controller.html["SG6000-CNコントローラのFibre Channel HBAの交換"]
+* link:changing-link-configuration-of-sg6000-cn-controller.html["SG6000-CNコントローラのリンク設定を変更する"]
+* link:changing-mtu-setting.html["MTU設定を変更します"]
+* link:checking-dns-server-configuration.html["DNSサーバの設定を確認しています"]
+* link:monitoring-node-encryption-in-maintenance-mode.html["メンテナンスモードでのノード暗号化の監視"]
+

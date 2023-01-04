@@ -1,0 +1,24 @@
+---
+permalink: vmware/index.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware環境にStorageGRID をインストールする方法について説明します。 
+---
+= VMware をインストールする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware環境にStorageGRID をインストールする方法について説明します。
+
+* link:installation-overview.html["インストールの概要"]
+* link:planning-and-preparation.html["計画と準備"]
+* link:deploying-virtual-machine-grid-nodes-in-vmware-vsphere-web-client.html["VMware vSphere Web Clientでの仮想マシングリッドノードの導入"]
+* link:configuring-grid-and-completing-installation.html["グリッドの設定とインストールの完了"]
+* link:automating-installation.html["インストールの自動化"]
+* link:overview-of-installation-rest-api.html["インストール REST API の概要"]
+* link:where-to-go-next.html["次の手順"]
+* link:troubleshooting-installation-issues.html["インストールに関する問題のトラブルシューティング"]
+

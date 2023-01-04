@@ -1,0 +1,21 @@
+---
+permalink: ilm/how-objects-are-stored-replication-erasure-coding.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID では、レプリケートコピーを格納するかイレイジャーコーディングコピーを格納することで、オブジェクトを損失から保護できます。作成するコピーのタイプは、ILMルールの配置手順で指定します。 
+---
+= オブジェクトの格納方法（レプリケーションまたはイレイジャーコーディング）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID では、レプリケートコピーを格納するかイレイジャーコーディングコピーを格納することで、オブジェクトを損失から保護できます。作成するコピーのタイプは、ILMルールの配置手順で指定します。
+
+* link:what-replication-is.html["レプリケーションとは"]
+* link:why-you-should-not-use-single-copy-replication.html["シングルコピーレプリケーションを使用しない理由"]
+* link:what-erasure-coding-is.html["イレイジャーコーディングとは"]
+* link:what-erasure-coding-schemes-are.html["イレイジャーコーディングスキームとは"]
+* link:advantages-disadvantages-and-requirements-for-ec.html["イレイジャーコーディングのメリット、デメリット、および要件"]
+

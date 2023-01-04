@@ -1,0 +1,48 @@
+---
+permalink: maintain/rebooting-grid-node-from-grid-manager.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, reboot node, grid manager 
+summary: 'Grid Managerからグリッドノードをリブートすると、が実行されます `reboot` ターゲットノードでコマンドを実行します。' 
+---
+= グリッドノードのリブート- Grid Managerから
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Grid Managerからグリッドノードをリブートすると、が実行されます `reboot` ターゲットノードでコマンドを実行します。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Maintenance または Root Access 権限が必要です。
+* プロビジョニングパスフレーズが必要です。
+
+
+.手順
+. [*ノード（* Nodes）]を選択し
+. リブートするグリッドノードを選択します。
+. [* タスク * （ Tasks * ） ] タブを選択します。
++
+image::../media/nodes_tasks_reboot.gif[ノード > タスク > リブートボタン]
+
+. [Reboot]をクリックします。
++
+確認のダイアログボックスが表示されます。
+
++
+image::../media/reboot_node_confirmation.gif[グリッドノードのリブートの確認ダイアログ]
+
++
+
+NOTE: プライマリ管理ノードをリブートすると、サービスの停止中はブラウザと Grid Manager の接続が一時的に失われることを知らせる確認ダイアログボックスが表示されます。
+
+. プロビジョニングパスフレーズを入力し、 * OK * をクリックします。
+. ノードがリブートするまで待ちます。
++
+サービスがシャットダウンするまでに時間がかかる場合があります。
+
++
+ノードのリブート中は、Nodesページの左側にグレーのアイコン（Administratively Down）が表示されます。すべてのサービスが再び開始されると、アイコンは元の色に戻ります。
+
+

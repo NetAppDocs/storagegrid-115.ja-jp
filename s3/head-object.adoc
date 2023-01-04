@@ -1,0 +1,147 @@
+---
+permalink: s3/head-object.html 
+sidebar: sidebar 
+keywords:  
+summary: S3 HEAD Object 要求を使用すると、オブジェクト自体を返さずにオブジェクトからメタデータを読み出すことができます。 
+---
+= HEAD Object の実行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3 HEAD Object 要求を使用すると、オブジェクト自体を返さずにオブジェクトからメタデータを読み出すことができます。オブジェクトがクラウドストレージプールに格納されている場合は、 HEAD Object を使用してオブジェクトの移行状態を特定できます。
+
+
+
+== ユーザ指定の暗号化キーによるサーバ側の暗号化（ SSE-C ）の要求ヘッダー
+
+指定した一意のキーでオブジェクトが暗号化されている場合は、次の 3 つのヘッダーをすべて使用します。
+
+* `x-amz-server-side-encryption-customer-algorithm`:指定します `AES256`。
+* `x-amz-server-side-encryption-customer-key`:オブジェクトの暗号化キーを指定します
+* `x-amz-server-side-encryption-customer-key-MD5`:オブジェクトの暗号化キーのMD5ダイジェストを指定します。
+
+
+
+IMPORTANT: 指定した暗号化キーが格納されることはありません。暗号化キーを紛失すると、対応するオブジェクトが失われます。お客様提供の鍵を使用してオブジェクト・データを保護する前に'サーバ側の暗号化の使用に関する考慮事項を確認してください
+
+
+
+== ユーザメタデータ内の UTF-8 文字
+
+StorageGRID は、ユーザ定義メタデータ内のエスケープされた UTF-8 文字を解析も解釈もしません。ユーザ定義メタデータにエスケープされたUTF-8文字が含まれているオブジェクトに対してHEAD要求を実行しても、は返されません `x-amz-missing-meta` キーの名前または値に印刷できない文字が含まれている場合は、ヘッダーを指定します。
+
+
+
+== サポートされない要求ヘッダーです
+
+次の要求ヘッダーはサポートされていません `XNotImplemented`：
+
+* `x-amz-website-redirect-location`
+
+
+
+
+== クラウドストレージプールオブジェクトの応答ヘッダー
+
+オブジェクトがクラウドストレージプールに格納されている場合（情報ライフサイクル管理を使用してオブジェクトを管理する手順を参照）、次の応答ヘッダーが返されます。
+
+* `x-amz-storage-class: GLACIER`
+* `x-amz-restore`
+
+
+応答ヘッダーは、オブジェクトがクラウドストレージプールに移動され、必要に応じて読み出し不可能な状態に移行されてリストアされるときの状態に関する情報を提供します。
+
+|===
+| オブジェクトの状態 | HEAD Object への応答 
+
+
+ a| 
+StorageGRID に取り込まれているがまだ ILM によって評価されていないオブジェクト、または従来のストレージプールに格納されているオブジェクト、またはイレイジャーコーディングを使用しているオブジェクト
+ a| 
+`200 OK` （特別な応答ヘッダーは返されません）。
+
+
+
+ a| 
+クラウドストレージプール内にあるが、まだ読み出し不可能な状態に移行していない
+ a| 
+`200 OK`
+
+`x-amz-storage-class: GLACIER`
+
+`x-amz-restore: ongoing-request="false", expiry-date="Sat, 23 July 20 2030 00:00:00 GMT"`
+
+オブジェクトが読み出し不可能な状態に移行されるまでの間、の値 `expiry-date` は、将来の特定の日時に設定されます。移行の正確な時間は、 StorageGRID システムでは制御されません。
+
+
+
+ a| 
+オブジェクトが読み出し不可能な状態に移行したが、少なくとも 1 つのコピーがグリッドに存在する
+ a| 
+`200 OK`
+
+`x-amz-storage-class: GLACIER`
+
+`x-amz-restore: ongoing-request="false", expiry-date="Sat, 23 July 20 2030 00:00:00 GMT"`
+
+の値 `expiry-date` は、将来の特定の日時に設定されます。
+
+* 注：グリッド上のコピーを取得できない場合（ストレージノードが停止している場合など）は、オブジェクトを読み出す前に、問題 a POST Object restore 要求を実行してクラウドストレージプールからコピーをリストアする必要があります。
+
+
+
+ a| 
+読み出し不可能な状態に移行しており、グリッドにコピーが存在しない
+ a| 
+`200 OK`
+
+`x-amz-storage-class: GLACIER`
+
+
+
+ a| 
+読み出し不可能な状態からリストア中である
+ a| 
+`200 OK`
+
+`x-amz-storage-class: GLACIER`
+
+`x-amz-restore: ongoing-request="true"`
+
+
+
+ a| 
+クラウドストレージプールへのリストアが完了している
+ a| 
+`200 OK`
+
+`x-amz-storage-class: GLACIER`
+
+`x-amz-restore: ongoing-request="false", expiry-date="Sat, 23 July 20 2018 00:00:00 GMT"`
+
+。 `expiry-date` クラウドストレージプール内のオブジェクトが読み出し不可能な状態に戻るタイミングを示します。
+
+|===
+
+
+== クラウドストレージプール内のマルチパートオブジェクトまたはセグメント化されたオブジェクト
+
+マルチパートオブジェクトをアップロードした場合や StorageGRID が大きなオブジェクトをセグメントに分割した場合、 StorageGRID はオブジェクトのパーツまたはセグメントのサブセットをサンプリングすることでクラウドストレージプール内のオブジェクトが使用可能かどうかを判断します。HEAD Object要求が誤って返されることがあります `x-amz-restore: ongoing-request="false"` オブジェクトの一部のパートがすでに読み出し不可能な状態に移行されている場合や、オブジェクトの一部のパートがまだリストアされていない場合。
+
+
+
+== バージョン管理
+
+の場合 `versionId` サブリソースが指定されていません。バージョン管理されたバケット内のオブジェクトの最新バージョンが取得されます。オブジェクトの現在のバージョンが削除マーカーの場合は、「見つからない」ステータスがとともに返されます `x-amz-delete-marker` 応答ヘッダーをに設定しました `true`。
+
+.関連情報
+link:s3-rest-api-supported-operations-and-limitations.html["サーバ側の暗号化を使用"]
+
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+link:post-object-restore.html["POST Object restore の実行"]
+
+link:s3-operations-tracked-in-audit-logs.html["監査ログで追跡される S3 処理"]

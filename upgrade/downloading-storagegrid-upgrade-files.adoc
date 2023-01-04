@@ -1,0 +1,76 @@
+---
+permalink: upgrade/downloading-storagegrid-upgrade-files.html 
+sidebar: sidebar 
+keywords: download, upgrade files 
+summary: StorageGRID システムをアップグレードする前に、必要なファイルをサービスラップトップにダウンロードする必要があります。 
+---
+= StorageGRID アップグレードファイルをダウンロードします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムをアップグレードする前に、必要なファイルをサービスラップトップにダウンロードする必要があります。
+
+.必要なもの
+アップグレードするStorageGRID ソフトウェアのバージョンに必要な修正プログラムをすべてインストールしておく必要があります。リカバリとメンテナンスの手順のホットフィックス手順 を参照してください。
+
+.このタスクについて
+をダウンロードする必要があります `.upgrade` あらゆるプラットフォームに対応したアーカイブ。Linuxホストに導入されているノードがある場合は、アップグレードを開始する前にインストールするRPMアーカイブまたはDEBアーカイブもダウンロードする必要があります。
+
+.手順
+. ネットアップの StorageGRID ダウンロードページにアクセスします。
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
+
+. 最新のリリースをダウンロードするボタンを選択するか、ドロップダウンメニューから別のバージョンを選択して、「 * Go * 」を選択します。
++
+StorageGRID ソフトウェアのバージョンの形式は、 11._x.y_. です。StorageGRID ホットフィックスの形式は、 11._x.y.z _ です。
+
+. ネットアップアカウントのユーザ名とパスワードを使用してサインインします。
+. 「注意 / 必ずお読みください」という記述が表示されたら、それを読んでチェックボックスを選択してください。
++
+このステートメントは、リリースに必要なホットフィックスがある場合に表示されます。
+
+. エンドユーザライセンス契約を読み、チェックボックスをオンにして、「 * 同意して続行 * 」を選択します。
++
+選択したバージョンのダウンロードページが表示されます。このページには 3 つの列があります。
+
++
+** StorageGRID をインストールします
+** StorageGRID をアップグレードします
+** StorageGRID アプライアンスのサポートファイル
+
+
+. [* Upgrade StorageGRID *（アップグレードファイル*）]列で、を選択してダウンロードします `.upgrade` Archiveサービスの略。
++
+どのプラットフォームにもが必要です `.upgrade` Archiveサービスの略。
+
+. Linuxホストに導入されているノードがある場合は、RPMアーカイブまたはDEBアーカイブもダウンロードします `.tgz` または `.zip` の形式で入力し
++
+アップグレードを開始する前に、すべてのLinuxノードにRPMアーカイブまたはDEBアーカイブをインストールする必要があります。
+
++
+
+NOTE: SG100 または SG1000 では追加のファイルは必要ありません。
+
++
+
+NOTE: を選択します `.zip` ファイルサービスラップトップでWindowsを実行している場合。
+
++
+** Red Hat Enterprise LinuxまたはCentOS +
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` [+]
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`
+** UbuntuまたはDebian+
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip` [+]
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.tgz`
+
+
+
+
+.関連情報
+link:linux-installing-rpm-or-deb-package-on-all-hosts.html["Linux：すべてのホストにRPMパッケージまたはDEBパッケージをインストールします"]
+
+link:../maintain/index.html[""]

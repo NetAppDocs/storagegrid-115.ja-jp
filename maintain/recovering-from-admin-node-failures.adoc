@@ -1,0 +1,29 @@
+---
+permalink: maintain/recovering-from-admin-node-failures.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, admin node failure 
+summary: 管理ノードのリカバリプロセスは、プライマリ管理ノードと非プライマリ管理ノードで異なります。 
+---
+= 管理ノードの障害からのリカバリ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+管理ノードのリカバリプロセスは、プライマリ管理ノードと非プライマリ管理ノードで異なります。
+
+.このタスクについて
+プライマリまたは非プライマリ管理ノードのおおまかなリカバリ手順は同じですが、詳細は異なります。
+
+image::../media/overview_admin_node_recovery.png[プライマリまたは非プライマリ管理ノードのリカバリの概要]
+
+リカバリ対象の管理ノードの正しいリカバリ手順 に必ず従ってください。手順の概要は同じように見えますが、詳細な手順は異なります。
+
+.関連情報
+link:../sg100-1000/index.html["SG100 SG1000サービスアプライアンス"]
+
+.選択肢
+* link:recovering-from-primary-admin-node-failures.html["プライマリ管理ノードの障害からのリカバリ"]
+* link:recovering-from-non-primary-admin-node-failures.html["非プライマリ管理ノードの障害からのリカバリ"]
+

@@ -1,0 +1,21 @@
+---
+permalink: sg5600/setting-up-santricity-storage-manager.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, SANtricity Storage Manager, SANtricity, Storage Manager, configure, configuring, setup, set up, setting up 
+summary: SANtricity Storage Manager にアクセスしたあと、ハードウェアを設定する際にそのマネージャを使用できます。通常、この設定はアプライアンスを StorageGRID システムのストレージノードとして導入する前に行います。 
+---
+= SANtricity Storage Managerをセットアップしています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SANtricity Storage Manager にアクセスしたあと、ハードウェアを設定する際にそのマネージャを使用できます。通常、この設定はアプライアンスを StorageGRID システムのストレージノードとして導入する前に行います。
+
+.手順
+* link:configuring-autosupport.html["AutoSupport を設定しています"]
+* link:verifying-receipt-of-autosupport.html["AutoSupport の受信確認"]
+* link:configuring-email-and-snmp-trap-alert-notifications.html["EメールおよびSNMPトラップのアラート通知の設定"]
+* link:setting-passwords-for-santricity-storage-manager.html["SANtricity Storage Managerのパスワードを設定しています"]
+

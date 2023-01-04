@@ -1,0 +1,19 @@
+---
+permalink: monitor/using-grid-manager-for-monitoring.html 
+sidebar: sidebar 
+keywords:  
+summary: Grid Managerは、StorageGRID システムの監視に最も重要なツールです。このセクションでは、Grid Managerダッシュボードの概要を紹介し、ノードページに関する詳細情報を提供します。 
+---
+= Grid Managerを使用して監視する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Grid Managerは、StorageGRID システムの監視に最も重要なツールです。このセクションでは、Grid Managerダッシュボードの概要を紹介し、ノードページに関する詳細情報を提供します。
+
+* link:web-browser-requirements.html["Web ブラウザの要件"]
+* link:viewing-dashboard.html["ダッシュボードの表示"]
+* link:viewing-nodes-page.html["Nodesページを表示します"]
+

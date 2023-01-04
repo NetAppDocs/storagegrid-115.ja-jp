@@ -1,0 +1,36 @@
+---
+permalink: monitor/exporting-text-reports.html 
+sidebar: sidebar 
+keywords: reports, text, export text, report 
+summary: テキストレポートをエクスポートすると、ブラウザの新しいタブが開き、データを選択してコピーできます。 
+---
+= テキストレポートのエクスポート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+テキストレポートをエクスポートすると、ブラウザの新しいタブが開き、データを選択してコピーできます。
+
+.このタスクについて
+コピーしたデータを新しいドキュメント（スプレッドシートなど）に保存して、 StorageGRID システムのパフォーマンスの分析に使用できます。
+
+.手順
+. Support *>* Tools *>* Grid Topology *を選択します。
+. テキストレポートを作成します。
+. [ * エクスポート（ Export ） ] をクリックしますimage:../media/icon_export.gif["エクスポートアイコン"]。
++
+image::../media/export_text_report.gif[説明が付随するスクリーンショット]
+
++
+Export Text Report ウィンドウが開き、レポートが表示されます。
+
++
+image::../media/export_text_report_data.gif[サンプルのテキストレポートを示すスクリーンショット]
+
+. テキストレポートのエクスポートウィンドウの内容を選択してコピーします。
++
+このデータをスプレッドシートなどのサードパーティのドキュメントに貼り付けることができるようになりました。
+
+

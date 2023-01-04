@@ -1,0 +1,43 @@
+---
+permalink: admin/removing-high-availability-group.html 
+sidebar: sidebar 
+keywords:  
+summary: 使用しなくなったハイアベイラビリティ（HA\）グループを削除できます。 
+---
+= ハイアベイラビリティグループを削除しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用しなくなったハイアベイラビリティ（HA）グループを削除できます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限が必要です。
+
+
+.このタスクを実行します
+HAグループを削除すると、そのグループのいずれかの仮想IPアドレスを使用するように設定されているS3またはSwiftクライアントはStorageGRID に接続できなくなります。クライアントの停止を回避するには、該当するS3またはSwiftクライアントアプリケーションをすべて更新してからHAグループを削除する必要があります。各クライアントを更新して、別のIPアドレスを使用して接続します。たとえば、別のHAグループの仮想IPアドレスや、インストール時またはDHCPを使用してインターフェイスに設定されたIPアドレスなどです。
+
+.手順
+. * Configuration *>* Network Settings *>* High Availability Groups *を選択します。
++
+[High Availability Groups]ページが表示されます。
+
++
+image::../media/ha_groups_page_with_two_groups.png[HAグループのメイン画面]
+
+. 削除するHAグループを選択し、* Remove *をクリックします。
++
+Delete High Availability Groupという警告が表示されます。
+
++
+image::../media/ha_group_remove_warning.png[HAグループの削除に関する警告]
+
+. [OK] をクリックします。
++
+HAグループが削除されます。
+
+

@@ -1,0 +1,25 @@
+---
+permalink: upgrade/upgrade-planning-and-preparation.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムのアップグレードを計画して、システムをアップグレードする準備ができていること、および最小限の中断でアップグレードを完了できることを確認する必要があります。 
+---
+= アップグレードの計画と準備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムのアップグレードを計画して、システムをアップグレードする準備ができていること、および最小限の中断でアップグレードを完了できることを確認する必要があります。
+
+.手順
+. link:estimating-time-to-complete-upgrade.html["アップグレード所要時間の見積もり"]
+. link:how-your-system-is-affected-during-upgrade.html["アップグレード中にシステムが受ける影響"]
+. link:impact-of-upgrade-on-groups-and-user-accounts.html["アップグレードによるグループおよびユーザアカウントへの影響"]
+. link:verifying-installed-version-of-storagegrid.html["インストールされているStorageGRID のバージョンを確認しています"]
+. link:obtaining-required-materials-for-software-upgrade.html["ソフトウェアアップグレードの前提要件の確認"]
+. link:downloading-storagegrid-upgrade-files.html["StorageGRID アップグレードファイルをダウンロードします"]
+. link:downloading-recovery-package.html["リカバリパッケージをダウンロードしています"]
+. link:checking-systems-condition-before-upgrading-software.html["ソフトウェアのアップグレード前のシステム状態の確認"]
+

@@ -1,0 +1,27 @@
+---
+permalink: admin/managing-storagegrid-networks-and-connections.html 
+sidebar: sidebar 
+keywords:  
+summary: グリッドマネージャを使用して、 StorageGRID のネットワークと接続を設定および管理できます。 
+---
+= StorageGRID ネットワークと接続の管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+グリッドマネージャを使用して、 StorageGRID のネットワークと接続を設定および管理できます。
+
+を参照してください link:configuring-client-connections.html["S3およびSwiftクライアント接続の設定"] を参照して、 S3 または Swift クライアントを接続する方法を確認してください。
+
+* link:guidelines-for-storagegrid-networks.html["StorageGRID ネットワークのガイドライン"]
+* link:viewing-ip-addresses.html["IPアドレスを表示しています"]
+* link:supported-ciphers-for-outgoing-tls-connections.html["発信 TLS 接続でサポートされる暗号"]
+* link:changing-network-transfer-encryption.html["ネットワーク転送の暗号化の変更"]
+* link:configuring-server-certificates.html["サーバ証明書の設定"]
+* link:configuring-storage-proxy-settings.html["ストレージプロキシを設定しています"]
+* link:configuring-admin-proxy-settings.html["管理プロキシの設定"]
+* link:managing-traffic-classification-policies.html["トラフィック分類ポリシーの管理"]
+* link:what-link-costs-are.html["リンクコストとは"]
+

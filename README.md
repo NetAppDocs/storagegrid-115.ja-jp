@@ -1,1 +1,1 @@
-# storagegrid-115.ja-jp
+# storagegrid

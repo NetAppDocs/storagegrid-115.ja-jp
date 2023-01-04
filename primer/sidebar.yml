@@ -1,0 +1,72 @@
+---
+section: primer
+title: グリッド入門
+url: "/primer/index.html"
+entries:
+- title: StorageGRID について
+  url: "/primer/about-storagegrid.html"
+  entries:
+  - title: StorageGRID を使用したハイブリッドクラウド
+    url: "/primer/hybrid-clouds-with-storagegrid.html"
+- title: StorageGRID のアーキテクチャとネットワークトポロジ
+  url: "/primer/storagegrid-architecture-and-network-topology.html"
+- title: StorageGRID によるデータの管理方法
+  url: "/primer/how-storagegrid-manages-data.html"
+  entries:
+  - title: オブジェクトとは
+    url: "/primer/what-object-is.html"
+  - title: オブジェクトデータを保護する方法
+    url: "/primer/how-object-data-is-protected.html"
+  - title: オブジェクトのライフサイクル
+    url: "/primer/life-of-object.html"
+    entries:
+    - title: 取り込みのデータフロー
+      url: "/primer/ingest-data-flow.html"
+    - title: コピー管理
+      url: "/primer/copy-management.html"
+    - title: 読み出しのデータフロー
+      url: "/primer/retrieve-data-flow.html"
+    - title: データフローを削除します
+      url: "/primer/delete-data-flow.html"
+- title: Grid Managerの概要
+  url: "/primer/exploring-grid-manager.html"
+- title: Tenant Managerの概要
+  url: "/primer/exploring-tenant-manager.html"
+- title: StorageGRID を使用する
+  url: "/primer/using-storagegrid.html"
+  entries:
+  - title: StorageGRID アクセスの制御
+    url: "/primer/controlling-storagegrid-access.html"
+  - title: テナントとクライアント接続の管理
+    url: "/primer/managing-tenants-and-client-connections.html"
+  - title: ネットワークの設定
+    url: "/primer/configuring-network-settings.html"
+  - title: システム設定を構成しています
+    url: "/primer/configuring-system-settings.html"
+  - title: 情報ライフサイクル管理の使用
+    url: "/primer/using-information-lifecycle-management.html"
+  - title: StorageGRID 処理の監視
+    url: "/primer/monitoring-storagegrid-operations.html"
+    entries:
+    - title: Nodesページを表示します
+      url: "/primer/viewing-nodes-page.html"
+      entries:
+      - title: Nodes ページのタブ
+        url: "/primer/tabs-for-nodes-page.html"
+      - title: Prometheus 指標
+        url: "/primer/prometheus-metrics.html"
+      - title: StorageGRID 属性
+        url: "/primer/storagegrid-attributes.html"
+    - title: アラートの監視と管理
+      url: "/primer/monitoring-and-managing-alerts.html"
+    - title: SNMPによる監視を使用する
+      url: "/primer/using-snmp-monitoring.html"
+    - title: 監査メッセージの確認
+      url: "/primer/reviewing-audit-messages.html"
+  - title: メンテナンス手順の実行
+    url: "/primer/performing-maintenance-procedures.html"
+    entries:
+    - title: リカバリパッケージをダウンロードしています
+      url: "/primer/downloading-recovery-package.html"
+  - title: StorageGRID サポートオプションを使用する
+    url: "/primer/using-storagegrid-support-options.html"

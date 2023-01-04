@@ -1,0 +1,25 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords:  
+summary: ホットフィックスを適用する方法、障害が発生したグリッドノードをリカバリする方法、グリッドノードとサイトの運用を停止する方法、システム障害が発生した場合にオブジェクトをリカバリする方法について説明します。 
+---
+= リカバリを維持します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ホットフィックスを適用する方法、障害が発生したグリッドノードをリカバリする方法、グリッドノードとサイトの運用を停止する方法、システム障害が発生した場合にオブジェクトをリカバリする方法について説明します。
+
+* link:introduction-to-storagegrid-recovery-and-maintenance.html["StorageGRID のリカバリとメンテナンスの概要"]
+* link:storagegrid-hotfix-procedure.html["StorageGRID ホットフィックス手順"]
+* link:grid-node-recovery-procedures.html["グリッドノードのリカバリ手順"]
+* link:how-site-recovery-is-performed-by-technical-support.html["テクニカルサポートによるサイトリカバリの実行方法"]
+* link:decommission-procedure.html["手順 の運用を停止"]
+* link:network-maintenance-procedures.html["ネットワークのメンテナンス手順"]
+* link:host-level-and-middleware-procedures.html["ホストレベルおよびミドルウェアの手順"]
+* link:grid-node-procedures.html["グリッドノードの手順"]
+* link:appliance-node-cloning.html["アプライアンスノードのクローニング"]
+

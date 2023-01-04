@@ -1,0 +1,22 @@
+---
+permalink: expand/adding-storage-capacity.html 
+sidebar: sidebar 
+keywords: storage, capacity, add, adding, expand, expansion, full storage node 
+summary: 既存のストレージノードがいっぱいになったら、StorageGRID システムのストレージ容量を増やす必要があります。 
+---
+= ストレージ容量を追加しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+既存のストレージノードがいっぱいになったら、StorageGRID システムのストレージ容量を増やす必要があります。
+
+ストレージ容量を増やすには、まずデータの格納場所を把握し、必要なすべての場所に容量を追加する必要があります。たとえば、オブジェクトデータのコピーを複数のサイトに格納している場合は、各サイトのストレージ容量の拡張が必要になることがあります。
+
+* link:guidelines-for-adding-object-capacity.html["オブジェクト容量を追加する場合のガイドラインを次に示します"]
+* link:adding-storage-capacity-for-replicated-objects.html["レプリケートオブジェクトにストレージ容量を追加しています"]
+* link:adding-storage-capacity-for-erasure-coded-objects.html["イレイジャーコーディングオブジェクトのストレージ容量の追加"]
+* link:considerations-for-rebalancing-erasure-coded-data.html["イレイジャーコーディングデータのリバランシングに関する考慮事項"]
+

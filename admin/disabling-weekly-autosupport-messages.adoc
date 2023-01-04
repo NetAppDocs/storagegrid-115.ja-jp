@@ -1,0 +1,36 @@
+---
+permalink: admin/disabling-weekly-autosupport-messages.html 
+sidebar: sidebar 
+keywords:  
+summary: デフォルトでは、 StorageGRID システムは週に 1 回ネットアップサポートに AutoSupport メッセージを送信するように設定されています。 
+---
+= 週次AutoSupport メッセージの無効化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+デフォルトでは、 StorageGRID システムは週に 1 回ネットアップサポートに AutoSupport メッセージを送信するように設定されています。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限または Other Grid Configuration 権限が必要です。
+
+
+.このタスクについて
+週次AutoSupport メッセージが送信されるタイミングを確認するには、「* AutoSupport *>* Results *」ページの「* Weekly AutoSupport *」の「* Next Scheduled Time *」を参照してください。 image:../media/autosupport_weekly_next_scheduled_time.png["Weekly AutoSupport ：次にスケジュールされた時刻"]
+
+AutoSupport メッセージの自動送信はいつでも無効にすることができます。
+
+.手順
+. [*サポート*（Support *）]>[*ツール*（* Tools *）]>[* AutoSupport *（**）]
++
+AutoSupport ページが表示され、 * 設定 * タブが選択されます。
+
+. [毎週AutoSupport を有効にする*]チェックボックスをオフにします。
++
+image::../media/autosupport_disable_weekly.png[AutoSupport ページ]
+
+. [ 保存（ Save ） ] を選択します。
+

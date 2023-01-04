@@ -1,0 +1,91 @@
+---
+permalink: fabricpool/creating-load-balancer-endpoint-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, load balancer, endpoint, load balancing, create, creating, certificate 
+summary: FabricPool で使用するStorageGRID を設定する場合は、ロードバランサエンドポイントを設定し、ロードバランサエンドポイント証明書をアップロードします。この証明書は、ONTAP とStorageGRID 間の接続を保護するために使用されます。 
+---
+= FabricPool のロードバランサエンドポイントの作成
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FabricPool で使用するStorageGRID を設定する場合は、ロードバランサエンドポイントを設定し、ロードバランサエンドポイント証明書をアップロードします。この証明書は、ONTAP とStorageGRID 間の接続を保護するために使用されます。
+
+.必要なもの
+* Grid Managerにはサポートされているブラウザを使用してサインインする必要があります。
+* Root Access 権限が必要です。
+* 次のファイルが必要です。
++
+** Server Certificate ：カスタムサーバ証明書ファイル。
+** Server Certificate Private Key ：カスタムサーバ証明書の秘密鍵ファイル。
+** CA Bundle：各中間発行認証局（CA）の証明書を含む単一のファイル。このファイルには、 PEM でエンコードされた各 CA 証明書ファイルが、証明書チェーンの順序で連結して含まれている必要があります。
+
+
+
+
+.このタスクについて
+このタスクの詳細については、を参照してください link:../admin/configuring-load-balancer-endpoints.html["ロードバランサエンドポイントの設定"]。
+
+.手順
+. [* Configuration *>* Network Settings *>* Load Balancer Endpoints *]を選択します。
++
+image::../media/load_balancer_endpoint_create_http.png[ロードバランサエンドポイントの作成]
+
+. [*エンドポイントの追加*]を選択します。
+. 次の情報を入力します。
++
+[cols="1a,1a"]
+|===
+| フィールド | 説明 
+
+
+ a| 
+表示名
+ a| 
+エンドポイントのわかりやすい名前
+
+
+
+ a| 
+ポート
+ a| 
+ロードバランシングに使用する StorageGRID ポート。このフィールドのデフォルト値は 10433 ですが、未使用の外部ポートを入力することもできます。80 または 443 と入力すると、エンドポイントは管理ノードで予約されているため、ゲートウェイノードにのみ設定されます。
+
+* 注： * 他のグリッドサービスで使用されているポートは使用できません。内部および外部の通信に使用されるポートのリストを参照してください。
+
+link:../network/network-port-reference.html["ネットワークポートのリファレンス"]
+
+StorageGRID を FabricPool クラウド階層として接続する場合は、 ONTAP に同じポート番号を指定する必要があります。
+
+
+
+ a| 
+プロトコル
+ a| 
+は* HTTPS *にする必要があります。
+
+
+
+ a| 
+エンドポイントバインドモード
+ a| 
+[ グローバル * （ Global * ） ] 設定を使用するか（推奨）、このエンドポイントのアクセス性を次のいずれかに制限します。
+
+** 特定のハイアベイラビリティ（ HA ）仮想 IP アドレス（ VIP ）。このオプションは、ワークロードの分離レベルを大幅に高める必要がある場合にのみ使用してください。
+** 特定のノードの特定のネットワークインターフェイス。
+
+
+|===
+. [ 保存（ Save ） ] を選択します。
++
+[Edit Endpoint]ダイアログボックスが表示されます。
+
+. 「* Endpoint Service Type *」で「* S3 *」を選択します。
+. [証明書のアップロード*(推奨)]を選択し、サーバ証明書、証明書の秘密鍵、およびCAバンドルを参照します。
++
+image::../media/load_balancer_endpoint_upload_cert.png[証明書のアップロード]
+
+. [ 保存（ Save ） ] を選択します。
+

@@ -1,0 +1,45 @@
+---
+permalink: maintain/deploying-new-linux-hosts.html 
+sidebar: sidebar 
+keywords: storagegrid, deploy linux host, new host, new linux host 
+summary: いくつかの例外を除き、最初のインストールプロセス時と同じ方法で新しいホストを準備します。 
+---
+= 新しいLinuxホストの導入
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+いくつかの例外を除き、最初のインストールプロセス時と同じ方法で新しいホストを準備します。
+
+新規または再インストールされた物理 / 仮想 Linux ホストを導入するには、お使いの Linux オペレーティングシステム用の StorageGRID のインストール手順に記載されているホストの準備について、手順 で説明しています。
+
+この手順 には、次のタスクが含まれています。
+
+. Linux をインストールします。
+. ホストネットワークを設定する。
+. ホストストレージを設定する。
+. Dockerをインストールする。
+. StorageGRID ホストサービスをインストールする。
++
+
+IMPORTANT: インストール手順の「 Install StorageGRID host service 」タスクを完了した後で停止します。「グリッドノードの配置」タスクは開始しないでください。
+
+
+
+これらの手順を実行する際は、次の重要なガイドラインに注意してください。
+
+* 元のホストと同じホストインターフェイス名を使用してください。
+* 共有ストレージを使用して StorageGRID ノードをサポートする場合や、障害ノードから一部またはすべてのディスクドライブ / SSD を交換ノードに移動した場合は、元のホストと同じストレージマッピングを再確立する必要があります。たとえば、でWWIDとエイリアスを使用していた場合などです `/etc/multipath.conf` インストール手順で推奨されるように、で同じエイリアス/ WWIDのペアを使用してください `/etc/multipath.conf` 交換用ホスト。
+* StorageGRID ノードが NetApp AFF システムから割り当てられたストレージを使用している場合は、ボリュームで FabricPool 階層化ポリシーが有効になっていないことを確認してください。StorageGRID ノードで使用するボリュームで FabricPool による階層化を無効にすることで、トラブルシューティングとストレージの処理がシンプルになります。
++
+
+IMPORTANT: StorageGRID を使用して StorageGRID に関連するデータを FabricPool 自体に階層化しないでください。StorageGRID データを StorageGRID に階層化すると、トラブルシューティングと運用がより複雑になります。
+
+
+
+.関連情報
+link:../rhel/index.html["Red Hat Enterprise Linux または CentOS をインストールします"]
+
+link:../ubuntu/index.html["Ubuntu または Debian をインストールします"]

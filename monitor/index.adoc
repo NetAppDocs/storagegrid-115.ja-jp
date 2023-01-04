@@ -1,0 +1,25 @@
+---
+permalink: monitor/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= StorageGRID システムを監視する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムを監視する方法と、発生する可能性のある問題を評価する方法について説明します。すべてのシステムアラートを一覧表示します。
+
+* link:using-grid-manager-for-monitoring.html["Grid Managerを使用して監視する"]
+* link:information-you-should-monitor-regularly.html["定期的に監視する必要がある情報"]
+* link:managing-alerts-and-alarms.html["アラートとアラームの管理"]
+* link:using-snmp-monitoring.html["SNMPによる監視を使用する"]
+* link:collecting-additional-storagegrid-data.html["追加のStorageGRID データを収集しています"]
+* link:../troubleshoot/troubleshooting-storagegrid-system.html["StorageGRID システムのトラブルシューティング"]
+* link:alerts-reference.html["アラート一覧"]
+* link:alarms-reference.html["アラーム一覧（従来のシステム）"]
+* link:../monitor/logs-files-reference.html["ログファイル参照"]
+

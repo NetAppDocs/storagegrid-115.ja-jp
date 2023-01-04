@@ -1,0 +1,40 @@
+---
+permalink: primer/prometheus-metrics.html 
+sidebar: sidebar 
+keywords: prometheus, metrics, grafana 
+summary: 管理ノードの Prometheus サービスは、すべてのノード上のサービスから時系列の指標を収集します。 
+---
+= Prometheus 指標
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+管理ノードの Prometheus サービスは、すべてのノード上のサービスから時系列の指標を収集します。
+
+Prometheus で収集された指標は、 Grid Manager のさまざまな場所で使用されます。
+
+* * Nodes ページ * ： Nodes ページで使用できるタブのグラフとチャートでは、 Grafana 視覚化ツールを使用して、 Prometheus で収集された時系列の指標を表示します。Grafana はグラフ形式とチャート形式で時系列のデータを表示し、 Prometheus はバックエンドのデータソースとして機能します。
++
+image::../media/prometheus_graph.png[Prometheusのグラフ]
+
+* * アラート * ： Prometheus 指標を使用するアラートルールの条件が true と評価されると、特定の重大度レベルでアラートがトリガーされます。
+* * グリッド管理 API * ： Prometheus 指標をカスタムのアラートルールまたは外部の自動化ツールで使用して、 StorageGRID システムを監視できます。Prometheus指標の完全なリストは、グリッド管理API（* Help *>* API Documentation *>* Metrics *）で入手できます。使用可能な指標の数は1、000を超えますが、StorageGRID の最も重要な処理を監視するために必要な指標は比較的少数です。
++
+
+NOTE: 名前に _private_ が含まれる指標は内部専用です。 StorageGRID のリリースごとに予告なく変更されることがあります。
+
+* サポート*>*ツール*>*診断*ページと*サポート*>*ツール*>*メトリクス*ページ：これらのページは主にテクニカルサポートが使用するためのもので、Prometheus指標の値を使用する多数のツールとグラフを提供します。
++
+
+NOTE: [Metrics] ページの一部の機能やメニュー項目は意図的に機能しないため、変更される場合があります。
+
+
+
+.関連情報
+link:monitoring-and-managing-alerts.html["アラートの監視と管理"]
+
+link:using-storagegrid-support-options.html["StorageGRID サポートオプションを使用する"]
+
+link:../monitor/index.html["トラブルシューティングを監視します"]

@@ -1,0 +1,26 @@
+---
+permalink: monitor/resetting-count-of-custom-events-to-zero.html 
+sidebar: sidebar 
+keywords:  
+summary: カスタムイベントのカウンタのみをリセットする場合は、のサポートメニューのグリッドトポロジページを使用する必要があります。 
+---
+= カスタムイベントのカウントを0にリセットします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+カスタムイベントのカウンタのみをリセットする場合は、のサポートメニューのグリッドトポロジページを使用する必要があります。
+
+.このタスクについて
+カウンタをリセットすると、次のイベントによってアラームがトリガーされます。一方、アラームを確認した場合は、次のしきい値レベルに達したときにのみアラームが再度トリガーされます。
+
+. Support *>* Tools *>* Grid Topology *を選択します。
+. * _grid node_* > * ssm * > * Events * > * Configuration * > * Main * を選択します。
+. カスタムイベントの * リセット * チェックボックスをオンにします。
++
+image::../media/custom_events_reset.gif[SSM のスクリーンショット > Events > Configuration > Main]
+
+. [ 変更の適用 *] をクリックします。
+

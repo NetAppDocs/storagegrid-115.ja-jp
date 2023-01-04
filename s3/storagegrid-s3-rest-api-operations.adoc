@@ -1,0 +1,1065 @@
+---
+permalink: s3/storagegrid-s3-rest-api-operations.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= StorageGRID の S3 REST API の処理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システム固有の処理が S3 REST API に追加されています。
+
+
+
+== GET Bucket consistency 要求を実行します
+
+GET Bucket consistency 要求を使用すると、特定のバケットに適用されている整合性レベルを確認できます。
+
+新たに作成したオブジェクトに対しては、リードアフターライト整合性を保証するようにデフォルトの整合性制御が設定されます。
+
+この処理を完了するには、s3：GetBucketConsistency権限またはrootアカウントが必要です。
+
+
+
+=== 要求例
+
+[source, subs="specialcharacters,quotes"]
+----
+GET /bucket?x-ntap-sg-consistency HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+=== 応答
+
+応答XMLで、 `<Consistency>` は次のいずれかの値を返します。
+
+|===
+| 整合性制御 | 説明 
+
+
+ a| 
+すべて
+ a| 
+すべてのノードが即座にデータを受け取り、受け取れない場合は要求が失敗します。
+
+
+
+ a| 
+strong-global
+ a| 
+すべてのサイトのすべてのクライアント要求について、リードアフターライト整合性が保証されます。
+
+
+
+ a| 
+strong-site
+ a| 
+1 つのサイト内のすべてのクライアント要求について、リードアフターライト整合性が保証されます。
+
+
+
+ a| 
+read-after-new-write の場合
+ a| 
+（デフォルト）新規オブジェクトにはリードアフターライト整合性を、オブジェクトの更新には結果整合性を提供します。高可用性が確保され、データ保護が保証されます。Amazon S3の整合性に相当します。
+
+* 注：存在しないオブジェクトに対してアプリケーションが HEAD 要求を使用すると、使用できないストレージノードがあると「 500 Internal Server Error 」が大量に返される可能性があります。これらのエラーを回避するには、 Amazon S3 と同様の整合性の保証が必要でない限り、整合性制御を「 available 」に設定します。
+
+
+
+ a| 
+available （ HEAD 処理は結果整合性）
+ a| 
+「 read-after-new-write 」整合性レベルと動作は同じですが、 HEAD 処理については結果整合性のみを提供します。ストレージ・ノードが使用できない場合 ' リードアフター・新規ライトよりもヘッド操作の可用性が高くなりますAmazon S3 の整合性と異なるのは HEAD 処理のみです。
+
+|===
+
+
+=== 応答例
+
+[listing]
+----
+HTTP/1.1 200 OK
+Date: Fri, 18 Sep 2020 01:02:18 GMT
+Connection: CLOSE
+Server: StorageGRID/11.5.0
+x-amz-request-id: 12345
+Content-Length: 127
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Consistency xmlns="http://s3.storagegrid.com/doc/2015-02-01/">read-after-new-write</Consistency>
+----
+.関連情報
+link:consistency-controls.html["整合性制御"]
+
+
+
+== PUT Bucket consistency 要求
+
+PUT Bucket consistency 要求を使用すると、バケットで実行される処理に適用する整合性レベルを指定できます。
+
+新たに作成したオブジェクトに対しては、リードアフターライト整合性を保証するようにデフォルトの整合性制御が設定されます。
+
+この処理を完了するには、s3：PutBucketConsistency権限またはrootアカウントが必要です。
+
+
+
+=== リクエスト
+
+。 `x-ntap-sg-consistency` パラメータには次のいずれかの値を指定する必要があります。
+
+|===
+| 整合性制御 | 説明 
+
+
+ a| 
+すべて
+ a| 
+すべてのノードが即座にデータを受け取り、受け取れない場合は要求が失敗します。
+
+
+
+ a| 
+strong-global
+ a| 
+すべてのサイトのすべてのクライアント要求について、リードアフターライト整合性が保証されます。
+
+
+
+ a| 
+strong-site
+ a| 
+1 つのサイト内のすべてのクライアント要求について、リードアフターライト整合性が保証されます。
+
+
+
+ a| 
+read-after-new-write の場合
+ a| 
+（デフォルト）新規オブジェクトにはリードアフターライト整合性を、オブジェクトの更新には結果整合性を提供します。高可用性が確保され、データ保護が保証されます。Amazon S3の整合性に相当します。
+
+* 注：存在しないオブジェクトに対してアプリケーションが HEAD 要求を使用すると、使用できないストレージノードがあると「 500 Internal Server Error 」が大量に返される可能性があります。これらのエラーを回避するには、 Amazon S3 と同様の整合性の保証が必要でない限り、整合性制御を「 available 」に設定します。
+
+
+
+ a| 
+available （ HEAD 処理は結果整合性）
+ a| 
+「 read-after-new-write 」整合性レベルと動作は同じですが、 HEAD 処理については結果整合性のみを提供します。ストレージ・ノードが使用できない場合 ' リードアフター・新規ライトよりもヘッド操作の可用性が高くなりますAmazon S3 の整合性と異なるのは HEAD 処理のみです。
+
+|===
+* 注： * 一般的には、「 read-after-new-write 」整合性制御値を使用する必要があります。要求が正しく機能しない場合は、可能であればアプリケーションクライアントの動作を変更します。または、 API 要求ごとに整合性制御を指定するようにクライアントを設定します。バケットレベルの整合性制御は最後の手段と考えてください。
+
+
+
+=== 要求例
+
+[source, subs="specialcharacters,quotes"]
+----
+PUT /bucket?x-ntap-sg-consistency=strong-global HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+.関連情報
+link:consistency-controls.html["整合性制御"]
+
+
+
+== GET Bucket last access time 要求
+
+GET Bucket last access time 要求を使用すると、最終アクセス時間の更新が個々のバケットで有効になっているか無効になっているかを確認できます。
+
+この処理を完了するには、s3：GetBucketLastAccessTime権限またはrootアカウントが必要です。
+
+
+
+=== 要求例
+
+[source, subs="specialcharacters,quotes"]
+----
+GET /bucket?x-ntap-sg-lastaccesstime HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+=== 応答例
+
+次の例では、バケットの最終アクセス時間の更新が有効になっています。
+
+[listing]
+----
+HTTP/1.1 200 OK
+Date: Sat, 29 Nov 2015 01:02:18 GMT
+Connection: CLOSE
+Server: StorageGRID/10.3.0
+x-amz-request-id: 12345
+Content-Length: 127
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<LastAccessTime xmlns="http://s3.storagegrid.com/doc/2015-02-01/">enabled
+</LastAccessTime>
+----
+
+
+== PUT Bucket last access time 要求の場合
+
+PUT Bucket last access time 要求を使用すると、最終アクセス時間の更新を個々のバケットで有効または無効にできます。最終アクセス時間の更新を無効にするとパフォーマンスが向上します。バージョン 10.3.0 以降で作成されたバケットに対しては、いずれもデフォルトで無効になります。
+
+この処理を完了するには、バケットのs3：PutBucketLastAccessTime権限またはrootアカウントが必要です。
+
+
+NOTE: StorageGRID バージョン 10.3 以降では、すべての新規バケットで最終アクセス時間の更新がデフォルトで無効になります。以前のバージョンの StorageGRID で作成されたバケットにこの新たなデフォルトの動作を適用する場合は、対象となるバケットごとに最終アクセス時間の更新を無効にする必要があります。Tenant Manager またはテナント管理 API の PUT Bucket last access time 要求、 * S3 * > * Buckets * > * Change Last Access Setting * チェックボックスを使用して、最終アクセス時間の更新を有効または無効にできます。
+
+バケットで最終アクセス時間の更新が無効になっている場合、バケットの処理の動作は次のようになります。
+
+* GET Object 、 GET Object ACL 、 GET Object Tagging 、 HEAD Object の各要求では、最終アクセス時間が更新されません。オブジェクトは、情報ライフサイクル管理（ ILM ）評価のキューに追加されません。
+* メタデータのみを更新する PUT Object - Copy 要求と PUT Object Tagging 要求では、最終アクセス時間も更新されます。オブジェクトは ILM 評価のキューに追加されます。
+* ソースバケットで最終アクセス時間の更新が無効になっている場合は、 PUT Object - Copy 要求でソースバケットの最終アクセス時間が更新されません。コピーされたオブジェクトは、ソースバケットの ILM 評価のキューに追加されません。ただし、デスティネーションについては、 PUT Object - Copy 要求で常に最終アクセス時間が更新されます。オブジェクトのコピーは、 ILM 評価のキューに追加されます。
+* Complete Multipart Upload 要求では、最終アクセス時間が更新されます。完了したオブジェクトは、 ILM 評価のキューに追加されます。
+
+
+
+
+=== 例をリクエストする
+
+この例では、バケットの最終アクセス時間を有効にしています。
+
+[source, subs="specialcharacters,quotes"]
+----
+PUT /bucket?x-ntap-sg-lastaccesstime=enabled HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+この例では、バケットの最終アクセス時間を無効にしています。
+
+[source, subs="specialcharacters,quotes"]
+----
+PUT /bucket?x-ntap-sg-lastaccesstime=disabled HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+.関連情報
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+
+
+== DELETE Bucket metadata notification configuration 要求
+
+DELETE Bucket metadata notification configuration 要求では、設定 XML を削除することで、個々のバケットで検索統合サービスを無効化できます。
+
+この処理を完了するには、バケットのs3：DeleteBucketMetadataNotification権限またはrootアカウントが必要です。
+
+
+
+=== 要求例
+
+次の例は、バケットの検索統合サービスを無効にする方法を示しています。
+
+[source, subs="specialcharacters,quotes"]
+----
+DELETE /test1?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+== GET Bucket metadata notification configuration 要求
+
+GET Bucket metadata notification configuration 要求では、個々のバケットで検索統合を設定するために使用する設定 XML を読み出すことができます。
+
+この処理を完了するには、s3：GetBucketMetadataNotification権限またはrootアカウントが必要です。
+
+
+
+=== 要求例
+
+次の要求は、というバケットのメタデータ通知設定を読み出します `bucket`。
+
+[source, subs="specialcharacters,quotes"]
+----
+GET /bucket?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+=== 応答
+
+応答の本文には、バケットのメタデータ通知設定が含まれます。メタデータ通知設定では、バケットでの検索統合の設定を確認できます。つまり、どのオブジェクトにインデックスが付けられ、そのオブジェクトメタデータがどのエンドポイントに送信されるかを確認できます。
+
+[listing]
+----
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>rule-status</Status>
+        <Prefix>key-prefix</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:_region:account-ID_:domain/_mydomain/myindex/mytype_</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Rule-2</ID>
+         ...
+    </Rule>
+     ...
+</MetadataNotificationConfiguration>
+----
+各メタデータ通知設定には、 1 つ以上のルールが含まれています。各ルールは、環境 がオブジェクトを指定し、 StorageGRID がオブジェクトメタデータを送信するデスティネーションを指定します。デスティネーションは、 StorageGRID エンドポイントの URN を使用して指定する必要があります。
+
+|===
+| 名前 | 説明 | 必須 
+
+
+ a| 
+MetadataNotificationConfiguration のページです
+ a| 
+メタデータ通知でオブジェクトとデスティネーションの指定に使用されるルール用のコンテナタグ。
+
+1 つ以上の Rule 要素を含みます。
+ a| 
+はい。
+
+
+
+ a| 
+ルール
+ a| 
+指定したインデックスにメタデータを追加する必要があるオブジェクトを特定するルール用のコンテナタグ。
+
+プレフィックスが重複しているルールは拒否されます。
+
+MetadataNotificationConfiguration 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+ID
+ a| 
+ルールの一意の識別子。
+
+Rule 要素に含まれています。
+ a| 
+いいえ
+
+
+
+ a| 
+ステータス
+ a| 
+Status には「 Enabled 」または「 Disabled 」を指定できます。無効になっているルールについては操作が実行されません。
+
+Rule 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+プレフィックス
+ a| 
+プレフィックスと一致するオブジェクトにルールが適用され、そのメタデータが指定したデスティネーションに送信されます。
+
+すべてのオブジェクトを照合するには、空のプレフィックスを指定します。
+
+Rule 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+宛先
+ a| 
+ルールのデスティネーションのコンテナタグ。
+
+Rule 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+URN
+ a| 
+オブジェクトメタデータが送信されるデスティネーションの URN 。次のプロパティを持つ StorageGRID エンドポイントの URN を指定する必要があります。
+
+* `es` 3番目のエレメントである必要があります。
+* URNの末尾に、メタデータが格納されるインデックスとタイプを、の形式で指定する必要があります `domain-name/myindex/mytype`。
+
+
+エンドポイントは、 Tenant Manager またはテナント管理 API を使用して設定します。形式は次のとおりです。
+
+* `arn:aws:es:_region:account-ID_:domain/mydomain/myindex/mytype`
+* `urn:mysite:es:::mydomain/myindex/mytype`
+
+
+エンドポイントは設定 XML を送信する前に設定する必要があります。そうしないと、 404 エラーで設定が失敗します。
+
+Urn は Destination 要素に含まれています。
+ a| 
+はい。
+
+|===
+
+
+=== 応答例
+
+間に含まれるXML  `<MetadataNotificationConfiguration></MetadataNotificationConfiguration>` タグは、バケットに対して検索統合エンドポイントとの統合がどのように設定されているかを示します。次の例では、という名前のElasticsearchインデックスにオブジェクトメタデータが送信されています `current` と入力します `2017` という名前のAWSドメインでホストされている `records`。
+
+[listing]
+----
+HTTP/1.1 200 OK
+Date: Thu, 20 Jul 2017 18:24:05 GMT
+Connection: KEEP-ALIVE
+Server: StorageGRID/11.0.0
+x-amz-request-id: 3832973499
+Content-Length: 264
+Content-Type: application/xml
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>Enabled</Status>
+        <Prefix>2017</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-east-1:3333333:domain/records/current/2017</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+.関連情報
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+
+
+== PUT Bucket metadata notification configuration 要求
+
+PUT Bucket metadata notification configuration 要求を使用すると、個々のバケットで検索統合サービスを有効化できます。要求の本文に含めるメタデータ通知設定 XML では、デスティネーション検索インデックスにメタデータを送信するオブジェクトを指定します。
+
+この処理を完了するには、バケットのs3：PutBucketMetadataNotification権限またはrootアカウントが必要です。
+
+
+
+=== リクエスト
+
+要求の本文にメタデータ通知設定が含まれている必要があります。各メタデータ通知設定には、 1 つ以上のルールが含まれています。各ルールは、環境 がオブジェクトを指定し、 StorageGRID がオブジェクトメタデータを送信するデスティネーションを指定します。
+
+オブジェクトはオブジェクト名のプレフィックスでフィルタリングできます。たとえば、というプレフィックスのオブジェクトのメタデータを送信できます `/images` を1つのデスティネーションに、プレフィックスがのオブジェクトに追加します `/videos` 別のノードに移動します
+
+プレフィックスが重複している設定は無効で、送信時に拒否されます。たとえば、プレフィックスがのオブジェクト用のルールを1つ含む設定などです `test` プレフィックスが付いたオブジェクトの2番目のルールです `test2` 許可されません。
+
+デスティネーションは、 StorageGRID エンドポイントの URN を使用して指定する必要があります。エンドポイントは、メタデータ通知設定が送信されたときに存在している必要があります。存在していない場合、要求がとして失敗します `400 Bad Request`。エラーメッセージ： `Unable to save the metadata notification (search) policy. The specified endpoint URN does not exist: _URN_.`
+
+[listing]
+----
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>rule-status</Status>
+        <Prefix>key-prefix</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Rule-2</ID>
+         ...
+    </Rule>
+     ...
+</MetadataNotificationConfiguration>
+----
+次の表に、メタデータ通知設定 XML の要素を示します。
+
+|===
+| 名前 | 説明 | 必須 
+
+
+ a| 
+MetadataNotificationConfiguration のページです
+ a| 
+メタデータ通知でオブジェクトとデスティネーションの指定に使用されるルール用のコンテナタグ。
+
+1 つ以上の Rule 要素を含みます。
+ a| 
+はい。
+
+
+
+ a| 
+ルール
+ a| 
+指定したインデックスにメタデータを追加する必要があるオブジェクトを特定するルール用のコンテナタグ。
+
+プレフィックスが重複しているルールは拒否されます。
+
+MetadataNotificationConfiguration 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+ID
+ a| 
+ルールの一意の識別子。
+
+Rule 要素に含まれています。
+ a| 
+いいえ
+
+
+
+ a| 
+ステータス
+ a| 
+Status には「 Enabled 」または「 Disabled 」を指定できます。無効になっているルールについては操作が実行されません。
+
+Rule 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+プレフィックス
+ a| 
+プレフィックスと一致するオブジェクトにルールが適用され、そのメタデータが指定したデスティネーションに送信されます。
+
+すべてのオブジェクトを照合するには、空のプレフィックスを指定します。
+
+Rule 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+宛先
+ a| 
+ルールのデスティネーションのコンテナタグ。
+
+Rule 要素に含まれています。
+ a| 
+はい。
+
+
+
+ a| 
+URN
+ a| 
+オブジェクトメタデータが送信されるデスティネーションの URN 。次のプロパティを持つ StorageGRID エンドポイントの URN を指定する必要があります。
+
+* `es` 3番目のエレメントである必要があります。
+* URNの末尾に、メタデータが格納されるインデックスとタイプを、の形式で指定する必要があります `domain-name/myindex/mytype`。
+
+
+エンドポイントは、 Tenant Manager またはテナント管理 API を使用して設定します。形式は次のとおりです。
+
+* `arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype`
+* `urn:mysite:es:::mydomain/myindex/mytype`
+
+
+エンドポイントは設定 XML を送信する前に設定する必要があります。そうしないと、 404 エラーで設定が失敗します。
+
+Urn は Destination 要素に含まれています。
+ a| 
+はい。
+
+|===
+
+
+=== 例をリクエストする
+
+次の例は、バケットの検索統合を有効にする方法を示しています。この例では、すべてのオブジェクトのオブジェクトメタデータが同じデスティネーションに送信されます。
+
+[source, subs="specialcharacters,quotes"]
+----
+PUT /test1?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>Enabled</Status>
+        <Prefix></Prefix>
+        <Destination>
+           <Urn>urn:sgws:es:::sgws-notifications/test1/all</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+この例では、プレフィックスに一致するオブジェクトのオブジェクトメタデータを指定します `/images` が1つのデスティネーションに送信され、プレフィックスに一致するオブジェクトのオブジェクトメタデータが送信されます `/videos` 2番目の送信先に送信されます。
+
+[source, subs="specialcharacters,quotes"]
+----
+PUT /graphics?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Images-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/images</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-east-1:3333333:domain/es-domain/graphics/imagetype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Videos-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/videos</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-west-1:22222222:domain/es-domain/graphics/videotype</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+.関連情報
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+
+
+=== 検索統合サービスで生成される JSON
+
+バケットで検索統合サービスを有効にすると、オブジェクトのメタデータまたはタグの追加、更新、削除が行われるたびに、 JSON ドキュメントが生成されてデスティネーションエンドポイントに送信されます。
+
+次の例は、キーを含むオブジェクトの場合に生成されるJSONを示しています `SGWS/Tagging.txt` は、という名前のバケットに作成されます `test`。。 `test` バケットはバージョン管理されていないため、を使用します `versionId` タグが空です。
+
+[listing]
+----
+{
+  "bucket": "test",
+  "key": "SGWS/Tagging.txt",
+  "versionId": "",
+  "accountId": "86928401983529626822",
+  "size": 38,
+  "md5": "3d6c7634a85436eee06d43415012855",
+  "region":"us-east-1"
+  "metadata": {
+    "age": "25"
+  },
+  "tags": {
+    "color": "yellow"
+  }
+}
+----
+
+
+=== メタデータ通知に含まれているオブジェクトメタデータ
+
+次の表に、検索統合が有効になっている場合にデスティネーションエンドポイントに送信される JSON ドキュメント内のすべてのフィールドを示します。
+
+ドキュメント名には、バケット名、オブジェクト名、バージョン ID （存在する場合）が含まれます。
+
+|===
+| を入力します | 項目名 | 説明 
+
+
+ a| 
+バケットとオブジェクトの情報
+ a| 
+バケット
+ a| 
+バケットの名前
+
+
+
+ a| 
+バケットとオブジェクトの情報
+ a| 
+キーを押します
+ a| 
+オブジェクトキーの名前
+
+
+
+ a| 
+バケットとオブジェクトの情報
+ a| 
+versionId
+ a| 
+バージョン管理されたバケット内のオブジェクトのオブジェクトバージョン
+
+
+
+ a| 
+バケットとオブジェクトの情報
+ a| 
+リージョン
+ a| 
+たとえば、バケットのリージョンのように指定します `us-east-1`
+
+
+
+ a| 
+システムメタデータ
+ a| 
+サイズ
+ a| 
+HTTP クライアントから認識できるオブジェクトのサイズ（バイト）
+
+
+
+ a| 
+システムメタデータ
+ a| 
+MD5
+ a| 
+オブジェクトのハッシュ
+
+
+
+ a| 
+ユーザメタデータ
+ a| 
+メタデータ
+`_key:value_`
+ a| 
+オブジェクトのすべてのユーザメタデータをキーと値のペアとして格納
+
+
+
+ a| 
+タグ
+ a| 
+タグ
+`_key:value_`
+ a| 
+オブジェクトに対して定義されたすべてのオブジェクトタグをキーと値のペアとして使用します
+
+|===
+* 注： StorageGRID は、タグとユーザメタデータに対して、文字列または S3 イベント通知として Elasticsearch に日付と番号を渡します。これらの文字列を日付または数値として解釈するように Elasticsearch を設定するには、動的フィールドマッピングおよびマッピング日付形式に関する Elasticsearch の手順に従ってください。検索統合サービスを設定する前に、インデックスの動的フィールドマッピングを有効にする必要があります。ドキュメントにインデックスを付けた後は、インデックス内のドキュメントのフィールドタイプを編集できません。
+
+
+
+== GET Storage Usage 要求の略
+
+GET Storage Usage 要求を使用すると、アカウントで使用しているストレージの総容量とアカウントに関連付けられているバケットごとの使用容量を確認できます。
+
+アカウントとそのバケットで使用されているストレージの量は、でGET Service要求を変更して取得できます `x-ntap-sg-usage` クエリパラメータ。バケットによるストレージの使用量は、システムで処理される PUT 要求や DELETE 要求とは別に追跡されます。特にシステムの負荷が高い場合などは、使用量の値が要求の処理に基づく想定値と同じになるまでに少し時間がかかることがあります。
+
+デフォルトでは、 StorageGRID は strong-global 整合性を使用して、使用状況の情報を取得します。strong-global 整合性が保証されていない場合、 StorageGRID は、強いサイトで整合性のある使用状況情報を取得しようとします。
+
+この処理を完了するには、s3：ListAllMyBuckets権限またはrootアカウントが必要です。
+
+
+
+=== 要求例
+
+[source, subs="specialcharacters,quotes"]
+----
+GET /?x-ntap-sg-usage HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+=== 応答例
+
+次の例は、 2 つのバケットに 4 つのオブジェクトと 12 バイトのデータが格納されたアカウントです。各バケットには、 2 つのオブジェクトと 6 バイトのデータが格納されています。
+
+[listing]
+----
+HTTP/1.1 200 OK
+Date: Sat, 29 Nov 2015 00:49:05 GMT
+Connection: KEEP-ALIVE
+Server: StorageGRID/10.2.0
+x-amz-request-id: 727237123
+Content-Length: 427
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<UsageResult xmlns="http://s3.storagegrid.com/doc/2015-02-01">
+<CalculationTime>2014-11-19T05:30:11.000000Z</CalculationTime>
+<ObjectCount>4</ObjectCount>
+<DataBytes>12</DataBytes>
+<Buckets>
+<Bucket>
+<Name>bucket1</Name>
+<ObjectCount>2</ObjectCount>
+<DataBytes>6</DataBytes>
+</Bucket>
+<Bucket>
+<Name>bucket2</Name>
+<ObjectCount>2</ObjectCount>
+<DataBytes>6</DataBytes>
+</Bucket>
+</Buckets>
+</UsageResult>
+----
+
+
+=== バージョン管理
+
+には、格納されているすべてのオブジェクトバージョンが関連します `ObjectCount` および `DataBytes` 応答の値。削除マーカーはに追加されません `ObjectCount` 合計。
+
+.関連情報
+link:consistency-controls.html["整合性制御"]
+
+
+
+== 従来の準拠のためのバケット要求が廃止されました
+
+従来の準拠機能で作成されたバケットの管理には、 StorageGRID S3 REST API の使用が必要になる場合があります。
+
+
+
+=== コンプライアンス機能は廃止されました
+
+以前のバージョンの StorageGRID で提供されていた StorageGRID 準拠機能は廃止され、 S3 オブジェクトロックに置き換えられました。
+
+グローバル準拠設定を有効にしている場合は、StorageGRID 11.5にアップグレードすると、グローバルなS3オブジェクトロック設定が自動的に有効になります。準拠を有効にした新しいバケットは作成できなくなりました。ただし、必要に応じて、 StorageGRID S3 REST API を使用して、従来の準拠バケットを管理できます。
+
+link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェクトロックを使用する"]
+
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+
+
+
+=== 廃止：準拠のための PUT Bucket 要求の変更
+
+SGCompliance XML 要素は廃止されました。これまでは、この StorageGRID カスタム要素を PUT Bucket 要求のオプションの XML 要求の本文に含めて準拠バケットを作成できました。
+
+
+IMPORTANT: 以前のバージョンの StorageGRID で提供されていた StorageGRID 準拠機能は廃止され、 S3 オブジェクトロックに置き換えられました。
+
+link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェクトロックを使用する"]
+
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+
+準拠を有効にした新しいバケットを作成することはできなくなりました。準拠バケットを新しく作成するために PUT Bucket 要求の変更を使用しようとすると、次のエラーメッセージが返されます。
+
+[listing]
+----
+The Compliance feature is deprecated.
+Contact your StorageGRID administrator if you need to create new Compliant buckets.
+----
+.関連情報
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+
+
+=== 廃止予定： GET Bucket compliance 要求
+
+GET Bucket compliance 要求は廃止されました。ただし、既存のレガシー準拠バケットに対して現在有効な準拠設定を引き続き確認することができます。
+
+
+IMPORTANT: 以前のバージョンの StorageGRID で提供されていた StorageGRID 準拠機能は廃止され、 S3 オブジェクトロックに置き換えられました。
+
+link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェクトロックを使用する"]
+
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+
+この処理を完了するには、s3：GetBucketCompliance権限またはrootアカウントが必要です。
+
+
+
+==== 要求例
+
+次の要求例では、という名前のバケットの準拠設定を確認できます `mybucket`。
+
+[source, subs="specialcharacters,quotes"]
+----
+GET /mybucket/?x-ntap-sg-compliance HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+==== 応答例
+
+応答XMLで、 `<SGCompliance>` バケットで有効な準拠設定が表示されます。次の応答例では、バケットの準拠設定が示されており、各オブジェクトはグリッドに取り込まれてから 1 年間（ 525 、 600 分）保持されます。このバケットには現在リーガルホールドはありません。各オブジェクトは 1 年後に自動的に削除されます。
+
+[source, subs="specialcharacters,quotes"]
+----
+HTTP/1.1 200 OK
+Date: _date_
+Connection: _connection_
+Server: StorageGRID/11.1.0
+x-amz-request-id: _request ID_
+Content-Length: _length_
+Content-Type: application/xml
+
+<SGCompliance>
+  <RetentionPeriodMinutes>525600</RetentionPeriodMinutes>
+  <LegalHold>false</LegalHold>
+  <AutoDelete>true</AutoDelete>
+</SGCompliance>
+----
+|===
+| 名前 | 説明 
+
+
+ a| 
+RetentionPeriodMinutes です
+ a| 
+このバケットに追加されたオブジェクトの保持期間を分で指定します。保持期間は、オブジェクトがグリッドに取り込まれたときからの期間です。
+
+
+
+ a| 
+LegalHold のようになります
+ a| 
+* True ：このバケットは、現在リーガルホールドの対象です。このバケット内のオブジェクトは、保持期間が過ぎたあとも、リーガルホールドが解除されるまで削除できません。
+* False ：このバケットは、現在リーガルホールドの対象ではありません。このバケット内のオブジェクトは、保持期間が過ぎたら削除できます。
+
+
+
+
+ a| 
+自動削除
+ a| 
+* True ：このバケット内のオブジェクトは、バケットがリーガルホールドの対象である場合を除き、保持期間が過ぎると自動的に削除されます。
+* false ：このバケット内のオブジェクトは、保持期間が過ぎても自動的には削除されません。これらのオブジェクトを削除する必要がある場合は、手動で削除する必要があります。
+
+
+|===
+
+
+==== エラー応答
+
+バケットが準拠バケットとして作成されていない場合、応答のHTTPステータスコードはになります `404 Not Found`を返します `XNoSuchBucketCompliance`。
+
+.関連情報
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+
+
+=== 廃止予定： PUT Bucket compliance 要求
+
+PUT Bucket compliance 要求は廃止されました。ただし、この要求を引き続き使用して、既存のレガシー準拠バケットの準拠設定を変更できます。たとえば、既存のバケットをリーガルホールドの対象にしたり、バケットの保持期間を長くしたりできます。
+
+
+IMPORTANT: 以前のバージョンの StorageGRID で提供されていた StorageGRID 準拠機能は廃止され、 S3 オブジェクトロックに置き換えられました。
+
+link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェクトロックを使用する"]
+
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+
+この処理を完了するには、s3：PutBucketCompliance権限またはrootアカウントが必要です。
+
+PUT Bucket compliance 要求を発行する際は、準拠設定のすべてのフィールドに値を指定する必要があります。
+
+
+
+==== 要求例
+
+次の要求例では、という名前のバケットの準拠設定を変更します `mybucket`。この例では、のオブジェクトが表示されています `mybucket` オブジェクトがグリッドに取り込まれてから1年間ではなく2年間（1、051、200分）保持されます。このバケットにリーガルホールドはありません。各オブジェクトは 2 年後に自動的に削除されます。
+
+[source, subs="specialcharacters,quotes"]
+----
+PUT /mybucket/?x-ntap-sg-compliance HTTP/1.1
+Date: _date_
+Authorization: _authorization name_
+Host: _host_
+Content-Length: 152
+
+<SGCompliance>
+  <RetentionPeriodMinutes>1051200</RetentionPeriodMinutes>
+  <LegalHold>false</LegalHold>
+  <AutoDelete>true</AutoDelete>
+</SGCompliance>
+----
+|===
+| 名前 | 説明 
+
+
+ a| 
+RetentionPeriodMinutes です
+ a| 
+このバケットに追加されたオブジェクトの保持期間を分で指定します。保持期間は、オブジェクトがグリッドに取り込まれたときからの期間です。
+
+* 注意： RetentionPeriodMinutes に新しい値を指定する場合は、バケットの現在の保持期間以上の値を指定する必要があります。設定したバケットの保持期間は、増やすことはできますが減らすことはできません。
+
+
+
+ a| 
+LegalHold のようになります
+ a| 
+* True ：このバケットは、現在リーガルホールドの対象です。このバケット内のオブジェクトは、保持期間が過ぎたあとも、リーガルホールドが解除されるまで削除できません。
+* False ：このバケットは、現在リーガルホールドの対象ではありません。このバケット内のオブジェクトは、保持期間が過ぎたら削除できます。
+
+
+
+
+ a| 
+自動削除
+ a| 
+* True ：このバケット内のオブジェクトは、バケットがリーガルホールドの対象である場合を除き、保持期間が過ぎると自動的に削除されます。
+* false ：このバケット内のオブジェクトは、保持期間が過ぎても自動的には削除されません。これらのオブジェクトを削除する必要がある場合は、手動で削除する必要があります。
+
+
+|===
+
+
+==== 準拠設定の整合性レベル
+
+PUT Bucket compliance 要求によって S3 バケットの準拠設定を更新すると、 StorageGRID は、グリッド全体のバケットのメタデータを更新しようとします。デフォルトでは、 StorageGRID は * strong-global * 整合性レベルを使用し、バケットのメタデータを含むすべてのデータセンターサイトおよびストレージノードで、変更された準拠設定のリードアフターライト整合性を保証します。
+
+データセンターサイトまたはサイトの複数のストレージノードが利用できないために、StorageGRID が「strong-global」の整合性レベルを保証できない場合は、応答のHTTPステータスコードがになります `503 Service Unavailable.`
+
+この応答を受け取った場合は、必要なストレージサービスをできるだけ早く利用可能にするために、グリッド管理者に問い合わせる必要があります。グリッド管理者が各サイトで十分な数のストレージノードを利用可能にできない場合は、テクニカルサポートから、 * strong-site * 整合性レベルを強制的に適用することで、失敗した要求を再試行するよう指示される場合があります。
+
+
+IMPORTANT: テクニカルサポートから指示があった場合や、このレベルを使用した場合の影響を理解している場合を除き、 PUT Bucket compliance で * strong-site * 整合性レベルを強制的に適用することは避けてください。
+
+整合性レベルを * strong-site * 」に下げると、 StorageGRID は、サイト内のクライアント要求に対してのみ、更新された準拠設定のリードアフターライト整合性を保証します。そのため、すべてのサイトおよびストレージノードが利用可能になるまでの間、 StorageGRID システムにはこのバケットに対して複数の異なる設定が一時的に存在することになる場合があります。整合性のない設定を使用すると、予期せぬ望ましくない動作が生じる可能性がありますたとえば、あるバケットをリーガルホールドの対象にして、低い整合性レベルを強制的に適用すると、一部のデータセンターサイトでバケットの以前の準拠設定（つまり、リーガルホールドの対象外の状態）が引き続き適用される場合があります。したがって、リーガルホールドの対象と思われるオブジェクトは、保持期間が経過すると、ユーザによって削除される場合と、 AutoDelete によって削除される場合があります。
+
+strong-site *整合性レベルを強制的に適用するには、PUT Bucket compliance要求を再発行し、を含めてください `Consistency-Control` HTTP要求ヘッダー。
+
+[listing]
+----
+PUT /mybucket/?x-ntap-sg-compliance HTTP/1.1
+Consistency-Control: strong-site
+----
+
+
+==== エラー応答
+
+* バケットが準拠バケットとして作成されていない場合、応答のHTTPステータスコードはになります `404 Not Found`。
+* 状況 `RetentionPeriodMinutes` 要求がバケットの現在の保持期間よりも短い場合、HTTPステータスコードはになります `400 Bad Request`。
+
+
+.関連情報
+link:storagegrid-s3-rest-api-operations.html["廃止：準拠のための PUT Bucket 要求の変更"]
+
+link:../tenant/index.html["テナントアカウントを使用する"]
+
+link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]

@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-high-availability-groups.html 
+sidebar: sidebar 
+keywords:  
+summary: ハイアベイラビリティ（HA）グループを使用して、S3 / Swiftクライアントに可用性の高いデータ接続を提供できます。HAグループを使用して、Grid ManagerとTenant Managerへの可用性の高い接続を提供することもできます。 
+---
+= ハイアベイラビリティグループの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ハイアベイラビリティ（HA）グループを使用して、S3 / Swiftクライアントに可用性の高いデータ接続を提供できます。HAグループを使用して、Grid ManagerとTenant Managerへの可用性の高い接続を提供することもできます。
+
+* link:what-ha-group-is.html["HAグループとは"]
+* link:how-ha-groups-are-used.html["HAグループの使用方法"]
+* link:configuration-options-for-ha-groups.html["HA グループの設定オプション"]
+* link:creating-high-availability-group.html["ハイアベイラビリティグループを作成する"]
+* link:editing-high-availability-group.html["ハイアベイラビリティグループの編集"]
+* link:removing-high-availability-group.html["ハイアベイラビリティグループを削除しています"]
+

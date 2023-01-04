@@ -1,0 +1,28 @@
+---
+permalink: rhel/deploying-virtual-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, deploying grid nodes, deploy grid nodes, rhel, redhat, redhat linux, centos 
+summary: Red Hat Enterprise LinuxホストまたはCentOSホストに仮想グリッドノードを導入するには、すべてのノードのノード構成ファイルを作成し、それらのファイルを検証してから、StorageGRID ホストサービスを開始してノードを起動します。StorageGRID アプライアンスストレージノードを導入する必要がある場合は、すべての仮想ノードを導入したあとに、アプライアンスのインストールとメンテナンスの手順を参照してください。 
+---
+= 仮想グリッドノードの導入
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Red Hat Enterprise LinuxホストまたはCentOSホストに仮想グリッドノードを導入するには、すべてのノードのノード構成ファイルを作成し、それらのファイルを検証してから、StorageGRID ホストサービスを開始してノードを起動します。StorageGRID アプライアンスストレージノードを導入する必要がある場合は、すべての仮想ノードを導入したあとに、アプライアンスのインストールとメンテナンスの手順を参照してください。
+
+* link:creating-node-configuration-files.html["ノード構成ファイルを作成しています"]
+* link:validating-storagegrid-configuration.html["StorageGRID 構成を検証しています"]
+* link:starting-storagegrid-host-service.html["StorageGRID ホストサービスを開始しています"]
+
+
+.関連情報
+link:../sg100-1000/index.html["SG100 SG1000サービスアプライアンス"]
+
+link:../sg5600/index.html["SG5600 ストレージアプライアンス"]
+
+link:../sg5700/index.html["SG5700 ストレージアプライアンス"]
+
+link:../sg6000/index.html["SG6000 ストレージアプライアンス"]

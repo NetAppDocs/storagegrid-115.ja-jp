@@ -1,0 +1,27 @@
+---
+permalink: maintain/recovering-from-non-primary-admin-node-failures.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, non-primary admin node failure 
+summary: 非プライマリ管理ノードの障害からリカバリするには、次のタスクを実行する必要があります。1 つの管理ノードが Configuration Management Node （ CMN ）サービスをホストしており、これをプライマリ管理ノードと呼びます。管理ノードを複数使用することはできますが、 StorageGRID システムごとに配置できるプライマリ管理ノードは 1 つだけです。それ以外の管理ノードはすべて非プライマリ管理ノードです。 
+---
+= 非プライマリ管理ノードの障害からのリカバリ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+非プライマリ管理ノードの障害からリカバリするには、次のタスクを実行する必要があります。1 つの管理ノードが Configuration Management Node （ CMN ）サービスをホストしており、これをプライマリ管理ノードと呼びます。管理ノードを複数使用することはできますが、 StorageGRID システムごとに配置できるプライマリ管理ノードは 1 つだけです。それ以外の管理ノードはすべて非プライマリ管理ノードです。
+
+.関連情報
+link:../sg100-1000/index.html["SG100 SG1000サービスアプライアンス"]
+
+.手順
+* link:copying-audit-logs-from-failed-non-primary-admin-node.html["障害が発生した非プライマリ管理ノードから監査ログをコピーする"]
+* link:replacing-non-primary-admin-node.html["非プライマリ管理ノードの交換"]
+* link:selecting-start-recovery-to-configure-non-primary-admin-node.html["リカバリの開始を選択して非プライマリ管理ノードを設定します"]
+* link:restoring-audit-log-on-recovered-non-primary-admin-node.html["リカバリ済み非プライマリ管理ノードでの監査ログのリストア"]
+* link:resetting-preferred-sender-on-recovered-non-primary-admin-node.html["リカバリ済み非プライマリ管理ノードで優先送信者をリセットしています"]
+* link:restoring-admin-node-database-non-primary-admin-node.html["非プライマリ管理ノードをリカバリする際の管理ノードデータベースのリストア"]
+* link:restoring-prometheus-metrics-non-primary-admin-node.html["非プライマリ管理ノードをリカバリする際のPrometheus指標のリストア"]
+

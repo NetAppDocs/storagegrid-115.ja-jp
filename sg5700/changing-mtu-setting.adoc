@@ -1,0 +1,51 @@
+---
+permalink: sg5700/changing-mtu-setting.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, mtu, set, setting, change, changing, modify 
+summary: アプライアンスノードの IP アドレスを設定するときに割り当てた MTU 設定を変更できます。 
+---
+= MTU設定を変更します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+アプライアンスノードの IP アドレスを設定するときに割り当てた MTU 設定を変更できます。
+
+.必要なもの
+アプライアンスのメンテナンスモードが開始されました。
+
+link:placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]
+
+.手順
+. StorageGRID アプライアンスインストーラから、 *Configure Networking*>*IP Configuration* を選択します。
+. グリッドネットワーク、管理ネットワーク、およびクライアントネットワークの MTU 設定に必要な変更を加えます。
++
+image::../media/grid_network_static.png[グリッドネットワークの IP]
+
++
+
+IMPORTANT: ネットワークの MTU 値は、ノードが接続されているスイッチポートに設定されている値と同じである必要があります。そうしないと、ネットワークパフォーマンスの問題やパケット損失が発生する可能性があります。
+
++
+
+IMPORTANT: ネットワークのパフォーマンスを最大限に高めるには、すべてのノードのグリッドネットワークインターフェイスで MTU 値がほぼ同じになるように設定する必要があります。個々のノードのグリッドネットワークの MTU 設定に大きな違いがある場合は、 * Grid Network MTU mismatch * アラートがトリガーされます。MTU 値はすべてのネットワークタイプで同じである必要はありません。
+
+. 設定に問題がなければ、「 * 保存 * 」を選択します。
+. ノードをリブートします。StorageGRID アプライアンス・インストーラから、 *Advanced*>*Reboot Controller* を選択し、次のいずれかのオプションを選択します。
++
+** Reboot into StorageGRID * を選択し、ノードをグリッドに再追加してコントローラをリブートします。メンテナンスモードで作業を完了し、ノードを通常動作に戻す準備ができている場合は、このオプションを選択します。
+** メンテナンスモードを維持したままコントローラをリブートするには、 * Reboot into Maintenance Mode * を選択します。このオプションは、グリッドに再追加する前にノードで追加のメンテナンス処理を実行する必要がある場合に選択します。image:../media/reboot_controller_from_maintenance_mode.png["コントローラをメンテナンスモードでリブートします"]
++
+アプライアンスがリブートしてグリッドに再参加するまでに最大 20 分かかることがあります。リブートが完了し、ノードが再びグリッドに参加したことを確認するには、 Grid Manager に戻ります。[ノード*（Nodes *）]タブには、通常のステータスが表示されます image:../media/icon_alert_green_checkmark.png["アイコンアラートの緑のチェックマーク"] アクティブなアラートがなく、ノードがグリッドに接続されていることを示す、アプライアンスノードの場合。
+
++
+image::../media/node_rejoin_grid_confirmation.png[アプライアンスノードがグリッドに再参加しました]
+
+
+
+
+
+.関連情報
+link:../admin/index.html["StorageGRID の管理"]

@@ -1,0 +1,58 @@
+---
+permalink: network/storagegrid-networking-overview.html 
+sidebar: sidebar 
+keywords: storagegrid, network, networking, ethernet, subnet, routing 
+summary: StorageGRID システムのネットワークを設定するには、イーサネットスイッチング、 TCP/IP ネットワーク、サブネット、ネットワークルーティング、およびファイアウォールに関する高度な経験が必要です。 
+---
+= StorageGRID ネットワークの概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムのネットワークを設定するには、イーサネットスイッチング、 TCP/IP ネットワーク、サブネット、ネットワークルーティング、およびファイアウォールに関する高度な経験が必要です。
+
+ネットワークを設定する前に、_グリッド入門_の説明に従ってStorageGRID アーキテクチャについて理解しておいてください。
+
+StorageGRID を導入して設定する前に、ネットワークインフラを設定する必要があります。通信は、グリッド内のすべてのノード間、およびグリッドと外部のクライアントとサービスの間で発生する必要があります。
+
+外部クライアントや外部サービスは、次のような機能を実行するために StorageGRID ネットワークに接続する必要があります。
+
+* オブジェクトデータを格納し、読み出す
+* E メール通知を受信
+* StorageGRID 管理インターフェイス（ Grid Manager およびテナントマネージャ）へのアクセス
+* 監査共有へのアクセス（オプション）
+* 次のようなサービスを提供します。
++
+** ネットワークタイムプロトコル NTP
+** Domain Name System （ DNS ；ドメインネームシステム）
+** キー管理サーバ（ KMS ）
+
+
+
+
+これらの機能を使用するトラフィックなどを処理するには、 StorageGRID ネットワークが適切に設定されている必要があります。
+
+使用する3つのStorageGRID ネットワークのうち、どのネットワークをどのように設定するかを決定したら、適切な手順に従ってStorageGRID ノードを設置して設定できます。
+
+.関連情報
+link:../primer/index.html["グリッド入門"]
+
+link:../admin/index.html["StorageGRID の管理"]
+
+link:../release-notes/index.html["リリースノート"]
+
+link:../rhel/index.html["Red Hat Enterprise Linux または CentOS をインストールします"]
+
+link:../ubuntu/index.html["Ubuntu または Debian をインストールします"]
+
+link:../vmware/index.html["VMware をインストールする"]
+
+link:../sg100-1000/index.html["SG100 SG1000サービスアプライアンス"]
+
+link:../sg6000/index.html["SG6000 ストレージアプライアンス"]
+
+link:../sg5700/index.html["SG5700 ストレージアプライアンス"]
+
+link:../sg5600/index.html["SG5600 ストレージアプライアンス"]

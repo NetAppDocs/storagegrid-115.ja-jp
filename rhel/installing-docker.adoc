@@ -1,0 +1,68 @@
+---
+permalink: rhel/installing-docker.html 
+sidebar: sidebar 
+keywords:  
+summary: Red Hat Enterprise LinuxまたはCentOSでは、StorageGRID システムはDockerコンテナの集合として実行されます。StorageGRID をインストールする前に、 Docker をインストールする必要があります。 
+---
+= Docker をインストールする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Red Hat Enterprise LinuxまたはCentOSでは、StorageGRID システムはDockerコンテナの集合として実行されます。StorageGRID をインストールする前に、 Docker をインストールする必要があります。
+
+.手順
+. 使用している Linux ディストリビューションの手順に従って Docker をインストールします。
++
+
+NOTE: Docker が Linux ディストリビューションに含まれていない場合は、 Docker の Web サイトからダウンロードできます。
+
+. 次の 2 つのコマンドを実行して、 Docker が有効化され、起動されたことを確認します。
++
+[listing]
+----
+
+            sudo systemctl enable docker
+----
++
+[listing]
+----
+
+            sudo systemctl start docker
+----
+. 次のコマンドを入力して、必要なバージョンの Docker がインストールされたことを確認します。
++
+[listing]
+----
+sudo docker version
+----
++
+クライアントとサーバのバージョンが1.10.3以降である必要があります。
+
++
+[listing]
+----
+Client:
+  Version: 1.10.3
+  API version: 1.22
+  Package version: docker-common-1.10.3-46.el7.14.x86_64
+  Go version: go1.6.2
+  Git commit: 5206701-unsupported
+  Built: Mon Aug 29 14:00:01 2016
+  OS/Arch: linux/amd64
+
+Server:
+  Version: 1.10.3
+  API version: 1.22
+  Package version: docker-common-1.10.3-46.el7.14.x86_64
+  Go version: go1.6.2
+  Git commit: 5206701-unsupported
+  Built: Mon Aug 29 14:00:01 2016
+  OS/Arch: linux/amd64
+----
+
+
+.関連情報
+link:configuring-host-storage.html["ホストストレージを設定しています"]

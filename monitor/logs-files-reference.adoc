@@ -1,0 +1,34 @@
+---
+permalink: monitor/logs-files-reference.html 
+sidebar: sidebar 
+keywords: log, logs, log files 
+summary: 以降のセクションでは、イベント、診断メッセージ、およびエラー状態のキャプチャに使用するログについて説明します。テクニカルサポートにトラブルシューティングを依頼すると、ログファイルを収集して転送するように求められることがあります。 
+---
+= ログファイル参照
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以降のセクションでは、イベント、診断メッセージ、およびエラー状態のキャプチャに使用するログについて説明します。テクニカルサポートにトラブルシューティングを依頼すると、ログファイルを収集して転送するように求められることがあります。
+
+* link:storagegrid-software-logs.html["StorageGRID ソフトウェアのログ"]
+* link:deployment-and-maintenance-logs.html["導入とメンテナンスのログ"]
+* link:logs-for-third-party-software.html["サードパーティソフトウェアのログ"]
+* link:about-bycast-log.html["bycast.log について"]
+
+
+
+IMPORTANT: このセクションの表は参考用です。これらのログは、テクニカルサポートが高度なトラブルシューティングに使用することを目的としています。監査ログやアプリケーションログファイルを使用して問題の履歴を再構築する高度な手法については、このガイドでは説明していません。
+
+これらのログにアクセスするには、ログファイルとシステムデータを収集します（* Support *>* Tools *>* Logs *）。プライマリ管理ノードを使用できない場合や特定のノードに到達できない場合は、次の手順で各グリッドノードのログにアクセスできます。
+
+. 次のコマンドを入力します。 `ssh admin@grid_node_IP`
+. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+. 次のコマンドを入力してrootに切り替えます。 `su -`
+. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+
+
+.関連情報
+link:collecting-log-files-and-system-data.html["ログファイルとシステムデータを収集しています"]

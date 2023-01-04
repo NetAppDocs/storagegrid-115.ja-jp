@@ -1,0 +1,24 @@
+---
+permalink: vmware/defining-configuration-file-for-your-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID の仮想グリッドノードを導入するために必要な情報を構成ファイルで指定します。このファイルは、deploy-vsphere-ovftool.sh Bashスクリプトで使用されます。サンプル構成ファイルを変更して、ファイルをゼロから作成する必要がないようにすることができます。 
+---
+= 導入用の構成ファイルを定義しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID の仮想グリッドノードを導入するために必要な情報を構成ファイルで指定します。このファイルは、で使用されます `deploy-vsphere-ovftool.sh` bashスクリプト。サンプル構成ファイルを変更して、ファイルをゼロから作成する必要がないようにすることができます。
+
+.手順
+. サンプル構成ファイルのコピーを作成します (`deploy-vsphere-ovftool.sample.ini`）。新しいファイルをという名前で保存します `deploy-vsphere-ovftool.ini` と同じディレクトリ内にあります `deploy-vsphere-ovftool.sh`。
+. を開きます `deploy-vsphere-ovftool.ini`。
+. VMware 仮想グリッドノードを導入するために必要なすべての情報を入力します。
++
+を参照してください link:configuration-file-settings.html["構成ファイルの設定"] を参照してください。
+
+. 必要な情報をすべて入力して確認したら、ファイルを保存して閉じます。
+

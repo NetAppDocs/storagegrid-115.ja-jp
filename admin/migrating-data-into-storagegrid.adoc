@@ -1,0 +1,24 @@
+---
+permalink: admin/migrating-data-into-storagegrid.html 
+sidebar: sidebar 
+keywords:  
+summary: 日常業務に StorageGRID システムを使用しながら、同時に StorageGRID システムに大量のデータを移行できます。 
+---
+= StorageGRID へのデータの移行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+日常業務に StorageGRID システムを使用しながら、同時に StorageGRID システムに大量のデータを移行できます。
+
+次のセクションでは、 StorageGRID システムへの大量のデータ移行について、その概要と計画方法を説明します。データ移行の一般的なガイドではなく、移行を実行するための詳細な手順も記載されていません。このセクションのガイドラインと手順に従って、日常業務を中断せずに StorageGRID システムにデータを効率的に移行し、移行したデータが StorageGRID システムによって適切に処理されるようにしてください。
+
+* link:confirming-capacity-of-storagegrid-system.html["StorageGRID システムの容量の確認"]
+* link:determining-ilm-policy-for-migrated-data.html["移行データのILMポリシーの決定"]
+* link:impact-of-migration-on-operations.html["移行が処理に及ぼす影響"]
+* link:scheduling-data-migration.html["データ移行のスケジュール設定"]
+* link:monitoring-data-migration.html["データ移行の監視"]
+* link:creating-custom-notifications-for-migration-alarms.html["移行アラーム用のカスタム通知の作成"]
+

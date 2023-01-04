@@ -1,0 +1,55 @@
+---
+permalink: admin/requirements-for-sso.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID システムでシングルサインオン（ SSO ）を有効にする前に、このセクションの要件を確認してください。 
+---
+= シングルサインオンの使用要件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID システムでシングルサインオン（ SSO ）を有効にする前に、このセクションの要件を確認してください。
+
+
+IMPORTANT: シングルサインオン（ SSO ）は、制限された Grid Manager ポートまたは Tenant Manager ポートでは使用できません。ユーザをシングルサインオンで認証する場合は、デフォルトの HTTPS ポート（ 443 ）を使用する必要があります。
+
+
+
+== アイデンティティプロバイダの要件
+
+SSOのアイデンティティプロバイダ（IdP）は、次の要件を満たしている必要があります。
+
+* 次のいずれかのバージョンのActive Directoryフェデレーションサービス（AD FS）
++
+** AD FS 4.0はWindows Server 2016に付属しています
++
+
+NOTE: Windows Server 2016 でが使用されている必要があります https://support.microsoft.com/en-us/help/3201845/cumulative-update-for-windows-10-version-1607-and-windows-server-2016["KB3201845 の更新プログラム"^]またはそれ以上。
+
+** AD FS 3.0 （ Windows Server 2012 R2 Update 以降に付属）。
+
+
+* Transport Layer Security （ TLS ） 1.2 または 1.3
+* Microsoft .NET Framework バージョン 3.5.1 以降
+
+
+
+
+== サーバ証明書の要件
+
+StorageGRID は、各管理ノード上の管理インターフェイスのサーバ証明書を使用して、Grid Manager、テナントマネージャ、グリッド管理API、およびテナント管理APIへのアクセスを保護します。AD FSでStorageGRID 用にSSOの証明書利用者信頼を設定する際には、このサーバ証明書をAD FSへのStorageGRID 要求の署名証明書として使用します。
+
+管理インターフェイス用のカスタムサーバ証明書をまだインストールしていない場合は、インストールしてください。インストールしたカスタムサーバ証明書はすべての管理ノードで使用され、すべてのStorageGRID 証明書利用者信頼で使用できます。
+
+
+NOTE: 管理ノードのデフォルトサーバ証明書をAD FSの証明書利用者信頼に使用することは推奨されません。ノードに障害が発生した場合にそのノードをリカバリすると、新しいデフォルトサーバ証明書が生成されます。リカバリしたノードにサインインするには、AD FSの証明書利用者信頼を新しい証明書で更新する必要があります。
+
+管理ノードのサーバ証明書にアクセスするには、ノードのコマンドシェルにログインしてに移動します `/var/local/mgmt-api` ディレクトリ。カスタムサーバ証明書の名前はです `custom-server.crt`。ノードのデフォルトサーバ証明書の名前はです `server.crt`。
+
+.関連情報
+link:controlling-access-through-firewalls.html["ファイアウォールによるアクセス制御"]
+
+link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["Grid ManagerおよびTenant Manager用のカスタムサーバ証明書を設定する"]

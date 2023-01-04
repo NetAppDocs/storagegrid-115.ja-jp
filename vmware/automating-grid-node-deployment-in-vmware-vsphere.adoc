@@ -1,0 +1,78 @@
+---
+permalink: vmware/automating-grid-node-deployment-in-vmware-vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphereへのStorageGRID グリッドノードの導入を自動化することができます。 
+---
+= VMware vSphereへのグリッドノード導入の自動化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphereへのStorageGRID グリッドノードの導入を自動化することができます。
+
+.必要なもの
+* Bash 3.2 以降が搭載された Linux / UNIX システムにアクセスできるようにしておきます。
+* VMware OVF Tool 4.1 をインストールし、正しく設定しておきます。
+* OVF Tool を使用して VMware vSphere にアクセスするために必要なユーザ名とパスワードを確認しておきます。
+* StorageGRID 仮想マシンを導入する vSphere 内の場所の仮想インフラ（ VI ） URL を確認しておきます。この URL は通常、 vApp またはリソースプールです。例： `vi://vcenter.example.com/vi/sgws`
++
+
+NOTE: VMwareを使用できます `ovftool` この値を決定するユーティリティ（を参照） `ovftool` 詳細についてはドキュメントを参照してください）。
+
++
+
+NOTE: vApp に導入する場合、初回は仮想マシンが自動的に起動されないため、手動で電源をオンにする必要があります。
+
+* 構成ファイルに必要なすべての情報を収集しておきます。を参照してください link:collecting-information-about-your-deployment-environment.html["導入環境に関する情報を収集"] を参照してください。
+* VMware 用インストールアーカイブに含まれている次のファイルに StorageGRID からアクセスできるようにしておきます。
+
+
+[cols="1a,1a"]
+|===
+| ファイル名 | 説明 
+
+
+| NetApp-SG-version-sha.vmdk  a| 
+グリッドノード仮想マシンを作成するためのテンプレートとして使用される仮想マシンディスクファイル。
+
+*注意：*このファイルはと同じフォルダになければなりません `.ovf` および `.mf` ファイル。
+
+
+
+| vsphere-primary-admin.ovf vsphere-primary-admin.mf  a| 
+Open Virtualization Formatテンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を使用してください。
+
+
+
+| vsphere-non-primary-admin.ovf vsphere-non-primary-admin.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）。非プライマリ管理ノードを導入する場合に使用します。
+
+
+
+| vsphere-archive.ovf vsphere-archive.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を使用してアーカイブノードを導入します。
+
+
+
+| vsphere-gateway.ovf vsphere-gateway.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を選択します。
+
+
+
+| vsphere-storage.ovf vsphere-storage.mf  a| 
+テンプレートファイル (`.ovf`)とマニフェストファイル (`.mf`）を選択します。
+
+
+
+| deploy-vsphere-ovftool.sh  a| 
+仮想グリッドノードの導入を自動化するための Bash シェルスクリプト。
+
+
+
+| deploy-vsphere-ovftool-sample.ini  a| 
+で使用するサンプル構成ファイル `deploy-vsphere-ovftool.sh` スクリプト：
+
+|===

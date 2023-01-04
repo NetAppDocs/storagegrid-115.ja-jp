@@ -1,0 +1,23 @@
+---
+permalink: sg100-1000/preparing-for-installation-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, install, installation, preparation, get ready, prepare 
+summary: StorageGRID アプライアンスを設置するための準備では、設置場所を準備し、必要なすべてのハードウェア、ケーブル、工具を揃えます。また、 IP アドレスとネットワーク情報を収集する必要があります。 
+---
+= 設置を準備しています
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID アプライアンスを設置するための準備では、設置場所を準備し、必要なすべてのハードウェア、ケーブル、工具を揃えます。また、 IP アドレスとネットワーク情報を収集する必要があります。
+
+.手順
+* link:preparing-site-sg100-and-sg1000.html["サイトの準備（SG100およびSG1000）"]
+* link:unpacking-boxes-sg100-and-sg1000.html["アプライアンスの開梱（SG100およびSG1000）"]
+* link:obtaining-additional-equipment-and-tools-sg100-and-sg1000.html["追加の機器と工具の入手（SG100およびSG1000）"]
+* link:web-browser-requirements.html["Web ブラウザの要件"]
+* link:reviewing-appliance-network-connections-sg100-and-sg1000.html["アプライアンスのネットワーク接続を確認します"]
+* link:gathering-installation-information-sg100-and-sg1000.html["設置情報の収集（SG100およびSG1000）"]
+
