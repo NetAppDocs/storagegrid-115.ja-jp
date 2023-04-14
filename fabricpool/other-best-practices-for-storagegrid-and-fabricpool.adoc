@@ -29,7 +29,7 @@ StorageGRID を設定する場合は、グローバル*保存オブジェクト�
 
 == 整合性レベル
 
-FabricPool バケットの場合、推奨されるバケット整合性レベルは「read-after-new-write」です。「Available」整合性レベルは推奨されません。を参照してください link:../tenant/changing-consistency-level.html["整合性レベルを変更します"]。
+FabricPool バケットの場合、推奨されるバケットの整合性レベルは* Read-after-new-write *で、新しいバケットのデフォルトの設定です。FabricPool バケットを編集して* available *やその他の整合性レベルを使用しないでください。
 
 
 
