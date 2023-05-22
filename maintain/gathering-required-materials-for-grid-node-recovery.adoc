@@ -60,7 +60,7 @@ Grid Manager にアクセスできない場合は、 ADC サービスが含ま�
  a| 
 現在サポートされているプラットフォームのバージョンについては、Interoperability Matrix Toolを参照してください。
 
-https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
+https://["NetApp Interoperability Matrix Tool で確認できます"]
 
 ドキュメントについては、プラットフォームのベンダーの Web サイトを参照してください。
 

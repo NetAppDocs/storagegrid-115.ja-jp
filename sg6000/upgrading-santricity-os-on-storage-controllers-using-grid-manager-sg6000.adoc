@@ -38,7 +38,7 @@ NOTE: この手順 は、 SANtricity OS のアップグレードに関連付け�
 アプライアンス内のストレージコントローラに対応する正しいバージョンのSANtricity OSを選択してください。SG6060ではE2800コントローラを、SGF6024ではEF570コントローラを使用します。
 
 +
-https://mysupport.netapp.com/site/products/all/details/eseries-santricityos/downloads-tab["ネットアップのダウンロード： SANtricity OS"^]
+https://["ネットアップのダウンロード： SANtricity OS"^]
 
 . サポートされているブラウザを使用してGrid Managerにサインインします。
 . [* Maintenance（メンテナンス）]を選択します次に、メニューの[システム]セクションで、[ソフトウェア・アップデート]を選択します。
@@ -177,6 +177,6 @@ NOTE: ステータスが「 Needs Attention 」のノードがある場合は、
 
 
 .関連情報
-https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]
+https://["NetApp Interoperability Matrix Tool で確認できます"^]
 
 link:upgrading-santricity-os-on-storage-controllers-using-maintenance-mode-sg6000.html["ストレージコントローラのSANtricity OSをメンテナンスモードでアップグレードします"]

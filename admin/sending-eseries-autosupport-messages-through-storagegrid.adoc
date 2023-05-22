@@ -34,7 +34,7 @@ link:configuring-admin-proxy-settings.html["管理プロキシの設定"]
 ====
 この手順 は、 E シリーズ AutoSupport メッセージ用に StorageGRID プロキシサーバを設定するためだけに使用します。EシリーズAutoSupport の設定情報の詳細については、Eシリーズのドキュメントセンターを参照してください。
 
-http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp Eシリーズシステムのドキュメントセンター"^]
+http://["NetApp Eシリーズシステムのドキュメントセンター"^]
 
 ====
 .手順

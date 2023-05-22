@@ -21,8 +21,8 @@ NOTE: 表示されるフィールド名と ONTAP で必要な値の入力プロ�
 
 詳細については、以下を参照してください。
 
-* https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598：『FabricPool Best Practices for ONTAP 9.8』"^]
-* https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 ドキュメンテーション・センター"^]
+* https://["TR-4598：『FabricPool Best Practices for ONTAP 9.8』"^]
+* https://["ONTAP 9 ドキュメンテーション・センター"^]
 
 
 [cols="1a,2a"]

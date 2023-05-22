@@ -471,9 +471,9 @@ Grid Manager を介して表示される監視、レポート、および設定�
 
 
 .関連情報
-https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]
+https://["NetApp Interoperability Matrix Tool で確認できます"^]
 
-https://hwu.netapp.com["NetApp Hardware Universe の略"^]
+https://["NetApp Hardware Universe の略"^]
 
 link:../vmware/index.html["VMware をインストールする"]
 

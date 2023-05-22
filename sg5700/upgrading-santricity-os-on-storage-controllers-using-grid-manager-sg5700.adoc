@@ -38,7 +38,7 @@ NOTE: この手順 は、 SANtricity OS のアップグレードに関連付け�
 必ずE2800ストレージコントローラのSANtricity OSバージョンを選択してください。
 
 +
-https://mysupport.netapp.com/site/products/all/details/eseries-santricityos/downloads-tab["ネットアップのダウンロード： SANtricity OS"^]
+https://["ネットアップのダウンロード： SANtricity OS"^]
 
 . サポートされているブラウザを使用してGrid Managerにサインインします。
 . [* Maintenance（メンテナンス）]を選択します次に、メニューの[システム]セクションで、[ソフトウェア・アップデート]を選択します。

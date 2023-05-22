@@ -62,7 +62,7 @@ sidebar:
     entries:
     - section: expand
     - section: maintain
-  - title: 以前のバージョン
+  - title: その他のバージョン
     url: "/earlier-versions.html"
   - title: 法的通知
     url: "/legal-notices.html"
@@ -148,9 +148,15 @@ homepage:
       url: https://netapp.com/blog/
     - title: ネットアップコミュニティ
       url: https://community.netapp.com/
-  - title: 以前のバージョン
+  - title: その他のバージョン
     links:
+    - title: StorageGRID 11.7ドキュメント
+      url: https://docs.netapp.com/us-en/storagegrid-117/index.html
+    - title: StorageGRID 11.6のドキュメント
+      url: https://docs.netapp.com/us-en/storagegrid-116/index.html
     - title: StorageGRID 11.4 ドキュメント
       url: https://docs.netapp.com/sgws-114/index.jsp
     - title: StorageGRID 11.3 のドキュメント
       url: https://docs.netapp.com/sgws-113/index.jsp
+    - title: StorageGRID 11.2 のドキュメント
+      url: https://docs.netapp.com/sgws-112/index.jsp

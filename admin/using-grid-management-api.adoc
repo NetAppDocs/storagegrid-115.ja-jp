@@ -29,4 +29,4 @@ Grid Manager のユーザインターフェイスの代わりにグリッド管�
 .関連情報
 link:../tenant/index.html["テナントアカウントを使用する"]
 
-https://prometheus.io/docs/querying/basics/["Prometheus：クエリの基本"^]
+https://["Prometheus：クエリの基本"^]

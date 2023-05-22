@@ -38,7 +38,7 @@ NOTE: タグとユーザメタデータの場合、 StorageGRID は文字列ま�
 StorageGRID 検索統合サービスは、デスティネーションとして Elasticsearch クラスタをサポートします。他のプラットフォームサービスと同様、 URN がサービスの設定 XML で使用されているエンドポイントにデスティネーションが指定されます。サポートされているElasticsearchのバージョンを確認するには、Interoperability Matrix Toolを使用してください。
 
 .関連情報
-https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]
+https://["NetApp Interoperability Matrix Tool で確認できます"]
 
 link:configuration-xml-for-search-configuration.html["検索統合用の XML を設定します"]
 
