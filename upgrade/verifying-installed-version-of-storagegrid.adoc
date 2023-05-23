@@ -39,7 +39,7 @@ IMPORTANT: 以前のバージョンのStorageGRID を使用している場合は
 
 . StorageGRID 11.4が表示されたら、StorageGRID のネットアップのダウンロードページにアクセスし、StorageGRID 11.4._x_versionに利用可能なホットフィックスがあるかどうかを確認します。
 +
-https://["ネットアップのダウンロード： StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
 
 . StorageGRID 11.4._x_versionに最新のホットフィックスが適用されていることを確認します。
 . 必要に応じて、最新のStorageGRID 11.4._x.y_hotfixをダウンロードしてStorageGRID 11.4._x_versionに適用します。

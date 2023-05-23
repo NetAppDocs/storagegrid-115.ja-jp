@@ -25,7 +25,7 @@ StorageGRID ロードバランササービスはすべての管理ノードと�
 
 推奨されるロードバランシングメカニズムは StorageGRID ロードバランササービスですが、代わりにサードパーティのロードバランサを統合することもできます。詳細については、ネットアップのアカウント担当者にお問い合わせいただくか、次のテクニカルレポートを参照してください。
 
-https://["StorageGRID ロードバランサオプション"^]
+https://www.netapp.com/pdf.html?item=/media/17068-tr4626pdf.pdf["StorageGRID ロードバランサオプション"^]
 
 
 NOTE: ゲートウェイノード上の別の Connection Load Balancer （ CLB ）サービスは廃止され、 FabricPool での使用は推奨されなくなりました。

@@ -25,7 +25,7 @@ image::../media/expansion_workflow.png[拡張プロセスの概要を示すフ�
 
 * 関連情報 *
 
-https://["NetApp Interoperability Matrix Tool で確認できます"^]
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]
 
 link:planning-expansion.html["StorageGRID 拡張の計画"]
 

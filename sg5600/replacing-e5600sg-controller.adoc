@@ -16,7 +16,7 @@ E5600SG コントローラの交換が必要となる場合があります。
 .必要なもの
 次のリソースにアクセスできる必要があります。
 
-* NetApp Support Site at + に掲載のE シリーズハードウェアの交換に関する情報http://["mysupport.netapp.com"^]
+* NetApp Support Site at + に掲載のE シリーズハードウェアの交換に関する情報http://mysupport.netapp.com/["mysupport.netapp.com"^]
 * E5600 に関するサポートサイトのドキュメント
 * アプライアンスのメンテナンスモードが開始されました。
 +
@@ -79,6 +79,6 @@ rootとしてログインすると、プロンプトがから変わります `$`
 
 
 .関連情報
-https://["NetApp E シリーズおよび EF シリーズでのハードウェアの交換手順"^]
+https://mysupport.netapp.com/info/web/ECMP11751516.html["NetApp E シリーズおよび EF シリーズでのハードウェアの交換手順"^]
 
-http://["ネットアップのマニュアル： E5600 シリーズ"^]
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61893["ネットアップのマニュアル： E5600 シリーズ"^]

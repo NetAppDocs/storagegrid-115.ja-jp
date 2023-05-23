@@ -22,7 +22,7 @@ StorageGRID システムをアップグレードする前に、必要なファ�
 .手順
 . ネットアップの StorageGRID ダウンロードページにアクセスします。
 +
-https://["ネットアップのダウンロード： StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
 
 . 最新のリリースをダウンロードするボタンを選択するか、ドロップダウンメニューから別のバージョンを選択して、「 * Go * 」を選択します。
 +

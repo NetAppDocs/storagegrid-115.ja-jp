@@ -33,7 +33,7 @@ link:creating-ilm-policy.html["ILMポリシーを作成する"]
 ====
 以前のバージョンのStorageGRID を使用してグローバル準拠設定を有効にした場合は、StorageGRID バージョン11.5にアップグレードすると新しいS3オブジェクトロック設定が自動的に有効になります。既存の準拠バケットの設定の管理には引き続きStorageGRID を使用できますが、新しい準拠バケットを作成することはできません。
 
-https://["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"^]
 
 ====
 .手順

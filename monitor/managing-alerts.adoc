@@ -223,7 +223,7 @@ link:../admin/index.html["StorageGRID の管理"]
 
 link:commonly-used-prometheus-metrics.html["よく使用される Prometheus 指標"]
 
-https://["Prometheus：クエリの基本"]
+https://prometheus.io/docs/querying/basics/["Prometheus：クエリの基本"]
 
 
 
@@ -352,7 +352,7 @@ link:../admin/index.html["StorageGRID の管理"]
 
 link:commonly-used-prometheus-metrics.html["よく使用される Prometheus 指標"]
 
-https://["Prometheus：クエリの基本"]
+https://prometheus.io/docs/querying/basics/["Prometheus：クエリの基本"]
 
 
 

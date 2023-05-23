@@ -268,7 +268,7 @@ link:configuring-security-for-rest-api.html["REST APIのセキュリティの設
 Amazon Web Services コマンドラインインターフェイス（ AWS CLI ）を使用してシステムへの接続をテストし、システムに対するオブジェクトの読み取りと書き込みが可能であることを確認できます。
 
 .必要なもの
-* AWS CLIをからダウンロードしてインストールしておく必要があります https://["aws.amazon.com/cli"]。
+* AWS CLIをからダウンロードしてインストールしておく必要があります https://aws.amazon.com/cli["aws.amazon.com/cli"]。
 * StorageGRID システムでS3テナントアカウントを作成しておく必要があります。
 
 

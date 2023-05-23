@@ -42,7 +42,7 @@ StorageGRID 11.5のS3オブジェクトロック機能は、以前のバージ�
 
 Tenant Managerの盾アイコン image:../media/icon_shield.png["盾アイコンをクリックします"] 従来の準拠バケットを示します。従来の準拠バケットには保留バッジが付いている場合もあります image:../media/hold_badge.png["バッジを保留します"] バケットがリーガルホールドの対象であることを示します。
 
-https://["KB：StorageGRID 11.5で従来の準拠バケットを管理する方法"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["KB：StorageGRID 11.5で従来の準拠バケットを管理する方法"^]
 
 link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
 

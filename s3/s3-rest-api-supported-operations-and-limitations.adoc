@@ -77,4 +77,4 @@ x-amz-id-2
 
 |===
 .関連情報
-http://["Amazon Web Services （ AWS ）ドキュメント：「 Amazon Simple Storage Service API Reference"]
+http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html["Amazon Web Services （ AWS ）ドキュメント：「 Amazon Simple Storage Service API Reference"]

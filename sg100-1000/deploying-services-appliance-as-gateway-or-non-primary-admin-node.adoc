@@ -94,7 +94,7 @@ IP を手動で入力します
 +
 .. ネットアップの StorageGRID ダウンロードページからインストールアーカイブをダウンロードします。
 +
-https://["ネットアップのダウンロード： StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
 
 .. アーカイブを展開します。
 .. StorageGRID アプライアンス・インストーラから、 * アドバンスト * > * StorageGRID ソフトウェアのアップロード * を選択します。

@@ -123,4 +123,4 @@ link:s3-rest-api-supported-operations-and-limitations.html["パーツをアッ�
 
 link:s3-rest-api-supported-operations-and-limitations.html["パーツのアップロード - コピー"]
 
-https://["Amazon S3 開発者ガイド：「お客様が用意した暗号化キーによるサーバ側の暗号化（ SSE-C ）を使用したデータの保護」"]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html["Amazon S3 開発者ガイド：「お客様が用意した暗号化キーによるサーバ側の暗号化（ SSE-C ）を使用したデータの保護」"]

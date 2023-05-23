@@ -838,7 +838,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェク�
 
 link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
 
-https://["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
 
 
 
@@ -853,7 +853,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェク�
 
 link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
 
-https://["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
 
 準拠を有効にした新しいバケットを作成することはできなくなりました。準拠バケットを新しく作成するために PUT Bucket 要求の変更を使用しようとすると、次のエラーメッセージが返されます。
 
@@ -880,7 +880,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェク�
 
 link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
 
-https://["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
 
 この処理を完了するには、s3：GetBucketCompliance権限またはrootアカウントが必要です。
 
@@ -971,7 +971,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["S3 オブジェク�
 
 link:../ilm/index.html["ILM を使用してオブジェクトを管理する"]
 
-https://["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["ネットアップのナレッジベース： StorageGRID 11.5 でレガシー準拠バケットを管理する方法"]
 
 この処理を完了するには、s3：PutBucketCompliance権限またはrootアカウントが必要です。
 

@@ -21,7 +21,7 @@ summary: アプライアンスハードウェアを登録するとサポート�
 +
 image::../media/appliance_label.gif[シリアル番号を含むラベル]
 
-. NetApp Support Siteにアクセスします http://["mysupport.netapp.com"^]。
+. NetApp Support Siteにアクセスします http://mysupport.netapp.com/["mysupport.netapp.com"^]。
 . ハードウェアの登録が必要かどうかを確認します。
 +
 |===

@@ -290,4 +290,4 @@ E2800 コントローラとのインストールまたは通信に失敗しま�
 .関連情報
 link:troubleshooting-hardware-installation.html["ハードウェアの設置のトラブルシューティング"]
 
-https://["ネットアップサポート"^]
+https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"^]

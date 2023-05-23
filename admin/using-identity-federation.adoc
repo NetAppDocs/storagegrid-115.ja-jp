@@ -171,7 +171,7 @@ memberof オーバーレイと refint オーバーレイを有効にする必要
 OpenLDAPの管理者ガイドのリバースグループメンバーシップのメンテナンスに関する情報を参照してください。
 
 .関連情報
-http://["OpenLDAP のドキュメント：バージョン 2.4 管理者ガイド"^]
+http://www.openldap.org/doc/admin24/index.html["OpenLDAP のドキュメント：バージョン 2.4 管理者ガイド"^]
 
 
 

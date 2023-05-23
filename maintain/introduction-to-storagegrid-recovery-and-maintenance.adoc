@@ -39,4 +39,4 @@ link:../sg5700/index.html["SG5700 ストレージアプライアンス"]
 
 link:../sg5600/index.html["SG5600 ストレージアプライアンス"]
 
-https://["NetApp Interoperability Matrix Tool で確認できます"]
+https://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"]

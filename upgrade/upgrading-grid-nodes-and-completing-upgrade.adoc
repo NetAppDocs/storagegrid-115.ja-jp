@@ -118,7 +118,7 @@ image::../media/software_upgrade_done.png[ソフトウェアアップグレー�
 
 . ネットアップのダウンロードページでStorageGRID を確認し、インストールしたStorageGRID バージョンに対応したホットフィックスがないかどうかを確認します。
 +
-https://["ネットアップのダウンロード： StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["ネットアップのダウンロード： StorageGRID"^]
 
 +
 StorageGRID 11.5._x.y_version の番号で、次の手順を実行します。
