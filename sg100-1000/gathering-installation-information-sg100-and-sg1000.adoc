@@ -21,7 +21,7 @@ StorageGRID の管理ネットワークは、システムの管理とメンテ�
 
 * SG100 RJ-45 ポート *
 
-image::../media/sg100_rj_45_ports_circled.png[丸で囲まれた SG100 RJ-45 ポート]
+image::../media/sg100_rj_45_ports_circled.png[SG100のRJ-45ポート]
 
 * SG1000 RJ-45 ポート *
 

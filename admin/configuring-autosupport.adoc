@@ -38,7 +38,7 @@ AutoSupport 機能および個々の AutoSupport オプションは、 StorageGR
 
 image::../media/autosupport_disabled_message.png[AutoSupport が無効なメッセージです]
 
-「x」記号を選択できます image:../media/autosupport_close_message.png[""] をクリックしてメッセージを閉じます。このメッセージは、AutoSupport が無効なままであっても、ブラウザキャッシュがクリアされるまで表示されません。
+「x」記号を選択できます image:../media/autosupport_close_message.png["X記号"] をクリックしてメッセージを閉じます。このメッセージは、AutoSupport が無効なままであっても、ブラウザキャッシュがクリアされるまで表示されません。
 
 
 

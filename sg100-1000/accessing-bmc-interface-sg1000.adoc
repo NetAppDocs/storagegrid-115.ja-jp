@@ -20,7 +20,7 @@ BMC 管理ポートの DHCP または静的 IP アドレスを使用して、サ
 * SG100 BMC 管理ポート *
 
 +
-image::../media/sg100_bmc_management_port.png[SG100 BMC 管理ポート]
+image::../media/sg100_bmc_management_port.png[SG100 管理ポート]
 
 +
 * SG1000 BMC 管理ポート *

@@ -23,7 +23,7 @@ image::../media/kms_step_2_upload_server_certificate.png[KMS ステップ 2 サ�
 サーバ証明書のメタデータが表示されます。
 
 +
-image::../media/kms_step_2_server_certificate_metadata.png[KMS の手順 2 ：サーバ証明書のメタデータ]
+image::../media/kms_step_2_server_certificate_metadata.png[サーバ証明書メタデータ]
 
 +
 

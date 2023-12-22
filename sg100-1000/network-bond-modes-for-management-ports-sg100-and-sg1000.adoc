@@ -15,7 +15,7 @@ summary: サービスアプライアンス上の 2 つの 1GbE 管理ポート�
 
 * SG100 ネットワーク管理ポート *
 
-image::../media/sg100_bonded_management_ports.png[SG100 ボンディングされた管理ポート]
+image::../media/sg100_bonded_management_ports.png[SG100のボンディングされた管理ポート]
 
 * SG1000 ネットワーク管理ポート *
 

@@ -44,7 +44,7 @@ Grid Manager を使用してストレージノードのメタデータ容量を�
 
 図の右側は、サイトへの 2 つのストレージノードの追加後に既存のメタデータがどのように再配置されるかを示しています。各ノードのメタデータの量が減少し、「 Low metadata storage * 」アラートがトリガーされなくなり、メタデータに使用できるスペースが増えました。
 
-image::../media/metadata_space_after_expansion.png[拡張後のメタデータスペース]
+image::../media/metadata_space_after_expansion.png[カクチヨウコノメタデータスペース]
 
 * 関連情報 *
 

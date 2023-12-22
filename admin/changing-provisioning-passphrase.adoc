@@ -38,7 +38,7 @@ CAUTION: 新しいプロビジョニングパスフレーズを安全な場所�
 プロビジョニングパスフレーズの変更が完了すると、成功を示す緑のバナーが表示されます。変更には1分未満かかります。
 
 +
-image::../media/change_provisioning_passphrase_success.png[プロビジョニングパスフレーズを変更しました]
+image::../media/change_provisioning_passphrase_success.png[プロビジョニングパスフレーズの変更-成功メッセージ]
 
 . 成功バナー内の*リカバリパッケージページ*リンクを選択します。
 . Grid Manager から新しいリカバリパッケージをダウンロードします。[* Maintenance *>]>[* Recovery Package]を選択し、新しいプロビジョニングパスフレーズを入力します。

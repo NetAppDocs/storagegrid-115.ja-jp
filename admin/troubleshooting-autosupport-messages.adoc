@@ -18,7 +18,7 @@ NOTE: E メール通知をシステム全体で停止した場合は、イベン
 
 AutoSupport メッセージの送信に失敗すると、 AutoSupport ページの * Results * タブに「 Failed 」と表示されます。
 
-image::../media/autosupport_results_tab.png[AutoSupport の結果タブ]
+image::../media/autosupport_results_tab.png[AutoSupportの[結果]タブ]
 
 
 
